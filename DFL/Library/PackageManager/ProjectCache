@@ -3273,6 +3273,7 @@ m_PackageAssets:
         - 1.1.0-pre.10
         - 1.1.0-pre.11
         - 1.1.0-pre.41
+        - 1.1.0-pre.69
         compatible:
         - 1.0.1
         - 1.1.0-pre.7
@@ -3281,6 +3282,7 @@ m_PackageAssets:
         - 1.1.0-pre.10
         - 1.1.0-pre.11
         - 1.1.0-pre.41
+        - 1.1.0-pre.69
         verified: 1.0.1
       dependencies:
       - name: com.unity.modules.unitywebrequest
