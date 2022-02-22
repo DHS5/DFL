@@ -14,9 +14,6 @@ public class PlayerController : MonoBehaviour
     [Tooltip("Camera attached to the player")]
     [SerializeField] private GameObject playerCamera;
 
-    [Tooltip("Rigidbody of the player")]
-    private Rigidbody playerRigidbody;
-
     [Tooltip("Velocity of the player")]
     private Vector3 velocity;
 
@@ -25,14 +22,20 @@ public class PlayerController : MonoBehaviour
 
     [Tooltip("Side speed multiplier of the player")]
     [SerializeField] private float sideSpeedM = 5f;
+    /// <summary>
+    /// Side speed of the player
+    /// </summary>
     private float SideSpeed
     {
         get { return Input.GetAxis("Horizontal") * sideSpeedM; }
         set { sideSpeedM = value; }
     }
 
-    [Tooltip("Side speed multiplier of the player")]
+    [Tooltip("Acceleration multiplier of the player")]
     [SerializeField] private float accelerationM = 5f;
+    /// <summary>
+    /// Acceleration of the player (can be negative)
+    /// </summary>
     private float Acceleration
     {
         get
@@ -57,6 +60,8 @@ public class PlayerController : MonoBehaviour
     private void CantAccelerate()
     {
         canAccelerate = false;
+
+        // Calls the CanAccelerate Method after 10 seconds
         Invoke(nameof(CanAccelerate), 10f);
     }
     /// <summary>
@@ -73,16 +78,19 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
 
-        // Sets the player parameter
-        
     }
 
+    /// <summary>
+    /// Update the physics parameters
+    /// </summary>
     private void Update()
     {
         velocity = Vector3.forward * (speed + Acceleration) * Time.deltaTime + Vector3.right * SideSpeed * Time.deltaTime;
     }
 
-    // Update is called once per frame
+    /// <summary>
+    /// Update the player's movements
+    /// </summary>
     void LateUpdate()
     {
         transform.Translate(velocity);
