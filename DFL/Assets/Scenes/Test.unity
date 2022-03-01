@@ -538,7 +538,7 @@ Transform:
   m_LocalScale: {x: 1, y: 10, z: 1}
   m_Children: []
   m_Father: {fileID: 677808257}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!136 &150977901
 CapsuleCollider:
@@ -1491,7 +1491,7 @@ GameObject:
   - component: {fileID: 677808257}
   - component: {fileID: 677808258}
   m_Layer: 0
-  m_Name: GoalPost 1
+  m_Name: GoalPost 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1508,14 +1508,14 @@ Transform:
   m_LocalPosition: {x: 0, y: 3, z: 200}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 1779888156}
   - {fileID: 1791256467}
   - {fileID: 150977900}
-  - {fileID: 1779888156}
   - {fileID: 1298123223}
   - {fileID: 1395476983}
   - {fileID: 1857908952}
   m_Father: {fileID: 1804225163}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!136 &677808258
 CapsuleCollider:
@@ -2039,7 +2039,7 @@ Transform:
   m_LocalScale: {x: 2, y: 5, z: 2}
   m_Children: []
   m_Father: {fileID: 1842877871}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!136 &730793623
 CapsuleCollider:
@@ -3343,7 +3343,7 @@ Transform:
   m_LocalScale: {x: 1, y: 8, z: 1}
   m_Children: []
   m_Father: {fileID: 1842877871}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!136 &1394551503
 CapsuleCollider:
@@ -3504,6 +3504,56 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1395476982}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1426004910
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1426004911}
+  - component: {fileID: 1426004912}
+  m_Layer: 0
+  m_Name: FieldManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1426004911
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1426004910}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -24.551615, y: 8.001394, z: 55.11737}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1426004912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1426004910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c664272bd882d1419a0812368fb2cbf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fieldMaterialList:
+  - grass: {fileID: 2100000, guid: 8e9032c9e1a61664ab0e33e0377bf378, type: 2}
+    endzone1: {fileID: 2100000, guid: 459d301fac8514943a5839fa9d42e562, type: 2}
+    endzone2: {fileID: 2100000, guid: 7895c33ba87ddc64babdd84d268d6bcc, type: 2}
+    barriers: {fileID: 2100000, guid: 3a3cdac09346f0d489387f2bb0d409e7, type: 2}
+    goalpostBase: {fileID: 2100000, guid: 24eae71b46639f34da39cfb5fbc3d010, type: 2}
+    goalpostMetal: {fileID: 2100000, guid: 84710369ace689047967477ae54dbd62, type: 2}
 --- !u!1 &1433487236
 GameObject:
   m_ObjectHideFlags: 0
@@ -3726,7 +3776,7 @@ Transform:
   - {fileID: 1334007157}
   - {fileID: 693737077}
   m_Father: {fileID: 1804225163}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1492448731
 GameObject:
@@ -3759,7 +3809,7 @@ Transform:
   m_LocalScale: {x: 1, y: 10, z: 1}
   m_Children: []
   m_Father: {fileID: 1842877871}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!136 &1492448733
 CapsuleCollider:
@@ -4066,7 +4116,7 @@ Transform:
   - {fileID: 484695186}
   - {fileID: 2089841219}
   m_Father: {fileID: 1804225163}
-  m_RootOrder: 1
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1664567380
 GameObject:
@@ -4390,7 +4440,7 @@ Transform:
   m_LocalScale: {x: 2, y: 5, z: 2}
   m_Children: []
   m_Father: {fileID: 677808257}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!136 &1779888157
 CapsuleCollider:
@@ -4486,7 +4536,7 @@ Transform:
   m_LocalScale: {x: 1, y: 8, z: 1}
   m_Children: []
   m_Father: {fileID: 677808257}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!136 &1791256468
 CapsuleCollider:
@@ -4578,11 +4628,11 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1454903638}
-  - {fileID: 1632926001}
-  - {fileID: 677808257}
-  - {fileID: 1842877871}
   - {fileID: 1918344540}
+  - {fileID: 1454903638}
+  - {fileID: 1842877871}
+  - {fileID: 677808257}
+  - {fileID: 1632926001}
   m_Father: {fileID: 1086744838}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4693,7 +4743,7 @@ GameObject:
   - component: {fileID: 1842877871}
   - component: {fileID: 1842877872}
   m_Layer: 0
-  m_Name: GoalPost 2
+  m_Name: GoalPost 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4710,14 +4760,14 @@ Transform:
   m_LocalPosition: {x: 0, y: 3, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 730793622}
   - {fileID: 1394551502}
   - {fileID: 1492448732}
-  - {fileID: 730793622}
   - {fileID: 625618665}
   - {fileID: 246778442}
   - {fileID: 142410210}
   m_Father: {fileID: 1804225163}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!136 &1842877872
 CapsuleCollider:
@@ -5052,7 +5102,7 @@ Transform:
   - {fileID: 599548992}
   - {fileID: 139322934}
   m_Father: {fileID: 1804225163}
-  m_RootOrder: 4
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1921518791
 GameObject:
