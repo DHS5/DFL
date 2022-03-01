@@ -27,11 +27,15 @@ public class FieldManager : MonoBehaviour
     GameObject field;
     Field fieldScript;
 
+    /// <summary>
+    /// Generates a field at the chosen position
+    /// </summary>
+    /// <param name="pos">Position of the new field in world space</param>
     public void GenerateField(Vector3 pos)
     {
         field =  Instantiate(fieldPrefab, pos, Quaternion.identity);
         fieldScript = field.GetComponent<Field>();
-        fieldScript.fieldMaterials = fieldMaterialList[0];
+        fieldScript.fieldMaterials = fieldMaterialList[1];
         fieldScript.CreateField();
     }
 

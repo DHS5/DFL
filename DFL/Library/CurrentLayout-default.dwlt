@@ -122,7 +122,7 @@ MonoBehaviour:
   m_MinSize: {x: 679, y: 492}
   m_MaxSize: {x: 14002, y: 14042}
   vertical: 0
-  controlID: 2866
+  controlID: 12436
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -147,7 +147,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 492}
   m_MaxSize: {x: 10001, y: 14042}
   vertical: 1
-  controlID: 2793
+  controlID: 12442
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -172,7 +172,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 221}
   m_MaxSize: {x: 8003, y: 4021}
   vertical: 0
-  controlID: 2837
+  controlID: 12406
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -398,9 +398,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 0a540000
-      m_LastClickedID: 0
-      m_ExpandedIDs: 0efbffff
+      m_SelectedIDs: a6eaffff
+      m_LastClickedID: -5466
+      m_ExpandedIDs: 1efbffff28520000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -460,9 +460,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -24.551615, y: 8.001394, z: 55.11737}
+    m_Target: {x: -0.7207268, y: 5.8711863, z: 236.4698}
     speed: 2
-    m_Value: {x: -24.551615, y: 8.001394, z: 55.11737}
+    m_Value: {x: -0.7207268, y: 5.8711863, z: 236.4698}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -509,13 +509,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.11225517, y: -0.07504124, z: 0.008479945, w: -0.9908456}
+    m_Target: {x: 0.15418726, y: -0.01335208, z: 0.002067309, w: 0.9880051}
     speed: 2
-    m_Value: {x: -0.11225517, y: -0.07504124, z: 0.008479945, w: -0.9908456}
+    m_Value: {x: 0.15121423, y: -0.0133574875, z: 0.002027123, w: 0.98840874}
   m_Size:
-    m_Target: 51.989532
+    m_Target: 14.405046
     speed: 2
-    m_Value: 51.989532
+    m_Value: 14.405046
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -578,22 +578,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Prefabs
+    - Assets/Materials
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Prefabs
+  - Assets/Materials
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Infomatique\Unity\Projects\Personal Projects\DFL\DFL
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 2a580000
-    m_LastClickedID: 22570
-    m_ExpandedIDs: 00000000e0550000e2550000e4550000e655000000ca9a3b
+    m_SelectedIDs: 86560000
+    m_LastClickedID: 22150
+    m_ExpandedIDs: 000000003e540000425400004454000086560000b858000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -621,7 +621,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000e0550000e2550000e4550000e655000000ca9a3b
+    m_ExpandedIDs: 000000003e540000425400004454000086560000b858000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
