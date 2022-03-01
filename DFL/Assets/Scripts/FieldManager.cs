@@ -18,5 +18,25 @@ public struct FieldMaterials
 /// </summary>
 public class FieldManager : MonoBehaviour
 {
+    [Tooltip("Prefab of the field")]
+    [SerializeField] private GameObject fieldPrefab;
+
+    [Tooltip("List of the struct containing the materials to use on the field")]
     [SerializeField] private FieldMaterials[] fieldMaterialList;
+
+    GameObject field;
+    Field fieldScript;
+
+    public void GenerateField(Vector3 pos)
+    {
+        field =  Instantiate(fieldPrefab, pos, Quaternion.identity);
+        fieldScript = field.GetComponent<Field>();
+        fieldScript.fieldMaterials = fieldMaterialList[0];
+        fieldScript.CreateField();
+    }
+
+    private void Start()
+    {
+        GenerateField(new Vector3(0, 0, 0));
+    }
 }
