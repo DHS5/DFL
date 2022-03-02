@@ -44,7 +44,7 @@ public class PlayerController : MonoBehaviour
             if (acc <= 0) return acc * accelerationM;
             else
             {
-                if (canAccelerate) { Invoke(nameof(CantAccelerate), 2f); return acc * accelerationM; }
+                if (canAccelerate) { Invoke(nameof(CantAccelerate), accelerationTime); return acc * accelerationM; }
                 else return 0;
             }
         }
@@ -54,15 +54,21 @@ public class PlayerController : MonoBehaviour
     [Tooltip("Is the player able to accelerate")]
     private bool canAccelerate = true;
 
+    [Tooltip("Seconds accelerating")]
+    [SerializeField] private float accelerationTime = 3f;
+
+    [Tooltip("Seconds waiting to accelerate")]
+    [SerializeField] private float waitToAccelerateTime = 8f;
+
     /// <summary>
-    /// Disable the player's acceleration during 10 seconds
+    /// Disable the player's acceleration during waitToAccelerateTime seconds
     /// </summary>
     private void CantAccelerate()
     {
         canAccelerate = false;
 
-        // Calls the CanAccelerate Method after 10 seconds
-        Invoke(nameof(CanAccelerate), 10f);
+        // Calls the CanAccelerate Method after waitToAccelerateTime seconds
+        Invoke(nameof(CanAccelerate), waitToAccelerateTime);
     }
     /// <summary>
     /// Enable the player's acceleration
