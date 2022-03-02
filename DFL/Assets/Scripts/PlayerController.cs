@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
     private Vector3 velocity;
 
     [Tooltip("Forward speed of the player")]
-    [SerializeField] private float speed = 10f;
+    [SerializeField] private float speed = 12f;
 
     [Tooltip("Side speed multiplier of the player")]
     [SerializeField] private float sideSpeedM = 5f;
@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     private float SideSpeed
     {
-        get { return Input.GetAxis("Horizontal") * sideSpeedM; }
+        get { return Input.GetAxis("Horizontal") * sideSpeedM * (speed / (speed + Acceleration)); }
         set { sideSpeedM = value; }
     }
 

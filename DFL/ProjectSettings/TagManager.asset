@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Obstacle
+  - TunnelEnter
+  - TunnelExit
+  - BlackWall
   layers:
   - Default
   - TransparentFX
