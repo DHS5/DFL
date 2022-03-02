@@ -21,10 +21,14 @@ public class FieldManager : MonoBehaviour
     [Tooltip("Prefab of the field")]
     [SerializeField] private GameObject fieldPrefab;
 
+    [Tooltip("Prefab of the Stadium")]
+    [SerializeField] private GameObject stadiumPrefab;
+
     [Tooltip("List of the struct containing the materials to use on the field")]
     [SerializeField] private FieldMaterials[] fieldMaterialList;
 
     GameObject field;
+    GameObject stadium;
     Field fieldScript;
 
     /// <summary>
@@ -34,6 +38,7 @@ public class FieldManager : MonoBehaviour
     public void GenerateField(Vector3 pos)
     {
         field =  Instantiate(fieldPrefab, pos, Quaternion.identity);
+        stadium = Instantiate(stadiumPrefab, pos, Quaternion.identity);
         fieldScript = field.GetComponent<Field>();
         fieldScript.fieldMaterials = fieldMaterialList[1];
         fieldScript.CreateField();
