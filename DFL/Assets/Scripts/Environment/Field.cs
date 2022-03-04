@@ -1,9 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Field : MonoBehaviour
-{
+{   
     [Tooltip("Struct containing the materials to use on the field")]
     public FieldMaterials fieldMaterials;
 
@@ -23,6 +24,12 @@ public class Field : MonoBehaviour
     [SerializeField] GameObject[] goalpost2Metal;
 
 
+    public GameObject centerZone;
+    public GameObject leftZone;
+    public GameObject rightZone;
+
+    [Tooltip("List of the enemies on the field")]
+    public List<GameObject> enemies;
 
     public void CreateField()
     {
@@ -48,5 +55,11 @@ public class Field : MonoBehaviour
         goalpost2Base.GetComponent<MeshRenderer>().material = fieldMaterials.goalpostBase;
         for (int i = 1; i < goalpost2Metal.Length; i++)
             goalpost2Metal[i].GetComponent<MeshRenderer>().material = fieldMaterials.goalpostMetal;
+    }
+
+    public void SuppEnemies()
+    {
+        for (int i = 0; i < enemies.Count; i++)
+            Destroy(enemies[i]);
     }
 }

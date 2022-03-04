@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 [System.Serializable]
 public struct FieldMaterials
@@ -18,11 +19,17 @@ public struct FieldMaterials
 /// </summary>
 public class FieldManager : MonoBehaviour
 {
+    [Tooltip("Nav Mesh Surface of the current field")]
+    [SerializeField] private NavMeshSurface surface;
+
     [Tooltip("Prefab of the field")]
     [SerializeField] private GameObject fieldPrefab;
 
     [Tooltip("Prefab of the Stadium")]
     [SerializeField] private GameObject stadiumPrefab;
+
+    [Tooltip("Script of the enemiesManager")]
+    [SerializeField] private EnemiesManager enemiesManager;
 
     [Tooltip("List of the struct containing the materials to use on the field")]
     [SerializeField] private FieldMaterials[] fieldMaterialList;
@@ -38,6 +45,7 @@ public class FieldManager : MonoBehaviour
     private GameObject formerStadium;
 
     private Field fieldScript;
+    private Field formerFieldScript;
 
     [Tooltip("Vector 3 containing the position of the actual field")]
     private Vector3 fieldPosition = new Vector3(0, 0, 0);
@@ -55,6 +63,7 @@ public class FieldManager : MonoBehaviour
             // Keeps the former field and stadium
             formerField = field;
             formerStadium = stadium;
+            formerFieldScript = fieldScript;
 
             // Destroys the former black wall
             GameObject[] bw = GameObject.FindGameObjectsWithTag("BlackWall");
@@ -75,6 +84,14 @@ public class FieldManager : MonoBehaviour
         fieldScript.fieldMaterials = fieldMaterialList[Random.Range(0, fieldMaterialList.Length)];
         // ## Apply the materials on the field
         fieldScript.CreateField();
+        // ## Actualization of the Nav Mesh
+        surface.BuildNavMesh();
+
+        // ### Management of the enemies
+        // ## Gives the enemiesManager the fieldScript
+        enemiesManager.fieldScript = fieldScript;
+        // ## Creates the enemy wave
+        enemiesManager.EnemyWave();
     }
 
     /// <summary>
@@ -84,6 +101,7 @@ public class FieldManager : MonoBehaviour
     {
         // Destroys the former field and stadium
         if (formerField != null) Destroy(formerField);
+        if (formerFieldScript != null) formerFieldScript.SuppEnemies();
         if (formerStadium != null) Destroy(formerStadium);
     }
 
@@ -93,5 +111,6 @@ public class FieldManager : MonoBehaviour
     private void Start()
     {
         GenerateField();
+        enemiesManager.BeginChase();
     }
 }

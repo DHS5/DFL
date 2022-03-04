@@ -9,6 +9,12 @@ public class PlayerGameplay : MonoBehaviour
 {
     [Tooltip("Field Manager of the game")]
     [SerializeField] private FieldManager fieldManager;
+
+    [Tooltip("Enemy Manager of the game")]
+    [SerializeField] private EnemiesManager enemiesManager;
+
+    [Tooltip("Whether the player is in a zone where he's chasable")]
+    public bool isChasable = true;
     
     /// <summary>
     /// Called when the player collide with a trigger
@@ -19,10 +25,13 @@ public class PlayerGameplay : MonoBehaviour
         if (other.gameObject.CompareTag("TunnelEnter"))
         {
             fieldManager.GenerateField();
+            isChasable = false;
         }
         if (other.gameObject.CompareTag("TunnelExit"))
         {
             fieldManager.SuppField();
+            isChasable = true;
+            enemiesManager.BeginChase();
         }
     }
 }
