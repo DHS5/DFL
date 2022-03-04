@@ -867,6 +867,7 @@ MonoBehaviour:
   centerZone: {fileID: 4661475785789780929}
   leftZone: {fileID: 4814302037679293185}
   rightZone: {fileID: 3816560325070205430}
+  enemies: []
 --- !u!1 &407003249663022476
 GameObject:
   m_ObjectHideFlags: 0
@@ -1827,7 +1828,7 @@ GameObject:
   - component: {fileID: 407003250111847682}
   - component: {fileID: 407003250111847685}
   - component: {fileID: 407003250111847684}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: FieldGrass
   m_TagString: Untagged
   m_Icon: {fileID: 0}

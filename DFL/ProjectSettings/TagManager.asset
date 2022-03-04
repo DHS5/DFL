@@ -8,11 +8,12 @@ TagManager:
   - TunnelEnter
   - TunnelExit
   - BlackWall
+  - Enemy
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - NavMesh
   - Water
   - UI
   - 

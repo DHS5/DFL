@@ -57,20 +57,25 @@ public abstract class Enemy : MonoBehaviour
             Vector3 toPlayerDirection = playerPosition - transform.position;
             // Gets the distance between the player and the enemy
             float distance = Vector3.Distance(playerPosition, transform.position);
-            // Gets the angle between the enemy's and the player's directions
-            float toPlayerAngle = Vector3.Angle(transform.forward, toPlayerDirection);
 
-            // If the enemy is close enough --> go directly to the player
-            if (distance <= chaseRadius || toPlayerAngle > 90)
-                destination = player.transform.position;
+            if (distance <= attentionRadius)
+            {
+                // Gets the angle between the enemy's and the player's directions
+                float toPlayerAngle = Vector3.Angle(transform.forward, toPlayerDirection);
 
-            // The enemy tries to anticipate the player's future position given his intelligence
-            else
-                destination = playerPosition + playerDirection * intelligence;
+                // If the enemy is close enough --> go directly to the player
+                if (distance <= chaseRadius || toPlayerAngle > 90)
+                    destination = player.transform.position;
+
+                // The enemy tries to anticipate the player's future position given his intelligence
+                else
+                    destination = playerPosition + playerDirection * intelligence;
 
 
-            // Sets the agent's destination
-            navMeshAgent.SetDestination(destination);
+                // Sets the agent's destination
+                navMeshAgent.SetDestination(destination);
+            }
+
             // Invoke recursively the method given the enemy's reactivity
             Invoke(nameof(ChasePlayer), reactivity);
         }

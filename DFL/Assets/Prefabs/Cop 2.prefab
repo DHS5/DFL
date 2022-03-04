@@ -1960,7 +1960,7 @@ GameObject:
   - component: {fileID: -491900890131206267}
   m_Layer: 0
   m_Name: Cop 2
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2013,7 +2013,7 @@ MonoBehaviour:
   intelligence: 15
   reactivity: 0.000001
   attentionRadius: 50
-  chaseRadius: 10
+  chaseRadius: 20
   size: 1
 --- !u!195 &-491900890131206267
 NavMeshAgent:

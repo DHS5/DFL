@@ -1476,7 +1476,7 @@ MonoBehaviour:
   m_Center: {x: 0, y: 2, z: 0}
   m_LayerMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 8
   m_UseGeometry: 0
   m_DefaultArea: 0
   m_IgnoreNavMeshAgent: 1
@@ -2691,6 +2691,7 @@ MonoBehaviour:
   enemyPrefabs:
   - {fileID: 6644603938449114179, guid: 35d11d1e1dd397942b5024ee78060e27, type: 3}
   - {fileID: 6644603938449114179, guid: f9b08a7f016b6774389d0fc7b1a97fe7, type: 3}
+  - {fileID: 6644603938449114179, guid: 5357804533e8cf647995da767184d46b, type: 3}
   fieldScript: {fileID: 0}
   gameMode: Defenders
 --- !u!4 &1988230387

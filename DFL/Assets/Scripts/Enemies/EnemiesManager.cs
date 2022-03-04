@@ -17,7 +17,7 @@ public class EnemiesManager : MonoBehaviour
     public string gameMode;
 
     [Tooltip("Wave number (difficulty)")]
-    private int waveNumber = 1;
+    private int waveNumber = 0;
 
     private GameObject centerZone;
     private GameObject leftZone;
@@ -38,6 +38,8 @@ public class EnemiesManager : MonoBehaviour
     /// </summary>
     public void EnemyWave()
     {
+        // Increment the wave number
+        waveNumber++;
         // Gets the spawning zones
         GetZones();
         
@@ -67,17 +69,36 @@ public class EnemiesManager : MonoBehaviour
     }
 
 
+    private void CreateEnemy(Vector3 pos, float xScale, float zScale, float sizeMultiplier)
+    {
+        /*
+         * Need to add a range : "place" of prefab choice given the difficulty and place
+         * waveNumber * "place" as a limit of random range
+         * --> able to choose bigmen, wings etc...
+        */
+
+        // Game Object of the enemy
+        GameObject enemy;
+        //
+        int difficulty = Mathf.Clamp(waveNumber, 0, enemyPrefabs.Length+1) - 1;
+        // Gets a random position and size and Instantiate the new Bigman
+        Vector3 randomPosition = new Vector3(Random.Range(-xScale, xScale), 0, Random.Range(-zScale, zScale));
+        enemy = Instantiate(enemyPrefabs[Random.Range(0, difficulty)], pos + randomPosition, Quaternion.identity);
+        //enemy = Instantiate(enemyPrefabs[difficulty], pos + randomPosition, Quaternion.identity);
+        enemy.GetComponent<Defender>().enemy = enemy;
+        enemy.GetComponent<Defender>().Size *= Random.Range(1 - sizeMultiplier, 1 + sizeMultiplier);
+        // Fill the enemies list of the field
+        fieldScript.enemies.Add(enemy);
+    }
+
+
     /// <summary>
     /// Generates a defender wave given the difficulty
+    /// (11 defenders, 5 in the center, 3 on each side)
     /// The position and size of the enemies are random
     /// </summary>
     private void DefendersWave()
-    {
-        // Game Object of the enemy
-        GameObject enemy;
-        // Size mulitplier range
-        float sizeMult = 0.1f;
-        
+    {        
         // Spawn in the center zone
         Vector3 center = centerZone.transform.position;
         float xScale = centerZone.transform.localScale.x / 2;
@@ -85,15 +106,29 @@ public class EnemiesManager : MonoBehaviour
         // 5 Bigmen in the center
         for (int i = 0; i < 5; i++)
         {
-            // Gets a random position and size and Instantiate the new Bigman
-            Vector3 randomPosition = new Vector3(Random.Range(-xScale, xScale), 0, Random.Range(-zScale, zScale));
-            enemy = Instantiate(enemyPrefabs[Random.Range(0,enemyPrefabs.Length)], center + randomPosition, Quaternion.identity);
-            enemy.GetComponent<Defender>().enemy = enemy;
-            enemy.GetComponent<Defender>().Size *= Random.Range(1 - sizeMult, 1 + sizeMult);
-            // Fill the enemies list of the field
-            fieldScript.enemies.Add(enemy);
+            CreateEnemy(center, xScale, zScale, 0.1f);
         }
-            
+
+        // Spawn in the left zone
+        Vector3 left = leftZone.transform.position;
+        xScale = leftZone.transform.localScale.x / 2;
+        zScale = leftZone.transform.localScale.z / 2;
+        // 3 Wings on the left
+        for (int i = 0; i < 3; i++)
+        {
+            CreateEnemy(left, xScale, zScale, 0.1f);
+        }
+
+        // Spawn in the right zone
+        Vector3 right = rightZone.transform.position;
+        xScale = rightZone.transform.localScale.x / 2;
+        zScale = rightZone.transform.localScale.z / 2;
+        // 3 Wings on the right
+        for (int i = 0; i < 3; i++)
+        {
+            CreateEnemy(right, xScale, zScale, 0.1f);
+        }
+
     }
 
     /// <summary>
