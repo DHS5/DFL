@@ -7,14 +7,19 @@ using UnityEngine;
 /// </summary>
 public class EnemiesManager : MonoBehaviour
 {
-    [Tooltip("List of the enemies's prefabs")]
-    [SerializeField] private GameObject[] enemyPrefabs;
+    [Tooltip("Singleton Instance of the GameManager")]
+    private GameManager gameManager = GameManager.InstanceGameManager;
+
 
     [Tooltip("Script of the field")]
     public Field fieldScript;
 
     [Tooltip("Current mode of play")]
     public string gameMode;
+
+
+    [Tooltip("List of the enemies's prefabs")]
+    [SerializeField] private GameObject[] enemyPrefabs;
 
     [Tooltip("Wave number (difficulty)")]
     private int waveNumber = 0;
@@ -23,6 +28,26 @@ public class EnemiesManager : MonoBehaviour
     private GameObject leftZone;
     private GameObject rightZone;
 
+    /// <summary>
+    /// Stops all enemies
+    /// </summary>
+    public void StopEnemies()
+    {
+        for (int i = 0; i < fieldScript.enemies.Count; i++)
+        {
+            fieldScript.enemies[i].GetComponent<Enemy>().Stop();
+        }
+    }
+    /// <summary>
+    /// Resumes all enemies
+    /// </summary>
+    public void ResumeEnemies()
+    {
+        for (int i = 0; i < fieldScript.enemies.Count; i++)
+        {
+            fieldScript.enemies[i].GetComponent<Enemy>().Resume();
+        }
+    }
 
     public void BeginChase()
     {
@@ -84,7 +109,7 @@ public class EnemiesManager : MonoBehaviour
         // Gets a random position and size and Instantiate the new Bigman
         Vector3 randomPosition = new Vector3(Random.Range(-xScale, xScale), 0, Random.Range(-zScale, zScale));
         enemy = Instantiate(enemyPrefabs[Random.Range(0, difficulty)], pos + randomPosition, Quaternion.identity);
-        //enemy = Instantiate(enemyPrefabs[difficulty], pos + randomPosition, Quaternion.identity);
+        //enemy = Instantiate(enemyPrefabs[enemyPrefabs.Length-1], pos + randomPosition, Quaternion.identity);
         enemy.GetComponent<Defender>().enemy = enemy;
         enemy.GetComponent<Defender>().Size *= Random.Range(1 - sizeMultiplier, 1 + sizeMultiplier);
         // Fill the enemies list of the field

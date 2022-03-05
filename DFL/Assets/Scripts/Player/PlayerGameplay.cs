@@ -7,6 +7,9 @@ using UnityEngine;
 /// </summary>
 public class PlayerGameplay : MonoBehaviour
 {
+    [Tooltip("Singleton Instance of the GameManager")]
+    private GameManager gameManager;
+
     [Tooltip("Field Manager of the game")]
     [SerializeField] private FieldManager fieldManager;
 
@@ -39,7 +42,19 @@ public class PlayerGameplay : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            Debug.Log("Dead");
+            Debug.Log("Dead by enemy");
+            gameManager.gameOver = true;
+
         }
+        if (collision.gameObject.CompareTag("Obstacle"))
+        {
+            Debug.Log("Dead by obstacle");
+            gameManager.gameOver = true;
+        }
+    }
+
+    private void Start()
+    {
+        gameManager = GameManager.InstanceGameManager;
     }
 }

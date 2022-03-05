@@ -8,6 +8,9 @@ using UnityEngine;
 /// </summary>
 public class PlayerController : MonoBehaviour
 {
+    [Tooltip("Whether the player is freezed")]
+    public bool freeze = true;
+    
     [Tooltip("Body of the player")]
     [SerializeField]  private GameObject playerBody;
 
@@ -40,13 +43,13 @@ public class PlayerController : MonoBehaviour
     {
         get
         {
-            float acc = Input.GetAxis("Vertical");
-            if (acc <= 0) return acc * accelerationM;
-            else
+            if (!freeze)
             {
-                if (canAccelerate) { Invoke(nameof(CantAccelerate), accelerationTime); return acc * accelerationM; }
-                else return 0;
+                float acc = Input.GetAxis("Vertical");
+                if (acc <= 0) return acc * accelerationM;
+                else if (canAccelerate) { Invoke(nameof(CantAccelerate), accelerationTime); return acc * accelerationM; }
             }
+            return 0;
         }
         set { accelerationM = value; }
     }
@@ -99,6 +102,7 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     void LateUpdate()
     {
-        transform.Translate(velocity);
+        if (!freeze)
+            transform.Translate(velocity);
     }
 }
