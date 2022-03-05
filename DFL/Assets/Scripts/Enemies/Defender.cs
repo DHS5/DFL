@@ -4,5 +4,8 @@ using UnityEngine;
 
 public class Defender : Enemy
 {
-    
+    public override void ChasePlayer()
+    {
+        base.ChasePlayer();
+    }
 }

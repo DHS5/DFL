@@ -25,22 +25,38 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject player;
 
 
+    /// <summary>
+    /// Instantiate the Singleton
+    /// </summary>
     private void Awake()
     {
         InstanceGameManager = this;
     }
 
 
+    /// <summary>
+    /// Starts the game
+    /// </summary>
     private void Start()
     {
+        // Game is on
         gameOn = true;
-        
+
+        // Generates the field
+        fieldManager.GenerateField();
+        // Unfreeze the player
         player.GetComponent<PlayerController>().freeze = false;
+        // Activates the enemies
+        enemiesManager.BeginChase();
     }
 
 
+    /// <summary>
+    /// Checks if the game is on and whether the game is over
+    /// </summary>
     private void Update()
     {
+        // Checks if the game is on
         if (!gameOn && gameOnLate)
         {
             player.GetComponent<PlayerController>().freeze = true;
@@ -54,7 +70,7 @@ public class GameManager : MonoBehaviour
             gameOnLate = true;
         }
 
-
+        // Checks if the game is over
         if (gameOver)
         {
             player.GetComponent<PlayerController>().freeze = true;

@@ -7,10 +7,6 @@ using UnityEngine;
 /// </summary>
 public class EnemiesManager : MonoBehaviour
 {
-    [Tooltip("Singleton Instance of the GameManager")]
-    private GameManager gameManager = GameManager.InstanceGameManager;
-
-
     [Tooltip("Script of the field")]
     public Field fieldScript;
 
@@ -18,12 +14,15 @@ public class EnemiesManager : MonoBehaviour
     public string gameMode;
 
 
-    [Tooltip("List of the enemies's prefabs")]
-    [SerializeField] private GameObject[] enemyPrefabs;
+    [Tooltip("List of the Wingmen's prefabs")]
+    [SerializeField] private GameObject[] wingmenPrefabs;
+    [Tooltip("List of the Bigmen's prefabs")]
+    [SerializeField] private GameObject[] linemenPrefabs;
 
-    [Tooltip("Wave number (difficulty)")]
+    [Tooltip("Wave number (--> difficulty)")]
     private int waveNumber = 0;
 
+    // Zones of the field
     private GameObject centerZone;
     private GameObject leftZone;
     private GameObject rightZone;
@@ -49,6 +48,9 @@ public class EnemiesManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Starts the chase for all the enemies on the field
+    /// </summary>
     public void BeginChase()
     {
         for (int i = 0; i < fieldScript.enemies.Count; i++)
@@ -93,15 +95,16 @@ public class EnemiesManager : MonoBehaviour
         rightZone = fieldScript.rightZone;
     }
 
-
-    private void CreateEnemy(Vector3 pos, float xScale, float zScale, float sizeMultiplier)
+    /// <summary>
+    /// Instantiate an enemy given a certain category
+    /// </summary>
+    /// <param name="enemyPrefabs">List of enemy prefabs (category)</param>
+    /// <param name="pos">Position of the zone in which create the enemy</param>
+    /// <param name="xScale">X scale of the zone</param>
+    /// <param name="zScale">Z scale of the zone</param>
+    /// <param name="sizeMultiplier">Size multiplier with which create the enemy</param>
+    private void CreateEnemy(GameObject[] enemyPrefabs, Vector3 pos, float xScale, float zScale, float sizeMultiplier)
     {
-        /*
-         * Need to add a range : "place" of prefab choice given the difficulty and place
-         * waveNumber * "place" as a limit of random range
-         * --> able to choose bigmen, wings etc...
-        */
-
         // Game Object of the enemy
         GameObject enemy;
         //
@@ -128,30 +131,30 @@ public class EnemiesManager : MonoBehaviour
         Vector3 center = centerZone.transform.position;
         float xScale = centerZone.transform.localScale.x / 2;
         float zScale = centerZone.transform.localScale.z / 2;
-        // 5 Bigmen in the center
+        // 5 Linemen in the center
         for (int i = 0; i < 5; i++)
         {
-            CreateEnemy(center, xScale, zScale, 0.1f);
+            CreateEnemy(linemenPrefabs, center, xScale, zScale, 0.1f);
         }
 
         // Spawn in the left zone
         Vector3 left = leftZone.transform.position;
         xScale = leftZone.transform.localScale.x / 2;
         zScale = leftZone.transform.localScale.z / 2;
-        // 3 Wings on the left
+        // 3 Wingmen on the left
         for (int i = 0; i < 3; i++)
         {
-            CreateEnemy(left, xScale, zScale, 0.1f);
+            CreateEnemy(wingmenPrefabs, left, xScale, zScale, 0.1f);
         }
 
         // Spawn in the right zone
         Vector3 right = rightZone.transform.position;
         xScale = rightZone.transform.localScale.x / 2;
         zScale = rightZone.transform.localScale.z / 2;
-        // 3 Wings on the right
+        // 3 Wingmen on the right
         for (int i = 0; i < 3; i++)
         {
-            CreateEnemy(right, xScale, zScale, 0.1f);
+            CreateEnemy(wingmenPrefabs, right, xScale, zScale, 0.1f);
         }
 
     }

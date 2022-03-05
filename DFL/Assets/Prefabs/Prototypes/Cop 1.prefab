@@ -1956,8 +1956,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6631964419132099031}
   - component: {fileID: 727603738}
-  - component: {fileID: 3674429935691768251}
   - component: {fileID: -491900890131206267}
+  - component: {fileID: 4817880093997369522}
   m_Layer: 0
   m_Name: Cop 1
   m_TagString: Enemy
@@ -1994,29 +1994,6 @@ CapsuleCollider:
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &3674429935691768251
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6644603938449114179}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d9ac10b0976ce174da9412ce3d35169a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 6644603938449114179}
-  enemy: {fileID: 0}
-  navMeshAgent: {fileID: -491900890131206267}
-  player: {fileID: 0}
-  intelligence: 10
-  reactivity: 0.0001
-  attackSpeedM: 1.5
-  attentionRadius: 100
-  chaseRadius: 11
-  attackRadius: 2
-  size: 1
 --- !u!195 &-491900890131206267
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -2039,6 +2016,27 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &4817880093997369522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6644603938449114179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 417bea4d5590e214dbece45d23a643de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 0}
+  navMeshAgent: {fileID: -491900890131206267}
+  intelligence: 10
+  reactivity: 0.0001
+  attackSpeedM: 1.5
+  attentionRadius: 100
+  chaseRadius: 11
+  attackRadius: 2
+  size: 1
 --- !u!1 &6869289770107773416
 GameObject:
   m_ObjectHideFlags: 0

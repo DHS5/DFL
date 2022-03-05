@@ -110,7 +110,6 @@ public class FieldManager : MonoBehaviour
     /// </summary>
     private void Start()
     {
-        GenerateField();
-        enemiesManager.BeginChase();
+        
     }
 }

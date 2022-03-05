@@ -8,21 +8,23 @@ using UnityEngine;
 /// </summary>
 public class PlayerController : MonoBehaviour
 {
+    [Tooltip("Controls the gameplay of the player")]
+    [SerializeField] private PlayerGameplay playerGameplayScript;
+
+
     [Tooltip("Whether the player is freezed")]
     public bool freeze = true;
     
+
     [Tooltip("Body of the player")]
     [SerializeField]  private GameObject playerBody;
-
     [Tooltip("Camera attached to the player")]
     [SerializeField] private GameObject playerCamera;
 
     [Tooltip("Velocity of the player")]
     private Vector3 velocity;
-
     [Tooltip("Forward speed of the player")]
     [SerializeField] private float speed = 12f;
-
     [Tooltip("Side speed multiplier of the player")]
     [SerializeField] private float sideSpeedM = 5f;
     /// <summary>
@@ -33,7 +35,6 @@ public class PlayerController : MonoBehaviour
         get { return Input.GetAxis("Horizontal") * sideSpeedM * (speed / (speed + Acceleration)); }
         set { sideSpeedM = value; }
     }
-
     [Tooltip("Acceleration multiplier of the player")]
     [SerializeField] private float accelerationM = 5f;
     /// <summary>
@@ -43,7 +44,7 @@ public class PlayerController : MonoBehaviour
     {
         get
         {
-            if (!freeze)
+            if (!freeze && playerGameplayScript.isChasable)
             {
                 float acc = Input.GetAxis("Vertical");
                 if (acc <= 0) return acc * accelerationM;
@@ -53,13 +54,10 @@ public class PlayerController : MonoBehaviour
         }
         set { accelerationM = value; }
     }
-
     [Tooltip("Is the player able to accelerate")]
     private bool canAccelerate = true;
-
     [Tooltip("Seconds accelerating")]
     [SerializeField] private float accelerationTime = 3f;
-
     [Tooltip("Seconds waiting to accelerate")]
     [SerializeField] private float waitToAccelerateTime = 8f;
 
@@ -81,13 +79,6 @@ public class PlayerController : MonoBehaviour
         canAccelerate = true;
     }
 
-    /// <summary>
-    /// Called on the player's creation
-    /// </summary>
-    void Start()
-    {
-
-    }
 
     /// <summary>
     /// Update the physics parameters
@@ -96,7 +87,6 @@ public class PlayerController : MonoBehaviour
     {
         velocity = Vector3.forward * (speed + Acceleration) * Time.deltaTime + Vector3.right * SideSpeed * Time.deltaTime;
     }
-
     /// <summary>
     /// Update the player's movements
     /// </summary>

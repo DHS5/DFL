@@ -762,7 +762,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-1458
+  m_Name: pb_Mesh-1480
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1734,7 +1734,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-1446
+  m_Name: pb_Mesh-1468
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2858,12 +2858,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fieldScript: {fileID: 0}
   gameMode: Defenders
-  enemyPrefabs:
+  wingmenPrefabs:
   - {fileID: 6644603938449114179, guid: 35d11d1e1dd397942b5024ee78060e27, type: 3}
   - {fileID: 6644603938449114179, guid: f9b08a7f016b6774389d0fc7b1a97fe7, type: 3}
   - {fileID: 6644603938449114179, guid: 5357804533e8cf647995da767184d46b, type: 3}
   - {fileID: 6644603938449114179, guid: af4df860230ae8d46a18a253b764ce21, type: 3}
   - {fileID: 6644603938449114179, guid: e5d5120bf5bd32446ab98884a0b2952d, type: 3}
+  - {fileID: 6644603938449114179, guid: 1fb772fb0c121724a9e9cfa1b782791f, type: 3}
+  - {fileID: 6644603938449114179, guid: aed01e52685a594449e491aa290bf30b, type: 3}
+  linemenPrefabs:
+  - {fileID: 6644603938449114179, guid: 66b39b71ca12e7648ac2a76e1ee06816, type: 3}
+  - {fileID: 6644603938449114179, guid: 727ffecac68aaf6439fad688d8df4c68, type: 3}
+  - {fileID: 6644603938449114179, guid: 93cd3eed7d7e3b945a72f8b1a2d53af8, type: 3}
+  - {fileID: 6644603938449114179, guid: 15835617e0780fc41a0c8e017f977af3, type: 3}
 --- !u!4 &1988230387
 Transform:
   m_ObjectHideFlags: 0
