@@ -27,12 +27,18 @@ public class PlayerGameplay : MonoBehaviour
         // When the player enter the tunnel --> Generates a new field
         if (other.gameObject.CompareTag("TunnelEnter"))
         {
+            // Deactivates the trigger (prevent from triggering several times)
+            other.gameObject.SetActive(false);
+
             fieldManager.GenerateField();
             isChasable = false;
         }
         // When the player quits the tunnel --> Destroys the former field
         if (other.gameObject.CompareTag("TunnelExit"))
         {
+            // Deactivates the trigger (prevent from triggering several times)
+            other.gameObject.SetActive(false);
+
             fieldManager.SuppField();
             isChasable = true;
             enemiesManager.BeginChase();

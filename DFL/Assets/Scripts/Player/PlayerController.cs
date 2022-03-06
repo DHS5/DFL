@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 /// <summary>
 /// Gives the user control of the player
@@ -20,6 +21,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField]  private GameObject playerBody;
     [Tooltip("Camera attached to the player")]
     [SerializeField] private GameObject playerCamera;
+
+    [Tooltip("Post-Processing effect of the acceleration")]
+    [SerializeField] private GameObject cameraAccPostProcess;
+    private Volume accPPVolume;
 
     [Tooltip("Velocity of the player")]
     private Vector3 velocity;
@@ -47,9 +52,19 @@ public class PlayerController : MonoBehaviour
             if (!freeze && playerGameplayScript.isChasable)
             {
                 float acc = Input.GetAxis("Vertical");
-                if (acc <= 0) return acc * accelerationM;
-                else if (canAccelerate) { Invoke(nameof(CantAccelerate), accelerationTime); return acc * accelerationM; }
+                if (acc <= 0)
+                {
+                    if (accPPVolume.weight > 0.01f) accPPVolume.weight = Mathf.Lerp(cameraAccPostProcess.GetComponent<Volume>().weight, 0, 0.01f);
+                    return acc * accelerationM;
+                }
+                else if (canAccelerate)
+                {
+                    Invoke(nameof(CantAccelerate), accelerationTime);
+                    accPPVolume.weight = Mathf.Lerp(cameraAccPostProcess.GetComponent<Volume>().weight, 1, 0.005f);
+                    return acc * accelerationM;
+                }
             }
+            if (accPPVolume.weight > 0.01f) accPPVolume.weight = Mathf.Lerp(cameraAccPostProcess.GetComponent<Volume>().weight, 0, 0.01f);
             return 0;
         }
         set { accelerationM = value; }
@@ -94,5 +109,10 @@ public class PlayerController : MonoBehaviour
     {
         if (!freeze)
             transform.Translate(velocity);
+    }
+
+    private void Start()
+    {
+        accPPVolume = cameraAccPostProcess.GetComponent<Volume>();
     }
 }
