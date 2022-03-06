@@ -16,7 +16,7 @@ public class PlayerGameplay : MonoBehaviour
 
 
     [Tooltip("Whether the player is in a zone where he's chasable")]
-    public bool isChasable = true;
+    public bool isChasable = false;
     
     /// <summary>
     /// Called when the player collide with a trigger

@@ -2,12 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+/// <summary>
+/// GameMode
+/// </summary>
+public enum GameMode { NONE, ZOMBIE, DEFENDERS }
+
+
+
 public class GameManager : MonoBehaviour
 {
     /// <summary>
     /// Singleton Instance of GameManager
     /// </summary>
-    public static GameManager InstanceGameManager;
+    public static GameManager InstanceGameManager { get; private set; }
+    
 
     [Tooltip("Whether the game is running")]
     public bool gameOn = false;
@@ -41,11 +50,15 @@ public class GameManager : MonoBehaviour
     {
         // Game is on
         gameOn = true;
+        // Chooses the game mode
+        ///enemiesManager.gameMode = GameMode.DEFENDERS;
 
         // Generates the field
         fieldManager.GenerateField();
-        // Unfreeze the player
+        // Unfreezes the player
         player.GetComponent<PlayerController>().freeze = false;
+        // Makes the player chasable
+        player.GetComponent<PlayerGameplay>().isChasable = true;
         // Activates the enemies
         enemiesManager.BeginChase();
     }

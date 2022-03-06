@@ -1715,7 +1715,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1426004910
 GameObject:
@@ -2258,7 +2258,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fpCamera: {fileID: 1949017575}
-  angleMax: 90
+  angleMax: 80
   yMouseSensitivity: 3
   ySmoothRotation: 10
 --- !u!136 &1664567384
@@ -2657,7 +2657,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!43 &1925676968
 Mesh:
@@ -2970,7 +2970,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fieldScript: {fileID: 0}
-  gameMode: Defenders
+  gameMode: 1
   wingmenPrefabs:
   - {fileID: 6644603938449114179, guid: 35d11d1e1dd397942b5024ee78060e27, type: 3}
   - {fileID: 6644603938449114179, guid: f9b08a7f016b6774389d0fc7b1a97fe7, type: 3}
@@ -2984,6 +2984,8 @@ MonoBehaviour:
   - {fileID: 6644603938449114179, guid: 727ffecac68aaf6439fad688d8df4c68, type: 3}
   - {fileID: 6644603938449114179, guid: 93cd3eed7d7e3b945a72f8b1a2d53af8, type: 3}
   - {fileID: 6644603938449114179, guid: 15835617e0780fc41a0c8e017f977af3, type: 3}
+  classicZPrefabs:
+  - {fileID: 7438494788967298231, guid: 9655d712c3c8a6e4da1258dc9898f930, type: 3}
 --- !u!4 &1988230387
 Transform:
   m_ObjectHideFlags: 0

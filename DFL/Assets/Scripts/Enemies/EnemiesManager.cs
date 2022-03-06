@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 /// <summary>
 /// Manages the semi-random spawn position of the enemies
 /// </summary>
@@ -11,13 +12,16 @@ public class EnemiesManager : MonoBehaviour
     public Field fieldScript;
 
     [Tooltip("Current mode of play")]
-    public string gameMode;
+    public GameMode gameMode;
 
 
     [Tooltip("List of the Wingmen's prefabs")]
     [SerializeField] private GameObject[] wingmenPrefabs;
     [Tooltip("List of the Bigmen's prefabs")]
     [SerializeField] private GameObject[] linemenPrefabs;
+
+    [Tooltip("List of the classic zombie's prefabs")]
+    [SerializeField] private GameObject[] classicZPrefabs;
 
     [Tooltip("Wave number (--> difficulty)")]
     private int waveNumber = 0;
@@ -73,10 +77,10 @@ public class EnemiesManager : MonoBehaviour
         // Generates the enemy wave given the mode
         switch (gameMode)
         {
-            case "Defenders":
+            case GameMode.DEFENDERS:
                 DefendersWave();
                 break;
-            case "Zombies":
+            case GameMode.ZOMBIE:
                 ZombiesWave();
                 break;
             default:
@@ -113,8 +117,8 @@ public class EnemiesManager : MonoBehaviour
         Vector3 randomPosition = new Vector3(Random.Range(-xScale, xScale), 0, Random.Range(-zScale, zScale));
         enemy = Instantiate(enemyPrefabs[Random.Range(0, difficulty)], pos + randomPosition, Quaternion.identity);
         //enemy = Instantiate(enemyPrefabs[enemyPrefabs.Length-1], pos + randomPosition, Quaternion.identity);
-        enemy.GetComponent<Defender>().enemy = enemy;
-        enemy.GetComponent<Defender>().Size *= Random.Range(1 - sizeMultiplier, 1 + sizeMultiplier);
+        enemy.GetComponent<Enemy>().enemy = enemy;
+        enemy.GetComponent<Enemy>().Size *= Random.Range(1 - sizeMultiplier, 1 + sizeMultiplier);
         // Fill the enemies list of the field
         fieldScript.enemies.Add(enemy);
     }
@@ -165,6 +169,13 @@ public class EnemiesManager : MonoBehaviour
     /// </summary>
     private void ZombiesWave()
     {
-
+        Vector3 center = centerZone.transform.position;
+        float xScale = centerZone.transform.localScale.x / 2;
+        float zScale = centerZone.transform.localScale.z / 2;
+        // Spawn on the whole field
+        for (int i = 0; i < 50; i++)
+        {
+            CreateEnemy(classicZPrefabs, center, 50, 90, 0.1f);
+        }
     }
 }
