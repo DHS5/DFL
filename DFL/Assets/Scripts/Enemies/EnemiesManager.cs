@@ -112,7 +112,7 @@ public class EnemiesManager : MonoBehaviour
         // Game Object of the enemy
         GameObject enemy;
         //
-        int difficulty = Mathf.Clamp(waveNumber, 0, enemyPrefabs.Length+1) - 1;
+        int difficulty = Mathf.Clamp(waveNumber, 0, enemyPrefabs.Length);
         // Gets a random position and size and Instantiate the new Bigman
         Vector3 randomPosition = new Vector3(Random.Range(-xScale, xScale), 0, Random.Range(-zScale, zScale));
         enemy = Instantiate(enemyPrefabs[Random.Range(0, difficulty)], pos + randomPosition, Quaternion.identity);

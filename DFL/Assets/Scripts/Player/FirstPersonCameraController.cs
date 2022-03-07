@@ -14,7 +14,7 @@ public class FirstPersonCameraController : MonoBehaviour
     private Quaternion cameraRotation;
 
     // Parameters for the look rotation (configurable in the inspector)
-    [SerializeField] private int angleMax = 50;
+    [SerializeField] private int angleMax = 60;
     [SerializeField]  private float yMouseSensitivity = 5f;
     [SerializeField] private float ySmoothRotation = 10f;
 
@@ -59,8 +59,13 @@ public class FirstPersonCameraController : MonoBehaviour
     /// </summary>
     private void LookRotation()
     {
-        // Gets the mouse X position
-        float yRotation = Input.GetAxis("Mouse X") * yMouseSensitivity * 1f;
+        // Gets the mouse X position and clamps it
+        float yRotation = Mathf.Clamp( Input.GetAxis("Mouse X") * yMouseSensitivity * 1f , -yMouseSensitivity , yMouseSensitivity);
+        // Gets the camera rotation
+        float cameraYRot = Mathf.Abs(fpCamera.transform.localRotation.y);
+        // If the player looks behind, reduces his rotation speed to avoid to exceed the maximum rotation angle
+        if (cameraYRot > (float)angleMax / 100)
+            yRotation = Mathf.Clamp( yRotation , -yMouseSensitivity + cameraYRot * yMouseSensitivity, yMouseSensitivity - cameraYRot * yMouseSensitivity);
 
         // Gets the new camera's rotation
         cameraRotation *= Quaternion.Euler(0f, yRotation, 0f);

@@ -625,6 +625,7 @@ GameObject:
   m_Component:
   - component: {fileID: 135357384}
   - component: {fileID: 135357385}
+  - component: {fileID: 135357386}
   m_Layer: 0
   m_Name: CameraAnimator
   m_TagString: Untagged
@@ -647,7 +648,7 @@ Transform:
   - {fileID: 1784974719}
   m_Father: {fileID: 1664567381}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -1.5625}
 --- !u!111 &135357385
 Animation:
   m_ObjectHideFlags: 0
@@ -660,10 +661,27 @@ Animation:
   m_Animation: {fileID: 7400000, guid: 11abf4986939e4c418d6ef4863afb3ac, type: 2}
   m_Animations:
   - {fileID: 7400000, guid: 11abf4986939e4c418d6ef4863afb3ac, type: 2}
+  - {fileID: 7400000, guid: b76970690c4a5eb4f8e2e61b0b46ae74, type: 2}
+  - {fileID: 7400000, guid: 34dc3d3574ab41947b27fd3225944d33, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!114 &135357386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 135357383}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 006ed2c12cdcc1c40a89a6f7bfab1b9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  runAnim: {fileID: 7400000, guid: 11abf4986939e4c418d6ef4863afb3ac, type: 2}
+  jukeRightAnim: {fileID: 7400000, guid: b76970690c4a5eb4f8e2e61b0b46ae74, type: 2}
+  jukeLeftAnim: {fileID: 7400000, guid: 34dc3d3574ab41947b27fd3225944d33, type: 2}
 --- !u!1 &332132857
 GameObject:
   m_ObjectHideFlags: 0
@@ -2240,6 +2258,7 @@ MonoBehaviour:
   playerBody: {fileID: 1591672065}
   playerCamera: {fileID: 1949017573}
   cameraAccPostProcess: {fileID: 1784974718}
+  cameraAnimator: {fileID: 135357386}
   speed: 12
   sideSpeedM: 8
   accelerationM: 5
@@ -2258,7 +2277,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fpCamera: {fileID: 1949017575}
-  angleMax: 80
+  angleMax: 85
   yMouseSensitivity: 3
   ySmoothRotation: 10
 --- !u!136 &1664567384
@@ -2970,7 +2989,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fieldScript: {fileID: 0}
-  gameMode: 1
+  gameMode: 2
   wingmenPrefabs:
   - {fileID: 6644603938449114179, guid: 35d11d1e1dd397942b5024ee78060e27, type: 3}
   - {fileID: 6644603938449114179, guid: f9b08a7f016b6774389d0fc7b1a97fe7, type: 3}
@@ -2984,8 +3003,12 @@ MonoBehaviour:
   - {fileID: 6644603938449114179, guid: 727ffecac68aaf6439fad688d8df4c68, type: 3}
   - {fileID: 6644603938449114179, guid: 93cd3eed7d7e3b945a72f8b1a2d53af8, type: 3}
   - {fileID: 6644603938449114179, guid: 15835617e0780fc41a0c8e017f977af3, type: 3}
+  - {fileID: 6644603938449114179, guid: 2296bef5cba7a5d43b0eed737d466def, type: 3}
   classicZPrefabs:
   - {fileID: 7438494788967298231, guid: 9655d712c3c8a6e4da1258dc9898f930, type: 3}
+  - {fileID: 7438494788967298231, guid: 588f875297d05cb4d943f46092aca01b, type: 3}
+  - {fileID: 7438494788967298231, guid: 4d837c5f97066a148b057ff29527c769, type: 3}
+  - {fileID: 7438494788967298231, guid: 46fc6d7d9956d6e40be96cf9256ff79a, type: 3}
 --- !u!4 &1988230387
 Transform:
   m_ObjectHideFlags: 0

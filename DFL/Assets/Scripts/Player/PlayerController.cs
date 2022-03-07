@@ -26,6 +26,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject cameraAccPostProcess;
     private Volume accPPVolume;
 
+    [Tooltip("")]
+    [SerializeField] CameraAnimator cameraAnimator;
+
     [Tooltip("Velocity of the player")]
     private Vector3 velocity;
     [Tooltip("Forward speed of the player")]
@@ -37,7 +40,23 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     private float SideSpeed
     {
-        get { return Input.GetAxis("Horizontal") * sideSpeedM * (speed / (speed + Acceleration)); }
+        get
+        {
+            // Calculate the side speed
+            float ss = Input.GetAxis("Horizontal") * sideSpeedM * (speed / (speed + Acceleration));
+            if (cameraAnimator.isJuking)
+            {
+                if (cameraAnimator.jukeSpeed >= 0)
+                    ss = Mathf.Clamp(ss, 0, Mathf.Abs(ss));
+                else ss = Mathf.Clamp(ss, -Mathf.Abs(ss), 0);
+            }
+
+            // Juke on a big side speed
+            if (Mathf.Abs(ss) > 9) cameraAnimator.Juke(ss);
+            else cameraAnimator.jukeSpeed = 0;
+
+            return ss;
+        }
         set { sideSpeedM = value; }
     }
     [Tooltip("Acceleration multiplier of the player")]

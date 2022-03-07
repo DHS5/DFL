@@ -1424,7 +1424,7 @@ MonoBehaviour:
   attentionRadius: 0
   chaseRadius: 0
   attackRadius: 0
-  size: 1
+  size: 1.5
 --- !u!1 &7654464796460211274
 GameObject:
   m_ObjectHideFlags: 0
