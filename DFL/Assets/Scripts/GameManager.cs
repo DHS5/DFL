@@ -16,13 +16,16 @@ public class GameManager : MonoBehaviour
     /// Singleton Instance of GameManager
     /// </summary>
     public static GameManager InstanceGameManager { get; private set; }
-    
 
+    [Tooltip("Current game mode")]
+    public GameMode gameMode;
+    
+    
     [Tooltip("Whether the game is running")]
-    public bool gameOn = false;
+    [HideInInspector] public bool gameOn = false;
     private bool gameOnLate = false;
     [Tooltip("Whether the game is over")]
-    public bool gameOver = false;
+    [HideInInspector] public bool gameOver = false;
 
 
     [Tooltip("Field Manager of the game")]
@@ -51,7 +54,7 @@ public class GameManager : MonoBehaviour
         // Game is on
         gameOn = true;
         // Chooses the game mode
-        ///enemiesManager.gameMode = GameMode.DEFENDERS;
+        ///gameMode = GameMode.DEFENDERS;
 
         // Generates the field
         fieldManager.GenerateField();

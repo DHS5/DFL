@@ -8,11 +8,11 @@ using UnityEngine;
 /// </summary>
 public class EnemiesManager : MonoBehaviour
 {
+    [Tooltip("Singleton Instance of the GameManager")]
+    private GameManager gameManager;
+
     [Tooltip("Script of the field")]
     public Field fieldScript;
-
-    [Tooltip("Current mode of play")]
-    public GameMode gameMode;
 
 
     [Tooltip("List of the Wingmen's prefabs")]
@@ -75,7 +75,7 @@ public class EnemiesManager : MonoBehaviour
         GetZones();
         
         // Generates the enemy wave given the mode
-        switch (gameMode)
+        switch (gameManager.gameMode)
         {
             case GameMode.DEFENDERS:
                 DefendersWave();
@@ -173,9 +173,19 @@ public class EnemiesManager : MonoBehaviour
         float xScale = centerZone.transform.localScale.x / 2;
         float zScale = centerZone.transform.localScale.z / 2;
         // Spawn on the whole field
-        for (int i = 0; i < 50; i++)
+        for (int i = 0; i < 50 + 5 * waveNumber; i++)
         {
             CreateEnemy(classicZPrefabs, center, 50, 90, 0.1f);
         }
+    }
+
+
+
+    /// <summary>
+    /// Gets the GameManager Singleton
+    /// </summary>
+    private void Awake()
+    {
+        gameManager = GameManager.InstanceGameManager;
     }
 }

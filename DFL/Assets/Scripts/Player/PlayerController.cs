@@ -74,16 +74,19 @@ public class PlayerController : MonoBehaviour
                 if (acc <= 0)
                 {
                     if (accPPVolume.weight > 0.01f) accPPVolume.weight = Mathf.Lerp(cameraAccPostProcess.GetComponent<Volume>().weight, 0, 0.01f);
+                    cameraAnimator.isSprinting = false;
                     return acc * accelerationM;
                 }
                 else if (canAccelerate)
                 {
                     Invoke(nameof(CantAccelerate), accelerationTime);
+                    cameraAnimator.Sprint();
                     accPPVolume.weight = Mathf.Lerp(cameraAccPostProcess.GetComponent<Volume>().weight, 1, 0.005f);
                     return acc * accelerationM;
                 }
             }
             if (accPPVolume.weight > 0.01f) accPPVolume.weight = Mathf.Lerp(cameraAccPostProcess.GetComponent<Volume>().weight, 0, 0.01f);
+            cameraAnimator.isSprinting = false;
             return 0;
         }
         set { accelerationM = value; }

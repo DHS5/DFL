@@ -11,6 +11,8 @@ public class CameraAnimator : MonoBehaviour
     [Tooltip("")]
     [SerializeField] AnimationClip runAnim;
     [Tooltip("")]
+    [SerializeField] AnimationClip sprintAnim;
+    [Tooltip("")]
     [SerializeField] AnimationClip jukeRightAnim;
     [Tooltip("")]
     [SerializeField] AnimationClip jukeLeftAnim;
@@ -18,13 +20,20 @@ public class CameraAnimator : MonoBehaviour
 
     public bool isJuking = false;
     public float jukeSpeed = 0;
+    private bool isDefault = true;
+    public bool isSprinting = false;
 
 
-    private void DefaultAnim()
+    public void DefaultAnim()
     {
-        isJuking = false;
-        cameraAnimation.clip = runAnim;
-        cameraAnimation.Play();
+        if (!isDefault)
+        {
+            isJuking = false;
+            isSprinting = false;
+            isDefault = true;
+            cameraAnimation.clip = runAnim;
+            cameraAnimation.Play();
+        }
     }
 
     public void Juke(float dir)
@@ -33,6 +42,7 @@ public class CameraAnimator : MonoBehaviour
         {
             jukeSpeed = dir;
             isJuking = true;
+            isDefault = false;
 
             if (dir > 0)
             {
@@ -52,9 +62,30 @@ public class CameraAnimator : MonoBehaviour
         
     }
 
+    public void Sprint()
+    {
+        if (!isSprinting)
+        {
+            isDefault = false;
+            isSprinting = true;
+            cameraAnimation.clip = sprintAnim;
+            cameraAnimation.Play();
+        }
+    }
+
 
     private void Start()
     {
         cameraAnimation = gameObject.GetComponent<Animation>();
+    }
+
+    private void Update()
+    {
+        if (!isSprinting && !isJuking && !isDefault)
+        {
+            isDefault = true;
+            cameraAnimation.clip = runAnim;
+            cameraAnimation.Play();
+        }
     }
 }

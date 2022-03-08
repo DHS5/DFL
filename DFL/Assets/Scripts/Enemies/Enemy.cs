@@ -12,7 +12,7 @@ public abstract class Enemy : MonoBehaviour
     public GameObject enemy;
 
     [Tooltip("Nav Mesh Agent of the enemy")]
-    [SerializeField] protected NavMeshAgent navMeshAgent;
+    protected NavMeshAgent navMeshAgent;
     [Tooltip("Game Object of the player")]
     protected GameObject player;
 
@@ -100,10 +100,11 @@ public abstract class Enemy : MonoBehaviour
     protected void NormalSpeed() { navMeshAgent.speed /= attackSpeedM; attackSpeed = false; }
 
     /// <summary>
-    /// Gets the player Game Object
+    /// Gets the player Game Object and the NavMesh Agent
     /// </summary>
     protected void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        navMeshAgent = GetComponent<NavMeshAgent>();
     }
 }
