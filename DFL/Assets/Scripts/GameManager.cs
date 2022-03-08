@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public static GameManager InstanceGameManager { get; private set; }
 
+    [Header("Game mode")]
     [Tooltip("Current game mode")]
     public GameMode gameMode;
     
@@ -27,12 +28,13 @@ public class GameManager : MonoBehaviour
     [Tooltip("Whether the game is over")]
     [HideInInspector] public bool gameOver = false;
 
-
+    [Header("Game managers")]
     [Tooltip("Field Manager of the game")]
     [SerializeField] private FieldManager fieldManager;
     [Tooltip("Enemies Manager of the game")]
     [SerializeField] private EnemiesManager enemiesManager;
 
+    [Header("Player")]
     [Tooltip("Player Game Object")]
     [SerializeField] private GameObject player;
 

@@ -684,8 +684,10 @@ MonoBehaviour:
   sprintAnim: {fileID: 7400000, guid: ae9b266f9bf3da54285fa85259ce0eda, type: 2}
   jukeRightAnim: {fileID: 7400000, guid: b76970690c4a5eb4f8e2e61b0b46ae74, type: 2}
   jukeLeftAnim: {fileID: 7400000, guid: 34dc3d3574ab41947b27fd3225944d33, type: 2}
+  cameraAccPostProcess: {fileID: 1784974718}
   isJuking: 0
   jukeSpeed: 0
+  isSprinting: 0
 --- !u!1 &332132857
 GameObject:
   m_ObjectHideFlags: 0

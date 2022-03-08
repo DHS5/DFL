@@ -44,6 +44,7 @@ public class PlayerController : MonoBehaviour
         {
             // Calculate the side speed
             float ss = Input.GetAxis("Horizontal") * sideSpeedM * (speed / (speed + Acceleration));
+            // If already juking, prevent a second juke or a juke to the other side immediately
             if (cameraAnimator.isJuking)
             {
                 if (cameraAnimator.jukeSpeed >= 0)
@@ -53,8 +54,10 @@ public class PlayerController : MonoBehaviour
 
             // Juke on a big side speed
             if (Mathf.Abs(ss) > 9) cameraAnimator.Juke(ss);
+            // Else juke speed is null
             else cameraAnimator.jukeSpeed = 0;
 
+            // Returns the side speed
             return ss;
         }
         set { sideSpeedM = value; }
@@ -73,20 +76,24 @@ public class PlayerController : MonoBehaviour
                 float acc = Input.GetAxis("Vertical");
                 if (acc <= 0)
                 {
-                    if (accPPVolume.weight > 0.01f) accPPVolume.weight = Mathf.Lerp(cameraAccPostProcess.GetComponent<Volume>().weight, 0, 0.01f);
-                    cameraAnimator.isSprinting = false;
+                    // No sprint
+                    cameraAnimator.EndSprint();
+                    // Returns the acceleration
                     return acc * accelerationM;
                 }
                 else if (canAccelerate)
                 {
+                    // Deactivates the acceleration
                     Invoke(nameof(CantAccelerate), accelerationTime);
+                    // Sprint animation
                     cameraAnimator.Sprint();
-                    accPPVolume.weight = Mathf.Lerp(cameraAccPostProcess.GetComponent<Volume>().weight, 1, 0.005f);
+                    // Returns the acceleration
                     return acc * accelerationM;
                 }
             }
-            if (accPPVolume.weight > 0.01f) accPPVolume.weight = Mathf.Lerp(cameraAccPostProcess.GetComponent<Volume>().weight, 0, 0.01f);
-            cameraAnimator.isSprinting = false;
+            // No sprint
+            cameraAnimator.EndSprint();
+            
             return 0;
         }
         set { accelerationM = value; }
@@ -103,10 +110,14 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     private void CantAccelerate()
     {
-        canAccelerate = false;
+        // Prevent the method of being called several times
+        if (canAccelerate)
+        {
+            canAccelerate = false;
 
-        // Calls the CanAccelerate Method after waitToAccelerateTime seconds
-        Invoke(nameof(CanAccelerate), waitToAccelerateTime);
+            // Calls the CanAccelerate Method after waitToAccelerateTime seconds
+            Invoke(nameof(CanAccelerate), waitToAccelerateTime);
+        }
     }
     /// <summary>
     /// Enable the player's acceleration
