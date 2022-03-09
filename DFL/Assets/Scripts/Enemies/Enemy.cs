@@ -9,23 +9,20 @@ using UnityEngine.AI;
 public abstract class Enemy : MonoBehaviour
 {
     [Tooltip("Game Object of the enemy")]
-    public GameObject enemy;
+    [HideInInspector] public GameObject enemy;
 
     [Tooltip("Nav Mesh Agent of the enemy")]
     protected NavMeshAgent navMeshAgent;
     [Tooltip("Game Object of the player")]
     protected GameObject player;
 
+    [Header("Behaviour parameters")]
     [Tooltip("Level of intelligence of the enemy (anticipation of the future position)")]
     [SerializeField] protected int intelligence;
     [Tooltip("Level of reactivity of the enemy (time between new destination's settings)")]
     [SerializeField] protected float reactivity;
     [Tooltip("Reactivity multiplier")] 
     protected float reactivityM;
-    [Tooltip("Attack speed multiplier")]
-    [SerializeField] protected float attackSpeedM;
-    [Tooltip("Whether the enemy is in attack speed")]
-    protected bool attackSpeed = false;
 
     [Tooltip("Radius around the enemy in which the player gets the enemy's attention")]
     [SerializeField] protected float attentionRadius;
@@ -33,6 +30,13 @@ public abstract class Enemy : MonoBehaviour
     [SerializeField] protected float chaseRadius;
     [Tooltip("Radius around the enemy in which the player activates the enemy's attack")]
     [SerializeField] protected float attackRadius;
+
+
+    [Header("Physical parameters")]
+    [Tooltip("Attack speed multiplier")]
+    [SerializeField] protected float attackSpeedM;
+    [Tooltip("Whether the enemy is in attack speed")]
+    protected bool attackSpeed = false;
 
     [Tooltip("Size of the enemy")]
     [SerializeField] protected float size;

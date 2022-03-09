@@ -8,14 +8,14 @@ using UnityEngine;
 public class FirstPersonCameraController : MonoBehaviour
 {
     [Tooltip("First person camera")]
-    [SerializeField] private Camera fpCamera;
+    private Camera fpCamera;
 
     [Tooltip("Quaternion containing the camera rotation")]
     private Quaternion cameraRotation;
 
-    // Parameters for the look rotation (configurable in the inspector)
-    [SerializeField] private int angleMax = 60;
-    [SerializeField]  private float yMouseSensitivity = 5f;
+    [Header("First person camera parameters")]
+    [SerializeField] private int angleMax = 85;
+    [SerializeField]  private float yMouseSensitivity = 3f;
     [SerializeField] private float ySmoothRotation = 10f;
 
     /// <summary>
@@ -61,11 +61,15 @@ public class FirstPersonCameraController : MonoBehaviour
     {
         // Gets the mouse X position and clamps it
         float yRotation = Mathf.Clamp( Input.GetAxis("Mouse X") * yMouseSensitivity * 1f , -yMouseSensitivity , yMouseSensitivity);
+        Debug.Log(yRotation);
         // Gets the camera rotation
         float cameraYRot = Mathf.Abs(fpCamera.transform.localRotation.y);
         // If the player looks behind, reduces his rotation speed to avoid to exceed the maximum rotation angle
         if (cameraYRot > (float)angleMax / 100)
-            yRotation = Mathf.Clamp( yRotation , -yMouseSensitivity + cameraYRot * yMouseSensitivity, yMouseSensitivity - cameraYRot * yMouseSensitivity);
+        {
+            yRotation = Mathf.Clamp(yRotation, -yMouseSensitivity + cameraYRot * yMouseSensitivity, yMouseSensitivity - cameraYRot * yMouseSensitivity);
+            Debug.Log("clamped : " + yRotation);
+        }
 
         // Gets the new camera's rotation
         cameraRotation *= Quaternion.Euler(0f, yRotation, 0f);
@@ -80,10 +84,13 @@ public class FirstPersonCameraController : MonoBehaviour
     /// </summary>
     void Start()
     {
-        // Lock the cursor
+        // Locks the cursor
         LockCursor();
 
-        // Initialize the camera's rotation
+        // Initializes the camera
+        fpCamera = GetComponent<Camera>();
+
+        // Initializes the camera's rotation
         cameraRotation = fpCamera.transform.localRotation;
     }
 

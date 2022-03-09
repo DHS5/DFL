@@ -9,28 +9,28 @@ using UnityEngine.Rendering;
 /// </summary>
 public class PlayerController : MonoBehaviour
 {
+    [Header("Useful scripts")]
     [Tooltip("Controls the gameplay of the player")]
-    [SerializeField] private PlayerGameplay playerGameplayScript;
+    private PlayerGameplay playerGameplay;
+    [Tooltip("Animator script of the camera")]
+    [SerializeField] CameraAnimator cameraAnimator;
 
 
     [Tooltip("Whether the player is freezed")]
-    public bool freeze = true;
-    
+    [HideInInspector] public bool freeze = true;
 
+
+    [Header("Useful game objects")]
     [Tooltip("Body of the player")]
     [SerializeField]  private GameObject playerBody;
     [Tooltip("Camera attached to the player")]
     [SerializeField] private GameObject playerCamera;
 
-    [Tooltip("Post-Processing effect of the acceleration")]
-    [SerializeField] private GameObject cameraAccPostProcess;
-    private Volume accPPVolume;
-
-    [Tooltip("")]
-    [SerializeField] CameraAnimator cameraAnimator;
+    
 
     [Tooltip("Velocity of the player")]
     private Vector3 velocity;
+    [Header("Controller variables of the player")]
     [Tooltip("Forward speed of the player")]
     [SerializeField] private float speed = 12f;
     [Tooltip("Side speed multiplier of the player")]
@@ -71,7 +71,7 @@ public class PlayerController : MonoBehaviour
     {
         get
         {
-            if (!freeze && playerGameplayScript.isChasable)
+            if (!freeze && playerGameplay.isChasable)
             {
                 float acc = Input.GetAxis("Vertical");
                 if (acc <= 0)
@@ -144,8 +144,9 @@ public class PlayerController : MonoBehaviour
             transform.Translate(velocity);
     }
 
+
     private void Start()
     {
-        accPPVolume = cameraAccPostProcess.GetComponent<Volume>();
+        playerGameplay = GetComponent<PlayerGameplay>();
     }
 }

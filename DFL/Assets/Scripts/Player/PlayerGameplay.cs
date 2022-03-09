@@ -10,13 +10,13 @@ public class PlayerGameplay : MonoBehaviour
     [Tooltip("Singleton Instance of the GameManager")]
     private GameManager gameManager;
     [Tooltip("Field Manager of the game")]
-    [SerializeField] private FieldManager fieldManager;
+    private FieldManager fieldManager;
     [Tooltip("Enemy Manager of the game")]
-    [SerializeField] private EnemiesManager enemiesManager;
+    private EnemiesManager enemiesManager;
 
 
     [Tooltip("Whether the player is in a zone where he's chasable")]
-    public bool isChasable = false;
+    [HideInInspector] public bool isChasable = false;
     
     /// <summary>
     /// Called when the player collide with a trigger
@@ -68,8 +68,10 @@ public class PlayerGameplay : MonoBehaviour
     /// <summary>
     /// Gets the GameManager Singleton
     /// </summary>
-    private void Start()
+    private void Awake()
     {
         gameManager = GameManager.InstanceGameManager;
+        enemiesManager = gameManager.enemiesManager;
+        fieldManager = gameManager.fieldManager;
     }
 }

@@ -12,14 +12,18 @@ public class EnemiesManager : MonoBehaviour
     private GameManager gameManager;
 
     [Tooltip("Script of the field")]
-    public Field fieldScript;
+    [HideInInspector] public Field fieldScript;
 
 
+    [Header("Defenders")]
+
+    [Header("Enemy's prefab lists")]
     [Tooltip("List of the Wingmen's prefabs")]
     [SerializeField] private GameObject[] wingmenPrefabs;
     [Tooltip("List of the Bigmen's prefabs")]
     [SerializeField] private GameObject[] linemenPrefabs;
 
+    [Header("Zombies")]
     [Tooltip("List of the classic zombie's prefabs")]
     [SerializeField] private GameObject[] classicZPrefabs;
 
@@ -27,6 +31,7 @@ public class EnemiesManager : MonoBehaviour
     private int waveNumber = 0;
 
     // Zones of the field
+    private GameObject fieldZone;
     private GameObject centerZone;
     private GameObject leftZone;
     private GameObject rightZone;
@@ -94,6 +99,7 @@ public class EnemiesManager : MonoBehaviour
     /// </summary>
     private void GetZones()
     {
+        fieldZone = fieldScript.fieldZone;
         centerZone = fieldScript.centerZone;
         leftZone = fieldScript.leftZone;
         rightZone = fieldScript.rightZone;
@@ -169,13 +175,14 @@ public class EnemiesManager : MonoBehaviour
     /// </summary>
     private void ZombiesWave()
     {
-        Vector3 center = centerZone.transform.position;
-        float xScale = centerZone.transform.localScale.x / 2;
-        float zScale = centerZone.transform.localScale.z / 2;
+        Vector3 field = fieldZone.transform.position;
+        float xScale = fieldZone.transform.localScale.x / 2;
+        float zScale = fieldZone.transform.localScale.z / 2 - 10; // 10 = margin
         // Spawn on the whole field
         for (int i = 0; i < 50 + 5 * waveNumber; i++)
         {
-            CreateEnemy(classicZPrefabs, center, 50, 90, 0.1f);
+            //CreateEnemy(classicZPrefabs, field, xScale, zScale, 0.1f);
+            CreateEnemy(classicZPrefabs, field, xScale, zScale, 0.1f);
         }
     }
 

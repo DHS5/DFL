@@ -19,18 +19,24 @@ public struct FieldMaterials
 /// </summary>
 public class FieldManager : MonoBehaviour
 {
+    [Tooltip("Singleton Instance of the GameManager")]
+    private GameManager gameManager;
+    [Tooltip("Script of the enemiesManager")]
+    private EnemiesManager enemiesManager;
+
+
+    [Header("Nav Mesh Surface")]
     [Tooltip("Nav Mesh Surface of the current field")]
     [SerializeField] private NavMeshSurface surface;
 
+    [Header("Environment prefabs")]
     [Tooltip("Prefab of the field")]
     [SerializeField] private GameObject fieldPrefab;
-
     [Tooltip("Prefab of the Stadium")]
     [SerializeField] private GameObject stadiumPrefab;
 
-    [Tooltip("Script of the enemiesManager")]
-    [SerializeField] private EnemiesManager enemiesManager;
 
+    [Header("List of field materials")]
     [Tooltip("List of the struct containing the materials to use on the field")]
     [SerializeField] private FieldMaterials[] fieldMaterialList;
 
@@ -108,8 +114,9 @@ public class FieldManager : MonoBehaviour
     /// <summary>
     /// Generate a first field
     /// </summary>
-    private void Start()
+    private void Awake()
     {
-        
+        gameManager = GameManager.InstanceGameManager;
+        enemiesManager = gameManager.enemiesManager;
     }
 }

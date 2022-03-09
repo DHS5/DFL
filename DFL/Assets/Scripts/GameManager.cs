@@ -30,9 +30,9 @@ public class GameManager : MonoBehaviour
 
     [Header("Game managers")]
     [Tooltip("Field Manager of the game")]
-    [SerializeField] private FieldManager fieldManager;
+    public FieldManager fieldManager;
     [Tooltip("Enemies Manager of the game")]
-    [SerializeField] private EnemiesManager enemiesManager;
+    public EnemiesManager enemiesManager;
 
     [Header("Player")]
     [Tooltip("Player Game Object")]

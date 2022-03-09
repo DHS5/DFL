@@ -6,11 +6,10 @@ using UnityEngine.AI;
 public class Field : MonoBehaviour
 {   
     [Tooltip("Struct containing the materials to use on the field")]
-    public FieldMaterials fieldMaterials;
+    [HideInInspector] public FieldMaterials fieldMaterials;
 
-    [Tooltip("Position of the field in world space")]
-    private Vector3 fieldPosition;
 
+    [Header("Prefab objects of the field")]
     [SerializeField] GameObject grass;
     [SerializeField] GameObject endzone1;
     [SerializeField] GameObject endzone2;
@@ -24,13 +23,19 @@ public class Field : MonoBehaviour
     [SerializeField] GameObject[] goalpost2Metal;
 
 
+    [Header("Zones of the field")]
+    public GameObject fieldZone;
     public GameObject centerZone;
     public GameObject leftZone;
     public GameObject rightZone;
 
     [Tooltip("List of the enemies on the field")]
-    public List<GameObject> enemies;
+    [HideInInspector] public List<GameObject> enemies;
 
+
+    /// <summary>
+    /// Sets all the materials of the new field
+    /// </summary>
     public void CreateField()
     {
         // ### Ground
@@ -57,6 +62,9 @@ public class Field : MonoBehaviour
             goalpost2Metal[i].GetComponent<MeshRenderer>().material = fieldMaterials.goalpostMetal;
     }
 
+    /// <summary>
+    /// Destroys all the enemies on the field
+    /// </summary>
     public void SuppEnemies()
     {
         for (int i = 0; i < enemies.Count; i++)

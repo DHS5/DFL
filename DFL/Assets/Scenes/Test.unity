@@ -687,7 +687,6 @@ MonoBehaviour:
   cameraAccPostProcess: {fileID: 1784974718}
   isJuking: 0
   jukeSpeed: 0
-  isSprinting: 0
 --- !u!1 &332132857
 GameObject:
   m_ObjectHideFlags: 0
@@ -1351,6 +1350,7 @@ Transform:
   m_Children:
   - {fileID: 1804225163}
   - {fileID: 1708251326}
+  - {fileID: 1397773265}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1735,12 +1735,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1397773263}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -396.0938, y: 6.956833, z: 188.16385}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_Father: {fileID: 1086744838}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1426004910
 GameObject:
@@ -1788,7 +1788,6 @@ MonoBehaviour:
   surface: {fileID: 1397773264}
   fieldPrefab: {fileID: 407003249648766668, guid: d44afab48a0d01847959fcdb37711ad9, type: 3}
   stadiumPrefab: {fileID: 159295887083582103, guid: dd4d7981f5152504db4740582c3ec36d, type: 3}
-  enemiesManager: {fileID: 1988230386}
   fieldMaterialList:
   - grass: {fileID: 2100000, guid: 8e9032c9e1a61664ab0e33e0377bf378, type: 2}
     endzone1: {fileID: 2100000, guid: 459d301fac8514943a5839fa9d42e562, type: 2}
@@ -2221,7 +2220,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1664567381}
   - component: {fileID: 1664567382}
-  - component: {fileID: 1664567383}
   - component: {fileID: 1664567386}
   - component: {fileID: 1664567384}
   - component: {fileID: 1664567385}
@@ -2260,33 +2258,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 807fb6fa73a02de4ea5d6542adf5ee44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerGameplayScript: {fileID: 1664567386}
+  cameraAnimator: {fileID: 135357386}
   freeze: 0
   playerBody: {fileID: 1591672065}
   playerCamera: {fileID: 1949017573}
-  cameraAccPostProcess: {fileID: 1784974718}
-  cameraAnimator: {fileID: 135357386}
   speed: 12
   sideSpeedM: 8
   accelerationM: 5
   accelerationTime: 3
   waitToAccelerateTime: 8
---- !u!114 &1664567383
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1664567380}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d802f290793543449e8ac8a5e8128d4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fpCamera: {fileID: 1949017575}
-  angleMax: 85
-  yMouseSensitivity: 3
-  ySmoothRotation: 10
 --- !u!136 &1664567384
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2329,8 +2309,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59c3018f0bdbc52448196d77268fb825, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fieldManager: {fileID: 1426004912}
-  enemiesManager: {fileID: 1988230386}
   isChasable: 1
 --- !u!4 &1708251326 stripped
 Transform:
@@ -2683,7 +2661,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!43 &1925676968
 Mesh:
@@ -2861,8 +2839,9 @@ GameObject:
   - component: {fileID: 1949017575}
   - component: {fileID: 1949017574}
   - component: {fileID: 1949017577}
+  - component: {fileID: 1949017578}
   m_Layer: 0
-  m_Name: PlayerCamera
+  m_Name: Player1PCamera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2900,7 +2879,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 350
+  far clip plane: 500
   field of view: 60
   orthographic: 0
   orthographic size: 5
@@ -2966,6 +2945,21 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
+--- !u!114 &1949017578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1949017573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d802f290793543449e8ac8a5e8128d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  angleMax: 85
+  yMouseSensitivity: 3
+  ySmoothRotation: 20
 --- !u!1 &1988230385
 GameObject:
   m_ObjectHideFlags: 0
@@ -3530,5 +3524,14 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 575515827}
+    - target: {fileID: 8279571069302744816, guid: d44afab48a0d01847959fcdb37711ad9, type: 3}
+      propertyPath: fieldZone
+      value: 
+      objectReference: {fileID: 407003251401344071}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d44afab48a0d01847959fcdb37711ad9, type: 3}
+--- !u!1 &407003251401344071 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5616284391599433613, guid: d44afab48a0d01847959fcdb37711ad9, type: 3}
+  m_PrefabInstance: {fileID: 407003251401344070}
+  m_PrefabAsset: {fileID: 0}
