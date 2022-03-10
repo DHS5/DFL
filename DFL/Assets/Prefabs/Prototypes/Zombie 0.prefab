@@ -1379,7 +1379,7 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
-  m_Height: 1
+  m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!195 &-529846816312369520
@@ -1417,13 +1417,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 0}
-  navMeshAgent: {fileID: -529846816312369520}
   intelligence: 0
   reactivity: 0
-  attackSpeedM: 0
   attentionRadius: 0
   chaseRadius: 0
   attackRadius: 0
+  attackSpeedM: 0
   size: 1.5
 --- !u!1 &7654464796460211274
 GameObject:

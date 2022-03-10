@@ -25,6 +25,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField]  private GameObject playerBody;
     [Tooltip("Camera attached to the player")]
     [SerializeField] private GameObject playerCamera;
+    [Tooltip("Rigidbody of the player")]
+    private Rigidbody playerRigidbody;
 
     
 
@@ -105,6 +107,15 @@ public class PlayerController : MonoBehaviour
     [Tooltip("Seconds waiting to accelerate")]
     [SerializeField] private float waitToAccelerateTime = 8f;
 
+    [Tooltip("Whether the player can jump")]
+    private bool canJump = true;
+    [Tooltip("Vector3 containing the jump's power")]
+    private Vector3 jumpPower;
+    [Tooltip("Height the player is reaching when jumping")]
+    [SerializeField] private float jumpHeight = 2f;
+    [Tooltip("Gravity multiplier")]
+    private float gravityScale = 1.5f;
+
     /// <summary>
     /// Disable the player's acceleration during waitToAccelerateTime seconds
     /// </summary>
@@ -129,24 +140,62 @@ public class PlayerController : MonoBehaviour
 
 
     /// <summary>
+    /// Makes the player jump
+    /// </summary>
+    private void Jump()
+    {
+        canJump = false;
+        playerRigidbody.AddForce(jumpPower, ForceMode.Impulse);
+    }
+
+
+    /// <summary>
+    /// Detects a collision with the ground to know if the player can jump
+    /// </summary>
+    /// <param name="collision">Collider of the colliding game object</param>
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+            canJump = true;
+    }
+
+    /// <summary>
     /// Update the physics parameters
     /// </summary>
     private void Update()
     {
         velocity = Vector3.forward * (speed + Acceleration) * Time.deltaTime + Vector3.right * SideSpeed * Time.deltaTime;
     }
+
+
     /// <summary>
     /// Update the player's movements
     /// </summary>
     void LateUpdate()
     {
         if (!freeze)
+        {
+            // Makes the player run
             transform.Translate(velocity);
+
+            // Makes the player jump
+            if (Input.GetKeyDown(KeyCode.Space) && canJump)
+            {
+                Jump();
+            }
+        }
+
+        // Increase the gravity
+        playerRigidbody.AddForce(Physics.gravity * gravityScale);
     }
 
 
     private void Start()
     {
         playerGameplay = GetComponent<PlayerGameplay>();
+        playerRigidbody = GetComponent<Rigidbody>();
+
+        // Calculates the jump power to reach a precise height
+        jumpPower = new Vector3(0, Mathf.Sqrt(jumpHeight * -20 * (Physics.gravity.y * gravityScale)), 0);
     }
 }

@@ -9,6 +9,7 @@ TagManager:
   - TunnelExit
   - BlackWall
   - Enemy
+  - Ground
   layers:
   - Default
   - TransparentFX

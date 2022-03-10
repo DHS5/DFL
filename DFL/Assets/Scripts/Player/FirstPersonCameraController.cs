@@ -61,15 +61,11 @@ public class FirstPersonCameraController : MonoBehaviour
     {
         // Gets the mouse X position and clamps it
         float yRotation = Mathf.Clamp( Input.GetAxis("Mouse X") * yMouseSensitivity * 1f , -yMouseSensitivity , yMouseSensitivity);
-        Debug.Log(yRotation);
         // Gets the camera rotation
         float cameraYRot = Mathf.Abs(fpCamera.transform.localRotation.y);
         // If the player looks behind, reduces his rotation speed to avoid to exceed the maximum rotation angle
         if (cameraYRot > (float)angleMax / 100)
-        {
             yRotation = Mathf.Clamp(yRotation, -yMouseSensitivity + cameraYRot * yMouseSensitivity, yMouseSensitivity - cameraYRot * yMouseSensitivity);
-            Debug.Log("clamped : " + yRotation);
-        }
 
         // Gets the new camera's rotation
         cameraRotation *= Quaternion.Euler(0f, yRotation, 0f);

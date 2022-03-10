@@ -6,7 +6,7 @@ using UnityEngine;
 /// <summary>
 /// GameMode
 /// </summary>
-public enum GameMode { NONE, ZOMBIE, DEFENDERS }
+[System.Serializable] public enum GameMode { NONE, ZOMBIE, DEFENDERS }
 
 
 
@@ -17,9 +17,11 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public static GameManager InstanceGameManager { get; private set; }
 
-    [Header("Game mode")]
+    [Header("Game parameters")]
     [Tooltip("Current game mode")]
     public GameMode gameMode;
+    [Tooltip("")]
+    public int difficulty;
     
     
     [Tooltip("Whether the game is running")]
@@ -33,6 +35,8 @@ public class GameManager : MonoBehaviour
     public FieldManager fieldManager;
     [Tooltip("Enemies Manager of the game")]
     public EnemiesManager enemiesManager;
+    [Tooltip("Data Manager of the game")]
+    [HideInInspector] public DataManager dataManager;
 
     [Header("Player")]
     [Tooltip("Player Game Object")]
@@ -45,6 +49,7 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         InstanceGameManager = this;
+        dataManager = DataManager.InstanceDataManager;
     }
 
 
@@ -55,8 +60,12 @@ public class GameManager : MonoBehaviour
     {
         // Game is on
         gameOn = true;
-        // Chooses the game mode
-        ///gameMode = GameMode.DEFENDERS;
+        // Gets the Game parameters from DataManager
+        if (dataManager != null)
+        {
+            gameMode = dataManager.gameMode;
+            difficulty = dataManager.difficulty;
+        }
 
         // Generates the field
         fieldManager.GenerateField();

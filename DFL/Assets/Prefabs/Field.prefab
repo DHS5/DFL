@@ -1667,7 +1667,7 @@ GameObject:
   - component: {fileID: 407003250111847684}
   m_Layer: 3
   m_Name: FieldGrass
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -3214,7 +3214,7 @@ GameObject:
   - component: {fileID: 407003250853191687}
   m_Layer: 0
   m_Name: EndzoneGrass 1
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3745,7 +3745,7 @@ GameObject:
   - component: {fileID: 407003251271606897}
   m_Layer: 0
   m_Name: EndzoneGrass 2
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
