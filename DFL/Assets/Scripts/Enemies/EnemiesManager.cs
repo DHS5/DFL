@@ -36,6 +36,19 @@ public class EnemiesManager : MonoBehaviour
     private GameObject leftZone;
     private GameObject rightZone;
 
+
+
+
+
+    /// <summary>
+    /// Gets the GameManager Singleton
+    /// </summary>
+    private void Awake()
+    {
+        gameManager = GameManager.InstanceGameManager;
+    }
+
+
     /// <summary>
     /// Stops all enemies
     /// </summary>
@@ -106,7 +119,7 @@ public class EnemiesManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Instantiate an enemy given a certain category
+    /// Instantiate an enemy at a semi-random position and size
     /// </summary>
     /// <param name="enemyPrefabs">List of enemy prefabs (category)</param>
     /// <param name="pos">Position of the zone in which create the enemy</param>
@@ -117,23 +130,27 @@ public class EnemiesManager : MonoBehaviour
     {
         // Game Object of the enemy
         GameObject enemy;
-        //
+
+        // Clamps the difficulty so it doesn't get out of the enemyPrefabs length
         int difficulty = Mathf.Clamp(waveNumber, 0, enemyPrefabs.Length);
-        // Gets a random position and size and Instantiate the new Bigman
+
+        // Gets a random position and instantiate the new enemy
         Vector3 randomPosition = new Vector3(Random.Range(-xScale, xScale), 0, Random.Range(-zScale, zScale));
         enemy = Instantiate(enemyPrefabs[Random.Range(0, difficulty)], pos + randomPosition, Quaternion.identity);
         //enemy = Instantiate(enemyPrefabs[enemyPrefabs.Length-1], pos + randomPosition, Quaternion.identity);
+
+        // Gives the enemy his body and a semi-random size
         enemy.GetComponent<Enemy>().enemy = enemy;
         enemy.GetComponent<Enemy>().Size *= Random.Range(1 - sizeMultiplier, 1 + sizeMultiplier);
+
         // Fill the enemies list of the field
         fieldScript.enemies.Add(enemy);
     }
 
 
     /// <summary>
-    /// Generates a defender wave given the difficulty
+    /// Generates a defender wave
     /// (11 defenders, 5 in the center, 3 on each side)
-    /// The position and size of the enemies are random
     /// </summary>
     private void DefendersWave()
     {        
@@ -170,29 +187,21 @@ public class EnemiesManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Generates a zombie wave given the difficulty
-    /// The position and size of the enemies are random
+    /// Generates a zombie wave
     /// </summary>
     private void ZombiesWave()
     {
         Vector3 field = fieldZone.transform.position;
         float xScale = fieldZone.transform.localScale.x / 2;
-        float zScale = fieldZone.transform.localScale.z / 2 - 10; // 10 = margin
+        float zScale = fieldZone.transform.localScale.z / 2;
         // Spawn on the whole field
         for (int i = 0; i < 50 + 5 * waveNumber; i++)
         {
-            //CreateEnemy(classicZPrefabs, field, xScale, zScale, 0.1f);
             CreateEnemy(classicZPrefabs, field, xScale, zScale, 0.1f);
         }
     }
 
 
 
-    /// <summary>
-    /// Gets the GameManager Singleton
-    /// </summary>
-    private void Awake()
-    {
-        gameManager = GameManager.InstanceGameManager;
-    }
+    
 }

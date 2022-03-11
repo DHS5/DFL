@@ -810,7 +810,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameMode: 2
-  difficulty: 0
+  difficulty: 1
   gameOn: 0
   gameOver: 0
   fieldManager: {fileID: 1426004912}
@@ -837,7 +837,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-54846
+  m_Name: pb_Mesh-1480
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1917,7 +1917,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-54834
+  m_Name: pb_Mesh-1468
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2378,7 +2378,7 @@ MonoBehaviour:
   accelerationM: 5
   accelerationTime: 3
   waitToAccelerateTime: 8
-  jumpHeight: 1.4
+  jumpHeight: 3.2
 --- !u!136 &1664567384
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -3070,8 +3070,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   angleMax: 85
-  yMouseSensitivity: 3
-  ySmoothRotation: 20
+  yMouseSensitivity: 12
+  ySmoothRotation: 25
 --- !u!1 &1988230385
 GameObject:
   m_ObjectHideFlags: 0

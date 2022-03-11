@@ -112,7 +112,7 @@ public class PlayerController : MonoBehaviour
     [Tooltip("Vector3 containing the jump's power")]
     private Vector3 jumpPower;
     [Tooltip("Height the player is reaching when jumping")]
-    [SerializeField] private float jumpHeight = 2f;
+    [SerializeField] private float jumpHeight;
     [Tooltip("Gravity multiplier")]
     private float gravityScale = 1.5f;
 
@@ -178,13 +178,25 @@ public class PlayerController : MonoBehaviour
             // Makes the player run
             transform.Translate(velocity);
 
-            // Makes the player jump
-            if (Input.GetKeyDown(KeyCode.Space) && canJump)
-            {
-                Jump();
-            }
+            
         }
 
+        // Makes the player jump
+        if (Input.GetKeyDown(KeyCode.Space) && canJump)
+        {
+            canJump = false;
+            Jump();
+        }
+
+        
+    }
+
+
+    /// <summary>
+    /// Keeps the gravity scale the same given the FPS
+    /// </summary>
+    private void FixedUpdate()
+    {
         // Increase the gravity
         playerRigidbody.AddForce(Physics.gravity * gravityScale);
     }
@@ -196,6 +208,6 @@ public class PlayerController : MonoBehaviour
         playerRigidbody = GetComponent<Rigidbody>();
 
         // Calculates the jump power to reach a precise height
-        jumpPower = new Vector3(0, Mathf.Sqrt(jumpHeight * -20 * (Physics.gravity.y * gravityScale)), 0);
+        jumpPower = new Vector3(0, Mathf.Sqrt(jumpHeight * -2 * (Physics.gravity.y * gravityScale)), 0);
     }
 }
