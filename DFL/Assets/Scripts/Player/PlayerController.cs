@@ -114,7 +114,7 @@ public class PlayerController : MonoBehaviour
     [Tooltip("Height the player is reaching when jumping")]
     [SerializeField] private float jumpHeight;
     [Tooltip("Gravity multiplier")]
-    private float gravityScale = 1.5f;
+    private float gravityScale = 10f;
 
     /// <summary>
     /// Disable the player's acceleration during waitToAccelerateTime seconds
@@ -165,6 +165,7 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         velocity = Vector3.forward * (speed + Acceleration) * Time.deltaTime + Vector3.right * SideSpeed * Time.deltaTime;
+        if (!playerGameplay.isChasable) velocity *= 2;
     }
 
 
@@ -178,17 +179,13 @@ public class PlayerController : MonoBehaviour
             // Makes the player run
             transform.Translate(velocity);
 
-            
-        }
-
-        // Makes the player jump
-        if (Input.GetKeyDown(KeyCode.Space) && canJump)
-        {
-            canJump = false;
-            Jump();
-        }
-
-        
+            // Makes the player jump
+            if (Input.GetKeyDown(KeyCode.Space) && canJump)
+            {
+                canJump = false;
+                Jump();
+            }
+        }        
     }
 
 

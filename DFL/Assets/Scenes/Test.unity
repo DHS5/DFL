@@ -1348,13 +1348,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 693288144}
-  m_LocalRotation: {x: -0, y: -0.48053294, z: -0, w: 0.8769766}
+  m_LocalRotation: {x: 0, y: -0.38268343, z: 0, w: 0.92387956}
   m_LocalPosition: {x: 2.714, y: 1, z: -0.179}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1664567381}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: -57.44, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -45, z: 0}
 --- !u!114 &693288146
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2378,7 +2378,7 @@ MonoBehaviour:
   accelerationM: 5
   accelerationTime: 3
   waitToAccelerateTime: 8
-  jumpHeight: 3.2
+  jumpHeight: 2.5
 --- !u!136 &1664567384
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -3070,8 +3070,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   angleMax: 85
-  yMouseSensitivity: 12
-  ySmoothRotation: 25
+  yMouseSensitivity: 3
+  ySmoothRotation: 20
 --- !u!1 &1988230385
 GameObject:
   m_ObjectHideFlags: 0

@@ -64,7 +64,7 @@ public class FirstPersonCameraController : MonoBehaviour
         // Gets the camera rotation
         float cameraYRot = Mathf.Abs(fpCamera.transform.localRotation.y);
         // If the player looks behind, reduces his rotation speed to avoid to exceed the maximum rotation angle
-        if (cameraYRot > (float)angleMax / 100)
+        if (cameraYRot > (float)angleMax / 100 && yRotation* fpCamera.transform.localRotation.y > 0)
             yRotation = Mathf.Clamp(yRotation, -yMouseSensitivity + cameraYRot * yMouseSensitivity, yMouseSensitivity - cameraYRot * yMouseSensitivity);
 
         // Gets the new camera's rotation
@@ -91,12 +91,10 @@ public class FirstPersonCameraController : MonoBehaviour
     }
 
 
-    /// <summary>
-    /// Calls look rotation at constant rate
-    /// </summary>
-    private void FixedUpdate()
+    private void LateUpdate()
     {
-        // Gets the look rotation
+        // Gets the look rotation of the camera
         LookRotation();
-    }
+    }    
+
 }
