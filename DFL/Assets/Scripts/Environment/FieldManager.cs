@@ -21,8 +21,10 @@ public class FieldManager : MonoBehaviour
 {
     [Tooltip("Singleton Instance of the GameManager")]
     private GameManager gameManager;
-    [Tooltip("Script of the enemiesManager")]
+    [Tooltip("Script of the EnemiesManager")]
     private EnemiesManager enemiesManager;
+    [Tooltip("Script of the TeamManager")]
+    private TeamManager teamManager;
 
 
     [Header("Nav Mesh Surface")]
@@ -96,6 +98,8 @@ public class FieldManager : MonoBehaviour
         // ### Management of the enemies
         // ## Gives the enemiesManager the fieldScript
         enemiesManager.fieldScript = fieldScript;
+        // ## Gives the teamManager a enemies's clone
+        teamManager.enemies = fieldScript.enemies;
         // ## Creates the enemy wave
         enemiesManager.EnemyWave();
     }
@@ -118,5 +122,6 @@ public class FieldManager : MonoBehaviour
     {
         gameManager = GameManager.InstanceGameManager;
         enemiesManager = gameManager.enemiesManager;
+        teamManager = gameManager.teamManager;
     }
 }

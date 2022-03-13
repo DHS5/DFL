@@ -35,6 +35,8 @@ public class GameManager : MonoBehaviour
     public FieldManager fieldManager;
     [Tooltip("Enemies Manager of the game")]
     public EnemiesManager enemiesManager;
+    [Tooltip("Team Manager of the game")]
+    public TeamManager teamManager;
     [Tooltip("Data Manager of the game")]
     [HideInInspector] public DataManager dataManager;
 
