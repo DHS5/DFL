@@ -716,7 +716,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &310631923
 MonoBehaviour:
@@ -730,6 +730,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13714282c194f0a4aa067b82f8495d17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 392287958}
+  player: {fileID: 1664567380}
+  attackersPrefabs:
+  - {fileID: 6644603938449114179, guid: 7a6c53d1e23619e48985fa783fd0af6f, type: 3}
+  enemies: []
+  playerProtectionRadius: 30
+  teamReactivity: 0.5
 --- !u!1 &332132857
 GameObject:
   m_ObjectHideFlags: 0
@@ -852,12 +859,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f57bfd2202e8254aa4b5f3738344fed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameMode: 2
+  gameMode: 3
   difficulty: 1
   gameOn: 0
   gameOver: 0
   fieldManager: {fileID: 1426004912}
   enemiesManager: {fileID: 1988230386}
+  teamManager: {fileID: 310631923}
   dataManager: {fileID: 0}
   player: {fileID: 1664567380}
 --- !u!4 &392287959
@@ -1938,6 +1946,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c664272bd882d1419a0812368fb2cbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 392287958}
   surface: {fileID: 1397773264}
   fieldPrefab: {fileID: 407003249648766668, guid: d44afab48a0d01847959fcdb37711ad9, type: 3}
   stadiumPrefab: {fileID: 159295887083582103, guid: dd4d7981f5152504db4740582c3ec36d, type: 3}
@@ -2416,6 +2425,7 @@ MonoBehaviour:
   freeze: 0
   playerBody: {fileID: 1591672065}
   playerCamera: {fileID: 1949017573}
+  velocity: {x: 0, y: 0, z: 0}
   speed: 12
   sideSpeedM: 8
   accelerationM: 5
@@ -2464,6 +2474,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59c3018f0bdbc52448196d77268fb825, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 392287958}
   isChasable: 1
 --- !u!4 &1708251326 stripped
 Transform:
@@ -2816,7 +2827,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!43 &1925676968
 Mesh:
@@ -3144,6 +3155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abe0740fe7922a64cada77dee2f30f91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 392287958}
   fieldScript: {fileID: 0}
   wingmenPrefabs:
   - {fileID: 6644603938449114179, guid: 35d11d1e1dd397942b5024ee78060e27, type: 3}

@@ -8,11 +8,13 @@ using UnityEngine;
 public class PlayerGameplay : MonoBehaviour
 {
     [Tooltip("Singleton Instance of the GameManager")]
-    private GameManager gameManager;
+    [SerializeField] private GameManager gameManager;
     [Tooltip("Field Manager of the game")]
     private FieldManager fieldManager;
     [Tooltip("Enemy Manager of the game")]
     private EnemiesManager enemiesManager;
+    [Tooltip("Team Manager of the game")]
+    private TeamManager teamManager;
 
 
     [Tooltip("Whether the player is in a zone where he's chasable")]
@@ -30,6 +32,7 @@ public class PlayerGameplay : MonoBehaviour
             // Deactivates the trigger (prevent from triggering several times)
             other.gameObject.SetActive(false);
 
+            teamManager.ClearAttackers();
             fieldManager.GenerateField();
             isChasable = false;
         }
@@ -42,6 +45,8 @@ public class PlayerGameplay : MonoBehaviour
             fieldManager.SuppField();
             isChasable = true;
             enemiesManager.BeginChase();
+            teamManager.TeamCreation();
+            teamManager.BeginProtection();
         }
     }
     /// <summary>
@@ -70,8 +75,8 @@ public class PlayerGameplay : MonoBehaviour
     /// </summary>
     private void Awake()
     {
-        gameManager = GameManager.InstanceGameManager;
         enemiesManager = gameManager.enemiesManager;
         fieldManager = gameManager.fieldManager;
+        teamManager = gameManager.teamManager;
     }
 }

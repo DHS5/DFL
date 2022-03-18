@@ -31,7 +31,7 @@ public class PlayerController : MonoBehaviour
     
 
     [Tooltip("Velocity of the player")]
-    private Vector3 velocity;
+    [HideInInspector] public Vector3 velocity;
     [Header("Controller variables of the player")]
     [Tooltip("Forward speed of the player")]
     [SerializeField] private float speed = 12f;

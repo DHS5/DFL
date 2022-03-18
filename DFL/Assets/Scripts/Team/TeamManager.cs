@@ -9,7 +9,7 @@ using UnityEngine;
 public class TeamManager : MonoBehaviour
 {
     [Tooltip("Singleton Instance of the GameManager")]
-    private GameManager gameManager;
+    [SerializeField] private GameManager gameManager;
     [Tooltip("Field Manager of the game")]
     private FieldManager fieldManager;
     [Tooltip("Enemy Manager of the game")]
@@ -18,28 +18,24 @@ public class TeamManager : MonoBehaviour
     [Tooltip("")]
     [SerializeField] private GameObject player;
 
+    [SerializeField] private GameObject[] attackersPrefabs;
+
 
     [Tooltip("List of the team's attackers currently free")]
-    private List<GameObject> freeAttackers;
+    private List<GameObject> freeAttackers = new List<GameObject>();
     [Tooltip("List of the team's attackers currently busy")]
-    private List<GameObject> busyAttackers;
+    private List<GameObject> busyAttackers = new List<GameObject>();
     [Tooltip("List of the enemies currently not taken care of")]
     [HideInInspector] public List<GameObject> enemies;
+
+    private List<GameObject> enemiesToSupp = new List<GameObject>();
+    private List<GameObject> enemiesToAdd = new List<GameObject>();
 
 
     [SerializeField] private float playerProtectionRadius;
 
     [SerializeField] private float teamReactivity;
 
-    /// <summary>
-    /// Gets the GameManager Singleton
-    /// </summary>
-    private void Awake()
-    {
-        gameManager = GameManager.InstanceGameManager;
-        enemiesManager = gameManager.enemiesManager;
-        fieldManager = gameManager.fieldManager;
-    }
 
 
     /// <summary>
@@ -48,7 +44,7 @@ public class TeamManager : MonoBehaviour
     /// <param name="enemy">Enemy to add to the list</param>
     public void AddEnemy(GameObject enemy)
     {
-        enemies.Add(enemy);
+        enemiesToAdd.Add(enemy);
     }
 
     /// <summary>
@@ -57,15 +53,78 @@ public class TeamManager : MonoBehaviour
     /// <param name="enemy">Enemy to supp from the list</param>
     public void SuppEnemy(GameObject enemy)
     {
-        enemies.Remove(enemy);
+        //
+        enemiesToSupp.Add(enemy);
     }
 
+    private void ActuEnemies()
+    {
+        foreach (GameObject e in enemiesToSupp)
+        {
+            enemies.Remove(e);
+        }
+        foreach (GameObject e in enemiesToAdd)
+        {
+            enemies.Add(e);
+        }
+    }
+
+    public void FreeAttacker(GameObject a)
+    {
+        busyAttackers.Remove(a);
+        freeAttackers.Add(a);
+    }
+
+    public void ClearAttackers()
+    {
+        foreach (GameObject a in freeAttackers) Destroy(a);
+        foreach (GameObject a in busyAttackers) Destroy(a);
+        freeAttackers.Clear();
+        busyAttackers.Clear();
+        enemies.Clear();
+        enemiesToAdd.Clear();
+        enemiesToSupp.Clear();
+    }
+
+
+    /// <summary>
+    /// Instantiate an attacker from the attackers prefab list with a semi-random position
+    /// </summary>
+    private void InstantiateAttacker()
+    {
+        Vector3 playerPos = player.transform.position;
+        Vector3 randomPos = new Vector3(Random.Range(-playerProtectionRadius / 2, playerProtectionRadius / 2), 0, Random.Range(5, playerProtectionRadius / 2)) + playerPos;
+        GameObject attacker = Instantiate(attackersPrefabs[0], randomPos, Quaternion.identity);
+        attacker.GetComponent<Attackers>().teamManager = this;
+        attacker.GetComponent<Attackers>().player = player;
+        attacker.GetComponent<Attackers>().playerProtectionRadius = playerProtectionRadius;
+        freeAttackers.Add(attacker);
+    }
+
+
+    public void TeamCreation()
+    {
+        for (int i = 0; i < 5; i++)
+        {
+            InstantiateAttacker();
+        }
+    }
+
+
+    /// <summary>
+    /// Begins the player's protection
+    /// </summary>
+    public void BeginProtection()
+    {
+        ProtectPlayer();
+    }
 
     private void ProtectPlayer()
     {
         foreach (GameObject e in enemies)
         {
-            if (Vector3.Distance(e.transform.position, player.transform.position) < playerProtectionRadius)
+            float toPlayerAngle = Vector3.Angle(player.transform.forward, e.transform.position - player.transform.position);
+            if (Vector3.Distance(e.transform.position, player.transform.position) < playerProtectionRadius * ( 1 - toPlayerAngle/180))
             {
                 if (freeAttackers.Count > 0)
                 {
@@ -100,5 +159,18 @@ public class TeamManager : MonoBehaviour
                 }
             }
         }
+        ActuEnemies();
+        if (player.GetComponent<PlayerGameplay>().isChasable)
+            Invoke(nameof(ProtectPlayer), teamReactivity);
+    }
+
+
+    /// <summary>
+    /// Gets the GameManager Singleton
+    /// </summary>
+    private void Awake()
+    {
+        enemiesManager = gameManager.enemiesManager;
+        fieldManager = gameManager.fieldManager;
     }
 }

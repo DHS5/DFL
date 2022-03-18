@@ -32,6 +32,9 @@ public class DataManager : MonoBehaviour
                 case 2:
                     gameMode = global::GameMode.ZOMBIE;
                     break;
+                case 3:
+                    gameMode = global::GameMode.TEAM;
+                    break;
                 default:
                     gameMode = global::GameMode.NONE;
                     break;

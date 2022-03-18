@@ -6,10 +6,12 @@ using UnityEngine;
 /// <summary>
 /// GameMode
 /// </summary>
-[System.Serializable] public enum GameMode { NONE, ZOMBIE, DEFENDERS }
+[System.Serializable] public enum GameMode { NONE, ZOMBIE, DEFENDERS, TEAM }
 
 
-
+/// <summary>
+/// Manages the whole game
+/// </summary>
 public class GameManager : MonoBehaviour
 {
     /// <summary>
@@ -45,6 +47,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject player;
 
 
+
     /// <summary>
     /// Instantiate the Singleton
     /// </summary>
@@ -75,6 +78,14 @@ public class GameManager : MonoBehaviour
         player.GetComponent<PlayerController>().freeze = false;
         // Makes the player chasable
         player.GetComponent<PlayerGameplay>().isChasable = true;
+
+        // If game mode = TEAM
+        if (gameMode == GameMode.TEAM)
+        {
+            teamManager.TeamCreation();
+            teamManager.BeginProtection();
+        }
+
         // Activates the enemies
         enemiesManager.BeginChase();
     }

@@ -9,7 +9,7 @@ using UnityEngine;
 public class EnemiesManager : MonoBehaviour
 {
     [Tooltip("Singleton Instance of the GameManager")]
-    private GameManager gameManager;
+    [SerializeField] private GameManager gameManager;
 
     [Tooltip("Script of the field")]
     [HideInInspector] public Field fieldScript;
@@ -37,16 +37,6 @@ public class EnemiesManager : MonoBehaviour
     private GameObject rightZone;
 
 
-
-
-
-    /// <summary>
-    /// Gets the GameManager Singleton
-    /// </summary>
-    private void Awake()
-    {
-        gameManager = GameManager.InstanceGameManager;
-    }
 
 
     /// <summary>
@@ -98,6 +88,9 @@ public class EnemiesManager : MonoBehaviour
             case GameMode.DEFENDERS:
                 DefendersWave();
                 break;
+            case GameMode.TEAM:
+                DefendersWave();
+                break;
             case GameMode.ZOMBIE:
                 ZombiesWave();
                 break;
@@ -136,8 +129,8 @@ public class EnemiesManager : MonoBehaviour
 
         // Gets a random position and instantiate the new enemy
         Vector3 randomPosition = new Vector3(Random.Range(-xScale, xScale), 0, Random.Range(-zScale, zScale));
-        //enemy = Instantiate(enemyPrefabs[Random.Range(0, difficulty)], pos + randomPosition, Quaternion.identity);
-        enemy = Instantiate(enemyPrefabs[enemyPrefabs.Length-1], pos + randomPosition, Quaternion.identity);
+        enemy = Instantiate(enemyPrefabs[Random.Range(0, difficulty)], pos + randomPosition, Quaternion.identity);
+        //enemy = Instantiate(enemyPrefabs[enemyPrefabs.Length-1], pos + randomPosition, Quaternion.identity);
 
         // Gives the enemy his body and a semi-random size
         enemy.GetComponent<Enemy>().enemy = enemy;
