@@ -124,7 +124,7 @@ public class TeamManager : MonoBehaviour
         foreach (GameObject e in enemies)
         {
             float toPlayerAngle = Vector3.Angle(player.transform.forward, e.transform.position - player.transform.position);
-            if (Vector3.Distance(e.transform.position, player.transform.position) < playerProtectionRadius * ( 1 - toPlayerAngle/180))
+            if (Vector3.Distance(e.transform.position, player.transform.position) < playerProtectionRadius * ( 1 - toPlayerAngle/270))
             {
                 if (freeAttackers.Count > 0)
                 {

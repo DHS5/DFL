@@ -45,8 +45,11 @@ public class PlayerGameplay : MonoBehaviour
             fieldManager.SuppField();
             isChasable = true;
             enemiesManager.BeginChase();
-            teamManager.TeamCreation();
-            teamManager.BeginProtection();
+            if (gameManager.gameMode == GameMode.TEAM)
+            {
+                teamManager.TeamCreation();
+                teamManager.BeginProtection();
+            }
         }
     }
     /// <summary>

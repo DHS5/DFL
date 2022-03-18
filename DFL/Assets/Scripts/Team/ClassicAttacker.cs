@@ -16,7 +16,7 @@ public class ClassicAttacker : Attackers
         Vector3 targetPos = target.transform.position;
         float dist = Vector3.Distance(playerPos, targetPos);
         Vector3 dir = targetPos - playerPos;
-        navMeshAgent.SetDestination(playerPos + dir.normalized * (dist/2));
+        navMeshAgent.SetDestination(playerPos + dir.normalized * (3*dist/4));
     }
 
     private void LateUpdate()
@@ -40,7 +40,7 @@ public class ClassicAttacker : Attackers
         {
             BlockEnemy();
 
-            if (Vector3.Distance(transform.position, playerPos) > 12 || target.transform.position.z - playerPos.z < -5)
+            if (Vector3.Distance(transform.position, playerPos) > 15 || target.transform.position.z - playerPos.z < -6)
             {
                 UnTarget();
             }
