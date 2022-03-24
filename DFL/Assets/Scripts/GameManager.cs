@@ -6,7 +6,12 @@ using UnityEngine;
 /// <summary>
 /// GameMode
 /// </summary>
-[System.Serializable] public enum GameMode { NONE, ZOMBIE, DEFENDERS, TEAM }
+[System.Serializable] public enum GameMode { NONE = 0, ZOMBIE = 2, DEFENDERS = 1, TEAM = 3, OBJECTIF = 4 }
+
+/// <summary>
+/// Game difficulty
+/// </summary>
+[System.Serializable] public enum GameDifficulty { EASY = 0 , NORMAL = 2 , HARD = 4 }
 
 
 /// <summary>
@@ -22,10 +27,12 @@ public class GameManager : MonoBehaviour
     [Header("Game parameters")]
     [Tooltip("Current game mode")]
     public GameMode gameMode;
-    [Tooltip("")]
-    public int difficulty;
-    
-    
+    [Tooltip("Current game difficulty")]
+    public GameDifficulty difficulty;
+    [Tooltip("Range of different enemies that can spawn in one wave")]
+    [Range(0, 5)] public int enemiesRange;
+
+
     [Tooltip("Whether the game is running")]
     [HideInInspector] public bool gameOn = false;
     private bool gameOnLate = false;

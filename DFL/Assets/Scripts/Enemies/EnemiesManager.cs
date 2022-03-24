@@ -14,7 +14,6 @@ public class EnemiesManager : MonoBehaviour
     [Tooltip("Script of the field")]
     [HideInInspector] public Field fieldScript;
 
-
     [Header("Defenders")]
 
     [Header("Enemy's prefab lists")]
@@ -26,9 +25,12 @@ public class EnemiesManager : MonoBehaviour
     [Header("Zombies")]
     [Tooltip("List of the classic zombie's prefabs")]
     [SerializeField] private GameObject[] classicZPrefabs;
+    [Tooltip("List of the sleeping zombie's prefabs")]
+    [SerializeField] private GameObject[] sleepingZPrefabs;
 
     [Tooltip("Wave number (--> difficulty)")]
     private int waveNumber = 0;
+
 
     // Zones of the field
     private GameObject fieldZone;
@@ -124,12 +126,13 @@ public class EnemiesManager : MonoBehaviour
         // Game Object of the enemy
         GameObject enemy;
 
-        // Clamps the difficulty so it doesn't get out of the enemyPrefabs length
-        int difficulty = Mathf.Clamp(waveNumber, 0, enemyPrefabs.Length);
+        // Clamps the level so it doesn't get out of the enemyPrefabs length
+        int maxLevel = Mathf.Clamp(waveNumber + (int)gameManager.difficulty, (int)gameManager.difficulty, enemyPrefabs.Length);
+        int minLevel = Mathf.Clamp(waveNumber + (int)gameManager.difficulty - gameManager.enemiesRange, (int)gameManager.difficulty, enemyPrefabs.Length);
 
         // Gets a random position and instantiate the new enemy
         Vector3 randomPosition = new Vector3(Random.Range(-xScale, xScale), 0, Random.Range(-zScale, zScale));
-        enemy = Instantiate(enemyPrefabs[Random.Range(0, difficulty)], pos + randomPosition, Quaternion.identity);
+        enemy = Instantiate(enemyPrefabs[Random.Range(minLevel, maxLevel)], pos + randomPosition, Quaternion.identity);
         //enemy = Instantiate(enemyPrefabs[enemyPrefabs.Length-1], pos + randomPosition, Quaternion.identity);
 
         // Gives the enemy his body and a semi-random size
@@ -187,10 +190,13 @@ public class EnemiesManager : MonoBehaviour
         Vector3 field = fieldZone.transform.position;
         float xScale = fieldZone.transform.localScale.x / 2;
         float zScale = fieldZone.transform.localScale.z / 2;
+        int r;
         // Spawn on the whole field
         for (int i = 0; i < 50 + 5 * waveNumber; i++)
         {
-            CreateEnemy(classicZPrefabs, field, xScale, zScale, 0.1f);
+            r = Random.Range(1, 3);
+            if (r == 1) CreateEnemy(classicZPrefabs, field, xScale, zScale, 0.1f);
+            else if (r == 2) CreateEnemy(sleepingZPrefabs, field, xScale, zScale, 0.1f);
         }
     }
 

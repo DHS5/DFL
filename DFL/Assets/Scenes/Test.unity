@@ -859,8 +859,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f57bfd2202e8254aa4b5f3738344fed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameMode: 3
-  difficulty: 1
+  gameMode: 1
+  difficulty: 0
+  enemiesRange: 5
   gameOn: 0
   gameOver: 0
   fieldManager: {fileID: 1426004912}
@@ -3164,18 +3165,44 @@ MonoBehaviour:
   - {fileID: 6644603938449114179, guid: af4df860230ae8d46a18a253b764ce21, type: 3}
   - {fileID: 6644603938449114179, guid: e5d5120bf5bd32446ab98884a0b2952d, type: 3}
   - {fileID: 6644603938449114179, guid: 1fb772fb0c121724a9e9cfa1b782791f, type: 3}
+  - {fileID: 6644603938449114179, guid: af4df860230ae8d46a18a253b764ce21, type: 3}
   - {fileID: 6644603938449114179, guid: aed01e52685a594449e491aa290bf30b, type: 3}
+  - {fileID: 6644603938449114179, guid: e5d5120bf5bd32446ab98884a0b2952d, type: 3}
+  - {fileID: 6644603938449114179, guid: 1fb772fb0c121724a9e9cfa1b782791f, type: 3}
+  - {fileID: 6644603938449114179, guid: aed01e52685a594449e491aa290bf30b, type: 3}
+  - {fileID: 6644603938449114179, guid: 1fb772fb0c121724a9e9cfa1b782791f, type: 3}
   linemenPrefabs:
   - {fileID: 6644603938449114179, guid: 66b39b71ca12e7648ac2a76e1ee06816, type: 3}
   - {fileID: 6644603938449114179, guid: 727ffecac68aaf6439fad688d8df4c68, type: 3}
   - {fileID: 6644603938449114179, guid: 93cd3eed7d7e3b945a72f8b1a2d53af8, type: 3}
   - {fileID: 6644603938449114179, guid: 15835617e0780fc41a0c8e017f977af3, type: 3}
   - {fileID: 6644603938449114179, guid: 2296bef5cba7a5d43b0eed737d466def, type: 3}
+  - {fileID: 6644603938449114179, guid: 93cd3eed7d7e3b945a72f8b1a2d53af8, type: 3}
+  - {fileID: 6644603938449114179, guid: 2296bef5cba7a5d43b0eed737d466def, type: 3}
+  - {fileID: 6644603938449114179, guid: 15835617e0780fc41a0c8e017f977af3, type: 3}
+  - {fileID: 6644603938449114179, guid: 93cd3eed7d7e3b945a72f8b1a2d53af8, type: 3}
+  - {fileID: 6644603938449114179, guid: 2296bef5cba7a5d43b0eed737d466def, type: 3}
+  - {fileID: 6644603938449114179, guid: 15835617e0780fc41a0c8e017f977af3, type: 3}
   classicZPrefabs:
   - {fileID: 7438494788967298231, guid: 9655d712c3c8a6e4da1258dc9898f930, type: 3}
   - {fileID: 7438494788967298231, guid: 588f875297d05cb4d943f46092aca01b, type: 3}
   - {fileID: 7438494788967298231, guid: 4d837c5f97066a148b057ff29527c769, type: 3}
+  - {fileID: 7438494788967298231, guid: 9655d712c3c8a6e4da1258dc9898f930, type: 3}
   - {fileID: 7438494788967298231, guid: 46fc6d7d9956d6e40be96cf9256ff79a, type: 3}
+  - {fileID: 7438494788967298231, guid: 4d837c5f97066a148b057ff29527c769, type: 3}
+  - {fileID: 7438494788967298231, guid: 588f875297d05cb4d943f46092aca01b, type: 3}
+  - {fileID: 7438494788967298231, guid: 46fc6d7d9956d6e40be96cf9256ff79a, type: 3}
+  - {fileID: 7438494788967298231, guid: 4d837c5f97066a148b057ff29527c769, type: 3}
+  - {fileID: 7438494788967298231, guid: 9655d712c3c8a6e4da1258dc9898f930, type: 3}
+  - {fileID: 7438494788967298231, guid: 46fc6d7d9956d6e40be96cf9256ff79a, type: 3}
+  - {fileID: 7438494788967298231, guid: 46fc6d7d9956d6e40be96cf9256ff79a, type: 3}
+  sleepingZPrefabs:
+  - {fileID: 7438494788967298231, guid: db551dcebd65f564ebbf2a4e59770b88, type: 3}
+  - {fileID: 7438494788967298231, guid: db551dcebd65f564ebbf2a4e59770b88, type: 3}
+  - {fileID: 7438494788967298231, guid: db551dcebd65f564ebbf2a4e59770b88, type: 3}
+  - {fileID: 7438494788967298231, guid: db551dcebd65f564ebbf2a4e59770b88, type: 3}
+  - {fileID: 7438494788967298231, guid: db551dcebd65f564ebbf2a4e59770b88, type: 3}
+  - {fileID: 7438494788967298231, guid: db551dcebd65f564ebbf2a4e59770b88, type: 3}
 --- !u!4 &1988230387
 Transform:
   m_ObjectHideFlags: 0

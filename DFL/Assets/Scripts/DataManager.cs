@@ -16,40 +16,23 @@ public class DataManager : MonoBehaviour
 
 
     [Tooltip("Game Mode to pass to the GameManager")]
-    [HideInInspector] public GameMode gameMode = global::GameMode.DEFENDERS;
+    [HideInInspector] public GameMode gameMode;
     /// <summary>
     /// Game Mode property
     /// </summary>
-    public int GameMode
+    public int Mode
     {
-        set 
-        { 
-            switch (value)
-            {
-                case 1:
-                    gameMode = global::GameMode.DEFENDERS;
-                    break;
-                case 2:
-                    gameMode = global::GameMode.ZOMBIE;
-                    break;
-                case 3:
-                    gameMode = global::GameMode.TEAM;
-                    break;
-                default:
-                    gameMode = global::GameMode.NONE;
-                    break;
-            }
-        }
+        set { gameMode = (GameMode) value; }
     }
 
     [Tooltip("Difficulty to pass to the GameManager")]
-    [HideInInspector] public int difficulty = 1;
+    [HideInInspector] public GameDifficulty difficulty;
     /// <summary>
     /// Difficulty property
     /// </summary>
     public int Difficulty
     {
-        set { if (value > 0) difficulty = value; }
+        set { difficulty = (GameDifficulty) value; }
     }
 
 
