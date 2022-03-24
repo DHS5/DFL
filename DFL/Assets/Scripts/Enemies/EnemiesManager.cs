@@ -10,6 +10,8 @@ public class EnemiesManager : MonoBehaviour
 {
     [Tooltip("Singleton Instance of the GameManager")]
     [SerializeField] private GameManager gameManager;
+    [Tooltip("UI Manager of the game")]
+    private GameUIManager gameUIManager;
 
     [Tooltip("Script of the field")]
     [HideInInspector] public Field fieldScript;
@@ -39,6 +41,10 @@ public class EnemiesManager : MonoBehaviour
     private GameObject rightZone;
 
 
+    private void Awake()
+    {
+        gameUIManager = gameManager.gameUIManager;
+    }
 
 
     /// <summary>
@@ -81,6 +87,7 @@ public class EnemiesManager : MonoBehaviour
     {
         // Increment the wave number
         waveNumber++;
+        gameUIManager.ActuWaveNumber(waveNumber);
         // Gets the spawning zones
         GetZones();
         
@@ -192,7 +199,7 @@ public class EnemiesManager : MonoBehaviour
         float zScale = fieldZone.transform.localScale.z / 2;
         int r;
         // Spawn on the whole field
-        for (int i = 0; i < 50 + 5 * waveNumber; i++)
+        for (int i = 0; i < 50 + 5 * (waveNumber + (int) gameManager.difficulty) ; i++)
         {
             r = Random.Range(1, 3);
             if (r == 1) CreateEnemy(classicZPrefabs, field, xScale, zScale, 0.1f);

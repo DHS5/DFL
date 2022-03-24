@@ -46,6 +46,8 @@ public class GameManager : MonoBehaviour
     public EnemiesManager enemiesManager;
     [Tooltip("Team Manager of the game")]
     public TeamManager teamManager;
+    [Tooltip("UI Manager of the game")]
+    public GameUIManager gameUIManager;
     [Tooltip("Data Manager of the game")]
     [HideInInspector] public DataManager dataManager;
 
@@ -108,12 +110,22 @@ public class GameManager : MonoBehaviour
         {
             player.GetComponent<PlayerController>().freeze = true;
             enemiesManager.StopEnemies();
+            // If game mode = TEAM
+            if (gameMode == GameMode.TEAM)
+            {
+                teamManager.StopAttackers();
+            }
             gameOnLate = false;
         }
         else if (gameOn && !gameOnLate)
         {
             player.GetComponent<PlayerController>().freeze = false;
             enemiesManager.ResumeEnemies();
+            // If game mode = TEAM
+            if (gameMode == GameMode.TEAM)
+            {
+                teamManager.ResumeAttackers();
+            }
             gameOnLate = true;
         }
 
@@ -122,6 +134,11 @@ public class GameManager : MonoBehaviour
         {
             player.GetComponent<PlayerController>().freeze = true;
             enemiesManager.StopEnemies();
+            // If game mode = TEAM
+            if (gameMode == GameMode.TEAM)
+            {
+                teamManager.StopAttackers();
+            }
         }
     }
 

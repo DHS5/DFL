@@ -20,9 +20,24 @@ public class Attackers : MonoBehaviour
     [HideInInspector] public GameObject target;
 
 
-    private void Start()
+    private void Awake()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
+    }
+
+    /// <summary>
+    /// Stops the attacker
+    /// </summary>
+    public void Stop()
+    {
+        navMeshAgent.isStopped = true;
+    }
+    /// <summary>
+    /// Resumes the attacker
+    /// </summary>
+    public void Resume()
+    {
+        navMeshAgent.isStopped = false;
     }
 
 

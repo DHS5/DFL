@@ -37,6 +37,40 @@ public class TeamManager : MonoBehaviour
     [SerializeField] private float teamReactivity;
 
 
+    /// <summary>
+    /// Gets the Game Managers
+    /// </summary>
+    private void Awake()
+    {
+        enemiesManager = gameManager.enemiesManager;
+        fieldManager = gameManager.fieldManager;
+    }
+
+
+    /// <summary>
+    /// Stops all the attackers
+    /// </summary>
+    public void StopAttackers()
+    {
+        foreach (GameObject a in freeAttackers)
+            a.GetComponent<Attackers>().Stop();
+
+        foreach (GameObject a in busyAttackers)
+            a.GetComponent<Attackers>().Stop();
+    }
+
+    /// <summary>
+    /// Resume all the attackers
+    /// </summary>
+    public void ResumeAttackers()
+    {
+        foreach (GameObject a in freeAttackers)
+            a.GetComponent<Attackers>().Resume();
+
+        foreach (GameObject a in busyAttackers)
+            a.GetComponent<Attackers>().Resume();
+    }
+
 
     /// <summary>
     /// Add an enemy to the enemies list
@@ -164,13 +198,4 @@ public class TeamManager : MonoBehaviour
             Invoke(nameof(ProtectPlayer), teamReactivity);
     }
 
-
-    /// <summary>
-    /// Gets the GameManager Singleton
-    /// </summary>
-    private void Awake()
-    {
-        enemiesManager = gameManager.enemiesManager;
-        fieldManager = gameManager.fieldManager;
-    }
 }

@@ -1,18 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class GameUIManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [Tooltip("Singleton Instance of the GameManager")]
+    [SerializeField] private GameManager gameManager;
+
+    [Tooltip("Wave number UI text")]
+    [SerializeField] private TextMeshProUGUI waveNumberText;
+
+    /// <summary>
+    /// Gets the Game Managers
+    /// </summary>
+    private void Awake()
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
+
+    public void ActuWaveNumber(int wave)
     {
-        
+        waveNumberText.text = wave.ToString();
     }
 }
