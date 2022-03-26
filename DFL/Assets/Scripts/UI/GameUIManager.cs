@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameUIManager : MonoBehaviour
 {
@@ -18,6 +19,12 @@ public class GameUIManager : MonoBehaviour
     private void Awake()
     {
         
+    }
+
+
+    public void BackToMenu()
+    {
+        SceneManager.LoadScene(0);
     }
 
 

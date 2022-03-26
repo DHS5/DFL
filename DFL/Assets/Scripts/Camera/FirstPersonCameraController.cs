@@ -30,6 +30,12 @@ public class FirstPersonCameraController : MonoBehaviour
         Cursor.visible = false;
     }
 
+    private void UnlockCursor()
+    {
+        // Unlock the cursor in the middle of the screen
+        Cursor.lockState = CursorLockMode.None;
+    }
+
     /// <summary>
     /// Clamps the rotation around the Y axis between -50° and 50°
     /// Also keeps the rotation stable during the run
@@ -95,6 +101,17 @@ public class FirstPersonCameraController : MonoBehaviour
     {
         // Gets the look rotation of the camera
         LookRotation();
+
+
+        if (Input.GetMouseButtonDown(1))
+        {
+            LockCursor();
+        }
+
+        else if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            UnlockCursor();
+        }
     }    
 
 }

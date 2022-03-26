@@ -61,9 +61,9 @@ public class ObjectifManager : MonoBehaviour
 
     private void Update()
     {
-        if (player.transform.position.z > currentObjectif.gameObject.transform.position.z + 5)
-        {
-            Debug.Log("Missed an objectif");
-        }
+       //if (player.transform.position.z > currentObjectif.gameObject.transform.position.z + 5)
+       //{
+       //    Debug.Log("Missed an objectif");
+       //}
     }
 }
