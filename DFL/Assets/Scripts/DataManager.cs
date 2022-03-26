@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+
 
 
 /// <summary>
@@ -17,23 +17,10 @@ public class DataManager : MonoBehaviour
 
     [Tooltip("Game Mode to pass to the GameManager")]
     [HideInInspector] public GameMode gameMode;
-    /// <summary>
-    /// Game Mode property
-    /// </summary>
-    public int Mode
-    {
-        set { gameMode = (GameMode) value; }
-    }
-
+    
     [Tooltip("Difficulty to pass to the GameManager")]
     [HideInInspector] public GameDifficulty difficulty;
-    /// <summary>
-    /// Difficulty property
-    /// </summary>
-    public int Difficulty
-    {
-        set { difficulty = (GameDifficulty) value; }
-    }
+    
 
 
     /// <summary>
@@ -48,14 +35,6 @@ public class DataManager : MonoBehaviour
         }
         InstanceDataManager = this;
         DontDestroyOnLoad(gameObject);
-
-        gameMode = global::GameMode.DEFENDERS;
-    }
-
-
-    public void LaunchGame()
-    {
-        SceneManager.LoadScene(1);
     }
 
 

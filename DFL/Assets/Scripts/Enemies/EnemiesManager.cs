@@ -103,6 +103,9 @@ public class EnemiesManager : MonoBehaviour
             case GameMode.ZOMBIE:
                 ZombiesWave();
                 break;
+            case GameMode.OBJECTIF:
+                DefendersWave();
+                break;
             default:
                 Debug.Log("No mode");
                 break;

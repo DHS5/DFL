@@ -189,5 +189,12 @@ public class GameManager : MonoBehaviour
             teamManager.TeamCreation();
             teamManager.BeginProtection();
         }
+
+        // If game mode = OBJECTIF
+        if (gameMode == GameMode.OBJECTIF)
+        {
+            // Generates the objectives
+            objectifManager.GenerateObj();
+        }
     }
 }

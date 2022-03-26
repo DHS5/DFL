@@ -8,9 +8,10 @@ public class Objectif : MonoBehaviour
     [HideInInspector] public ObjectifManager objectifManager;
 
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        Debug.Log(other);
+        if (other.gameObject.CompareTag("Player"))
         {
             objectifManager.NextObj();
         }
