@@ -868,7 +868,9 @@ MonoBehaviour:
   enemiesManager: {fileID: 1988230386}
   teamManager: {fileID: 310631923}
   gameUIManager: {fileID: 968982203}
+  objectifManager: {fileID: 0}
   dataManager: {fileID: 0}
+  currentField: {fileID: 0}
   player: {fileID: 1664567380}
 --- !u!4 &392287959
 Transform:
@@ -890,7 +892,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-47728
+  m_Name: pb_Mesh-1480
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2152,7 +2154,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-47716
+  m_Name: pb_Mesh-1468
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3539,7 +3541,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 392287958}
-  fieldScript: {fileID: 0}
+  field: {fileID: 0}
   wingmenPrefabs:
   - {fileID: 6644603938449114179, guid: 35d11d1e1dd397942b5024ee78060e27, type: 3}
   - {fileID: 6644603938449114179, guid: f9b08a7f016b6774389d0fc7b1a97fe7, type: 3}

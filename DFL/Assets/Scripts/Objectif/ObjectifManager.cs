@@ -25,9 +25,9 @@ public class ObjectifManager : MonoBehaviour
 
     private void GetZones()
     {
-       //zones[0] = ;
-       //zones[1] = ;
-       //zones[2] = ;
+        zones[0] = gameManager.currentField.frontZone;
+        zones[1] = gameManager.currentField.middleZone;
+        zones[2] = gameManager.currentField.endZone;
     }
 
 
@@ -52,7 +52,7 @@ public class ObjectifManager : MonoBehaviour
             // Gets a random position in the current zone
             Vector3 randomPos = new Vector3(Random.Range(-xScale, xScale), 0, Random.Range(-zScale, zScale)) + zonePos;
 
-
+            // Instantiate the objectif
             Objectif obj = Instantiate(objectifPrefab, randomPos, Quaternion.identity).GetComponent<Objectif>();
             obj.objectifManager = this;
         }

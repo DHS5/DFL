@@ -14,7 +14,7 @@ public class EnemiesManager : MonoBehaviour
     private GameUIManager gameUIManager;
 
     [Tooltip("Script of the field")]
-    [HideInInspector] public Field fieldScript;
+    [HideInInspector] public Field field;
 
     [Header("Defenders")]
 
@@ -52,9 +52,9 @@ public class EnemiesManager : MonoBehaviour
     /// </summary>
     public void StopEnemies()
     {
-        for (int i = 0; i < fieldScript.enemies.Count; i++)
+        for (int i = 0; i < field.enemies.Count; i++)
         {
-            fieldScript.enemies[i].GetComponent<Enemy>().Stop();
+            field.enemies[i].GetComponent<Enemy>().Stop();
         }
     }
     /// <summary>
@@ -62,9 +62,9 @@ public class EnemiesManager : MonoBehaviour
     /// </summary>
     public void ResumeEnemies()
     {
-        for (int i = 0; i < fieldScript.enemies.Count; i++)
+        for (int i = 0; i < field.enemies.Count; i++)
         {
-            fieldScript.enemies[i].GetComponent<Enemy>().Resume();
+            field.enemies[i].GetComponent<Enemy>().Resume();
         }
     }
 
@@ -73,9 +73,9 @@ public class EnemiesManager : MonoBehaviour
     /// </summary>
     public void BeginChase()
     {
-        for (int i = 0; i < fieldScript.enemies.Count; i++)
+        for (int i = 0; i < field.enemies.Count; i++)
         {
-            fieldScript.enemies[i].GetComponent<Enemy>().ChasePlayer();
+            field.enemies[i].GetComponent<Enemy>().ChasePlayer();
         }
     }
 
@@ -114,10 +114,10 @@ public class EnemiesManager : MonoBehaviour
     /// </summary>
     private void GetZones()
     {
-        fieldZone = fieldScript.fieldZone;
-        centerZone = fieldScript.centerZone;
-        leftZone = fieldScript.leftZone;
-        rightZone = fieldScript.rightZone;
+        fieldZone = field.fieldZone;
+        centerZone = field.centerZone;
+        leftZone = field.leftZone;
+        rightZone = field.rightZone;
     }
 
     /// <summary>
@@ -147,7 +147,7 @@ public class EnemiesManager : MonoBehaviour
         enemy.GetComponent<Enemy>().Size *= Random.Range(1 - sizeMultiplier, 1 + sizeMultiplier);
 
         // Fill the enemies list of the field
-        fieldScript.enemies.Add(enemy);
+        field.enemies.Add(enemy);
     }
 
 
@@ -207,7 +207,4 @@ public class EnemiesManager : MonoBehaviour
         }
     }
 
-
-
-    
 }

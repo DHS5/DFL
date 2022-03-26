@@ -28,6 +28,9 @@ public class Field : MonoBehaviour
     public GameObject centerZone;
     public GameObject leftZone;
     public GameObject rightZone;
+    public GameObject frontZone;
+    public GameObject middleZone;
+    public GameObject endZone;
 
     [Tooltip("List of the enemies on the field")]
     [HideInInspector] public List<GameObject> enemies;

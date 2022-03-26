@@ -48,8 +48,12 @@ public class GameManager : MonoBehaviour
     public TeamManager teamManager;
     [Tooltip("UI Manager of the game")]
     public GameUIManager gameUIManager;
+    [Tooltip("Objectif Manager of the game")]
+    public ObjectifManager objectifManager;
     [Tooltip("Data Manager of the game")]
     [HideInInspector] public DataManager dataManager;
+    [Tooltip("Current field of the game")]
+    [HideInInspector] public Field currentField;
 
     [Header("Player")]
     [Tooltip("Player Game Object")]
@@ -77,26 +81,21 @@ public class GameManager : MonoBehaviour
         // Gets the Game parameters from DataManager
         if (dataManager != null)
         {
+            // Gets the DataManager's infos
             gameMode = dataManager.gameMode;
             difficulty = dataManager.difficulty;
         }
 
-        // Generates the field
-        fieldManager.GenerateField();
+        // Generates the game
+        TunnelEnter();
+
         // Unfreezes the player
         player.GetComponent<PlayerController>().freeze = false;
         // Makes the player chasable
         player.GetComponent<PlayerGameplay>().isChasable = true;
 
-        // If game mode = TEAM
-        if (gameMode == GameMode.TEAM)
-        {
-            teamManager.TeamCreation();
-            teamManager.BeginProtection();
-        }
-
-        // Activates the enemies
-        enemiesManager.BeginChase();
+        // 
+        TunnelExit();
     }
 
 
@@ -108,24 +107,34 @@ public class GameManager : MonoBehaviour
         // Checks if the game is on
         if (!gameOn && gameOnLate)
         {
+            // Freezes the player
             player.GetComponent<PlayerController>().freeze = true;
+            // Stops the enemies
             enemiesManager.StopEnemies();
+
             // If game mode = TEAM
             if (gameMode == GameMode.TEAM)
             {
+                // Stops the attackers
                 teamManager.StopAttackers();
             }
+
             gameOnLate = false;
         }
         else if (gameOn && !gameOnLate)
         {
+            // Unfreezes the player
             player.GetComponent<PlayerController>().freeze = false;
+            // Resumes the enemies
             enemiesManager.ResumeEnemies();
+
             // If game mode = TEAM
             if (gameMode == GameMode.TEAM)
             {
+                // Resumes the attackers
                 teamManager.ResumeAttackers();
             }
+
             gameOnLate = true;
         }
 
@@ -142,6 +151,43 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Called when the player enters the tunnel
+    /// </summary>
+    public void TunnelEnter()
+    {
+        // Generates a new field
+        fieldManager.GenerateField();
+        // Gives the EnemiesManager the field script and calls an enemy wave
+        enemiesManager.field = currentField;
+        enemiesManager.EnemyWave();
 
+        // If game mode = TEAM
+        if (gameMode == GameMode.TEAM)
+        {
+            // Clear the attackers
+            teamManager.ClearAttackers();
+            // Gives the teamManager an enemies's clone
+            teamManager.enemies = new List<GameObject>(currentField.enemies);
+        }
+    }
 
+    /// <summary>
+    /// Called when the player exits the tunnel
+    /// </summary>
+    public void TunnelExit()
+    {
+        // Destroys the former field
+        fieldManager.SuppField();
+        // Starts the enemies's chase
+        enemiesManager.BeginChase();
+
+        // If game mode = TEAM
+        if (gameMode == GameMode.TEAM)
+        {
+            // Creates a team and starts the player's protection
+            teamManager.TeamCreation();
+            teamManager.BeginProtection();
+        }
+    }
 }

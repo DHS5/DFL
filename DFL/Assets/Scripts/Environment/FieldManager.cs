@@ -21,10 +21,6 @@ public class FieldManager : MonoBehaviour
 {
     [Tooltip("Singleton Instance of the GameManager")]
     [SerializeField] private GameManager gameManager;
-    [Tooltip("Script of the EnemiesManager")]
-    private EnemiesManager enemiesManager;
-    [Tooltip("Script of the TeamManager")]
-    private TeamManager teamManager;
 
 
     [Header("Nav Mesh Surface")]
@@ -95,13 +91,8 @@ public class FieldManager : MonoBehaviour
         // ## Actualization of the Nav Mesh
         surface.BuildNavMesh();
 
-        // ### Management of the enemies
-        // ## Gives the enemiesManager the fieldScript
-        enemiesManager.fieldScript = fieldScript;
-        // ## Creates the enemy wave
-        enemiesManager.EnemyWave();
-        // ## Gives the teamManager a enemies's clone
-        teamManager.enemies = new List<GameObject>(fieldScript.enemies);
+        // ### Gives the GameManager the fieldScript
+        gameManager.currentField = fieldScript;
     }
 
     /// <summary>
@@ -116,11 +107,10 @@ public class FieldManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Generate a first field
+    /// 
     /// </summary>
     private void Awake()
     {
-        enemiesManager = gameManager.enemiesManager;
-        teamManager = gameManager.teamManager;
+        
     }
 }

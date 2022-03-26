@@ -9,12 +9,6 @@ public class PlayerGameplay : MonoBehaviour
 {
     [Tooltip("Singleton Instance of the GameManager")]
     [SerializeField] private GameManager gameManager;
-    [Tooltip("Field Manager of the game")]
-    private FieldManager fieldManager;
-    [Tooltip("Enemy Manager of the game")]
-    private EnemiesManager enemiesManager;
-    [Tooltip("Team Manager of the game")]
-    private TeamManager teamManager;
 
 
     [Tooltip("Whether the player is in a zone where he's chasable")]
@@ -31,25 +25,21 @@ public class PlayerGameplay : MonoBehaviour
         {
             // Deactivates the trigger (prevent from triggering several times)
             other.gameObject.SetActive(false);
-
-            teamManager.ClearAttackers();
-            fieldManager.GenerateField();
+            // Makes the player unchasable
             isChasable = false;
+
+            gameManager.TunnelEnter();
         }
+
         // When the player quits the tunnel --> Destroys the former field
         if (other.gameObject.CompareTag("TunnelExit"))
         {
             // Deactivates the trigger (prevent from triggering several times)
             other.gameObject.SetActive(false);
-
-            fieldManager.SuppField();
+            // Makes the player chasable
             isChasable = true;
-            enemiesManager.BeginChase();
-            if (gameManager.gameMode == GameMode.TEAM)
-            {
-                teamManager.TeamCreation();
-                teamManager.BeginProtection();
-            }
+
+            gameManager.TunnelExit();
         }
     }
     /// <summary>
@@ -74,12 +64,10 @@ public class PlayerGameplay : MonoBehaviour
     }
 
     /// <summary>
-    /// Gets the GameManager Singleton
+    /// 
     /// </summary>
     private void Awake()
     {
-        enemiesManager = gameManager.enemiesManager;
-        fieldManager = gameManager.fieldManager;
-        teamManager = gameManager.teamManager;
+        
     }
 }
