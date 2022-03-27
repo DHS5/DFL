@@ -34,6 +34,9 @@ public class FirstPersonCameraController : MonoBehaviour
     {
         // Unlock the cursor in the middle of the screen
         Cursor.lockState = CursorLockMode.None;
+
+        // Makes the cursor visible
+        Cursor.visible = true;
     }
 
     /// <summary>

@@ -13,6 +13,7 @@ ScriptsOnlyBuild:
     - GameUIManager
     - LineMan
     - MainMenuUIManager
+    - Objectif
     - ObjectifManager
     - PlayerController
     - PlayerGameplay
@@ -21,8 +22,6 @@ ScriptsOnlyBuild:
     - WingMan
     NavMeshComponents.dll:
     - UnityEngine.AI.NavMeshSurface
-    NavMeshComponentsEditor.dll:
-    - UnityEditor.AI.NavMeshAssetManager
     Unity.Play.Publisher.Editor.dll:
     - Unity.Play.Publisher.Editor.AnalyticsHelper
     - Unity.Play.Publisher.Editor.PublisherWindow
@@ -335,6 +334,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 6088}
     - Class: 114
       Script: {instanceID: 6246}
+    - Class: 114
+      Script: {instanceID: 6260}
     - Class: 114
       Script: {instanceID: 6386}
     - Class: 114
@@ -1398,4 +1399,4 @@ ScriptsOnlyBuild:
   scenePathNames:
   - Assets/Scenes/Menu.unity
   - Assets/Scenes/Test.unity
-  playerPath: C:/Infomatique/Unity/Projects/Personal Projects/DFL/DFL/WebGL Builds
+  playerPath: C:/Infomatique/Unity/Projects/Personal Projects/Builds

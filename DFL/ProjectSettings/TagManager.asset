@@ -10,6 +10,7 @@ TagManager:
   - BlackWall
   - Enemy
   - Ground
+  - ZombieVolume
   layers:
   - Default
   - TransparentFX

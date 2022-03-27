@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 
 /// <summary>
@@ -94,8 +95,6 @@ public class GameManager : MonoBehaviour
         // Makes the player chasable
         player.GetComponent<PlayerGameplay>().isChasable = true;
 
-        // 
-        TunnelExit();
     }
 
 
@@ -161,6 +160,14 @@ public class GameManager : MonoBehaviour
         // Gives the EnemiesManager the field script and calls an enemy wave
         enemiesManager.field = currentField;
         enemiesManager.EnemyWave();
+
+        // If game mode = ZOMBIE
+        if (gameMode == GameMode.ZOMBIE)
+        {
+            // Activates the zombie post processing volume at the end of the tunnel
+            foreach (GameObject g in GameObject.FindGameObjectsWithTag("ZombieVolume"))
+                g.GetComponent<Volume>().weight = 1;
+        }
 
         // If game mode = TEAM
         if (gameMode == GameMode.TEAM)
