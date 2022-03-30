@@ -253,7 +253,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &310631921
 GameObject:
@@ -429,6 +429,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameMode: 2
   difficulty: 0
+  options: 
   enemiesRange: 5
   gameOn: 0
   gameOver: 0
@@ -437,6 +438,7 @@ MonoBehaviour:
   teamManager: {fileID: 310631923}
   gameUIManager: {fileID: 968982203}
   objectifManager: {fileID: 508634768}
+  obstacleManager: {fileID: 1741596852}
   dataManager: {fileID: 0}
   currentField: {fileID: 0}
   player: {fileID: 1664567380}
@@ -593,7 +595,7 @@ RectTransform:
   m_Children:
   - {fileID: 1097962227}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1018,7 +1020,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1097962226
 GameObject:
@@ -1436,6 +1438,54 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManager: {fileID: 392287958}
   isChasable: 1
+--- !u!1 &1741596850
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1741596851}
+  - component: {fileID: 1741596852}
+  m_Layer: 0
+  m_Name: ObstacleManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1741596851
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1741596850}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 61.38953, y: 30.668724, z: 46.120407}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1741596852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1741596850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea0cfc7340b31b74abc4eb19516594bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameManager: {fileID: 392287958}
+  obstaclePrefabs:
+  - {fileID: 4544493572597981696, guid: 6bee4f54e19732247b1db863f0805307, type: 3}
+  - {fileID: 5271083261749639531, guid: e0cb94c5e34c6b64f98e4bc1d7e3650b, type: 3}
+  obstaclesLimit: 50
 --- !u!1 &1784974718
 GameObject:
   m_ObjectHideFlags: 0
@@ -1562,7 +1612,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1879570253
 GameObject:
@@ -1679,7 +1729,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1949017573
 GameObject:

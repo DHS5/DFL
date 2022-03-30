@@ -20,7 +20,10 @@ public class DataManager : MonoBehaviour
     
     [Tooltip("Difficulty to pass to the GameManager")]
     [HideInInspector] public GameDifficulty difficulty;
-    
+
+    [Tooltip("Game options to pass to the GameManager")]
+    [HideInInspector] public List<GameOption> options = new List<GameOption>();
+
 
 
     /// <summary>
@@ -31,11 +34,14 @@ public class DataManager : MonoBehaviour
         if (InstanceDataManager != null)
         {
             Destroy(this);
+            // Clears the options when starting the menu
+            InstanceDataManager.options.Clear();
             return;
         }
         InstanceDataManager = this;
         DontDestroyOnLoad(gameObject);
     }
+
 
 
 

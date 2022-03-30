@@ -5,15 +5,19 @@ using UnityEngine.Rendering;
 
 
 /// <summary>
-/// GameMode
+/// Game Mode
 /// </summary>
 [System.Serializable] public enum GameMode { NONE = 0, ZOMBIE = 2, DEFENDERS = 1, TEAM = 3, OBJECTIF = 4 }
 
 /// <summary>
-/// Game difficulty
+/// Game Difficulty
 /// </summary>
 [System.Serializable] public enum GameDifficulty { EASY = 0 , NORMAL = 2 , HARD = 4 }
 
+/// <summary>
+/// Game Option
+/// </summary>
+[System.Serializable] public enum GameOption { BONUS = 0, OBSTACLE = 1, DARK = 2 }
 
 /// <summary>
 /// Manages the whole game
@@ -30,6 +34,8 @@ public class GameManager : MonoBehaviour
     public GameMode gameMode;
     [Tooltip("Current game difficulty")]
     public GameDifficulty difficulty;
+    [Tooltip("Current game options")]
+    public List<GameOption> options = new List<GameOption>();
     [Tooltip("Range of different enemies that can spawn in one wave")]
     [Range(0, 5)] public int enemiesRange;
 
@@ -51,6 +57,8 @@ public class GameManager : MonoBehaviour
     public GameUIManager gameUIManager;
     [Tooltip("Objectif Manager of the game")]
     public ObjectifManager objectifManager;
+    [Tooltip("Obstacle Manager of the game")]
+    public ObstacleManager obstacleManager;
     [Tooltip("Data Manager of the game")]
     [HideInInspector] public DataManager dataManager;
     [Tooltip("Current field of the game")]
@@ -85,6 +93,7 @@ public class GameManager : MonoBehaviour
             // Gets the DataManager's infos
             gameMode = dataManager.gameMode;
             difficulty = dataManager.difficulty;
+            options = dataManager.options;
         }
 
         // Generates the game
@@ -176,6 +185,13 @@ public class GameManager : MonoBehaviour
             teamManager.ClearAttackers();
             // Gives the teamManager an enemies's clone
             teamManager.enemies = new List<GameObject>(currentField.enemies);
+        }
+
+        // If the option OBSTACLE is chosen
+        if (options.Contains(GameOption.OBSTACLE))
+        {
+            // Generates the obstacles
+            obstacleManager.GenerateObstacles((enemiesManager.waveNumber + (int) difficulty) * 5);
         }
     }
 

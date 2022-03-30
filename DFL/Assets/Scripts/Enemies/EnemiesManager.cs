@@ -31,7 +31,7 @@ public class EnemiesManager : MonoBehaviour
     [SerializeField] private GameObject[] sleepingZPrefabs;
 
     [Tooltip("Wave number (--> difficulty)")]
-    private int waveNumber = 0;
+    [HideInInspector] public int waveNumber = 0;
 
 
     // Zones of the field
