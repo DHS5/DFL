@@ -156,6 +156,9 @@ public class GameManager : MonoBehaviour
             {
                 teamManager.StopAttackers();
             }
+
+            // Calls the restart UI screen
+            gameUIManager.GameOver();
         }
     }
 

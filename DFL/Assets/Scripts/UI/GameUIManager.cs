@@ -10,8 +10,12 @@ public class GameUIManager : MonoBehaviour
     [Tooltip("Singleton Instance of the GameManager")]
     [SerializeField] private GameManager gameManager;
 
+    [Tooltip("Game UI screens\n" +
+        "0 --> game screen\n" +
+        "1 --> restart screen")]
+    [SerializeField] private GameObject[] screens;
     [Tooltip("Wave number UI text")]
-    [SerializeField] private TextMeshProUGUI waveNumberText;
+    [SerializeField] private TextMeshProUGUI[] waveNumberTexts;
 
     /// <summary>
     /// Gets the Game Managers
@@ -21,15 +25,38 @@ public class GameUIManager : MonoBehaviour
         
     }
 
-
+    /// <summary>
+    /// Goes back to the menu
+    /// </summary>
     public void BackToMenu()
     {
         SceneManager.LoadScene(0);
     }
+    /// <summary>
+    /// Restarts the game
+    /// </summary>
+    public void Restart()
+    {
+        SceneManager.LoadScene(1);
+    }
 
 
+    /// <summary>
+    /// Actualize both wave texts
+    /// </summary>
+    /// <param name="wave"></param>
     public void ActuWaveNumber(int wave)
     {
-        waveNumberText.text = wave.ToString();
+        foreach (TextMeshProUGUI t in waveNumberTexts)
+            t.text = wave.ToString();
+    }
+
+    /// <summary>
+    /// Activates the restart screen and deactivates the game screen
+    /// </summary>
+    public void GameOver()
+    {
+        screens[0].SetActive(false);
+        screens[1].SetActive(true);
     }
 }
