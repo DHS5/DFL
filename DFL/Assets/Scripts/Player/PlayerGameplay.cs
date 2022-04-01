@@ -13,7 +13,10 @@ public class PlayerGameplay : MonoBehaviour
 
     [Tooltip("Whether the player is in a zone where he's chasable")]
     [HideInInspector] public bool isChasable = false;
-    
+
+    [Tooltip("Whether the player is invincible (bonus)")]
+    [HideInInspector] public bool isInvincible = false;
+
     /// <summary>
     /// Called when the player collide with a trigger
     /// </summary>

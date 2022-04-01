@@ -116,6 +116,12 @@ public class PlayerController : MonoBehaviour
     [Tooltip("Gravity multiplier")]
     private float gravityScale = 10f;
 
+
+    // Bonus attribute of the player (changed by the bonus)
+    [HideInInspector] public float bonusSpeed = 0f;
+
+    [HideInInspector] public Vector3 bonusJump = new Vector3(0,0,0);
+
     /// <summary>
     /// Disable the player's acceleration during waitToAccelerateTime seconds
     /// </summary>

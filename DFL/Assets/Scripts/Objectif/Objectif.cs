@@ -10,7 +10,6 @@ public class Objectif : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log(other);
         if (other.gameObject.CompareTag("Player"))
         {
             objectifManager.NextObj();
