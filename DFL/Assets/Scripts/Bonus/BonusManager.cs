@@ -38,10 +38,11 @@ public class BonusManager : MonoBehaviour
         float zScale = fieldZone.transform.localScale.z / 2;
 
         // Gets a random position in the first part of the field zone
-        Vector3 randomPos = new Vector3(Random.Range(-xScale, xScale), 0, Random.Range(-zScale, 0)) + zonePos;
+        Vector3 randomPos = new Vector3(Random.Range(-xScale, xScale), 1, Random.Range(-zScale, 0)) + zonePos;
 
         // Instantiate the bonus
         bonus = Instantiate(bonusPrefabs[Random.Range(0, bonusPrefabs.Length)], randomPos, Quaternion.identity).GetComponent<Bonus>();
         bonus.bonusManager = this;
+        bonus.player = gameManager.player;
     }
 }

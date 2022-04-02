@@ -117,9 +117,9 @@ public class PlayerController : MonoBehaviour
     private float gravityScale = 10f;
 
 
-    // Bonus attribute of the player (changed by the bonus)
+    [Tooltip("Bonus speed attribute of the player (changed by the bonus)")]
     [HideInInspector] public float bonusSpeed = 0f;
-
+    [Tooltip("Bonus jump attribute of the player (changed by the bonus)")]
     [HideInInspector] public Vector3 bonusJump = new Vector3(0,0,0);
 
     /// <summary>
@@ -151,7 +151,7 @@ public class PlayerController : MonoBehaviour
     private void Jump()
     {
         canJump = false;
-        playerRigidbody.AddForce(jumpPower, ForceMode.Impulse);
+        playerRigidbody.AddForce(jumpPower + bonusJump, ForceMode.Impulse);
     }
 
 
@@ -170,7 +170,7 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     private void Update()
     {
-        velocity = Vector3.forward * (speed + Acceleration) * Time.deltaTime + Vector3.right * SideSpeed * Time.deltaTime;
+        velocity = Vector3.forward * (speed + bonusSpeed + Acceleration) * Time.deltaTime + Vector3.right * SideSpeed * Time.deltaTime;
         if (!playerGameplay.isChasable) velocity *= 2;
     }
 

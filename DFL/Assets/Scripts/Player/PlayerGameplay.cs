@@ -11,11 +11,17 @@ public class PlayerGameplay : MonoBehaviour
     [SerializeField] private GameManager gameManager;
 
 
+    [Tooltip("Player's number of life")]
+    [HideInInspector] public int lifeNumber = 1;
+
     [Tooltip("Whether the player is in a zone where he's chasable")]
     [HideInInspector] public bool isChasable = false;
 
     [Tooltip("Whether the player is invincible (bonus)")]
     [HideInInspector] public bool isInvincible = false;
+
+    [Tooltip("Whether the player is visible")]
+    [HideInInspector] public bool isVisible = true;
 
     /// <summary>
     /// Called when the player collide with a trigger
@@ -52,16 +58,21 @@ public class PlayerGameplay : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         // When the player collides with an enemy --> game over
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (collision.gameObject.CompareTag("Enemy") && !isInvincible)
         {
+            lifeNumber--;
             Debug.Log("Dead by enemy");
-            gameManager.gameOver = true;
-
         }
         // When the player collides with an obstacle --> game over
-        if (collision.gameObject.CompareTag("Obstacle"))
+        if (collision.gameObject.CompareTag("Obstacle") && !isInvincible)
         {
+            lifeNumber--;
             Debug.Log("Dead by obstacle");
+        }
+
+        // If the player has no life left, GAME OVER
+        if (lifeNumber == 0)
+        {
             gameManager.gameOver = true;
         }
     }

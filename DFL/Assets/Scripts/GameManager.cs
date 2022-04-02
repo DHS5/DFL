@@ -59,6 +59,8 @@ public class GameManager : MonoBehaviour
     public ObjectifManager objectifManager;
     [Tooltip("Obstacle Manager of the game")]
     public ObstacleManager obstacleManager;
+    [Tooltip("Bonus Manager of the game")]
+    public BonusManager bonusManager;
     [Tooltip("Data Manager of the game")]
     [HideInInspector] public DataManager dataManager;
     [Tooltip("Current field of the game")]
@@ -66,7 +68,7 @@ public class GameManager : MonoBehaviour
 
     [Header("Player")]
     [Tooltip("Player Game Object")]
-    [SerializeField] private GameObject player;
+    public GameObject player;
 
 
 
@@ -195,6 +197,13 @@ public class GameManager : MonoBehaviour
         {
             // Generates the obstacles
             obstacleManager.GenerateObstacles((enemiesManager.waveNumber + (int) difficulty) * 5);
+        }
+
+        // If the option BONUS is chosen
+        if (options.Contains(GameOption.BONUS))
+        {
+            // Generates the bonus
+            bonusManager.GenerateBonus();
         }
     }
 

@@ -253,7 +253,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &310631921
 GameObject:
@@ -573,6 +573,7 @@ MonoBehaviour:
   gameUIManager: {fileID: 968982203}
   objectifManager: {fileID: 508634768}
   obstacleManager: {fileID: 1741596852}
+  bonusManager: {fileID: 677329121}
   dataManager: {fileID: 0}
   currentField: {fileID: 0}
   player: {fileID: 1664567380}
@@ -730,7 +731,7 @@ RectTransform:
   - {fileID: 1097962227}
   - {fileID: 679469700}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -870,6 +871,56 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 668465754}
   m_CullTransparentMesh: 1
+--- !u!1 &677329119
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 677329120}
+  - component: {fileID: 677329121}
+  m_Layer: 0
+  m_Name: BonusManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &677329120
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 677329119}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 32.746727, y: 254.9552, z: -365.01917}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &677329121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 677329119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9985156aa9395a42b6744bc13aefd39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameManager: {fileID: 392287958}
+  bonusPrefabs:
+  - {fileID: 4254428741046978167, guid: 0ca743fa2154c7b41a9152768d24d217, type: 3}
+  - {fileID: 4254428741046978167, guid: 065fcd1484e17a848af78c3ca81776d4, type: 3}
+  - {fileID: 4254428741046978167, guid: 4fe43ca840c4bc04dac983c8db7aa1a2, type: 3}
+  - {fileID: 4254428741046978167, guid: cabd54dcc9d42e646bf328b6e7214872, type: 3}
+  - {fileID: 4254428741046978167, guid: 06449d029b2d0c3458c93d6f97dd612d, type: 3}
 --- !u!1 &679469699
 GameObject:
   m_ObjectHideFlags: 0
@@ -1465,7 +1516,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1097962226
 GameObject:
@@ -2107,6 +2158,8 @@ MonoBehaviour:
   accelerationTime: 3
   waitToAccelerateTime: 8
   jumpHeight: 2.5
+  bonusSpeed: 0
+  bonusJump: {x: 0, y: 0, z: 0}
 --- !u!136 &1664567384
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2151,6 +2204,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManager: {fileID: 392287958}
   isChasable: 1
+  isInvincible: 0
 --- !u!1 &1741596850
 GameObject:
   m_ObjectHideFlags: 0
@@ -2459,7 +2513,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1879570253
 GameObject:
@@ -2576,7 +2630,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1949017573
 GameObject:
