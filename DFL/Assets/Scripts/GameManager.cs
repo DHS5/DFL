@@ -182,9 +182,8 @@ public class GameManager : MonoBehaviour
         // If game mode = ZOMBIE
         if (gameMode == GameMode.ZOMBIE)
         {
-            // Activates the zombie post processing volume at the end of the tunnel
-            foreach (GameObject g in GameObject.FindGameObjectsWithTag("ZombieVolume"))
-                g.GetComponent<Volume>().weight = 1;
+            // Puts the scene in a total dark
+            environmentManager.ZombieEnterTunnel();
         }
 
         // If game mode = TEAM
@@ -234,6 +233,13 @@ public class GameManager : MonoBehaviour
         {
             // Generates the objectives
             objectifManager.GenerateObj();
+        }
+
+        // If game mode = ZOMBIE
+        if (gameMode == GameMode.ZOMBIE)
+        {
+            // Activates the dark lightning
+            environmentManager.ZombieExitTunnel();
         }
     }
 }
