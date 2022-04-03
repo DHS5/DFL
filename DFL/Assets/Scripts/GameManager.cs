@@ -17,7 +17,7 @@ using UnityEngine.Rendering;
 /// <summary>
 /// Game Option
 /// </summary>
-[System.Serializable] public enum GameOption { BONUS = 0, OBSTACLE = 1, DARK = 2 }
+[System.Serializable] public enum GameOption { BONUS = 0, OBSTACLE = 1, FOG = 2 }
 
 /// <summary>
 /// Manages the whole game
@@ -49,6 +49,8 @@ public class GameManager : MonoBehaviour
     [Header("Game managers")]
     [Tooltip("Field Manager of the game")]
     public FieldManager fieldManager;
+    [Tooltip("Environment Manager of the game")]
+    public EnvironmentManager environmentManager;
     [Tooltip("Enemies Manager of the game")]
     public EnemiesManager enemiesManager;
     [Tooltip("Team Manager of the game")]
@@ -98,6 +100,8 @@ public class GameManager : MonoBehaviour
             options = dataManager.options;
         }
 
+        // Generates the environment
+        environmentManager.GenerateEnvironment();
         // Generates the game
         TunnelEnter();
 
