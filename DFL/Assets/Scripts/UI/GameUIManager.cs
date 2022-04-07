@@ -17,12 +17,19 @@ public class GameUIManager : MonoBehaviour
     [Tooltip("Wave number UI text")]
     [SerializeField] private TextMeshProUGUI[] waveNumberTexts;
 
+
+    [Tooltip("UI components of the acceleration bar")]
+    [SerializeField] private GameObject[] AccelerationBars;
+
+
+    [SerializeField] private Animation accBarAnim;
+
     /// <summary>
     /// Gets the Game Managers
     /// </summary>
     private void Awake()
     {
-        
+
     }
 
     /// <summary>
@@ -59,4 +66,27 @@ public class GameUIManager : MonoBehaviour
         screens[0].SetActive(false);
         screens[1].SetActive(true);
     }
+
+
+    public void AccBarAnim(float dechargeTime, float rechargeTime)
+    {
+        AccelerationBars[0].SetActive(false);
+
+        accBarAnim.Stop();
+
+        Keyframe[] keys = new Keyframe[3];
+        keys[0] = new Keyframe(0.0f, 0.0f);
+        keys[1] = new Keyframe(dechargeTime, AccelerationBars[0].GetComponent<RectTransform>().offsetMax.y / 2);
+        keys[2] = new Keyframe(dechargeTime + rechargeTime, 0.0f);
+        AnimationCurve curve = new AnimationCurve(keys);
+        accBarAnim.clip.SetCurve("", typeof(RectTransform), "Charging Image : Anchored Position.y", curve);
+
+        keys[1].value = AccelerationBars[0].GetComponent<RectTransform>().offsetMax.y;
+        accBarAnim.clip.SetCurve("", typeof(RectTransform), "Charging Image : Size Delta.y", curve);
+
+        accBarAnim.Play();
+
+        Invoke(nameof(FullAccBar), dechargeTime + rechargeTime);
+    }
+    private void FullAccBar() { AccelerationBars[0].SetActive(true); }
 }

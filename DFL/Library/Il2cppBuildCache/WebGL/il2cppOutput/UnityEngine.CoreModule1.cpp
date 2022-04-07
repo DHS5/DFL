@@ -30985,6 +30985,15 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool RenderSettings_get_fog_mAB01FC3FE552B153
 	bool icallRetVal = _il2cpp_icall_func();
 	return icallRetVal;
 }
+// System.Void UnityEngine.RenderSettings::set_fog(System.Boolean)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RenderSettings_set_fog_mD367E22D3EF66CA9FAAD7AF7712E891B2F569275 (bool ___value0, const RuntimeMethod* method)
+{
+	typedef void (*RenderSettings_set_fog_mD367E22D3EF66CA9FAAD7AF7712E891B2F569275_ftn) (bool);
+	static RenderSettings_set_fog_mD367E22D3EF66CA9FAAD7AF7712E891B2F569275_ftn _il2cpp_icall_func;
+	if (!_il2cpp_icall_func)
+	_il2cpp_icall_func = (RenderSettings_set_fog_mD367E22D3EF66CA9FAAD7AF7712E891B2F569275_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.RenderSettings::set_fog(System.Boolean)");
+	_il2cpp_icall_func(___value0);
+}
 // UnityEngine.Color UnityEngine.RenderSettings::get_ambientSkyColor()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Color_tF40DAF76C04FFECF3FE6024F85A294741C9CC659  RenderSettings_get_ambientSkyColor_m5896B3B873B5D45304BCDC89D88537DE036F4049 (const RuntimeMethod* method)
 {
@@ -31018,6 +31027,15 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Color_tF40DAF76C04FFECF3FE6024F85A294741C9CC6
 		return L_0;
 	}
 }
+// System.Void UnityEngine.RenderSettings::set_ambientIntensity(System.Single)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RenderSettings_set_ambientIntensity_m1E97F76AFF47C18DE4EF7EF08580CA57661B709D (float ___value0, const RuntimeMethod* method)
+{
+	typedef void (*RenderSettings_set_ambientIntensity_m1E97F76AFF47C18DE4EF7EF08580CA57661B709D_ftn) (float);
+	static RenderSettings_set_ambientIntensity_m1E97F76AFF47C18DE4EF7EF08580CA57661B709D_ftn _il2cpp_icall_func;
+	if (!_il2cpp_icall_func)
+	_il2cpp_icall_func = (RenderSettings_set_ambientIntensity_m1E97F76AFF47C18DE4EF7EF08580CA57661B709D_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.RenderSettings::set_ambientIntensity(System.Single)");
+	_il2cpp_icall_func(___value0);
+}
 // UnityEngine.Color UnityEngine.RenderSettings::get_subtractiveShadowColor()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Color_tF40DAF76C04FFECF3FE6024F85A294741C9CC659  RenderSettings_get_subtractiveShadowColor_m0E9278FE139A0AEEA82DD30BC47A7F91A57AF9A0 (const RuntimeMethod* method)
 {
@@ -31038,6 +31056,15 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Material_t8927C00353A72755313F046D0CE85178AE8
 	_il2cpp_icall_func = (RenderSettings_get_skybox_m26B7C34BE5FD107824F56520824A5CCB4686D4B1_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.RenderSettings::get_skybox()");
 	Material_t8927C00353A72755313F046D0CE85178AE8218EE * icallRetVal = _il2cpp_icall_func();
 	return icallRetVal;
+}
+// System.Void UnityEngine.RenderSettings::set_skybox(UnityEngine.Material)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RenderSettings_set_skybox_m452A88810ECA0D7B7B71DBA56E8D0D661CEEA237 (Material_t8927C00353A72755313F046D0CE85178AE8218EE * ___value0, const RuntimeMethod* method)
+{
+	typedef void (*RenderSettings_set_skybox_m452A88810ECA0D7B7B71DBA56E8D0D661CEEA237_ftn) (Material_t8927C00353A72755313F046D0CE85178AE8218EE *);
+	static RenderSettings_set_skybox_m452A88810ECA0D7B7B71DBA56E8D0D661CEEA237_ftn _il2cpp_icall_func;
+	if (!_il2cpp_icall_func)
+	_il2cpp_icall_func = (RenderSettings_set_skybox_m452A88810ECA0D7B7B71DBA56E8D0D661CEEA237_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.RenderSettings::set_skybox(UnityEngine.Material)");
+	_il2cpp_icall_func(___value0);
 }
 // UnityEngine.Light UnityEngine.RenderSettings::get_sun()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Light_tA2F349FE839781469A0344CF6039B51512394275 * RenderSettings_get_sun_mF349095D8EFEFFDD6450A02732B0881411F5AE9D (const RuntimeMethod* method)

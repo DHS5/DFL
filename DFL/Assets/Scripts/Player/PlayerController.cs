@@ -10,6 +10,8 @@ using UnityEngine.Rendering;
 public class PlayerController : MonoBehaviour
 {
     [Header("Useful scripts")]
+    [Tooltip("Singleton Instance of the GameManager")]
+    [SerializeField] private GameManager gameManager;
     [Tooltip("Controls the gameplay of the player")]
     private PlayerGameplay playerGameplay;
     [Tooltip("Animator script of the camera")]
@@ -85,8 +87,15 @@ public class PlayerController : MonoBehaviour
                 }
                 else if (canAccelerate)
                 {
-                    // Deactivates the acceleration
-                    Invoke(nameof(CantAccelerate), accelerationTime);
+                    if (!isAccelerating)
+                    {
+                        // Deactivates the acceleration
+                        Invoke(nameof(CantAccelerate), accelerationTime);
+                        // UI animation
+                        gameManager.gameUIManager.AccBarAnim(accelerationTime, waitToAccelerateTime);
+
+                        isAccelerating = true;
+                    }
                     // Sprint animation
                     cameraAnimator.Sprint();
                     // Returns the acceleration
@@ -100,6 +109,8 @@ public class PlayerController : MonoBehaviour
         }
         set { accelerationM = value; }
     }
+    [Tooltip("Is the player accelerating")]
+    private bool isAccelerating = false;
     [Tooltip("Is the player able to accelerate")]
     private bool canAccelerate = true;
     [Tooltip("Seconds accelerating")]
@@ -131,6 +142,7 @@ public class PlayerController : MonoBehaviour
         if (canAccelerate)
         {
             canAccelerate = false;
+            isAccelerating = false;
 
             // Calls the CanAccelerate Method after waitToAccelerateTime seconds
             Invoke(nameof(CanAccelerate), waitToAccelerateTime);
