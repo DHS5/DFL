@@ -11,6 +11,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SZombie2
       objectReference: {fileID: 0}
+    - target: {fileID: 1479208766464490, guid: e45a69c421144304c8d8176026d3fd7b, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 4771946628154188, guid: e45a69c421144304c8d8176026d3fd7b, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -127,7 +131,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 0}
-  intelligence: 15
+  intelligence: 12
   reactivity: 0
   attentionRadius: 0
   chaseRadius: 0

@@ -61,7 +61,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bonusManager: {fileID: 0}
   player: {fileID: 0}
-  bonusTime: 8
+  bonusTime: 6
 --- !u!1 &4254428742231082319
 GameObject:
   m_ObjectHideFlags: 0

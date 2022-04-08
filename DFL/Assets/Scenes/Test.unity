@@ -649,8 +649,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameMode: 2
-  difficulty: 0
-  options: 
+  difficulty: 4
+  options: 0000000001000000
   enemiesRange: 5
   gameOn: 0
   gameOver: 0
@@ -1005,9 +1005,18 @@ MonoBehaviour:
   gameManager: {fileID: 392287958}
   bonusPrefabs:
   - {fileID: 4254428741046978167, guid: 0ca743fa2154c7b41a9152768d24d217, type: 3}
+  - {fileID: 4254428741046978167, guid: 0ca743fa2154c7b41a9152768d24d217, type: 3}
+  - {fileID: 4254428741046978167, guid: 0ca743fa2154c7b41a9152768d24d217, type: 3}
+  - {fileID: 4254428741046978167, guid: 0ca743fa2154c7b41a9152768d24d217, type: 3}
   - {fileID: 4254428741046978167, guid: 065fcd1484e17a848af78c3ca81776d4, type: 3}
-  - {fileID: 4254428741046978167, guid: 4fe43ca840c4bc04dac983c8db7aa1a2, type: 3}
+  - {fileID: 4254428741046978167, guid: 065fcd1484e17a848af78c3ca81776d4, type: 3}
+  - {fileID: 4254428741046978167, guid: 065fcd1484e17a848af78c3ca81776d4, type: 3}
+  - {fileID: 4254428741046978167, guid: 065fcd1484e17a848af78c3ca81776d4, type: 3}
   - {fileID: 4254428741046978167, guid: cabd54dcc9d42e646bf328b6e7214872, type: 3}
+  - {fileID: 4254428741046978167, guid: cabd54dcc9d42e646bf328b6e7214872, type: 3}
+  - {fileID: 4254428741046978167, guid: cabd54dcc9d42e646bf328b6e7214872, type: 3}
+  - {fileID: 4254428741046978167, guid: 4fe43ca840c4bc04dac983c8db7aa1a2, type: 3}
+  - {fileID: 4254428741046978167, guid: 4fe43ca840c4bc04dac983c8db7aa1a2, type: 3}
   - {fileID: 4254428741046978167, guid: 06449d029b2d0c3458c93d6f97dd612d, type: 3}
 --- !u!1 &679469699
 GameObject:
@@ -2499,6 +2508,9 @@ MonoBehaviour:
   obstaclePrefabs:
   - {fileID: 4544493572597981696, guid: 6bee4f54e19732247b1db863f0805307, type: 3}
   - {fileID: 5271083261749639531, guid: e0cb94c5e34c6b64f98e4bc1d7e3650b, type: 3}
+  - {fileID: 2739308792927983643, guid: ab547fe4dae2c934bbeadb43464ad3f2, type: 3}
+  - {fileID: 6267750974276708512, guid: 0ee20bf72123e2444ba551f7af66d765, type: 3}
+  - {fileID: 6609333202229858898, guid: d84821dfc3199e0499b39d72fa20f54e, type: 3}
   obstaclesLimit: 50
 --- !u!1 &1759252192
 GameObject:
@@ -3087,12 +3099,16 @@ MonoBehaviour:
   - {fileID: 4789666479980949965, guid: f9df41480abdb6343b9b34f65eccd839, type: 3}
   - {fileID: 4789666479980949965, guid: 38701926ddb797645bc172241d0e323a, type: 3}
   - {fileID: 4789666479980949965, guid: f9df41480abdb6343b9b34f65eccd839, type: 3}
+  - {fileID: 4789666479980949965, guid: 3e51d7b150d1a15409c0c72142c6e9de, type: 3}
   - {fileID: 4789666479980949965, guid: 38701926ddb797645bc172241d0e323a, type: 3}
-  - {fileID: 4789666479980949965, guid: f0e260bd3d42397448470f3f5fdb7d74, type: 3}
+  - {fileID: 4789666479980949965, guid: 23dc46379241d124c921ec92bc5e523f, type: 3}
+  - {fileID: 4789666479980949965, guid: 3e51d7b150d1a15409c0c72142c6e9de, type: 3}
+  - {fileID: 4789666479980949965, guid: 38701926ddb797645bc172241d0e323a, type: 3}
+  - {fileID: 4789666479980949965, guid: 23dc46379241d124c921ec92bc5e523f, type: 3}
   - {fileID: 4789666479980949965, guid: f9df41480abdb6343b9b34f65eccd839, type: 3}
   - {fileID: 4789666479980949965, guid: 38701926ddb797645bc172241d0e323a, type: 3}
-  - {fileID: 4789666479980949965, guid: 38701926ddb797645bc172241d0e323a, type: 3}
-  - {fileID: 4789666479980949965, guid: f9df41480abdb6343b9b34f65eccd839, type: 3}
+  - {fileID: 4789666479980949965, guid: 3e51d7b150d1a15409c0c72142c6e9de, type: 3}
+  - {fileID: 4789666479980949965, guid: 23dc46379241d124c921ec92bc5e523f, type: 3}
   waveNumber: 0
 --- !u!4 &1988230387
 Transform:

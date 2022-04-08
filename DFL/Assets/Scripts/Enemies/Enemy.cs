@@ -84,18 +84,19 @@ public abstract class Enemy : MonoBehaviour
     /// </summary>
     public virtual void ChasePlayer()
     {
-        // Gets the player's position
-        playerPosition = player.transform.position;
-        // Gets the player's direction
-        playerDirection = player.transform.forward.normalized;
-        // Gets the direction to the player
-        toPlayerDirection = (playerPosition - transform.position).normalized;
-        // Gets the distance between the player and the enemy
-        distance = Vector3.Distance(playerPosition, transform.position);
-        // Gets the angle between the enemy's and the player's directions
-        toPlayerAngle = Vector3.Angle(transform.forward, toPlayerDirection);
-
-        //Debug.Log(playerPosition);
+        if (player.GetComponent<PlayerGameplay>().isVisible)
+        {
+            // Gets the player's position
+            playerPosition = player.transform.position;
+            // Gets the player's direction
+            playerDirection = player.transform.forward.normalized;
+            // Gets the direction to the player
+            toPlayerDirection = (playerPosition - transform.position).normalized;
+            // Gets the distance between the player and the enemy
+            distance = Vector3.Distance(playerPosition, transform.position);
+            // Gets the angle between the enemy's and the player's directions
+            toPlayerAngle = Vector3.Angle(transform.forward, toPlayerDirection);
+        }
     }
 
     /// <summary>
