@@ -14,9 +14,14 @@ public class FirstPersonCameraController : MonoBehaviour
     private Quaternion cameraRotation;
 
     [Header("First person camera parameters")]
+    [Tooltip("Max angle at which the player is able to look behind")]
     [SerializeField] private int angleMax = 85;
+    [Tooltip("Mouse sensitivity along the Y axis")]
+    [Range(2, 10)]
     [SerializeField]  private float yMouseSensitivity = 3f;
-    [SerializeField] private float ySmoothRotation = 10f;
+    [Tooltip("Mouse smoothness of the rotation")]
+    [Range(10, 30)]
+    [SerializeField] private float ySmoothRotation = 20f;
 
     /// <summary>
     /// Locks the cursor and makes it invisible
@@ -97,6 +102,12 @@ public class FirstPersonCameraController : MonoBehaviour
 
         // Initializes the camera's rotation
         cameraRotation = fpCamera.transform.localRotation;
+
+        if (DataManager.InstanceDataManager != null && DataManager.InstanceDataManager.yMouseSensitivity != 0)
+        {
+            yMouseSensitivity = DataManager.InstanceDataManager.yMouseSensitivity;
+            ySmoothRotation = DataManager.InstanceDataManager.ySmoothRotation;
+        }
     }
 
 

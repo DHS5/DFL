@@ -25,6 +25,9 @@ public class DataManager : MonoBehaviour
     [HideInInspector] public List<GameOption> options = new List<GameOption>();
 
 
+    [HideInInspector] public float yMouseSensitivity;
+    [HideInInspector] public float ySmoothRotation;
+
 
     /// <summary>
     /// Gets the Singleton Instance

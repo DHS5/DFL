@@ -24,6 +24,7 @@ public class GameUIManager : MonoBehaviour
 
     [SerializeField] private Animation accBarAnim;
 
+
     /// <summary>
     /// Gets the Game Managers
     /// </summary>

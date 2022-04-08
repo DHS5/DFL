@@ -6,6 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuUIManager : MonoBehaviour
 {
+    [SerializeField] private Slider sensitivitySlider;
+    [SerializeField] private Slider smoothRotationSlider;
+
 
     /// <summary>
     /// Game Mode property
@@ -23,6 +26,32 @@ public class MainMenuUIManager : MonoBehaviour
         set { DataManager.InstanceDataManager.difficulty = (GameDifficulty)value; }
     }
 
+    public float YMouseSensitivity
+    {
+        set
+        {
+            DataManager.InstanceDataManager.yMouseSensitivity = value;
+        }
+    }
+    
+    public float YSmoothRotation
+    {
+        set
+        {
+            DataManager.InstanceDataManager.ySmoothRotation = value;
+        }
+    }
+
+
+    private void Start()
+    {
+        if (DataManager.InstanceDataManager.yMouseSensitivity != 0)
+            sensitivitySlider.value = DataManager.InstanceDataManager.yMouseSensitivity;
+        if (DataManager.InstanceDataManager.ySmoothRotation != 0)
+            smoothRotationSlider.value = DataManager.InstanceDataManager.ySmoothRotation;
+    }
+
+
 
     /// <summary>
     /// Removes or adds a game option
@@ -31,8 +60,8 @@ public class MainMenuUIManager : MonoBehaviour
     /// <param name="option">Game option to add/remove</param>
     public void ChooseOption(int option)
     {
-        if (!DataManager.InstanceDataManager.options.Contains((GameOption)option)) { DataManager.InstanceDataManager.options.Add((GameOption)option); Debug.Log("yes"); }
-        else { DataManager.InstanceDataManager.options.Remove((GameOption)option); Debug.Log("no"); }
+        if (!DataManager.InstanceDataManager.options.Contains((GameOption)option)) { DataManager.InstanceDataManager.options.Add((GameOption)option); }
+        else { DataManager.InstanceDataManager.options.Remove((GameOption)option); }
     }
 
 
