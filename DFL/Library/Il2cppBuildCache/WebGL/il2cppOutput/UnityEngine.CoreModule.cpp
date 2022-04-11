@@ -15345,12 +15345,20 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void JobsUtility_Schedule_Injected_mFDFBDD20D
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t JobsUtility_CreateJobReflectionData_m259924334FCDB88CDEEB3049DD941A76AA785C71 (Type_t * ___wrapperJobType0, Type_t * ___userJobType1, RuntimeObject * ___managedJobFunction02, RuntimeObject * ___managedJobFunction13, RuntimeObject * ___managedJobFunction24, const RuntimeMethod* method);
 // System.Void Unity.Jobs.LowLevel.Unsafe.JobsUtility/PanicFunction_::Invoke()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PanicFunction__Invoke_m1A61124D09B3DB67123E6E5FD12D5C290D425B66 (PanicFunction__tFB4D850E5B848FFEF210623F5669284D723544EB * __this, const RuntimeMethod* method);
+// System.Void UnityEngine.Keyframe::.ctor(System.Single,System.Single)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Keyframe__ctor_mE08ED8666CB420F48B8D95B7D6B305A5ED0CFD9C (Keyframe_tBEEE79DF5E970E48A8972FFFCE8B25A6068ACE9F * __this, float ___time0, float ___value1, const RuntimeMethod* method);
 // System.Void UnityEngine.Keyframe::.ctor(System.Single,System.Single,System.Single,System.Single)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Keyframe__ctor_m572CCEE06F612003F939F3FF439B15F89E8C1D54 (Keyframe_tBEEE79DF5E970E48A8972FFFCE8B25A6068ACE9F * __this, float ___time0, float ___value1, float ___inTangent2, float ___outTangent3, const RuntimeMethod* method);
 // System.Single UnityEngine.Keyframe::get_time()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float Keyframe_get_time_m75EBFDECA329315F6D41A60C0B1291F5BA4039E8 (Keyframe_tBEEE79DF5E970E48A8972FFFCE8B25A6068ACE9F * __this, const RuntimeMethod* method);
 // System.Void UnityEngine.Keyframe::set_time(System.Single)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Keyframe_set_time_mB48C8B14B2346F46A0A4FE27CDD01D163F945CC4 (Keyframe_tBEEE79DF5E970E48A8972FFFCE8B25A6068ACE9F * __this, float ___value0, const RuntimeMethod* method);
+// System.Void UnityEngine.Keyframe::set_value(System.Single)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Keyframe_set_value_m617DC36870FB4BA758FDEF2497DF958297266E3F (Keyframe_tBEEE79DF5E970E48A8972FFFCE8B25A6068ACE9F * __this, float ___value0, const RuntimeMethod* method);
+// System.Void UnityEngine.Keyframe::set_inTangent(System.Single)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Keyframe_set_inTangent_m12C08116896BC3E2C632356738D4CBE1D43B37C5 (Keyframe_tBEEE79DF5E970E48A8972FFFCE8B25A6068ACE9F * __this, float ___value0, const RuntimeMethod* method);
+// System.Void UnityEngine.Keyframe::set_outTangent(System.Single)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Keyframe_set_outTangent_m8754D0F36E7C5470E7FE426171ADD7D77077C275 (Keyframe_tBEEE79DF5E970E48A8972FFFCE8B25A6068ACE9F * __this, float ___value0, const RuntimeMethod* method);
 // System.Boolean UnityEngine.Rendering.LODParameters::Equals(UnityEngine.Rendering.LODParameters)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool LODParameters_Equals_mF803671C1F46ECEEE0B376EBF3AAF69D1236B4C0 (LODParameters_tA41D06C4BDB03138144BE9DCC4BC6B37963DC5CD * __this, LODParameters_tA41D06C4BDB03138144BE9DCC4BC6B37963DC5CD  ___other0, const RuntimeMethod* method);
 // System.Boolean UnityEngine.Rendering.LODParameters::Equals(System.Object)
@@ -34344,6 +34352,28 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void JobsUtility_Schedule_Injected_mFDFBDD20D
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
+// System.Void UnityEngine.Keyframe::.ctor(System.Single,System.Single)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Keyframe__ctor_mE08ED8666CB420F48B8D95B7D6B305A5ED0CFD9C (Keyframe_tBEEE79DF5E970E48A8972FFFCE8B25A6068ACE9F * __this, float ___time0, float ___value1, const RuntimeMethod* method)
+{
+	{
+		float L_0 = ___time0;
+		__this->set_m_Time_0(L_0);
+		float L_1 = ___value1;
+		__this->set_m_Value_1(L_1);
+		__this->set_m_InTangent_2((0.0f));
+		__this->set_m_OutTangent_3((0.0f));
+		__this->set_m_WeightedMode_4(0);
+		__this->set_m_InWeight_5((0.0f));
+		__this->set_m_OutWeight_6((0.0f));
+		return;
+	}
+}
+IL2CPP_EXTERN_C  void Keyframe__ctor_mE08ED8666CB420F48B8D95B7D6B305A5ED0CFD9C_AdjustorThunk (RuntimeObject * __this, float ___time0, float ___value1, const RuntimeMethod* method)
+{
+	int32_t _offset = 1;
+	Keyframe_tBEEE79DF5E970E48A8972FFFCE8B25A6068ACE9F * _thisAdjusted = reinterpret_cast<Keyframe_tBEEE79DF5E970E48A8972FFFCE8B25A6068ACE9F *>(__this + _offset);
+	Keyframe__ctor_mE08ED8666CB420F48B8D95B7D6B305A5ED0CFD9C(_thisAdjusted, ___time0, ___value1, method);
+}
 // System.Void UnityEngine.Keyframe::.ctor(System.Single,System.Single,System.Single,System.Single)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Keyframe__ctor_m572CCEE06F612003F939F3FF439B15F89E8C1D54 (Keyframe_tBEEE79DF5E970E48A8972FFFCE8B25A6068ACE9F * __this, float ___time0, float ___value1, float ___inTangent2, float ___outTangent3, const RuntimeMethod* method)
 {
@@ -34406,6 +34436,51 @@ IL2CPP_EXTERN_C  void Keyframe_set_time_mB48C8B14B2346F46A0A4FE27CDD01D163F945CC
 	int32_t _offset = 1;
 	Keyframe_tBEEE79DF5E970E48A8972FFFCE8B25A6068ACE9F * _thisAdjusted = reinterpret_cast<Keyframe_tBEEE79DF5E970E48A8972FFFCE8B25A6068ACE9F *>(__this + _offset);
 	Keyframe_set_time_mB48C8B14B2346F46A0A4FE27CDD01D163F945CC4(_thisAdjusted, ___value0, method);
+}
+// System.Void UnityEngine.Keyframe::set_value(System.Single)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Keyframe_set_value_m617DC36870FB4BA758FDEF2497DF958297266E3F (Keyframe_tBEEE79DF5E970E48A8972FFFCE8B25A6068ACE9F * __this, float ___value0, const RuntimeMethod* method)
+{
+	{
+		float L_0 = ___value0;
+		__this->set_m_Value_1(L_0);
+		return;
+	}
+}
+IL2CPP_EXTERN_C  void Keyframe_set_value_m617DC36870FB4BA758FDEF2497DF958297266E3F_AdjustorThunk (RuntimeObject * __this, float ___value0, const RuntimeMethod* method)
+{
+	int32_t _offset = 1;
+	Keyframe_tBEEE79DF5E970E48A8972FFFCE8B25A6068ACE9F * _thisAdjusted = reinterpret_cast<Keyframe_tBEEE79DF5E970E48A8972FFFCE8B25A6068ACE9F *>(__this + _offset);
+	Keyframe_set_value_m617DC36870FB4BA758FDEF2497DF958297266E3F(_thisAdjusted, ___value0, method);
+}
+// System.Void UnityEngine.Keyframe::set_inTangent(System.Single)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Keyframe_set_inTangent_m12C08116896BC3E2C632356738D4CBE1D43B37C5 (Keyframe_tBEEE79DF5E970E48A8972FFFCE8B25A6068ACE9F * __this, float ___value0, const RuntimeMethod* method)
+{
+	{
+		float L_0 = ___value0;
+		__this->set_m_InTangent_2(L_0);
+		return;
+	}
+}
+IL2CPP_EXTERN_C  void Keyframe_set_inTangent_m12C08116896BC3E2C632356738D4CBE1D43B37C5_AdjustorThunk (RuntimeObject * __this, float ___value0, const RuntimeMethod* method)
+{
+	int32_t _offset = 1;
+	Keyframe_tBEEE79DF5E970E48A8972FFFCE8B25A6068ACE9F * _thisAdjusted = reinterpret_cast<Keyframe_tBEEE79DF5E970E48A8972FFFCE8B25A6068ACE9F *>(__this + _offset);
+	Keyframe_set_inTangent_m12C08116896BC3E2C632356738D4CBE1D43B37C5(_thisAdjusted, ___value0, method);
+}
+// System.Void UnityEngine.Keyframe::set_outTangent(System.Single)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Keyframe_set_outTangent_m8754D0F36E7C5470E7FE426171ADD7D77077C275 (Keyframe_tBEEE79DF5E970E48A8972FFFCE8B25A6068ACE9F * __this, float ___value0, const RuntimeMethod* method)
+{
+	{
+		float L_0 = ___value0;
+		__this->set_m_OutTangent_3(L_0);
+		return;
+	}
+}
+IL2CPP_EXTERN_C  void Keyframe_set_outTangent_m8754D0F36E7C5470E7FE426171ADD7D77077C275_AdjustorThunk (RuntimeObject * __this, float ___value0, const RuntimeMethod* method)
+{
+	int32_t _offset = 1;
+	Keyframe_tBEEE79DF5E970E48A8972FFFCE8B25A6068ACE9F * _thisAdjusted = reinterpret_cast<Keyframe_tBEEE79DF5E970E48A8972FFFCE8B25A6068ACE9F *>(__this + _offset);
+	Keyframe_set_outTangent_m8754D0F36E7C5470E7FE426171ADD7D77077C275(_thisAdjusted, ___value0, method);
 }
 #ifdef __clang__
 #pragma clang diagnostic pop

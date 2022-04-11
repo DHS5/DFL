@@ -45,4 +45,14 @@ public class BonusManager : MonoBehaviour
         bonus.bonusManager = this;
         bonus.player = gameManager.player;
     }
+
+    public void BonusAnim(bool bar, float time, Color color)
+    {
+        if (bar) gameManager.gameUIManager.BonusBarAnim(time, color);
+    }
+
+    public void AddLife(int lifeNumber)
+    {
+        gameManager.gameUIManager.ModifyLife(true, lifeNumber);
+    }
 }

@@ -47,8 +47,11 @@ public class MainMenuUIManager : MonoBehaviour
     {
         if (DataManager.InstanceDataManager.yMouseSensitivity != 0)
             sensitivitySlider.value = DataManager.InstanceDataManager.yMouseSensitivity;
+        else DataManager.InstanceDataManager.yMouseSensitivity = sensitivitySlider.value;
+
         if (DataManager.InstanceDataManager.ySmoothRotation != 0)
             smoothRotationSlider.value = DataManager.InstanceDataManager.ySmoothRotation;
+        else DataManager.InstanceDataManager.ySmoothRotation = smoothRotationSlider.value;
     }
 
 

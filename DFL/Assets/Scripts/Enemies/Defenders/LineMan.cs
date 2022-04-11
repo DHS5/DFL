@@ -22,7 +22,7 @@ public class LineMan : Defender
                 // If the enemy is close enough --> go directly to the player
                 if (distance <= attackRadius)
                 {
-                    destination = player.transform.position;
+                    destination = playerPosition;
                     // Increase the reactivity time
                     reactivityM = 0f;
                     if (!attackSpeed)

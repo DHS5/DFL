@@ -22,7 +22,7 @@ public class WingMan : Defender
                 // If the enemy is close enough --> go directly to the player
                 if (distance <= chaseRadius || toPlayerAngle > 90)
                 {
-                    destination = player.transform.position; //Debug.Log(destination);
+                    destination = playerPosition; //Debug.Log(destination);
                     // Increase the reactivity time
                     reactivityM = 0.5f;
                     // If the enemy is in position to attack

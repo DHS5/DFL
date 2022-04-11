@@ -61,12 +61,14 @@ public class PlayerGameplay : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy") && !isInvincible)
         {
             lifeNumber--;
+            if (lifeNumber > 0) gameManager.gameUIManager.ModifyLife(false, lifeNumber - 1);
             Debug.Log("Dead by enemy");
         }
         // When the player collides with an obstacle --> game over
         if (collision.gameObject.CompareTag("Obstacle") && !isInvincible)
         {
             lifeNumber--;
+            if (lifeNumber > 0) gameManager.gameUIManager.ModifyLife(false, lifeNumber - 1);
             Debug.Log("Dead by obstacle");
         }
 

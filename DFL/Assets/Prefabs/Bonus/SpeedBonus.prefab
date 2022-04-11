@@ -48,7 +48,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bonusManager: {fileID: 0}
   player: {fileID: 0}
-  bonusTime: 8
+  bonusTime: 6
+  bonusColor: {r: 1, g: 0.93511665, b: 0, a: 1}
   bonusSpeed: 5
 --- !u!135 &2826616267289591310
 SphereCollider:

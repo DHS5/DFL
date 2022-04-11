@@ -19,9 +19,12 @@ public class Bonus : MonoBehaviour
 
 
     [SerializeField] private float bonusTime;
+    [SerializeField] private Color bonusColor;
+
+    protected bool bar = true;
 
 
-    private void Start()
+    protected virtual void Start()
     {
         playerC = player.GetComponent<PlayerController>();
         playerG = player.GetComponent<PlayerGameplay>();
@@ -37,13 +40,13 @@ public class Bonus : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             TriggerBonus();
+            bonusManager.BonusAnim(bar, bonusTime, bonusColor);
         }
     }
 
 
     protected virtual void TriggerBonus()
     {
-        Debug.Log("bonus");
         gameObject.SetActive(false);
         Invoke(nameof(EndBonus), bonusTime);
     }
@@ -51,8 +54,5 @@ public class Bonus : MonoBehaviour
     /// <summary>
     /// Puts the bonus attributes back to their initial state
     /// </summary>
-    protected virtual void EndBonus()
-    {
-        Debug.Log("end bonus");
-    }
+    protected virtual void EndBonus() { }
 }

@@ -62,6 +62,7 @@ MonoBehaviour:
   bonusManager: {fileID: 0}
   player: {fileID: 0}
   bonusTime: 8
+  bonusColor: {r: 1, g: 0.5868703, b: 0, a: 1}
 --- !u!1 &4254428742231082319
 GameObject:
   m_ObjectHideFlags: 0
