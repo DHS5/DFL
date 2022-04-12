@@ -35,7 +35,7 @@ public class BonusManager : MonoBehaviour
         // Gets the zones position and scale info
         Vector3 zonePos = fieldZone.transform.position;
         float xScale = fieldZone.transform.localScale.x / 2;
-        float zScale = fieldZone.transform.localScale.z / 2;
+        float zScale = fieldZone.transform.localScale.z / 2.5f;
 
         // Gets a random position in the first part of the field zone
         Vector3 randomPos = new Vector3(Random.Range(-xScale, xScale), 1, Random.Range(-zScale, 0)) + zonePos;

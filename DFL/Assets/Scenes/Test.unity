@@ -726,7 +726,7 @@ MonoBehaviour:
   gameMode: 1
   difficulty: 0
   options: 00000000
-  enemiesRange: 5
+  enemiesRange: 1
   gameOn: 0
   gameOver: 0
   fieldManager: {fileID: 1426004912}
@@ -2938,6 +2938,8 @@ MonoBehaviour:
   velocity: {x: 0, y: 0, z: 0}
   speed: 12
   sideSpeedM: 8
+  jukeSpeedM: 1.25
+  sideSpeedAccD: 1.75
   accelerationM: 5
   accelerationTime: 3
   waitToAccelerateTime: 8
@@ -3724,9 +3726,12 @@ MonoBehaviour:
   - {fileID: 6644603938449114179, guid: 1fb772fb0c121724a9e9cfa1b782791f, type: 3}
   - {fileID: 6644603938449114179, guid: af4df860230ae8d46a18a253b764ce21, type: 3}
   - {fileID: 6644603938449114179, guid: aed01e52685a594449e491aa290bf30b, type: 3}
+  - {fileID: 6644603938449114179, guid: a4809fe6f47f5b74dbc49a8c8f64b034, type: 3}
   - {fileID: 6644603938449114179, guid: e5d5120bf5bd32446ab98884a0b2952d, type: 3}
   - {fileID: 6644603938449114179, guid: 1fb772fb0c121724a9e9cfa1b782791f, type: 3}
+  - {fileID: 6644603938449114179, guid: a4809fe6f47f5b74dbc49a8c8f64b034, type: 3}
   - {fileID: 6644603938449114179, guid: aed01e52685a594449e491aa290bf30b, type: 3}
+  - {fileID: 6644603938449114179, guid: a4809fe6f47f5b74dbc49a8c8f64b034, type: 3}
   - {fileID: 6644603938449114179, guid: 1fb772fb0c121724a9e9cfa1b782791f, type: 3}
   linemenPrefabs:
   - {fileID: 6644603938449114179, guid: 66b39b71ca12e7648ac2a76e1ee06816, type: 3}

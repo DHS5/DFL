@@ -12,8 +12,11 @@ public class LifeBonus : Bonus
 
     protected override void TriggerBonus()
     {
-        bonusManager.AddLife(playerG.lifeNumber - 1);
-        playerG.lifeNumber++;
+        if (playerG.lifeNumber < 3)
+        {
+            bonusManager.AddLife(playerG.lifeNumber - 1);
+            playerG.lifeNumber++;
+        }
 
         base.TriggerBonus();
     }

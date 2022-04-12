@@ -39,6 +39,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float speed = 12f;
     [Tooltip("Side speed multiplier of the player")]
     [SerializeField] private float sideSpeedM = 5f;
+    [Tooltip("Juke speed multiplier of the player")]
+    [SerializeField] private float jukeSpeedM = 1.25f;
+    [Tooltip("Side speed acceleration divider of the player")]
+    [SerializeField] private float sideSpeedAccD = 1.75f;
     /// <summary>
     /// Side speed of the player
     /// </summary>
@@ -47,13 +51,11 @@ public class PlayerController : MonoBehaviour
         get
         {
             // Calculate the side speed
-            float ss = Input.GetAxis("Horizontal") * sideSpeedM * (speed / (speed + Acceleration));
+            float ss = Input.GetAxis("Horizontal") * sideSpeedM * (speed / (speed + Acceleration / sideSpeedAccD + bonusSpeed));
             // If already juking, prevent a second juke or a juke to the other side immediately
             if (cameraAnimator.isJuking)
             {
-                if (cameraAnimator.jukeSpeed >= 0)
-                    ss = Mathf.Clamp(ss, 0, Mathf.Abs(ss));
-                else ss = Mathf.Clamp(ss, -Mathf.Abs(ss), 0);
+                ss = ( cameraAnimator.jukeSpeed >= 0 ? Mathf.Clamp(ss, 0, Mathf.Abs(ss)) : Mathf.Clamp(ss, -Mathf.Abs(ss), 0) ) * jukeSpeedM;
             }
 
             // Juke on a big side speed
