@@ -248,7 +248,7 @@ Transform:
   - {fileID: 1784974719}
   m_Father: {fileID: 1664567381}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -10}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!111 &135357385
 Animation:
   m_ObjectHideFlags: 0
@@ -264,6 +264,8 @@ Animation:
   - {fileID: 7400000, guid: b76970690c4a5eb4f8e2e61b0b46ae74, type: 2}
   - {fileID: 7400000, guid: 34dc3d3574ab41947b27fd3225944d33, type: 2}
   - {fileID: 7400000, guid: ae9b266f9bf3da54285fa85259ce0eda, type: 2}
+  - {fileID: 7400000, guid: 687c62284520063479ff02037932f044, type: 2}
+  - {fileID: 7400000, guid: 21abfd552ae40684390506f2b8f5cf45, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -284,6 +286,8 @@ MonoBehaviour:
   sprintAnim: {fileID: 7400000, guid: ae9b266f9bf3da54285fa85259ce0eda, type: 2}
   jukeRightAnim: {fileID: 7400000, guid: b76970690c4a5eb4f8e2e61b0b46ae74, type: 2}
   jukeLeftAnim: {fileID: 7400000, guid: 34dc3d3574ab41947b27fd3225944d33, type: 2}
+  spinRightAnim: {fileID: 7400000, guid: 21abfd552ae40684390506f2b8f5cf45, type: 2}
+  spinLeftAnim: {fileID: 7400000, guid: 687c62284520063479ff02037932f044, type: 2}
   cameraAccPostProcess: {fileID: 1784974718}
   isJuking: 0
   jukeSpeed: 0
@@ -726,7 +730,7 @@ MonoBehaviour:
   gameMode: 1
   difficulty: 0
   options: 00000000
-  enemiesRange: 1
+  enemiesRange: 5
   gameOn: 0
   gameOver: 0
   fieldManager: {fileID: 1426004912}
@@ -2939,6 +2943,7 @@ MonoBehaviour:
   speed: 12
   sideSpeedM: 8
   jukeSpeedM: 1.25
+  spinSpeedM: 1.75
   sideSpeedAccD: 1.75
   accelerationM: 5
   accelerationTime: 3
@@ -3740,11 +3745,16 @@ MonoBehaviour:
   - {fileID: 6644603938449114179, guid: 15835617e0780fc41a0c8e017f977af3, type: 3}
   - {fileID: 6644603938449114179, guid: 2296bef5cba7a5d43b0eed737d466def, type: 3}
   - {fileID: 6644603938449114179, guid: 93cd3eed7d7e3b945a72f8b1a2d53af8, type: 3}
+  - {fileID: 6644603938449114179, guid: f2b20d365e530c0489c175fdbd98b81f, type: 3}
   - {fileID: 6644603938449114179, guid: 2296bef5cba7a5d43b0eed737d466def, type: 3}
+  - {fileID: 6644603938449114179, guid: c737648f3ea600f4b9adf5c0bcea7918, type: 3}
   - {fileID: 6644603938449114179, guid: 15835617e0780fc41a0c8e017f977af3, type: 3}
-  - {fileID: 6644603938449114179, guid: 93cd3eed7d7e3b945a72f8b1a2d53af8, type: 3}
+  - {fileID: 6644603938449114179, guid: f2b20d365e530c0489c175fdbd98b81f, type: 3}
+  - {fileID: 6644603938449114179, guid: c737648f3ea600f4b9adf5c0bcea7918, type: 3}
   - {fileID: 6644603938449114179, guid: 2296bef5cba7a5d43b0eed737d466def, type: 3}
-  - {fileID: 6644603938449114179, guid: 15835617e0780fc41a0c8e017f977af3, type: 3}
+  - {fileID: 6644603938449114179, guid: c737648f3ea600f4b9adf5c0bcea7918, type: 3}
+  - {fileID: 6644603938449114179, guid: f2b20d365e530c0489c175fdbd98b81f, type: 3}
+  - {fileID: 6644603938449114179, guid: c737648f3ea600f4b9adf5c0bcea7918, type: 3}
   classicZPrefabs:
   - {fileID: 4789666479980949965, guid: f8d2d8798542fba4e98c4e6075108948, type: 3}
   - {fileID: 4789666479980949965, guid: d4d60b14aea97b94e9f6649081c26410, type: 3}

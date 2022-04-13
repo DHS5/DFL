@@ -19,6 +19,10 @@ public class CameraAnimator : MonoBehaviour
     [SerializeField] AnimationClip jukeRightAnim;
     [Tooltip("")]
     [SerializeField] AnimationClip jukeLeftAnim;
+    [Tooltip("")]
+    [SerializeField] AnimationClip spinRightAnim;
+    [Tooltip("")]
+    [SerializeField] AnimationClip spinLeftAnim;
 
     [Header("Post Processing")]
     [Tooltip("Post-Processing effect of the acceleration")]
@@ -30,6 +34,7 @@ public class CameraAnimator : MonoBehaviour
     [HideInInspector] public float jukeSpeed = 0;
     private bool isDefault = true;
     private bool isSprinting = false;
+    private bool isSpining = false;
 
 
     /// <summary>
@@ -37,11 +42,13 @@ public class CameraAnimator : MonoBehaviour
     /// </summary>
     public void DefaultAnim()
     {
-        if (!isDefault)
+        if (!isDefault && !isSpining)
         {
             isJuking = false;
             isSprinting = false;
+            isSpining = false;
             isDefault = true;
+            jukeSpeed = 0f;
             cameraAnimation.clip = runAnim;
             cameraAnimation.Play();
         }
@@ -53,28 +60,18 @@ public class CameraAnimator : MonoBehaviour
     /// <param name="dir">Direction of the juke (-1 : left / 1 : right)</param>
     public void Juke(float dir)
     {
-        if (!isJuking && jukeSpeed * dir <= 0)
+        if (!isJuking && jukeSpeed * dir <= 0 && !isSpining)
         {
             jukeSpeed = dir;
             isJuking = true;
             isDefault = false;
 
-            if (dir > 0)
-            {
-                cameraAnimation.clip = jukeRightAnim;
-                cameraAnimation.Play();
-            }
-            else if (dir < 0)
-            {
-                cameraAnimation.clip = jukeLeftAnim;
-                cameraAnimation.Play();
-            }
+            cameraAnimation.clip = (dir > 0 ? jukeRightAnim : jukeLeftAnim);
+            cameraAnimation.Play();
 
             float animTime = cameraAnimation.clip.length;
             Invoke(nameof(DefaultAnim), animTime);
-            
         }
-        
     }
 
     /// <summary>
@@ -105,6 +102,27 @@ public class CameraAnimator : MonoBehaviour
             isSprinting = false;
             DefaultAnim();
         }
+    }
+
+    public void Spin(float dir)
+    {
+        if (!isSpining)
+        {
+            Debug.Log("Spin");
+            isSpining = true;
+            isDefault = false;
+
+            cameraAnimation.clip = (dir > 0 ? spinRightAnim : spinLeftAnim);
+            cameraAnimation.Play();
+
+            float animTime = cameraAnimation.clip.length;
+            Invoke(nameof(EndSpin), animTime);
+        }
+    }
+    private void EndSpin()
+    {
+        isSpining = false;
+        DefaultAnim();
     }
 
     /// <summary>
