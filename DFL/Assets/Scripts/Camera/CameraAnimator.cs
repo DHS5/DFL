@@ -34,7 +34,7 @@ public class CameraAnimator : MonoBehaviour
     [HideInInspector] public float jukeSpeed = 0;
     private bool isDefault = true;
     private bool isSprinting = false;
-    private bool isSpining = false;
+    [HideInInspector] public bool isSpining = false;
 
 
     /// <summary>

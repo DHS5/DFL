@@ -65,6 +65,7 @@ public class PlayerController : MonoBehaviour
                 }
                 else ss *= jukeSpeedM;
             }
+            else if (cameraAnimator.isSpining) ss *= spinSpeedM;
             // Juke on a big side speed
             if (Mathf.Abs(ss) > 9)
             {

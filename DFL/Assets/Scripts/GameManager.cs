@@ -168,6 +168,19 @@ public class GameManager : MonoBehaviour
         }
     }
 
+
+    public void PauseGame()
+    {
+        gameOn = false;
+    }
+    public void UnpauseGame()
+    {
+        Invoke(nameof(GameOn) , 1f);
+    }
+    private void GameOn() { gameOn = true; }
+
+
+
     /// <summary>
     /// Called when the player enters the tunnel
     /// </summary>

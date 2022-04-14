@@ -7,6 +7,11 @@ using UnityEngine;
 /// </summary>
 public class FirstPersonCameraController : MonoBehaviour
 {
+    [Header("Useful scripts")]
+    [Tooltip("Singleton Instance of the GameManager")]
+    [SerializeField] private GameManager gameManager;
+
+
     [Tooltip("First person camera")]
     private Camera fpCamera;
 
@@ -23,6 +28,8 @@ public class FirstPersonCameraController : MonoBehaviour
     [Range(10, 30)]
     [SerializeField] private float ySmoothRotation = 20f;
 
+    private bool locked = true;
+
     /// <summary>
     /// Locks the cursor and makes it invisible
     /// </summary>
@@ -33,6 +40,8 @@ public class FirstPersonCameraController : MonoBehaviour
 
         // Makes the cursor invisible
         Cursor.visible = false;
+
+        locked = true;
     }
 
     private void UnlockCursor()
@@ -42,6 +51,8 @@ public class FirstPersonCameraController : MonoBehaviour
 
         // Makes the cursor visible
         Cursor.visible = true;
+
+        locked = false;
     }
 
     /// <summary>
@@ -114,7 +125,7 @@ public class FirstPersonCameraController : MonoBehaviour
     private void LateUpdate()
     {
         // Gets the look rotation of the camera
-        LookRotation();
+        if (locked && gameManager.gameOn) LookRotation();
 
 
         if (Input.GetMouseButtonDown(1))
