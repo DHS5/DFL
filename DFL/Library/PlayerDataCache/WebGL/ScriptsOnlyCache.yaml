@@ -345,6 +345,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 4822}
     - Class: 114
+      Script: {instanceID: 4996}
+    - Class: 114
       Script: {instanceID: 5068}
     - Class: 114
       Script: {instanceID: 5256}
@@ -517,7 +519,7 @@ ScriptsOnlyBuild:
     className: DepthOfField
   - hash:
       serializedVersion: 2
-      Hash: 2e05b7baa2628f30201cd24f9d5e283a
+      Hash: 9375d6b04ee503d72b0b96c6eb24d018
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: FirstPersonCameraController
@@ -955,7 +957,7 @@ ScriptsOnlyBuild:
     className: UniversalRenderPipelineEditorResources
   - hash:
       serializedVersion: 2
-      Hash: 87b0811be965cc128042919fd5511712
+      Hash: c9169424a2cb73027d6eb05d587d24b9
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerController
@@ -967,7 +969,7 @@ ScriptsOnlyBuild:
     className: ActivationPlayableAsset
   - hash:
       serializedVersion: 2
-      Hash: e6bea882575790e4d1fae3f0ce4d54d9
+      Hash: 6ba9b863f82545a34d61dffb3741fa01
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: CameraAnimator
@@ -1351,7 +1353,7 @@ ScriptsOnlyBuild:
     className: SpeedBonus
   - hash:
       serializedVersion: 2
-      Hash: a29ee5db05a59c23916c22057406bf46
+      Hash: f2862e84d646a43ee4b7fa87ee2e325f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameUIManager

@@ -17,6 +17,9 @@ public class GameUIManager : MonoBehaviour
     [Tooltip("Wave number UI text")]
     [SerializeField] private TextMeshProUGUI[] waveNumberTexts;
 
+    [SerializeField] private Slider sensitivitySlider;
+    [SerializeField] private Slider smoothRotationSlider;
+
 
     [Tooltip("UI components of the acceleration bar")]
     [SerializeField] private GameObject[] accelerationBars;
@@ -42,7 +45,11 @@ public class GameUIManager : MonoBehaviour
 
     private void Start()
     {
-        
+        if (DataManager.InstanceDataManager != null)
+        {
+            sensitivitySlider.value = DataManager.InstanceDataManager.yMouseSensitivity;
+            smoothRotationSlider.value = DataManager.InstanceDataManager.ySmoothRotation;
+        }
     }
 
     /// <summary>

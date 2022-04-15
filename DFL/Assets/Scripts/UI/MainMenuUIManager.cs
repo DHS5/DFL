@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 
 public class MainMenuUIManager : MonoBehaviour
 {
@@ -74,5 +77,14 @@ public class MainMenuUIManager : MonoBehaviour
     public void LaunchGame()
     {
         SceneManager.LoadScene(1);
+    }
+
+    public void QuitGame()
+    {
+#if UNITY_EDITOR
+        EditorApplication.ExitPlaymode();
+#else
+        Application.Quit();
+#endif
     }
 }
