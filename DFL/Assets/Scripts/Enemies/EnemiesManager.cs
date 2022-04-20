@@ -29,6 +29,8 @@ public class EnemiesManager : MonoBehaviour
     [SerializeField] private GameObject[] classicZPrefabs;
     [Tooltip("List of the sleeping zombie's prefabs")]
     [SerializeField] private GameObject[] sleepingZPrefabs;
+    [Tooltip("")]
+    [SerializeField] private AudioClip[] zombieAudios;
 
     [Tooltip("Wave number (--> difficulty)")]
     [HideInInspector] public int waveNumber = 0;
@@ -131,10 +133,10 @@ public class EnemiesManager : MonoBehaviour
     /// <param name="xScale">X scale of the zone</param>
     /// <param name="zScale">Z scale of the zone</param>
     /// <param name="sizeMultiplier">Size multiplier with which create the enemy</param>
-    private void CreateEnemy(GameObject[] enemyPrefabs, Vector3 pos, float xScale, float zScale, float sizeMultiplier)
+    private void CreateEnemy(GameObject[] enemyPrefabs, Vector3 pos, float xScale, float zScale, float sizeMultiplier, AudioClip[] audios)
     {
         // Game Object of the enemy
-        GameObject enemy;
+        Enemy enemy;
 
         // Clamps the level so it doesn't get out of the enemyPrefabs length
         int maxLevel = Mathf.Clamp(waveNumber + (int)gameManager.difficulty, (int)gameManager.difficulty, enemyPrefabs.Length);
@@ -142,15 +144,20 @@ public class EnemiesManager : MonoBehaviour
 
         // Gets a random position and instantiate the new enemy
         Vector3 randomPosition = new Vector3(Random.Range(-xScale, xScale), 0, Random.Range(-zScale, zScale));
-        enemy = Instantiate(enemyPrefabs[Random.Range(minLevel, maxLevel)], pos + randomPosition, Quaternion.identity);
+        enemy = Instantiate(enemyPrefabs[Random.Range(minLevel, maxLevel)], pos + randomPosition, Quaternion.identity).GetComponent<Enemy>();
         //enemy = Instantiate(enemyPrefabs[enemyPrefabs.Length-1], pos + randomPosition, Quaternion.identity);
 
         // Gives the enemy his body and a semi-random size
-        enemy.GetComponent<Enemy>().enemy = enemy;
-        enemy.GetComponent<Enemy>().Size *= Random.Range(1 - sizeMultiplier, 1 + sizeMultiplier);
+        enemy.enemy = enemy.gameObject;
+        enemy.Size *= Random.Range(1 - sizeMultiplier, 1 + sizeMultiplier);
+        if (audios != null)
+        {
+            enemy.audioSource.clip = audios[Random.Range(0, audios.Length)];
+            enemy.audioSource.PlayDelayed(Random.Range(0f, 1f));
+        }
 
         // Fill the enemies list of the field
-        field.enemies.Add(enemy);
+        field.enemies.Add(enemy.gameObject);
     }
 
 
@@ -167,7 +174,7 @@ public class EnemiesManager : MonoBehaviour
         // 5 Linemen in the center
         for (int i = 0; i < 5; i++)
         {
-            CreateEnemy(linemenPrefabs, center, xScale, zScale, 0.1f);
+            CreateEnemy(linemenPrefabs, center, xScale, zScale, 0.1f, null);
         }
 
         // Spawn in the left zone
@@ -177,7 +184,7 @@ public class EnemiesManager : MonoBehaviour
         // 3 Wingmen on the left
         for (int i = 0; i < 3; i++)
         {
-            CreateEnemy(wingmenPrefabs, left, xScale, zScale, 0.1f);
+            CreateEnemy(wingmenPrefabs, left, xScale, zScale, 0.1f, null);
         }
 
         // Spawn in the right zone
@@ -187,7 +194,7 @@ public class EnemiesManager : MonoBehaviour
         // 3 Wingmen on the right
         for (int i = 0; i < 3; i++)
         {
-            CreateEnemy(wingmenPrefabs, right, xScale, zScale, 0.1f);
+            CreateEnemy(wingmenPrefabs, right, xScale, zScale, 0.1f, null);
         }
 
     }
@@ -205,8 +212,8 @@ public class EnemiesManager : MonoBehaviour
         for (int i = 0; i < 50 + 5 * (waveNumber + (int) gameManager.difficulty) ; i++)
         {
             r = Random.Range(1, 3);
-            if (r == 1) CreateEnemy(classicZPrefabs, field, xScale, zScale, 0.1f);
-            else if (r == 2) CreateEnemy(sleepingZPrefabs, field, xScale, zScale, 0.1f);
+            if (r == 1) CreateEnemy(classicZPrefabs, field, xScale, zScale, 0.1f, zombieAudios);
+            else if (r == 2) CreateEnemy(sleepingZPrefabs, field, xScale, zScale, 0.1f, zombieAudios);
         }
     }
 

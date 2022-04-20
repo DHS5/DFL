@@ -367,6 +367,7 @@
 "Assets/Scripts/Objectif/Objectif.cs"
 "Assets/Scripts/Objectif/ObjectifManager.cs"
 "Assets/Scripts/Obstacle/ObstacleManager.cs"
+"Assets/Scripts/Player/PlayerAnimator.cs"
 "Assets/Scripts/Player/PlayerController.cs"
 "Assets/Scripts/Player/PlayerGameplay.cs"
 "Assets/Scripts/Team/Attackers.cs"

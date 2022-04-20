@@ -7,7 +7,7 @@ public class SleepingZombie : Zombie
     public override void ChasePlayer()
     {
         base.ChasePlayer();
-        if (distance < attackRadius && navMeshAgent.remainingDistance < 5)
+        if (distance < chaseRadius && navMeshAgent.remainingDistance < 5)
         {
             navMeshAgent.SetDestination(playerPosition + playerDirection * intelligence);
         }

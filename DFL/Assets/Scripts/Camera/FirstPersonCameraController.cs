@@ -11,29 +11,33 @@ public class FirstPersonCameraController : MonoBehaviour
     [Tooltip("Singleton Instance of the GameManager")]
     [SerializeField] private GameManager gameManager;
 
-
     [Tooltip("First person camera")]
-    private Camera fpCamera;
+    [SerializeField] private GameObject fpCamera;
 
     [Tooltip("Quaternion containing the camera rotation")]
     private Quaternion cameraRotation;
 
     [Header("First person camera parameters")]
+    [Tooltip("Angle at which the player's head is rotated around the X-axis")]
+    [Range(-10, 15)]
+    [SerializeField] private float headAngle = 10f;
     [Tooltip("Max angle at which the player is able to look behind")]
     [SerializeField] private int angleMax = 85;
     [Tooltip("Mouse sensitivity along the Y axis")]
     [Range(2, 10)]
     [SerializeField]  private float yMouseSensitivity = 3f;
+    public float YMS { set { yMouseSensitivity = value; if (DataManager.InstanceDataManager != null) DataManager.InstanceDataManager.yMouseSensitivity = value; } }
     [Tooltip("Mouse smoothness of the rotation")]
     [Range(10, 30)]
     [SerializeField] private float ySmoothRotation = 20f;
+    public float YSR { set { ySmoothRotation = value; if (DataManager.InstanceDataManager != null) DataManager.InstanceDataManager.ySmoothRotation = value; } }
 
     private bool locked = true;
 
     /// <summary>
     /// Locks the cursor and makes it invisible
     /// </summary>
-    private void LockCursor()
+    public void LockCursor()
     {
         // Lock the cursor in the middle of the screen
         Cursor.lockState = CursorLockMode.Locked;
@@ -68,7 +72,7 @@ public class FirstPersonCameraController : MonoBehaviour
         rot.w = 1;
 
         // Keeps it stable around the X and Z axis
-        rot = Quaternion.Euler(10f, rot.eulerAngles.y, 0f);
+        rot = Quaternion.Euler(headAngle, rot.eulerAngles.y, 0f);
 
         // Clamps the Y rotation in the angleMax range
         float angleY = 2.0f * Mathf.Rad2Deg * Mathf.Atan(rot.y);
@@ -98,6 +102,7 @@ public class FirstPersonCameraController : MonoBehaviour
 
         // Slerps to the new rotation
         fpCamera.transform.localRotation = Quaternion.Slerp(fpCamera.transform.localRotation, cameraRotation, ySmoothRotation * Time.deltaTime);
+        fpCamera.transform.rotation = Quaternion.Euler(headAngle, fpCamera.transform.rotation.eulerAngles.y, 0f);
     }
 
     /// <summary>
@@ -109,10 +114,10 @@ public class FirstPersonCameraController : MonoBehaviour
         LockCursor();
 
         // Initializes the camera
-        fpCamera = GetComponent<Camera>();
+        //fpCamera = GetComponent<Camera>();
 
         // Initializes the camera's rotation
-        cameraRotation = fpCamera.transform.localRotation;
+        cameraRotation = fpCamera.transform.rotation;
 
         if (DataManager.InstanceDataManager != null && DataManager.InstanceDataManager.yMouseSensitivity != 0)
         {
@@ -125,7 +130,7 @@ public class FirstPersonCameraController : MonoBehaviour
     private void LateUpdate()
     {
         // Gets the look rotation of the camera
-        if (locked && gameManager.gameOn) LookRotation();
+        if (locked && gameManager.gameOn) LookRotation(); //&& !camAn.isSpining
 
 
         if (Input.GetMouseButtonDown(1))

@@ -166,15 +166,21 @@ public class GameManager : MonoBehaviour
             // Calls the restart UI screen
             gameUIManager.GameOver();
         }
+
+        // Pause the game on press P
+        if (Input.GetKeyDown(KeyCode.P)) PauseGame();
     }
 
 
     public void PauseGame()
     {
         gameOn = false;
+        gameUIManager.SettingsScreen(true);
     }
     public void UnpauseGame()
     {
+        gameUIManager.SettingsScreen(false);
+        player.GetComponentInChildren<FirstPersonCameraController>().LockCursor();
         Invoke(nameof(GameOn) , 1f);
     }
     private void GameOn() { gameOn = true; }

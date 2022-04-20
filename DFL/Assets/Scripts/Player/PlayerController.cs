@@ -16,6 +16,8 @@ public class PlayerController : MonoBehaviour
     private PlayerGameplay playerGameplay;
     [Tooltip("Animator script of the camera")]
     [SerializeField] CameraAnimator cameraAnimator;
+    [Tooltip("Animator script of the player")]
+    [SerializeField] PlayerAnimator playerAnimator;
 
 
     [Tooltip("Whether the player is freezed")]
@@ -56,22 +58,22 @@ public class PlayerController : MonoBehaviour
             // Calculate the side speed
             float ss = Input.GetAxis("Horizontal") * sideSpeedM * (speed / (speed + Acceleration / sideSpeedAccD + bonusSpeed));
             // If already juking, prevent a second juke or a juke to the other side immediately
-            if (cameraAnimator.isJuking)
+            if (playerAnimator.isJuking)
             {
-                if (ss * cameraAnimator.jukeSpeed < 0 && Acceleration == 0)
+                if (ss * playerAnimator.jukeSpeed < 0 && Acceleration == 0)
                 {
                     ss *= spinSpeedM;
-                    cameraAnimator.Spin(ss);
+                    playerAnimator.Spin(ss);
                 }
                 else ss *= jukeSpeedM;
             }
-            else if (cameraAnimator.isSpining) ss *= spinSpeedM;
+            else if (playerAnimator.isSpining) ss *= spinSpeedM;
             // Juke on a big side speed
             if (Mathf.Abs(ss) > 9)
             {
                 if (canJuke)
                 {
-                    cameraAnimator.Juke(ss);
+                    playerAnimator.Juke(ss);
                     canJuke = false;
                 }
             }

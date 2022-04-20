@@ -12,7 +12,8 @@ public class GameUIManager : MonoBehaviour
 
     [Tooltip("Game UI screens\n" +
         "0 --> game screen\n" +
-        "1 --> restart screen")]
+        "1 --> restart screen\n" +
+        "2 --> settings screen")]
     [SerializeField] private GameObject[] screens;
     [Tooltip("Wave number UI text")]
     [SerializeField] private TextMeshProUGUI[] waveNumberTexts;
@@ -87,6 +88,11 @@ public class GameUIManager : MonoBehaviour
         screens[1].SetActive(true);
     }
 
+
+    public void SettingsScreen(bool state)
+    {
+        screens[2].SetActive(state);
+    }
 
     /// <summary>
     /// Constructs and plays the acceleration bar animation

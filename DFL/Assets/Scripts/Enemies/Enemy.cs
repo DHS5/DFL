@@ -16,6 +16,10 @@ public abstract class Enemy : MonoBehaviour
     [Tooltip("Game Object of the player")]
     protected GameObject player;
 
+    [HideInInspector] public AudioSource audioSource;
+
+    protected Animator animator;
+
     [Header("Behaviour parameters")]
     [Tooltip("Level of intelligence of the enemy (anticipation of the future position)")]
     [SerializeField] protected int intelligence;
@@ -111,5 +115,7 @@ public abstract class Enemy : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
         navMeshAgent = GetComponent<NavMeshAgent>();
+        audioSource = GetComponent<AudioSource>();
+        animator = GetComponent<Animator>();
     }
 }

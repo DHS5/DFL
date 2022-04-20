@@ -4,15 +4,8 @@ using UnityEngine;
 
 public class Zombie : Enemy
 {
-    private Animator animator;
-    public override void ChasePlayer()
-    {
-        base.ChasePlayer();
-    }
-
     private void Start()
     {
-        animator = GetComponent<Animator>();
         animator.Play("Base Layer.Walk", 0, Random.Range(0f, 1f));
     }
 
@@ -27,6 +20,11 @@ public class Zombie : Enemy
         {
             animator.SetFloat("MoveSpeed", 0f);
             animator.SetFloat("SpeedM", 3f);
+        }
+
+        if (distance < attackRadius && distance > 0)
+        {
+            animator.SetTrigger("Attack");
         }
     }
 }
