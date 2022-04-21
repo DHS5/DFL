@@ -72,7 +72,7 @@ public class GameManager : MonoBehaviour
     [Tooltip("Player Game Object")]
     public GameObject player;
 
-
+    [SerializeField] private Animator playerRunAnimator;
 
     /// <summary>
     /// Instantiate the Singleton
@@ -157,6 +157,9 @@ public class GameManager : MonoBehaviour
         {
             player.GetComponent<PlayerController>().freeze = true;
             enemiesManager.StopEnemies();
+
+            playerRunAnimator.SetTrigger("Dead");
+
             // If game mode = TEAM
             if (gameMode == GameMode.TEAM)
             {

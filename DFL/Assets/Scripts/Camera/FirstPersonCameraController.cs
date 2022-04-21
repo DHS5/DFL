@@ -11,8 +11,11 @@ public class FirstPersonCameraController : MonoBehaviour
     [Tooltip("Singleton Instance of the GameManager")]
     [SerializeField] private GameManager gameManager;
 
-    [Tooltip("First person camera")]
-    [SerializeField] private GameObject fpCamera;
+    [Tooltip("Player body game object")]
+    [SerializeField] private GameObject playerBody;
+
+    [Tooltip("Head game object, parent of the first person camera")]
+    [SerializeField] private GameObject head;
 
     [Tooltip("Quaternion containing the camera rotation")]
     private Quaternion cameraRotation;
@@ -91,9 +94,9 @@ public class FirstPersonCameraController : MonoBehaviour
         // Gets the mouse X position and clamps it
         float yRotation = Mathf.Clamp( Input.GetAxis("Mouse X") * yMouseSensitivity * 1f , -yMouseSensitivity , yMouseSensitivity);
         // Gets the camera rotation
-        float cameraYRot = Mathf.Abs(fpCamera.transform.localRotation.y);
+        float cameraYRot = Mathf.Abs(head.transform.localRotation.y);
         // If the player looks behind, reduces his rotation speed to avoid to exceed the maximum rotation angle
-        if (cameraYRot > (float)angleMax / 100 && yRotation* fpCamera.transform.localRotation.y > 0)
+        if (cameraYRot > (float)angleMax / 100 && yRotation* head.transform.localRotation.y > 0)
             yRotation = Mathf.Clamp(yRotation, -yMouseSensitivity + cameraYRot * yMouseSensitivity, yMouseSensitivity - cameraYRot * yMouseSensitivity);
 
         // Gets the new camera's rotation
@@ -101,8 +104,8 @@ public class FirstPersonCameraController : MonoBehaviour
         cameraRotation = ClampRotation(cameraRotation);
 
         // Slerps to the new rotation
-        fpCamera.transform.localRotation = Quaternion.Slerp(fpCamera.transform.localRotation, cameraRotation, ySmoothRotation * Time.deltaTime);
-        fpCamera.transform.rotation = Quaternion.Euler(headAngle, fpCamera.transform.rotation.eulerAngles.y, 0f);
+        head.transform.localRotation = Quaternion.Slerp(head.transform.localRotation, cameraRotation, ySmoothRotation * Time.deltaTime);
+        head.transform.rotation = Quaternion.Euler(headAngle, head.transform.rotation.eulerAngles.y, playerBody.transform.rotation.eulerAngles.z);
     }
 
     /// <summary>
@@ -114,10 +117,10 @@ public class FirstPersonCameraController : MonoBehaviour
         LockCursor();
 
         // Initializes the camera
-        //fpCamera = GetComponent<Camera>();
+        //head = GetComponent<Camera>();
 
         // Initializes the camera's rotation
-        cameraRotation = fpCamera.transform.rotation;
+        cameraRotation = head.transform.rotation;
 
         if (DataManager.InstanceDataManager != null && DataManager.InstanceDataManager.yMouseSensitivity != 0)
         {

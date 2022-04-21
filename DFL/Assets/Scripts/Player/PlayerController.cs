@@ -15,9 +15,9 @@ public class PlayerController : MonoBehaviour
     [Tooltip("Controls the gameplay of the player")]
     private PlayerGameplay playerGameplay;
     [Tooltip("Animator script of the camera")]
-    [SerializeField] CameraAnimator cameraAnimator;
+    private CameraAnimator cameraAnimator;
     [Tooltip("Animator script of the player")]
-    [SerializeField] PlayerAnimator playerAnimator;
+    private PlayerAnimator playerAnimator;
 
 
     [Tooltip("Whether the player is freezed")]
@@ -242,6 +242,9 @@ public class PlayerController : MonoBehaviour
     {
         playerGameplay = GetComponent<PlayerGameplay>();
         playerRigidbody = GetComponent<Rigidbody>();
+
+        cameraAnimator = playerCamera.GetComponent<CameraAnimator>();
+        playerAnimator = playerBody.GetComponent<PlayerAnimator>();
 
         // Calculates the jump power to reach a precise height
         jumpPower = new Vector3(0, Mathf.Sqrt(jumpHeight * -2 * (Physics.gravity.y * gravityScale)), 0);

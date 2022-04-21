@@ -60,16 +60,14 @@ public class PlayerGameplay : MonoBehaviour
         // When the player collides with an enemy --> game over
         if (collision.gameObject.CompareTag("Enemy") && !isInvincible)
         {
-            lifeNumber--;
-            if (lifeNumber > 0) gameManager.gameUIManager.ModifyLife(false, lifeNumber - 1);
-            Debug.Log("Dead by enemy");
+            Hurt();
+            Debug.Log("Hurt by enemy");
         }
         // When the player collides with an obstacle --> game over
         if (collision.gameObject.CompareTag("Obstacle") && !isInvincible)
         {
-            lifeNumber--;
-            if (lifeNumber > 0) gameManager.gameUIManager.ModifyLife(false, lifeNumber - 1);
-            Debug.Log("Dead by obstacle");
+            Hurt();
+            Debug.Log("Hurt by obstacle");
         }
 
         // If the player has no life left, GAME OVER
@@ -77,6 +75,12 @@ public class PlayerGameplay : MonoBehaviour
         {
             gameManager.gameOver = true;
         }
+    }
+
+    private void Hurt()
+    {
+        lifeNumber--;
+        if (lifeNumber > 0) gameManager.gameUIManager.ModifyLife(false, lifeNumber - 1);
     }
 
     /// <summary>
