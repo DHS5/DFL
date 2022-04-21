@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class Defender : Enemy
 {
+    private float runLimit = 3f;
+    private float walkLimit = 0.0001f;
+
+    private Quaternion lookRot;
+    
     public override void ChasePlayer()
     {
         base.ChasePlayer();
@@ -16,15 +21,27 @@ public class Defender : Enemy
 
     private void Update()
     {
-        if (navMeshAgent.velocity.magnitude > 0.0001f)
+        // Walk
+        if (navMeshAgent.velocity.magnitude > walkLimit && navMeshAgent.velocity.magnitude < runLimit)
         {
             animator.SetFloat("Speed", 1f);
+            lookRot = Quaternion.LookRotation(playerPosition - transform.position);
+            navMeshAgent.transform.rotation = Quaternion.Slerp(navMeshAgent.transform.rotation, lookRot, 5 * Time.deltaTime);
+            audioSource.Stop();
         }
+        // Run
+        else if (navMeshAgent.velocity.magnitude >= runLimit)
+        {
+            animator.SetFloat("Speed", 2f);
+            if (!audioSource.isPlaying) audioSource.Play();
+        }
+        // Idle
         else
         {
             animator.SetFloat("Speed", 0f);
-            Quaternion lookRot = Quaternion.LookRotation(playerPosition - transform.position);
+            lookRot = Quaternion.LookRotation(playerPosition - transform.position);
             navMeshAgent.transform.rotation = Quaternion.Slerp(navMeshAgent.transform.rotation, lookRot, 5 * Time.deltaTime);
+            audioSource.Stop();
         }
     }
 }

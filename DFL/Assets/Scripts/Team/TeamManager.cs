@@ -15,9 +15,10 @@ public class TeamManager : MonoBehaviour
     [Tooltip("Enemy Manager of the game")]
     private EnemiesManager enemiesManager;
 
-    [Tooltip("")]
+    [Tooltip("GameObject of the player")]
     [SerializeField] private GameObject player;
 
+    [Tooltip("List of the attackers's prefabs")]
     [SerializeField] private GameObject[] attackersPrefabs;
 
 
@@ -127,12 +128,13 @@ public class TeamManager : MonoBehaviour
     private void InstantiateAttacker()
     {
         Vector3 playerPos = player.transform.position;
-        Vector3 randomPos = new Vector3(Random.Range(-playerProtectionRadius / 2, playerProtectionRadius / 2), 0, Random.Range(5, playerProtectionRadius / 2)) + playerPos;
-        GameObject attacker = Instantiate(attackersPrefabs[0], randomPos, Quaternion.identity);
-        attacker.GetComponent<Attackers>().teamManager = this;
-        attacker.GetComponent<Attackers>().player = player;
-        attacker.GetComponent<Attackers>().playerProtectionRadius = playerProtectionRadius;
-        freeAttackers.Add(attacker);
+        Vector3 randomPos = new Vector3(Random.Range(-playerProtectionRadius / 2, playerProtectionRadius / 2), 0, Random.Range(10, playerProtectionRadius / 2)) + playerPos;
+        Attackers attacker = Instantiate(attackersPrefabs[0], randomPos, Quaternion.identity).GetComponent<Attackers>();
+        attacker.teamManager = this;
+        attacker.player = player;
+        attacker.playerProtectionRadius = playerProtectionRadius;
+        attacker.Size *= Random.Range(0.9f, 1.1f);
+        freeAttackers.Add(attacker.gameObject);
     }
 
 

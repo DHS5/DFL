@@ -106,15 +106,15 @@ NavMeshSettings:
   m_BuildSettings:
     serializedVersion: 2
     agentTypeID: 0
-    agentRadius: 0.5
-    agentHeight: 2
+    agentRadius: 1
+    agentHeight: 2.5
     agentSlope: 45
-    agentClimb: 0.4
+    agentClimb: 0.51
     ledgeDropHeight: 0
     maxJumpAcrossDistance: 0
     minRegionArea: 2
     manualCellSize: 0
-    cellSize: 0.16666667
+    cellSize: 0.33333334
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
@@ -122,7 +122,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 23800000, guid: 83a9a0b406b6cc24bb302a8093e2bf0e, type: 2}
+  m_NavMeshData: {fileID: 0}
 --- !u!1 &78291670
 GameObject:
   m_ObjectHideFlags: 0
@@ -517,9 +517,9 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
+  m_VoxelSize: 0.33333334
   m_BuildHeightMesh: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: 74087b31ccc539641b3bb4d6dfc98f99, type: 2}
 --- !u!4 &205677400
 Transform:
   m_ObjectHideFlags: 0
@@ -734,7 +734,7 @@ MonoBehaviour:
   gameManager: {fileID: 392287958}
   player: {fileID: 1664567380}
   attackersPrefabs:
-  - {fileID: 3002252927343327898, guid: 27acb8807bd0c754ba26fe6894f443d1, type: 3}
+  - {fileID: 3002252927343327898, guid: bc24d57d23e927447a7c803f3188db9b, type: 3}
   enemies: []
   playerProtectionRadius: 30
   teamReactivity: 0.5
@@ -941,10 +941,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f57bfd2202e8254aa4b5f3738344fed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameMode: 1
-  difficulty: 4
+  gameMode: 3
+  difficulty: 0
   options: 00000000
-  enemiesRange: 1
+  enemiesRange: 5
   gameOn: 0
   gameOver: 0
   fieldManager: {fileID: 1426004912}
@@ -981,6 +981,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1664567381}
     m_Modifications:
+    - target: {fileID: 481326121232926630, guid: 954c6aefe33bdf948af105d130cc7e30, type: 3}
+      propertyPath: near clip plane
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 1618868863614082247, guid: 954c6aefe33bdf948af105d130cc7e30, type: 3}
       propertyPath: head
       value: 
@@ -997,6 +1001,10 @@ PrefabInstance:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 392287958}
+    - target: {fileID: 2360084400918751299, guid: 954c6aefe33bdf948af105d130cc7e30, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4741962590522118993, guid: 954c6aefe33bdf948af105d130cc7e30, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -1044,6 +1052,18 @@ PrefabInstance:
     - target: {fileID: 5369704138176416235, guid: 954c6aefe33bdf948af105d130cc7e30, type: 3}
       propertyPath: m_Name
       value: Player1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5604746415121909470, guid: 954c6aefe33bdf948af105d130cc7e30, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7506089709245199221, guid: 954c6aefe33bdf948af105d130cc7e30, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7506089709245199221, guid: 954c6aefe33bdf948af105d130cc7e30, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.005
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 954c6aefe33bdf948af105d130cc7e30, type: 3}
@@ -3723,7 +3743,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 112
-  m_CollisionDetection: 1
+  m_CollisionDetection: 2
 --- !u!114 &1664567386
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3751,10 +3771,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.25
-  m_Height: 2.5
+  m_Radius: 0.45666313
+  m_Height: 2.286889
   m_Direction: 1
-  m_Center: {x: 0, y: 1.25, z: 0}
+  m_Center: {x: 0, y: 1.1434445, z: 0.28309822}
 --- !u!1 &1702835708
 GameObject:
   m_ObjectHideFlags: 0
@@ -4778,6 +4798,8 @@ MonoBehaviour:
   - {fileID: 3002252927343327898, guid: 450a7f29cdde4f0409b8de7cf0044c93, type: 3}
   - {fileID: 3002252927343327898, guid: 2daef5a63457e2249a66a9474cfca210, type: 3}
   - {fileID: 3002252927343327898, guid: 450a7f29cdde4f0409b8de7cf0044c93, type: 3}
+  defenderAudios:
+  - {fileID: 8300000, guid: ea990ad4fac7d984b8a38eefe8c40f75, type: 3}
   classicZPrefabs:
   - {fileID: 4789666479980949965, guid: f8d2d8798542fba4e98c4e6075108948, type: 3}
   - {fileID: 4789666479980949965, guid: d4d60b14aea97b94e9f6649081c26410, type: 3}

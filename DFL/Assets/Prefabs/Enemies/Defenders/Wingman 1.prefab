@@ -106,6 +106,120 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: b39962497bfc4a145b0e3e71398066f6, type: 3}
   m_PrefabInstance: {fileID: 2696333398139586507}
   m_PrefabAsset: {fileID: 0}
+--- !u!82 &6778903616264709869
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3002252927343327898}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 20
+  Pan2D: 0
+  rolloffMode: 2
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0.10366097
+      value: 0.99728394
+      inSlope: -0.006562001
+      outSlope: -0.006562001
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.46048832
+      outWeight: 1
+    - serializedVersion: 3
+      time: 0.255912
+      value: 0.4575348
+      inSlope: -2.8193245
+      outSlope: -2.8193245
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.36575308
+    - serializedVersion: 3
+      time: 0.42516786
+      value: 0.14265442
+      inSlope: -0.8594023
+      outSlope: -0.4500587
+      tangentMode: 1
+      weightedMode: 0
+      inWeight: 0.71820253
+      outWeight: 0.2563016
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: -0.24816708
+      outSlope: -0.20007975
+      tangentMode: 5
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!195 &-8639070971329790850
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -115,7 +229,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 3002252927343327898}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 5
   m_Speed: 10
   m_Acceleration: 10
   avoidancePriority: 50
@@ -124,8 +238,8 @@ NavMeshAgent:
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 0
   m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 1
+  m_Height: 15
+  m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!114 &4611239730421938647
@@ -192,16 +306,33 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7036213049465896255, guid: b39962497bfc4a145b0e3e71398066f6, type: 3}
   m_PrefabInstance: {fileID: 2696333398139586507}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &865119798458555711
-BoxCollider:
+--- !u!54 &2016886119761987994
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4958158133932342004}
-  m_Material: {fileID: 0}
+  serializedVersion: 2
+  m_Mass: 80
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 84
+  m_CollisionDetection: 1
+--- !u!136 &3354892753847535572
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4958158133932342004}
+  m_Material: {fileID: 13400000, guid: e9e013393cac0354d855452d037b9488, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.05982399, y: 0.029392615, z: 0.14031056}
-  m_Center: {x: 0, y: 0, z: 0.015969792}
+  m_Radius: 0.02784033
+  m_Height: 0.14222164
+  m_Direction: 2
+  m_Center: {x: 0, y: -0.012319027, z: 0.014433356}

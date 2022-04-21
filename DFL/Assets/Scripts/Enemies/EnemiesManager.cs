@@ -23,6 +23,8 @@ public class EnemiesManager : MonoBehaviour
     [SerializeField] private GameObject[] wingmenPrefabs;
     [Tooltip("List of the Bigmen's prefabs")]
     [SerializeField] private GameObject[] linemenPrefabs;
+    [Tooltip("")]
+    [SerializeField] private AudioClip[] defenderAudios;
 
     [Header("Zombies")]
     [Tooltip("List of the classic zombie's prefabs")]
@@ -174,7 +176,7 @@ public class EnemiesManager : MonoBehaviour
         // 5 Linemen in the center
         for (int i = 0; i < 5; i++)
         {
-            CreateEnemy(linemenPrefabs, center, xScale, zScale, 0.1f, null);
+            CreateEnemy(linemenPrefabs, center, xScale, zScale, 0.1f, defenderAudios);
         }
 
         // Spawn in the left zone
@@ -184,7 +186,7 @@ public class EnemiesManager : MonoBehaviour
         // 3 Wingmen on the left
         for (int i = 0; i < 3; i++)
         {
-            CreateEnemy(wingmenPrefabs, left, xScale, zScale, 0.1f, null);
+            CreateEnemy(wingmenPrefabs, left, xScale, zScale, 0.1f, defenderAudios);
         }
 
         // Spawn in the right zone
@@ -194,7 +196,7 @@ public class EnemiesManager : MonoBehaviour
         // 3 Wingmen on the right
         for (int i = 0; i < 3; i++)
         {
-            CreateEnemy(wingmenPrefabs, right, xScale, zScale, 0.1f, null);
+            CreateEnemy(wingmenPrefabs, right, xScale, zScale, 0.1f, defenderAudios);
         }
 
     }
