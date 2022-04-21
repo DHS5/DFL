@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 12ccb828343c3405fb94289774b51aad, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -469,8 +469,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManager: {fileID: 392287958}
   skyboxes:
-  - {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
-  - {fileID: 2100000, guid: ed9e73623dad2854daa45e1b6f2405ea, type: 2}
+  - {fileID: 2100000, guid: 12ccb828343c3405fb94289774b51aad, type: 2}
+  - {fileID: 2100000, guid: 6eecb3bb77b3f7a43a504fceda3b0b5f, type: 2}
   directionnalLights:
   - {fileID: 1979317346042637183, guid: 0a48b145379cd624bb16046f51b1ce54, type: 3}
   - {fileID: 1211903166361045840, guid: 2e8ef2a4979899c439911dd8ba85723a, type: 3}
