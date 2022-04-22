@@ -204,7 +204,7 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         velocity = Vector3.forward * (speed + bonusSpeed + Acceleration) * Time.deltaTime + Vector3.right * SideSpeed * Time.deltaTime;
-        if (!playerGameplay.isChasable) velocity *= 2;
+        //if (!playerGameplay.isChasable) velocity *= 2;
     }
 
 

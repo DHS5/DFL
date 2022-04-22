@@ -12,6 +12,7 @@ public class Objectif : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            Destroy(gameObject);
             objectifManager.NextObj();
         }
     }

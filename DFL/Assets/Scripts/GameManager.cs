@@ -153,22 +153,7 @@ public class GameManager : MonoBehaviour
         }
 
         // Checks if the game is over
-        if (gameOver)
-        {
-            player.GetComponent<PlayerController>().freeze = true;
-            enemiesManager.StopEnemies();
-
-            playerRunAnimator.SetTrigger("Dead");
-
-            // If game mode = TEAM
-            if (gameMode == GameMode.TEAM)
-            {
-                teamManager.StopAttackers();
-            }
-
-            // Calls the restart UI screen
-            gameUIManager.GameOver();
-        }
+        if (gameOver) GameOver();
 
         // Pause the game on press P
         if (Input.GetKeyDown(KeyCode.P)) PauseGame();
@@ -183,11 +168,34 @@ public class GameManager : MonoBehaviour
     public void UnpauseGame()
     {
         gameUIManager.SettingsScreen(false);
-        player.GetComponentInChildren<FirstPersonCameraController>().LockCursor();
         Invoke(nameof(GameOn) , 1f);
     }
-    private void GameOn() { gameOn = true; }
+    private void GameOn()
+    { 
+        gameOn = true;
+        player.GetComponentInChildren<FirstPersonCameraController>().LockCursor();
+    }
 
+
+    /// <summary>
+    /// Called when the player loses
+    /// </summary>
+    private void GameOver()
+    {
+        player.GetComponent<PlayerController>().freeze = true;
+        enemiesManager.StopEnemies();
+
+        playerRunAnimator.SetTrigger("Dead");
+
+        // If game mode = TEAM
+        if (gameMode == GameMode.TEAM)
+        {
+            teamManager.StopAttackers();
+        }
+
+        // Calls the restart UI screen
+        gameUIManager.GameOver();
+    }
 
 
     /// <summary>

@@ -33,9 +33,7 @@ public class ObjectifManager : MonoBehaviour
 
     public void NextObj()
     {
-        // Destroys the previous objectif
-        if (currentObjectif != null) Destroy(currentObjectif.gameObject);
-        // Gets the next one
+        // Gets the next objectif
         if (objectives.Count > 0) currentObjectif = objectives.Dequeue();
     }
 
@@ -51,7 +49,7 @@ public class ObjectifManager : MonoBehaviour
         {
             // Gets the zones position and scale info
             Vector3 zonePos = zones[i].transform.position;
-            float xScale = zones[i].transform.localScale.x/2;
+            float xScale = zones[i].transform.localScale.x/2 - 10;
             float zScale = zones[i].transform.localScale.z/2;
 
             // Gets a random position in the current zone

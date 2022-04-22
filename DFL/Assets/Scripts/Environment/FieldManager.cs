@@ -55,6 +55,8 @@ public class FieldManager : MonoBehaviour
     private Vector3 fieldPosition = new Vector3(0, 0, 0);
     [Tooltip("Vector 3 giving the distance between the position of 2 fields")]
     private Vector3 fieldDistance = new Vector3(0,0,289);
+    [Tooltip("Vector 3 containing the position of the stadium in relation to the field")]
+    private Vector3 stadiumPosition = new Vector3(0, 0, 225);
 
     /// <summary>
     /// Generates a random field
@@ -81,7 +83,7 @@ public class FieldManager : MonoBehaviour
         // ### Creation of the field and the stadium
         // ## Instantiation of the prefabs
         field =  Instantiate(fieldPrefab, fieldPosition, Quaternion.identity);
-        stadium = Instantiate(stadiumPrefab, fieldPosition, Quaternion.identity);
+        stadium = Instantiate(stadiumPrefab, fieldPosition + stadiumPosition, Quaternion.identity);
         // ## Gets the field script
         fieldScript = field.GetComponent<Field>();
         // ## Gets random field's materials

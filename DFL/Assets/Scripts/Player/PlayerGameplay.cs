@@ -38,6 +38,8 @@ public class PlayerGameplay : MonoBehaviour
             isChasable = false;
 
             gameManager.TunnelEnter();
+
+            transform.position = new Vector3(0, 0, transform.position.z + 40);
         }
 
         // When the player quits the tunnel --> Destroys the former field

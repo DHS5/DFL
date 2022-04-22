@@ -21,6 +21,8 @@ public class GameUIManager : MonoBehaviour
     [SerializeField] private Slider sensitivitySlider;
     [SerializeField] private Slider smoothRotationSlider;
 
+    [SerializeField] private GameObject hintTexts;
+
 
     [Tooltip("UI components of the acceleration bar")]
     [SerializeField] private GameObject[] accelerationBars;
@@ -93,6 +95,15 @@ public class GameUIManager : MonoBehaviour
     {
         screens[2].SetActive(state);
     }
+
+    public void CloseAllTexts()
+    {
+        foreach (TextMeshProUGUI t in hintTexts.GetComponentsInChildren<TextMeshProUGUI>())
+        {
+            t.gameObject.SetActive(false);
+        }
+    }
+
 
     /// <summary>
     /// Constructs and plays the acceleration bar animation

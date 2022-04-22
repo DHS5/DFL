@@ -96,8 +96,10 @@ public class FirstPersonCameraController : MonoBehaviour
         // Gets the camera rotation
         float cameraYRot = Mathf.Abs(head.transform.localRotation.y);
         // If the player looks behind, reduces his rotation speed to avoid to exceed the maximum rotation angle
-        if (cameraYRot > (float)angleMax / 100 && yRotation* head.transform.localRotation.y > 0)
+        if (cameraYRot > (float)angleMax / 100 && ((yRotation > 0 && head.transform.localRotation.eulerAngles.y < 180) || (yRotation < 0 && head.transform.localRotation.eulerAngles.y > 180)))
+        {
             yRotation = Mathf.Clamp(yRotation, -yMouseSensitivity + cameraYRot * yMouseSensitivity, yMouseSensitivity - cameraYRot * yMouseSensitivity);
+        }
 
         // Gets the new camera's rotation
         cameraRotation *= Quaternion.Euler(0f, yRotation, 0f);
@@ -105,6 +107,7 @@ public class FirstPersonCameraController : MonoBehaviour
 
         // Slerps to the new rotation
         head.transform.localRotation = Quaternion.Slerp(head.transform.localRotation, cameraRotation, ySmoothRotation * Time.deltaTime);
+        // Fixes the x-rotation to the head angle and the z-rotation to the body's rotation
         head.transform.rotation = Quaternion.Euler(headAngle, head.transform.rotation.eulerAngles.y, playerBody.transform.rotation.eulerAngles.z);
     }
 
@@ -133,15 +136,15 @@ public class FirstPersonCameraController : MonoBehaviour
     private void LateUpdate()
     {
         // Gets the look rotation of the camera
-        if (locked && gameManager.gameOn) LookRotation(); //&& !camAn.isSpining
+        if (locked && gameManager.gameOn) LookRotation();
 
 
-        if (Input.GetMouseButtonDown(1))
+        if (!locked && Input.GetMouseButtonDown(1))
         {
             LockCursor();
         }
 
-        else if (Input.GetKeyDown(KeyCode.Escape))
+        if (locked && (Input.GetKeyDown(KeyCode.Escape) || gameManager.gameOver || !gameManager.gameOn))
         {
             UnlockCursor();
         }

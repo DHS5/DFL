@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 using UnityEngine.SceneManagement;
 #if UNITY_EDITOR
 using UnityEditor;
@@ -12,6 +13,7 @@ public class MainMenuUIManager : MonoBehaviour
     [SerializeField] private Slider sensitivitySlider;
     [SerializeField] private Slider smoothRotationSlider;
 
+    [SerializeField] private GameObject hintTexts;
 
     /// <summary>
     /// Game Mode property
@@ -55,6 +57,16 @@ public class MainMenuUIManager : MonoBehaviour
         if (DataManager.InstanceDataManager.ySmoothRotation != 0)
             smoothRotationSlider.value = DataManager.InstanceDataManager.ySmoothRotation;
         else DataManager.InstanceDataManager.ySmoothRotation = smoothRotationSlider.value;
+    }
+
+
+
+    public void CloseAllTexts()
+    {
+        foreach (TextMeshProUGUI t in hintTexts.GetComponentsInChildren<TextMeshProUGUI>())
+        {
+            t.gameObject.SetActive(false);
+        }
     }
 
 
