@@ -13,7 +13,6 @@ public class MainMenuUIManager : MonoBehaviour
     [SerializeField] private Slider sensitivitySlider;
     [SerializeField] private Slider smoothRotationSlider;
 
-    [SerializeField] private GameObject hintTexts;
 
     /// <summary>
     /// Game Mode property
@@ -61,9 +60,9 @@ public class MainMenuUIManager : MonoBehaviour
 
 
 
-    public void CloseAllTexts()
+    public void CloseAllTexts(GameObject g)
     {
-        foreach (TextMeshProUGUI t in hintTexts.GetComponentsInChildren<TextMeshProUGUI>())
+        foreach (TextMeshProUGUI t in g.GetComponentsInChildren<TextMeshProUGUI>())
         {
             t.gameObject.SetActive(false);
         }

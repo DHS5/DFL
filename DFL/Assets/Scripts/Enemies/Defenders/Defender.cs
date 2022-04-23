@@ -33,6 +33,7 @@ public class Defender : Enemy
         else if (navMeshAgent.velocity.magnitude >= runLimit)
         {
             animator.SetFloat("Speed", 2f);
+            audioSource.priority = (int)distance;
             if (!audioSource.isPlaying) audioSource.Play();
         }
         // Idle

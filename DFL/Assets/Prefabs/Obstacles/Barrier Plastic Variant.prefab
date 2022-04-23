@@ -33,15 +33,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4404025759862344, guid: 0e999189ff415364798d53bb25e626ce, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 645.9275
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4404025759862344, guid: 0e999189ff415364798d53bb25e626ce, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 551.37024
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4404025759862344, guid: 0e999189ff415364798d53bb25e626ce, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 271.70715
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4404025759862344, guid: 0e999189ff415364798d53bb25e626ce, type: 3}
       propertyPath: m_LocalRotation.w
@@ -71,6 +71,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 54854627386132520, guid: 0e999189ff415364798d53bb25e626ce, type: 3}
+      propertyPath: m_Constraints
+      value: 80
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e999189ff415364798d53bb25e626ce, type: 3}
 --- !u!1 &2739308792927983643 stripped
@@ -88,7 +92,7 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 0.020000001, y: 0.43400002, z: 0.92}
+  m_Extents: {x: 0.25, y: 0.43400002, z: 0.95}
   m_MoveThreshold: 0.1
   m_Carve: 0
   m_CarveOnlyStationary: 1
