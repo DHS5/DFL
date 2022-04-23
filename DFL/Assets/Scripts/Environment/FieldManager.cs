@@ -47,6 +47,8 @@ public class FieldManager : MonoBehaviour
     private GameObject formerField;
     [Tooltip("Former stadium game object")]
     private GameObject formerStadium;
+    [Tooltip("Stadium's camera")]
+    public Camera StadiumCamera { get; private set; }
 
     private Field fieldScript;
     private Field formerFieldScript;
@@ -61,7 +63,7 @@ public class FieldManager : MonoBehaviour
     /// <summary>
     /// Generates a random field
     /// </summary>
-    public void GenerateField()
+    public Field GenerateField()
     {
         // If it's not the first field creation, keeps the former field and stadium
         if (field != null)
@@ -84,6 +86,8 @@ public class FieldManager : MonoBehaviour
         // ## Instantiation of the prefabs
         field =  Instantiate(fieldPrefab, fieldPosition, Quaternion.identity);
         stadium = Instantiate(stadiumPrefab, fieldPosition + stadiumPosition, Quaternion.identity);
+        StadiumCamera = stadium.GetComponentInChildren<Camera>();
+        StadiumCamera.gameObject.SetActive(false);
         // ## Gets the field script
         fieldScript = field.GetComponent<Field>();
         // ## Gets random field's materials
@@ -93,26 +97,18 @@ public class FieldManager : MonoBehaviour
         // ## Actualization of the Nav Mesh
         surface.BuildNavMesh();
 
-        // ### Gives the GameManager the fieldScript
-        gameManager.currentField = fieldScript;
+        // ### Returns the fieldScript
+        return fieldScript;
     }
 
     /// <summary>
     /// Destroys the former field and stadium
     /// </summary>
-    public void SuppField()
+    public void DestroyField()
     {
         // Destroys the former field and stadium
         if (formerField != null) Destroy(formerField);
         if (formerFieldScript != null) formerFieldScript.SuppEnemies();
         if (formerStadium != null) Destroy(formerStadium);
-    }
-
-    /// <summary>
-    /// 
-    /// </summary>
-    private void Awake()
-    {
-        
     }
 }

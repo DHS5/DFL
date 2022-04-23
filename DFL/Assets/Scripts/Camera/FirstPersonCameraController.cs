@@ -17,6 +17,9 @@ public class FirstPersonCameraController : MonoBehaviour
     [Tooltip("Head game object, parent of the first person camera")]
     [SerializeField] private GameObject head;
 
+    [Tooltip("First person camera")]
+    [SerializeField] private Camera fpCamera;
+
     [Tooltip("Quaternion containing the camera rotation")]
     private Quaternion cameraRotation;
 
@@ -34,6 +37,11 @@ public class FirstPersonCameraController : MonoBehaviour
     [Range(10, 30)]
     [SerializeField] private float ySmoothRotation = 20f;
     public float YSR { set { ySmoothRotation = value; if (DataManager.InstanceDataManager != null) DataManager.InstanceDataManager.ySmoothRotation = value; } }
+    [Tooltip("")]
+    [SerializeField] private float[] cameraZPositions;
+    [Tooltip("")]
+    private int cameraZPos = 0;
+
 
     private bool locked = true;
 
@@ -147,6 +155,14 @@ public class FirstPersonCameraController : MonoBehaviour
         if (locked && (Input.GetKeyDown(KeyCode.Escape) || gameManager.gameOver || !gameManager.gameOn))
         {
             UnlockCursor();
+        }
+
+        if (locked && Input.GetKeyDown(KeyCode.M))
+        {
+            if (cameraZPos == cameraZPositions.Length - 1) cameraZPos = 0;
+            else cameraZPos++;
+            Debug.Log(cameraZPos);
+            fpCamera.transform.localPosition = new Vector3(fpCamera.transform.localPosition.x, fpCamera.transform.localPosition.y, cameraZPositions[cameraZPos]);
         }
     }    
 

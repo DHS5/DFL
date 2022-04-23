@@ -11,10 +11,13 @@ public class ObstacleManager : MonoBehaviour
     [Tooltip("Prefabs of the obstacles")]
     [SerializeField] private List<GameObject> obstaclePrefabs = new List<GameObject>();
 
+    [Tooltip("List of the active obstacles")]
+    private List<GameObject> obstacles = new List<GameObject>();
 
+    [Tooltip("Field zone where the obstacles are placable")]
     private GameObject fieldZone;
 
-
+    [Tooltip("Max number of obstacles placable on a single field")]
     [SerializeField] private int obstaclesLimit;
 
     /// <summary>
@@ -48,6 +51,20 @@ public class ObstacleManager : MonoBehaviour
             randomPos = new Vector3(Random.Range(-xScale, xScale), 0, Random.Range(-zScale, zScale)) + fieldPos;
             randomOrientation = Quaternion.Euler(0, Random.Range(0, 180), 0);
             GameObject obs = Instantiate(obstaclePrefabs[Random.Range(0, obstaclePrefabs.Count)], randomPos, randomOrientation);
+            obstacles.Add(obs);
         }
+    }
+
+
+    /// <summary>
+    /// Destroys the active obstacles
+    /// </summary>
+    public void DestroyObstacles()
+    {
+        for (int i = 0; i < obstacles.Count; i++)
+        {
+            Destroy(obstacles[i]);
+        }
+        obstacles.Clear();
     }
 }

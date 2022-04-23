@@ -31,6 +31,26 @@ public class EnvironmentManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Increases the density of the fog
+    /// </summary>
+    /// <param name="densityAddition">FogDensity += densityAddition</param>
+    public void IncreaseFog(float densityAddition)
+    {
+        RenderSettings.fogDensity += densityAddition;
+    }
+
+    public void BedTime()
+    {
+        RenderSettings.skybox = skyboxes[2];
+        FindObjectOfType<Light>().gameObject.SetActive(false);
+        dirLight = Instantiate(directionnalLights[2], new Vector3(0, 0, 0), Quaternion.Euler(50, -30, 0));
+        RenderSettings.ambientIntensity = 0.4f;
+    }
+
+
+
+
     public void ZombieEnterTunnel()
     {
         RenderSettings.ambientIntensity = 0f;

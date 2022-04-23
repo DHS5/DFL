@@ -20,9 +20,12 @@ public class ObjectifManager : MonoBehaviour
     private Objectif currentObjectif;
 
 
-    // Zones
+    [Tooltip("Zones of the field on which to place the objectives")]
     private GameObject[] zones = new GameObject[3];
 
+    /// <summary>
+    /// Gets the field zones
+    /// </summary>
     private void GetZones()
     {
         zones[0] = gameManager.currentField.frontZone;
@@ -30,14 +33,18 @@ public class ObjectifManager : MonoBehaviour
         zones[2] = gameManager.currentField.endZone;
     }
 
-
+    /// <summary>
+    /// Gets the next objectif
+    /// </summary>
     public void NextObj()
     {
-        // Gets the next objectif
         if (objectives.Count > 0) currentObjectif = objectives.Dequeue();
     }
 
 
+    /// <summary>
+    /// Generates the objectives
+    /// </summary>
     public void GenerateObj()
     {
         Objectif obj;
@@ -68,6 +75,7 @@ public class ObjectifManager : MonoBehaviour
 
     private void Update()
     {
+        // Checks if the player misses an objectif
         if (currentObjectif != null && player.transform.position.z > currentObjectif.gameObject.transform.position.z + 5)
         {
             Debug.Log("Missed an objectif");

@@ -96,9 +96,9 @@ public class GameUIManager : MonoBehaviour
         screens[2].SetActive(state);
     }
 
-    public void CloseAllTexts()
+    public void CloseAllTexts(GameObject g)
     {
-        foreach (TextMeshProUGUI t in hintTexts.GetComponentsInChildren<TextMeshProUGUI>())
+        foreach (TextMeshProUGUI t in g.GetComponentsInChildren<TextMeshProUGUI>())
         {
             t.gameObject.SetActive(false);
         }

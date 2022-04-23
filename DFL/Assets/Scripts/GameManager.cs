@@ -42,7 +42,6 @@ public class GameManager : MonoBehaviour
 
     [Tooltip("Whether the game is running")]
     [HideInInspector] public bool gameOn = false;
-    private bool gameOnLate = false;
     [Tooltip("Whether the game is over")]
     [HideInInspector] public bool gameOver = false;
 
@@ -71,7 +70,7 @@ public class GameManager : MonoBehaviour
     [Header("Player")]
     [Tooltip("Player Game Object")]
     public GameObject player;
-
+    [Tooltip("Animator of the player")]
     [SerializeField] private Animator playerRunAnimator;
 
     /// <summary>
@@ -118,42 +117,12 @@ public class GameManager : MonoBehaviour
     /// </summary>
     private void Update()
     {
-        // Checks if the game is on
-        if (!gameOn && gameOnLate)
-        {
-            // Freezes the player
-            player.GetComponent<PlayerController>().freeze = true;
-            // Stops the enemies
-            enemiesManager.StopEnemies();
-
-            // If game mode = TEAM
-            if (gameMode == GameMode.TEAM)
-            {
-                // Stops the attackers
-                teamManager.StopAttackers();
-            }
-
-            gameOnLate = false;
-        }
-        else if (gameOn && !gameOnLate)
-        {
-            // Unfreezes the player
-            player.GetComponent<PlayerController>().freeze = false;
-            // Resumes the enemies
-            enemiesManager.ResumeEnemies();
-
-            // If game mode = TEAM
-            if (gameMode == GameMode.TEAM)
-            {
-                // Resumes the attackers
-                teamManager.ResumeAttackers();
-            }
-
-            gameOnLate = true;
-        }
-
         // Checks if the game is over
-        if (gameOver) GameOver();
+        if (gameOver)
+        {
+            player.GetComponent<PlayerController>().freeze = true;
+            Invoke(nameof(GameOver), 0.5f);
+        }
 
         // Pause the game on press P
         if (Input.GetKeyDown(KeyCode.P)) PauseGame();
@@ -163,6 +132,19 @@ public class GameManager : MonoBehaviour
     public void PauseGame()
     {
         gameOn = false;
+
+        // Freezes the player
+        player.GetComponent<PlayerController>().freeze = true;
+        // Stops the enemies
+        enemiesManager.StopEnemies();
+
+        // If game mode = TEAM
+        if (gameMode == GameMode.TEAM)
+        {
+            // Stops the attackers
+            teamManager.StopAttackers();
+        }
+
         gameUIManager.SettingsScreen(true);
     }
     public void UnpauseGame()
@@ -173,6 +155,19 @@ public class GameManager : MonoBehaviour
     private void GameOn()
     { 
         gameOn = true;
+
+        // Unfreezes the player
+        player.GetComponent<PlayerController>().freeze = false;
+        // Resumes the enemies
+        enemiesManager.ResumeEnemies();
+
+        // If game mode = TEAM
+        if (gameMode == GameMode.TEAM)
+        {
+            // Resumes the attackers
+            teamManager.ResumeAttackers();
+        }
+
         player.GetComponentInChildren<FirstPersonCameraController>().LockCursor();
     }
 
@@ -182,18 +177,39 @@ public class GameManager : MonoBehaviour
     /// </summary>
     private void GameOver()
     {
+        // ### Player
+
+        // Player freezes
         player.GetComponent<PlayerController>().freeze = true;
+        // Player animator stops
+        playerRunAnimator.SetTrigger("Dead");
+
+
+        // ### Enemies
+
+        // Enemies stop
         enemiesManager.StopEnemies();
 
-        playerRunAnimator.SetTrigger("Dead");
+        
+        // ### Modes
 
         // If game mode = TEAM
         if (gameMode == GameMode.TEAM)
         {
+            // Attackers stop
             teamManager.StopAttackers();
         }
 
-        // Calls the restart UI screen
+
+        // ### Environment
+
+        // Activate the stadium's camera
+        fieldManager.StadiumCamera.gameObject.SetActive(true);
+
+        
+        // ### UI
+        
+        // Calls the UI restart screen
         gameUIManager.GameOver();
     }
 
@@ -203,18 +219,32 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void TunnelEnter()
     {
+        // ### Environment
+        
         // Generates a new field
-        fieldManager.GenerateField();
-        // Gives the EnemiesManager the field script and calls an enemy wave
-        enemiesManager.field = currentField;
+        currentField = fieldManager.GenerateField();
+        // Increases the fog according to the difficulty
+        if (difficulty == GameDifficulty.HARD) environmentManager.IncreaseFog(0.03f);
+        else if (difficulty == GameDifficulty.NORMAL) environmentManager.IncreaseFog(0.01f);
+        // Passes to night mode after wave 10 (if not zombie mode)
+        if (gameMode != GameMode.ZOMBIE && enemiesManager.waveNumber == 9) environmentManager.BedTime();
+
+
+        // ### Enemies
+
+        // Generates an enemy wave
         enemiesManager.EnemyWave();
 
+
+        // ### Modes
+        /*
         // If game mode = ZOMBIE
         if (gameMode == GameMode.ZOMBIE)
         {
             // Puts the scene in a total dark
             environmentManager.ZombieEnterTunnel();
         }
+        */
 
         // If game mode = TEAM
         if (gameMode == GameMode.TEAM)
@@ -225,9 +255,14 @@ public class GameManager : MonoBehaviour
             teamManager.enemies = new List<GameObject>(currentField.enemies);
         }
 
+
+        // ### Options
+
         // If the option OBSTACLE is chosen
         if (options.Contains(GameOption.OBSTACLE))
         {
+            // Destroys the active obstacles
+            obstacleManager.DestroyObstacles();
             // Generates the obstacles
             obstacleManager.GenerateObstacles((enemiesManager.waveNumber + (int) difficulty) * 5);
         }
@@ -235,6 +270,8 @@ public class GameManager : MonoBehaviour
         // If the option BONUS is chosen
         if (options.Contains(GameOption.BONUS))
         {
+            // Destroys the active bonus
+            bonusManager.DestroyBonus();
             // Generates the bonus
             bonusManager.GenerateBonus();
         }
@@ -245,10 +282,19 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void TunnelExit()
     {
+        // ### Environment
+        
         // Destroys the former field
-        fieldManager.SuppField();
+        fieldManager.DestroyField();
+
+
+        // ### Enemies
+
         // Starts the enemies's chase
         enemiesManager.BeginChase();
+
+
+        // ### Modes
 
         // If game mode = TEAM
         if (gameMode == GameMode.TEAM)
@@ -265,11 +311,13 @@ public class GameManager : MonoBehaviour
             objectifManager.GenerateObj();
         }
 
+        /*
         // If game mode = ZOMBIE
         if (gameMode == GameMode.ZOMBIE)
         {
             // Activates the dark lightning
             environmentManager.ZombieExitTunnel();
         }
+        */
     }
 }

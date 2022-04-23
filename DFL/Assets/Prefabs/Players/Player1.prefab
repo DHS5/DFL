@@ -197,12 +197,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 0}
-  playerBody: {fileID: 0}
-  head: {fileID: 0}
+  playerBody: {fileID: 5369704138176416235}
+  head: {fileID: 2360084400918751299}
+  fpCamera: {fileID: 481326121232926630}
   headAngle: 10
   angleMax: 85
   yMouseSensitivity: 3
   ySmoothRotation: 20
+  cameraZPositions:
+  - 0.005
+  - 0.011
+  - 0.025
 --- !u!111 &5057017052240295993
 Animation:
   m_ObjectHideFlags: 0

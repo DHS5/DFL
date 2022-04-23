@@ -506,6 +506,10 @@ void RegisterAllStrippedInternalCalls()
 		void Register_UnityEngine_AudioSource_set_clip();
 		Register_UnityEngine_AudioSource_set_clip();
 
+		//System.Void UnityEngine.AudioSource::set_priority(System.Int32)
+		void Register_UnityEngine_AudioSource_set_priority();
+		Register_UnityEngine_AudioSource_set_priority();
+
 	//End Registrations for type : UnityEngine.AudioSource
 
 	//Start Registrations for type : UnityEngine.Behaviour
@@ -3802,6 +3806,10 @@ void RegisterAllStrippedInternalCalls()
 		void Register_UnityEngine_RenderSettings_get_fog();
 		Register_UnityEngine_RenderSettings_get_fog();
 
+		//System.Single UnityEngine.RenderSettings::get_fogDensity()
+		void Register_UnityEngine_RenderSettings_get_fogDensity();
+		Register_UnityEngine_RenderSettings_get_fogDensity();
+
 		//System.Single UnityEngine.RenderSettings::get_reflectionIntensity()
 		void Register_UnityEngine_RenderSettings_get_reflectionIntensity();
 		Register_UnityEngine_RenderSettings_get_reflectionIntensity();
@@ -3833,6 +3841,10 @@ void RegisterAllStrippedInternalCalls()
 		//System.Void UnityEngine.RenderSettings::set_fog(System.Boolean)
 		void Register_UnityEngine_RenderSettings_set_fog();
 		Register_UnityEngine_RenderSettings_set_fog();
+
+		//System.Void UnityEngine.RenderSettings::set_fogDensity(System.Single)
+		void Register_UnityEngine_RenderSettings_set_fogDensity();
+		Register_UnityEngine_RenderSettings_set_fogDensity();
 
 		//System.Void UnityEngine.RenderSettings::set_skybox(UnityEngine.Material)
 		void Register_UnityEngine_RenderSettings_set_skybox();

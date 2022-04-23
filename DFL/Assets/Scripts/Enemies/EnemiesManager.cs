@@ -14,7 +14,7 @@ public class EnemiesManager : MonoBehaviour
     private GameUIManager gameUIManager;
 
     [Tooltip("Script of the field")]
-    [HideInInspector] public Field field;
+    private Field field;
 
     [Header("Defenders")]
 
@@ -121,6 +121,8 @@ public class EnemiesManager : MonoBehaviour
     /// </summary>
     private void GetZones()
     {
+        field = gameManager.currentField;
+        
         fieldZone = field.fieldZone;
         centerZone = field.centerZone;
         leftZone = field.leftZone;

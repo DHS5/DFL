@@ -10,6 +10,8 @@ public class BonusManager : MonoBehaviour
 
     [SerializeField] private GameObject[] bonusPrefabs;
 
+    private Bonus activeBonus;
+
 
     private GameObject fieldZone;
 
@@ -44,7 +46,18 @@ public class BonusManager : MonoBehaviour
         bonus = Instantiate(bonusPrefabs[Random.Range(0, bonusPrefabs.Length)], randomPos, Quaternion.identity).GetComponent<Bonus>();
         bonus.bonusManager = this;
         bonus.player = gameManager.player;
+        activeBonus = bonus;
     }
+
+    /// <summary>
+    /// Destroys the active bonus
+    /// </summary>
+    public void DestroyBonus()
+    {
+        Destroy(activeBonus);
+    }
+
+
 
     public void BonusAnim(bool bar, float time, Color color)
     {
