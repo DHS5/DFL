@@ -17,6 +17,7 @@ public class Defender : Enemy
     private void Start()
     {
         animator.Play("Base Layer.Idle", 0, Random.Range(0f, 1f));
+        gameObject.transform.position = new Vector3(transform.position.x, 0, transform.position.z);
     }
 
     private void Update()
@@ -43,6 +44,12 @@ public class Defender : Enemy
             lookRot = Quaternion.LookRotation(playerPosition - transform.position);
             navMeshAgent.transform.rotation = Quaternion.Slerp(navMeshAgent.transform.rotation, lookRot, 5 * Time.deltaTime);
             audioSource.Stop();
+        }
+
+        // Attack
+        if (distance < 5 && distance > 0 && navMeshAgent.velocity.magnitude > walkLimit)
+        {
+            animator.SetFloat("Speed", 3f);
         }
     }
 }

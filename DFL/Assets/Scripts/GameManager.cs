@@ -120,8 +120,10 @@ public class GameManager : MonoBehaviour
         // Checks if the game is over
         if (gameOver)
         {
+            playerRunAnimator.SetTrigger("Dead");
             player.GetComponent<PlayerController>().freeze = true;
-            Invoke(nameof(GameOver), 0.5f);
+            gameUIManager.GameOver();
+            Invoke(nameof(GameOver), 0.75f);
         }
 
         // Pause the game on press P
@@ -180,9 +182,9 @@ public class GameManager : MonoBehaviour
         // ### Player
 
         // Player freezes
-        player.GetComponent<PlayerController>().freeze = true;
+        //player.GetComponent<PlayerController>().freeze = true;
         // Player animator stops
-        playerRunAnimator.SetTrigger("Dead");
+        //playerRunAnimator.SetTrigger("Dead");
 
 
         // ### Enemies
@@ -210,7 +212,7 @@ public class GameManager : MonoBehaviour
         // ### UI
         
         // Calls the UI restart screen
-        gameUIManager.GameOver();
+        //gameUIManager.GameOver();
     }
 
 

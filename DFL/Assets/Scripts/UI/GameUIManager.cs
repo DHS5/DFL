@@ -154,6 +154,7 @@ public class GameUIManager : MonoBehaviour
         bonusBar.SetActive(true);
 
         AnimationClip clip = new AnimationClip();
+        clip.legacy = true;
 
         Keyframe[] keys = new Keyframe[2];
         keys[0] = new Keyframe(0.0f, 0.0f);
@@ -169,7 +170,6 @@ public class GameUIManager : MonoBehaviour
         curve = new AnimationCurve(keys);
         clip.SetCurve("", typeof(RectTransform), "m_SizeDelta.y", curve);
         
-        clip.legacy = true;
         bonusBarAnim.AddClip(clip, "clip");
         bonusBarAnim.Play("clip");
 

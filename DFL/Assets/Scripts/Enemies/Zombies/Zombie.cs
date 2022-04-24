@@ -11,18 +11,20 @@ public class Zombie : Enemy
 
     private void Update()
     {
-        if (Mathf.Abs(navMeshAgent.velocity.z) > 0.01f)
+        // Idle
+        if (Mathf.Abs(navMeshAgent.velocity.magnitude) > 0.01f)
         {
             animator.SetFloat("MoveSpeed", -1f);
-            animator.SetFloat("SpeedM", navMeshAgent.velocity.z);
+            animator.SetFloat("SpeedM", navMeshAgent.velocity.magnitude);
         }
+        // Run
         else
         {
             animator.SetFloat("MoveSpeed", 0f);
             animator.SetFloat("SpeedM", 3f);
         }
-
-        if (distance < attackRadius && distance > 0)
+        // Attack
+        if (distance < attackRadius && distance > 0 && navMeshAgent.velocity.magnitude > 0)
         {
             animator.SetTrigger("Attack");
         }

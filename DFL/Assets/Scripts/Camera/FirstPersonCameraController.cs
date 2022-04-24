@@ -30,7 +30,7 @@ public class FirstPersonCameraController : MonoBehaviour
     [Tooltip("Max angle at which the player is able to look behind")]
     [SerializeField] private int angleMax = 85;
     [Tooltip("Mouse sensitivity along the Y axis")]
-    [Range(2, 10)]
+    [Range(0.1f, 10f)]
     [SerializeField]  private float yMouseSensitivity = 3f;
     public float YMS { set { yMouseSensitivity = value; if (DataManager.InstanceDataManager != null) DataManager.InstanceDataManager.yMouseSensitivity = value; } }
     [Tooltip("Mouse smoothness of the rotation")]
@@ -99,8 +99,15 @@ public class FirstPersonCameraController : MonoBehaviour
     /// </summary>
     private void LookRotation()
     {
+        float xClamp = 1f;
+        if (Application.platform == RuntimePlatform.WebGLPlayer)
+        {
+            xClamp = 2f;
+        }
+
         // Gets the mouse X position and clamps it
-        float yRotation = Mathf.Clamp( Input.GetAxis("Mouse X") * yMouseSensitivity * 1f , -yMouseSensitivity , yMouseSensitivity);
+        float yRotation = Mathf.Clamp(Input.GetAxis("Mouse X"), -xClamp, xClamp) * yMouseSensitivity * 1f;
+
         // Gets the camera rotation
         float cameraYRot = Mathf.Abs(head.transform.localRotation.y);
         // If the player looks behind, reduces his rotation speed to avoid to exceed the maximum rotation angle

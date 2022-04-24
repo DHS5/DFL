@@ -31,6 +31,8 @@ ScriptsOnlyBuild:
     - WingMan
     NavMeshComponents.dll:
     - UnityEngine.AI.NavMeshSurface
+    NavMeshComponentsEditor.dll:
+    - UnityEditor.AI.NavMeshAssetManager
     Unity.Play.Publisher.Editor.dll:
     - Unity.Play.Publisher.Editor.AnalyticsHelper
     - Unity.Play.Publisher.Editor.PublisherWindow
@@ -2104,4 +2106,4 @@ ScriptsOnlyBuild:
   scenePathNames:
   - Assets/Scenes/Menu.unity
   - Assets/Scenes/Test.unity
-  playerPath: C:/Infomatique/Unity/Projects/Personal Projects/Builds
+  playerPath: C:/Infomatique/Unity/Projects/Personal Projects/DFL/DFL/WebGL Builds

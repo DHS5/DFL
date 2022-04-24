@@ -611,9 +611,9 @@ MonoBehaviour:
   m_FillRect: {fileID: 1441016235}
   m_HandleRect: {fileID: 239476737}
   m_Direction: 0
-  m_MinValue: 2
+  m_MinValue: 0.1
   m_MaxValue: 10
-  m_WholeNumbers: 1
+  m_WholeNumbers: 0
   m_Value: 3
   m_OnValueChanged:
     m_PersistentCalls:
@@ -2143,6 +2143,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3005089513715517491, guid: 954c6aefe33bdf948af105d130cc7e30, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 0e4d33072fecd1e48937773d8d088eba, type: 2}
     - target: {fileID: 4741962590522118993, guid: 954c6aefe33bdf948af105d130cc7e30, type: 3}
       propertyPath: m_RootOrder
       value: 1

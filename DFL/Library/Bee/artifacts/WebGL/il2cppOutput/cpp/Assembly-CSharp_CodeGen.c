@@ -308,115 +308,119 @@ extern void PlayerController__ctor_mDDAB7C7D82E1A5B3E6C197B1AB9D653DFE554F33 (vo
 extern void PlayerGameplay_OnTriggerEnter_m14CB1EFD0D1252A5D39AA17136210903298DA00A (void);
 // 0x00000094 System.Void PlayerGameplay::OnCollisionEnter(UnityEngine.Collision)
 extern void PlayerGameplay_OnCollisionEnter_m43D559341A700224A998CA903ACF4F0C5B553EC6 (void);
-// 0x00000095 System.Void PlayerGameplay::Hurt()
-extern void PlayerGameplay_Hurt_m04A41E0F63A7EBA7FF027BC48254AD3B81389162 (void);
-// 0x00000096 System.Void PlayerGameplay::Awake()
+// 0x00000095 System.Void PlayerGameplay::Hurt(UnityEngine.GameObject)
+extern void PlayerGameplay_Hurt_m480C85D66EC9256B265C429475C585EDDA313395 (void);
+// 0x00000096 System.Void PlayerGameplay::NotInvincible()
+extern void PlayerGameplay_NotInvincible_m0698F5E75CA43979E7EF97933D7A1F08063D4819 (void);
+// 0x00000097 System.Void PlayerGameplay::Dead(UnityEngine.GameObject)
+extern void PlayerGameplay_Dead_mE000C13E9F6D65EA2125FA67E40320D11FE13BA3 (void);
+// 0x00000098 System.Void PlayerGameplay::Awake()
 extern void PlayerGameplay_Awake_mA628611D741B3FBB26CC699224AD6E0F25BD06C7 (void);
-// 0x00000097 System.Void PlayerGameplay::.ctor()
+// 0x00000099 System.Void PlayerGameplay::.ctor()
 extern void PlayerGameplay__ctor_m944A198C5B7C6A6DA00DDE339C5C8A89A8B31C45 (void);
-// 0x00000098 System.Single Attackers::get_Size()
+// 0x0000009A System.Single Attackers::get_Size()
 extern void Attackers_get_Size_m15D15CBC57B74FF5A16980773CA7BCE76762429D (void);
-// 0x00000099 System.Void Attackers::set_Size(System.Single)
+// 0x0000009B System.Void Attackers::set_Size(System.Single)
 extern void Attackers_set_Size_m778C8E6EFD569A10E9A443438D86F376CE2160F2 (void);
-// 0x0000009A System.Void Attackers::Awake()
+// 0x0000009C System.Void Attackers::Awake()
 extern void Attackers_Awake_m80E457376B6702295ECDD9DF268AAA324D221481 (void);
-// 0x0000009B System.Void Attackers::Update()
+// 0x0000009D System.Void Attackers::Update()
 extern void Attackers_Update_m24EB292981C2F0EA3E5F9B143595DD88D52124FA (void);
-// 0x0000009C System.Void Attackers::Stop()
+// 0x0000009E System.Void Attackers::Stop()
 extern void Attackers_Stop_m7F18EFC4A6E996750BF12EBE3BD28B2763BD388B (void);
-// 0x0000009D System.Void Attackers::Resume()
+// 0x0000009F System.Void Attackers::Resume()
 extern void Attackers_Resume_mA777C2F5AAECC16A48303FB1E8D21F1B8C59B14F (void);
-// 0x0000009E System.Void Attackers::TargetEnemy(UnityEngine.GameObject)
+// 0x000000A0 System.Void Attackers::TargetEnemy(UnityEngine.GameObject)
 extern void Attackers_TargetEnemy_m8EE989A70A003ECE3B80B8B5863AED5A6EA1EA64 (void);
-// 0x0000009F System.Void Attackers::UnTarget()
+// 0x000000A1 System.Void Attackers::UnTarget()
 extern void Attackers_UnTarget_m60B0DBC0423D0A18DA54FDFBA634DDBDD55DB043 (void);
-// 0x000000A0 System.Void Attackers::BlockEnemy()
+// 0x000000A2 System.Void Attackers::BlockEnemy()
 extern void Attackers_BlockEnemy_mA423131A395B207F64E58F5840B35FE50E16ECE8 (void);
-// 0x000000A1 System.Void Attackers::.ctor()
+// 0x000000A3 System.Void Attackers::.ctor()
 extern void Attackers__ctor_m6A25BE9D1FC9481673D0AC4D6E1C6F20E0D33D34 (void);
-// 0x000000A2 System.Void ClassicAttacker::TargetEnemy(UnityEngine.GameObject)
+// 0x000000A4 System.Void ClassicAttacker::TargetEnemy(UnityEngine.GameObject)
 extern void ClassicAttacker_TargetEnemy_m5DDA507FE2E07CC1018742C2F79CC0A53235EA46 (void);
-// 0x000000A3 System.Void ClassicAttacker::BlockEnemy()
+// 0x000000A5 System.Void ClassicAttacker::BlockEnemy()
 extern void ClassicAttacker_BlockEnemy_mEF80B66193726AA76772D24096A6722B69610280 (void);
-// 0x000000A4 System.Void ClassicAttacker::LateUpdate()
+// 0x000000A6 System.Void ClassicAttacker::LateUpdate()
 extern void ClassicAttacker_LateUpdate_m97E8C61A994E8D5A99899DA4B2580F7868B9C202 (void);
-// 0x000000A5 System.Void ClassicAttacker::.ctor()
+// 0x000000A7 System.Void ClassicAttacker::.ctor()
 extern void ClassicAttacker__ctor_m853BDF2904DF2A1284B789AF836279D637908EDE (void);
-// 0x000000A6 System.Void TeamManager::Awake()
+// 0x000000A8 System.Void TeamManager::Awake()
 extern void TeamManager_Awake_m0D34929748880BD68D6A8C0471F3E728654E4995 (void);
-// 0x000000A7 System.Void TeamManager::StopAttackers()
+// 0x000000A9 System.Void TeamManager::StopAttackers()
 extern void TeamManager_StopAttackers_m9FAFC88A0F1D65C5B6B414C126EF0A36523A3285 (void);
-// 0x000000A8 System.Void TeamManager::ResumeAttackers()
+// 0x000000AA System.Void TeamManager::ResumeAttackers()
 extern void TeamManager_ResumeAttackers_m40E8CB87659341681BA9B82AAAE49F2151DF2CDF (void);
-// 0x000000A9 System.Void TeamManager::AddEnemy(UnityEngine.GameObject)
+// 0x000000AB System.Void TeamManager::AddEnemy(UnityEngine.GameObject)
 extern void TeamManager_AddEnemy_mBDC5E8E603AA9054F113FC4D994809F1A97DA084 (void);
-// 0x000000AA System.Void TeamManager::SuppEnemy(UnityEngine.GameObject)
+// 0x000000AC System.Void TeamManager::SuppEnemy(UnityEngine.GameObject)
 extern void TeamManager_SuppEnemy_m1DC6F5E05175C4067D826E8B4DAA122099D965B4 (void);
-// 0x000000AB System.Void TeamManager::ActuEnemies()
+// 0x000000AD System.Void TeamManager::ActuEnemies()
 extern void TeamManager_ActuEnemies_m4F1938115ECC629C289584741CEAA6F72731FDF6 (void);
-// 0x000000AC System.Void TeamManager::FreeAttacker(UnityEngine.GameObject)
+// 0x000000AE System.Void TeamManager::FreeAttacker(UnityEngine.GameObject)
 extern void TeamManager_FreeAttacker_m3DA25743DA6DFEABE5C992B1E78E8C8763D9E635 (void);
-// 0x000000AD System.Void TeamManager::ClearAttackers()
+// 0x000000AF System.Void TeamManager::ClearAttackers()
 extern void TeamManager_ClearAttackers_m0C30855A604342B921FD9AD254347684BD5B23B0 (void);
-// 0x000000AE System.Void TeamManager::InstantiateAttacker()
+// 0x000000B0 System.Void TeamManager::InstantiateAttacker()
 extern void TeamManager_InstantiateAttacker_mB6B5EB2DAA16C098B040508494F52D938F56517C (void);
-// 0x000000AF System.Void TeamManager::TeamCreation()
+// 0x000000B1 System.Void TeamManager::TeamCreation()
 extern void TeamManager_TeamCreation_m6570FFAE455B2AECFC8607754341BC21D7F428F5 (void);
-// 0x000000B0 System.Void TeamManager::BeginProtection()
+// 0x000000B2 System.Void TeamManager::BeginProtection()
 extern void TeamManager_BeginProtection_mCFF8FB90E50E99846BBFEDE417DE2E8950D21896 (void);
-// 0x000000B1 System.Void TeamManager::ProtectPlayer()
+// 0x000000B3 System.Void TeamManager::ProtectPlayer()
 extern void TeamManager_ProtectPlayer_m1217BCB32D7C9A2199BDCA614DB3083420F2BA18 (void);
-// 0x000000B2 System.Void TeamManager::.ctor()
+// 0x000000B4 System.Void TeamManager::.ctor()
 extern void TeamManager__ctor_m31768B71591D88A2D05C07950E0078D64CC38008 (void);
-// 0x000000B3 System.Void GameUIManager::Awake()
+// 0x000000B5 System.Void GameUIManager::Awake()
 extern void GameUIManager_Awake_mD8790D569C7CB69CDC2AA9F8C13CE68FF76C8E61 (void);
-// 0x000000B4 System.Void GameUIManager::Start()
+// 0x000000B6 System.Void GameUIManager::Start()
 extern void GameUIManager_Start_mDFFFDC182EE38C5C52334CBCDE7EAE1C3E8CEE82 (void);
-// 0x000000B5 System.Void GameUIManager::BackToMenu()
+// 0x000000B7 System.Void GameUIManager::BackToMenu()
 extern void GameUIManager_BackToMenu_mBB157880E8CB48B0EABD1DF19CAAA56F3CECD3AC (void);
-// 0x000000B6 System.Void GameUIManager::Restart()
+// 0x000000B8 System.Void GameUIManager::Restart()
 extern void GameUIManager_Restart_mC03A7F8E22F8607B95C499E26AC8337EF95DCE81 (void);
-// 0x000000B7 System.Void GameUIManager::ActuWaveNumber(System.Int32)
+// 0x000000B9 System.Void GameUIManager::ActuWaveNumber(System.Int32)
 extern void GameUIManager_ActuWaveNumber_m59F8832ABCE5FA4C6A124D2A0C8E199A3A9B9CA3 (void);
-// 0x000000B8 System.Void GameUIManager::GameOver()
+// 0x000000BA System.Void GameUIManager::GameOver()
 extern void GameUIManager_GameOver_m6A0E26C2A906693E3D3274BA58AE8A1C7C98059E (void);
-// 0x000000B9 System.Void GameUIManager::SettingsScreen(System.Boolean)
+// 0x000000BB System.Void GameUIManager::SettingsScreen(System.Boolean)
 extern void GameUIManager_SettingsScreen_m3C11D6579A0B30D8E205BEAA145CD68E2BB197E4 (void);
-// 0x000000BA System.Void GameUIManager::CloseAllTexts(UnityEngine.GameObject)
+// 0x000000BC System.Void GameUIManager::CloseAllTexts(UnityEngine.GameObject)
 extern void GameUIManager_CloseAllTexts_mA2C5CB8628880874EBFFF5C1DCAA7E77E6D78281 (void);
-// 0x000000BB System.Void GameUIManager::AccBarAnim(System.Single,System.Single)
+// 0x000000BD System.Void GameUIManager::AccBarAnim(System.Single,System.Single)
 extern void GameUIManager_AccBarAnim_mF5D85C8ADD01B92D963CE167FDCFCDF2EACB9C7C (void);
-// 0x000000BC System.Void GameUIManager::FullAccBar()
+// 0x000000BE System.Void GameUIManager::FullAccBar()
 extern void GameUIManager_FullAccBar_m68596AA393891E71E4BDDBB528F19ED86FEA7277 (void);
-// 0x000000BD System.Void GameUIManager::BonusBarAnim(System.Single,UnityEngine.Color)
+// 0x000000BF System.Void GameUIManager::BonusBarAnim(System.Single,UnityEngine.Color)
 extern void GameUIManager_BonusBarAnim_m0927F111C9BDF7FC6876F8D66BB724FBD87FC250 (void);
-// 0x000000BE System.Void GameUIManager::EndBonus()
+// 0x000000C0 System.Void GameUIManager::EndBonus()
 extern void GameUIManager_EndBonus_mDF94E26442C799A86E11C5DABF36F706F6C8796F (void);
-// 0x000000BF System.Void GameUIManager::ModifyLife(System.Boolean,System.Int32)
+// 0x000000C1 System.Void GameUIManager::ModifyLife(System.Boolean,System.Int32)
 extern void GameUIManager_ModifyLife_m33B42BEBC1301E7BB09A884A99544594B44AAAC0 (void);
-// 0x000000C0 System.Void GameUIManager::.ctor()
+// 0x000000C2 System.Void GameUIManager::.ctor()
 extern void GameUIManager__ctor_m98359F090BF9E15A7E794CFA5040EAE12919BA96 (void);
-// 0x000000C1 System.Void MainMenuUIManager::set_Mode(System.Int32)
+// 0x000000C3 System.Void MainMenuUIManager::set_Mode(System.Int32)
 extern void MainMenuUIManager_set_Mode_mE407972B1E886EC4CCF8D3D2E659F4D8BB0B2EBF (void);
-// 0x000000C2 System.Void MainMenuUIManager::set_Difficulty(System.Int32)
+// 0x000000C4 System.Void MainMenuUIManager::set_Difficulty(System.Int32)
 extern void MainMenuUIManager_set_Difficulty_m3C48A5681EF3B06E9A91127799BFA7234074B823 (void);
-// 0x000000C3 System.Void MainMenuUIManager::set_YMouseSensitivity(System.Single)
+// 0x000000C5 System.Void MainMenuUIManager::set_YMouseSensitivity(System.Single)
 extern void MainMenuUIManager_set_YMouseSensitivity_m24DC8E28611EFEA296E77558126116A584585642 (void);
-// 0x000000C4 System.Void MainMenuUIManager::set_YSmoothRotation(System.Single)
+// 0x000000C6 System.Void MainMenuUIManager::set_YSmoothRotation(System.Single)
 extern void MainMenuUIManager_set_YSmoothRotation_m084B80A7AAA7D2D2E71EF8F851DB7EF61C8101C2 (void);
-// 0x000000C5 System.Void MainMenuUIManager::Start()
+// 0x000000C7 System.Void MainMenuUIManager::Start()
 extern void MainMenuUIManager_Start_m0315AC3B93931BDEE4D8202C5EEE1AFE48C6446D (void);
-// 0x000000C6 System.Void MainMenuUIManager::CloseAllTexts(UnityEngine.GameObject)
+// 0x000000C8 System.Void MainMenuUIManager::CloseAllTexts(UnityEngine.GameObject)
 extern void MainMenuUIManager_CloseAllTexts_m2D9F1DEC3DD187AA34C2A7820C1F458B8647753B (void);
-// 0x000000C7 System.Void MainMenuUIManager::ChooseOption(System.Int32)
+// 0x000000C9 System.Void MainMenuUIManager::ChooseOption(System.Int32)
 extern void MainMenuUIManager_ChooseOption_m6DE0DF8211E9522002FBBECC733F79ACD2D297FE (void);
-// 0x000000C8 System.Void MainMenuUIManager::LaunchGame()
+// 0x000000CA System.Void MainMenuUIManager::LaunchGame()
 extern void MainMenuUIManager_LaunchGame_mFCE4C4DB99ABB8D623533A46C28EC89BE6A00990 (void);
-// 0x000000C9 System.Void MainMenuUIManager::QuitGame()
+// 0x000000CB System.Void MainMenuUIManager::QuitGame()
 extern void MainMenuUIManager_QuitGame_mDC1DD05E95625C1970988DC3D1384D638F4C2703 (void);
-// 0x000000CA System.Void MainMenuUIManager::.ctor()
+// 0x000000CC System.Void MainMenuUIManager::.ctor()
 extern void MainMenuUIManager__ctor_mA2FFC34FD2300A5EAE46C51EBA2F143DB23C8681 (void);
-static Il2CppMethodPointer s_methodPointers[202] = 
+static Il2CppMethodPointer s_methodPointers[204] = 
 {
 	ZombieCameraLogic_LateUpdate_m89B5A6874FFA2C2775DF64752654D8763B678DD9,
 	ZombieCameraLogic__ctor_m5327502C107049BA25BE7D16EA52B2A395488EE0,
@@ -566,7 +570,9 @@ static Il2CppMethodPointer s_methodPointers[202] =
 	PlayerController__ctor_mDDAB7C7D82E1A5B3E6C197B1AB9D653DFE554F33,
 	PlayerGameplay_OnTriggerEnter_m14CB1EFD0D1252A5D39AA17136210903298DA00A,
 	PlayerGameplay_OnCollisionEnter_m43D559341A700224A998CA903ACF4F0C5B553EC6,
-	PlayerGameplay_Hurt_m04A41E0F63A7EBA7FF027BC48254AD3B81389162,
+	PlayerGameplay_Hurt_m480C85D66EC9256B265C429475C585EDDA313395,
+	PlayerGameplay_NotInvincible_m0698F5E75CA43979E7EF97933D7A1F08063D4819,
+	PlayerGameplay_Dead_mE000C13E9F6D65EA2125FA67E40320D11FE13BA3,
 	PlayerGameplay_Awake_mA628611D741B3FBB26CC699224AD6E0F25BD06C7,
 	PlayerGameplay__ctor_m944A198C5B7C6A6DA00DDE339C5C8A89A8B31C45,
 	Attackers_get_Size_m15D15CBC57B74FF5A16980773CA7BCE76762429D,
@@ -621,7 +627,7 @@ static Il2CppMethodPointer s_methodPointers[202] =
 	MainMenuUIManager_QuitGame_mDC1DD05E95625C1970988DC3D1384D638F4C2703,
 	MainMenuUIManager__ctor_mA2FFC34FD2300A5EAE46C51EBA2F143DB23C8681,
 };
-static const int32_t s_InvokerIndices[202] = 
+static const int32_t s_InvokerIndices[204] = 
 {
 	6080,
 	6080,
@@ -771,7 +777,9 @@ static const int32_t s_InvokerIndices[202] =
 	6080,
 	4861,
 	4861,
+	4861,
 	6080,
+	4861,
 	6080,
 	6080,
 	6013,
@@ -830,7 +838,7 @@ IL2CPP_EXTERN_C const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule;
 const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule = 
 {
 	"Assembly-CSharp.dll",
-	202,
+	204,
 	s_methodPointers,
 	0,
 	NULL,

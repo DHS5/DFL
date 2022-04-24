@@ -15,7 +15,7 @@ public class ObjectifManager : MonoBehaviour
 
 
     [Tooltip("Queue of objectives")]
-    private Queue<Objectif> objectives = new Queue<Objectif>();
+    public Queue<Objectif> objectives = new Queue<Objectif>();
     [Tooltip("Current objectif for the player to go through")]
     private Objectif currentObjectif;
 
@@ -76,7 +76,7 @@ public class ObjectifManager : MonoBehaviour
     private void Update()
     {
         // Checks if the player misses an objectif
-        if (currentObjectif != null && player.transform.position.z > currentObjectif.gameObject.transform.position.z + 5)
+        if (currentObjectif != null && player.transform.position.z > currentObjectif.gameObject.transform.position.z + 5 && !gameManager.gameOver)
         {
             Debug.Log("Missed an objectif");
             gameManager.gameOver = true;

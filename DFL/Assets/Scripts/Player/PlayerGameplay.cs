@@ -11,6 +11,7 @@ public class PlayerGameplay : MonoBehaviour
     [SerializeField] private GameManager gameManager;
 
 
+
     [Tooltip("Player's number of life")]
     [HideInInspector] public int lifeNumber = 1;
 
@@ -62,27 +63,42 @@ public class PlayerGameplay : MonoBehaviour
         // When the player collides with an enemy --> game over
         if (collision.gameObject.CompareTag("Enemy") && !isInvincible)
         {
-            Hurt();
+            Hurt(collision.gameObject);
             Debug.Log("Hurt by enemy");
         }
         // When the player collides with an obstacle --> game over
         if (collision.gameObject.CompareTag("Obstacle") && !isInvincible)
         {
-            Hurt();
+            Hurt(collision.gameObject);
             Debug.Log("Hurt by obstacle");
-        }
-
-        // If the player has no life left, GAME OVER
-        if (lifeNumber == 0)
-        {
-            gameManager.gameOver = true;
         }
     }
 
-    private void Hurt()
+    private void Hurt(GameObject g)
     {
         lifeNumber--;
-        if (lifeNumber > 0) gameManager.gameUIManager.ModifyLife(false, lifeNumber - 1);
+        if (lifeNumber > 0)
+        {
+            gameManager.gameUIManager.ModifyLife(false, lifeNumber - 1);
+            isInvincible = true;
+            Invoke(nameof(NotInvincible), 1f);
+        }
+        // If the player has no life left, GAME OVER
+        else Dead(g);
+    }
+
+    private void NotInvincible() { isInvincible = false; }
+
+    /// <summary>
+    /// Game Over for the player
+    /// </summary>
+    /// <param name="g"></param>
+    private void Dead(GameObject g)
+    {
+        Vector3 dir = g.transform.position - gameManager.player.transform.position;
+        Vector3 playerRot = gameManager.player.transform.rotation.eulerAngles;
+        gameManager.player.transform.rotation = Quaternion.Euler(playerRot.x, Quaternion.LookRotation(dir, gameManager.player.transform.up).eulerAngles.y, playerRot.z);
+        gameManager.gameOver = true;
     }
 
     /// <summary>

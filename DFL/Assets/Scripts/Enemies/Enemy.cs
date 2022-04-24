@@ -118,4 +118,5 @@ public abstract class Enemy : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         animator = GetComponent<Animator>();
     }
+
 }
