@@ -2079,7 +2079,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f57bfd2202e8254aa4b5f3738344fed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameMode: 3
+  gameMode: 1
   difficulty: 0
   options: 00000000
   enemiesRange: 5
@@ -10911,7 +10911,7 @@ MonoBehaviour:
   accelerationM: 5
   accelerationTime: 3
   waitToAccelerateTime: 8
-  jumpHeight: 4
+  jumpHeight: 2.7
   bonusSpeed: 0
   bonusJump: {x: 0, y: 0, z: 0}
 --- !u!54 &1664567385

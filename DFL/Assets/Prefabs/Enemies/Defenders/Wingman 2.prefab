@@ -266,7 +266,7 @@ MonoBehaviour:
   chaseRadius: 20
   attackRadius: 3
   attackSpeedM: 1.75
-  size: 1
+  size: 1.05
 --- !u!1 &3300712122898976994 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 622957727053371177, guid: b39962497bfc4a145b0e3e71398066f6, type: 3}
