@@ -314,10 +314,10 @@
 -r:"C:/Infomatique/Unity/Projects/Personal Projects/DFL/DFL/Library/PackageCache/com.unity.collab-proxy@1.15.15/Lib/Editor/PlasticSCM/unityplastic.dll"
 -r:"Library/Bee/artifacts/2000b0aE.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/2000b0aE.dag/UnityEngine.UI.ref.dll"
-"Assets/NavMeshComponents/Scripts/NavMeshLink.cs"
-"Assets/NavMeshComponents/Scripts/NavMeshModifier.cs"
-"Assets/NavMeshComponents/Scripts/NavMeshModifierVolume.cs"
-"Assets/NavMeshComponents/Scripts/NavMeshSurface.cs"
+"Assets/Other/NavMeshComponents/Scripts/NavMeshLink.cs"
+"Assets/Other/NavMeshComponents/Scripts/NavMeshModifier.cs"
+"Assets/Other/NavMeshComponents/Scripts/NavMeshModifierVolume.cs"
+"Assets/Other/NavMeshComponents/Scripts/NavMeshSurface.cs"
 -langversion:9.0
 
 /deterministic

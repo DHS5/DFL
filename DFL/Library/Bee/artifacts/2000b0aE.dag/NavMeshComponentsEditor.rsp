@@ -401,12 +401,12 @@
 -r:"Library/Bee/artifacts/2000b0aE.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/2000b0aE.dag/UnityEngine.TestRunner.ref.dll"
 -r:"Library/Bee/artifacts/2000b0aE.dag/UnityEngine.UI.ref.dll"
-"Assets/NavMeshComponents/Editor/NavMeshAssetManager.cs"
-"Assets/NavMeshComponents/Editor/NavMeshComponentsGUIUtility.cs"
-"Assets/NavMeshComponents/Editor/NavMeshLinkEditor.cs"
-"Assets/NavMeshComponents/Editor/NavMeshModifierEditor.cs"
-"Assets/NavMeshComponents/Editor/NavMeshModifierVolumeEditor.cs"
-"Assets/NavMeshComponents/Editor/NavMeshSurfaceEditor.cs"
+"Assets/Other/NavMeshComponents/Editor/NavMeshAssetManager.cs"
+"Assets/Other/NavMeshComponents/Editor/NavMeshComponentsGUIUtility.cs"
+"Assets/Other/NavMeshComponents/Editor/NavMeshLinkEditor.cs"
+"Assets/Other/NavMeshComponents/Editor/NavMeshModifierEditor.cs"
+"Assets/Other/NavMeshComponents/Editor/NavMeshModifierVolumeEditor.cs"
+"Assets/Other/NavMeshComponents/Editor/NavMeshSurfaceEditor.cs"
 -langversion:9.0
 
 /deterministic

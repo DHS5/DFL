@@ -15,7 +15,7 @@ C:/Infomatique/Unity/Projects/Personal Projects/DFL/DFL
 -logFile
 Logs/AssetImportWorker1.log
 -srvPort
-62033
+53403
 Successfully changed project path to: C:/Infomatique/Unity/Projects/Personal Projects/DFL/DFL
 C:/Infomatique/Unity/Projects/Personal Projects/DFL/DFL
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -47,7 +47,7 @@ C:/Infomatique/Unity/Projects/Personal Projects/DFL/DFL
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Refreshing native plugins compatible for Editor in 223.23 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 104.27 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.3.0f1 (6eacc8284459)
 [Subsystems] Discovering subsystems at path C:/Infomatique/Unity/2021.3.0f1/Editor/Data/Resources/UnitySubsystems
@@ -63,91 +63,91 @@ Initialize mono
 Mono path[0] = 'C:/Infomatique/Unity/2021.3.0f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Infomatique/Unity/2021.3.0f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Infomatique/Unity/2021.3.0f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56204
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56032
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Infomatique/Unity/2021.3.0f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
 Register platform support module: C:/Infomatique/Unity/2021.3.0f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.022907 seconds.
+Registered in 0.009863 seconds.
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 188.45 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 103.37 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.584 seconds
+- Completed reload, in  0.772 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1585ms)
-		BeginReloadAssembly (148ms)
+	ReloadAssembly (773ms)
+		BeginReloadAssembly (92ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (2ms)
-		EndReloadAssembly (1155ms)
-			LoadAssemblies (137ms)
+			CreateAndSetChildDomain (1ms)
+		EndReloadAssembly (548ms)
+			LoadAssemblies (88ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (312ms)
+			SetupTypeCache (121ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (51ms)
-			SetupLoadedEditorAssemblies (693ms)
+			RebuildScriptCaches (30ms)
+			SetupLoadedEditorAssemblies (339ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (15ms)
+				InitializePlatformSupportModulesInManaged (10ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (189ms)
-				BeforeProcessingInitializeOnLoad (4ms)
-				ProcessInitializeOnLoadAttributes (358ms)
-				ProcessInitializeOnLoadMethodAttributes (127ms)
+				RefreshPlugins (104ms)
+				BeforeProcessingInitializeOnLoad (1ms)
+				ProcessInitializeOnLoadAttributes (171ms)
+				ProcessInitializeOnLoadMethodAttributes (52ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.012518 seconds.
+Registered in 0.008416 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory is not a mono symbol file
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 239.15 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 111.46 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  3.604 seconds
+- Completed reload, in  1.655 seconds
 Domain Reload Profiling:
-	ReloadAssembly (3606ms)
-		BeginReloadAssembly (206ms)
+	ReloadAssembly (1656ms)
+		BeginReloadAssembly (156ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (12ms)
+			DisableScriptedObjects (8ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (26ms)
-		EndReloadAssembly (3084ms)
-			LoadAssemblies (225ms)
+			CreateAndSetChildDomain (24ms)
+		EndReloadAssembly (1343ms)
+			LoadAssemblies (130ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (854ms)
+			SetupTypeCache (275ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (126ms)
-			SetupLoadedEditorAssemblies (1739ms)
+			RebuildScriptCaches (77ms)
+			SetupLoadedEditorAssemblies (825ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (14ms)
+				InitializePlatformSupportModulesInManaged (7ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (239ms)
-				BeforeProcessingInitializeOnLoad (308ms)
-				ProcessInitializeOnLoadAttributes (934ms)
-				ProcessInitializeOnLoadMethodAttributes (215ms)
-				AfterProcessingInitializeOnLoad (28ms)
+				RefreshPlugins (112ms)
+				BeforeProcessingInitializeOnLoad (107ms)
+				ProcessInitializeOnLoadAttributes (497ms)
+				ProcessInitializeOnLoadMethodAttributes (90ms)
+				AfterProcessingInitializeOnLoad (11ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (27ms)
+			AwakeInstancesAfterBackupRestoration (9ms)
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.18 seconds
-Refreshing native plugins compatible for Editor in 3.57 ms, found 2 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.08 seconds
+Refreshing native plugins compatible for Editor in 1.18 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 3801 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 129 unused Assets / (457.1 KB). Loaded Objects now: 4254.
-Memory consumption went from 184.1 MB to 183.7 MB.
-Total: 14.142100 ms (FindLiveObjects: 0.684000 ms CreateObjectMapping: 0.571600 ms MarkObjects: 11.402900 ms  DeleteObjects: 1.480400 ms)
+Unloading 129 unused Assets / (456.9 KB). Loaded Objects now: 4254.
+Memory consumption went from 184.4 MB to 183.9 MB.
+Total: 3.958700 ms (FindLiveObjects: 0.348200 ms CreateObjectMapping: 0.268000 ms MarkObjects: 2.947600 ms  DeleteObjects: 0.393800 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -161,129 +161,58 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 118889.122168 seconds.
-  path: Assets/Prefabs/Objectif.prefab
-  artifactKey: Guid(503b1e53010b9a84083f1495b5173468) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Objectif.prefab using Guid(503b1e53010b9a84083f1495b5173468) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '19c08c6a3db3457368b9bd8bbe144e49') in 0.733460 seconds 
+  Time since last request: 194233.916174 seconds.
+  path: Assets/Import/Footsteps - Essentials
+  artifactKey: Guid(4958dd0ad81eb2644bee6f80a89b57b9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Import/Footsteps - Essentials using Guid(4958dd0ad81eb2644bee6f80a89b57b9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f7ae51f4f651667af184895bcff1647b') in 0.012551 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 24.855786 seconds.
-  path: Assets/Import/illusionloop.com/road props/Prefabs - Standard/Stone Block.prefab
-  artifactKey: Guid(6b7f9dc333d9c6b499b7ecf4d7b68102) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Import/illusionloop.com/road props/Prefabs - Standard/Stone Block.prefab using Guid(6b7f9dc333d9c6b499b7ecf4d7b68102) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6c867aaa526d42b95fd417a4baa2df7d') in 0.164634 seconds 
+  Time since last request: 26.498882 seconds.
+  path: Assets/Import/Audio/Footsteps - Essentials/Footsteps_Grass/Footsteps_Grass_Run/Footsteps_Grass_Run_02.wav
+  artifactKey: Guid(1d7e7e6569aab5a45a837f470eaddc8b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Import/Audio/Footsteps - Essentials/Footsteps_Grass/Footsteps_Grass_Run/Footsteps_Grass_Run_02.wav using Guid(1d7e7e6569aab5a45a837f470eaddc8b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '64fb6b2fd148ff4703ca69580ebf998e') in 0.119202 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000042 seconds.
-  path: Assets/Import/illusionloop.com/road props/Prefabs - Standard/Water Barrel.prefab
-  artifactKey: Guid(83cd7cee4e25ee5489a38f35fa9880de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Import/illusionloop.com/road props/Prefabs - Standard/Water Barrel.prefab using Guid(83cd7cee4e25ee5489a38f35fa9880de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '42bf998b7dd462ff500b1ad3200219f9') in 0.170577 seconds 
+  Time since last request: 0.000020 seconds.
+  path: Assets/Import/Audio/Footsteps - Essentials/Footsteps_Grass/Footsteps_Grass_Run/Footsteps_Grass_Run_09.wav
+  artifactKey: Guid(7a5ff4a806216b14ab9dba35a4fb258c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Import/Audio/Footsteps - Essentials/Footsteps_Grass/Footsteps_Grass_Run/Footsteps_Grass_Run_09.wav using Guid(7a5ff4a806216b14ab9dba35a4fb258c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '66e6c2308a87c41bd743e182e7d2346b') in 0.016425 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000063 seconds.
-  path: Assets/Other/ExampleAssets/Prefabs/Workshop Set.prefab
-  artifactKey: Guid(a87f0180d46fd334b9025d0314a0dc70) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Other/ExampleAssets/Prefabs/Workshop Set.prefab using Guid(a87f0180d46fd334b9025d0314a0dc70) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '54d41333563ede69356d2dcc59cf85e2') in 0.260537 seconds 
+  Time since last request: 0.000023 seconds.
+  path: Assets/Import/Audio/Footsteps - Essentials/Footsteps_Grass/Footsteps_Grass_Run/Footsteps_Grass_Run_08.wav
+  artifactKey: Guid(161d5a427e88d594f9906708ccdc5663) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Import/Audio/Footsteps - Essentials/Footsteps_Grass/Footsteps_Grass_Run/Footsteps_Grass_Run_08.wav using Guid(161d5a427e88d594f9906708ccdc5663) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0f5f0661c3763b6aeb4660a8ded32260') in 0.016727 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000044 seconds.
-  path: Assets/Prefabs/Enemies/Zombies/SZombie2.prefab
-  artifactKey: Guid(38701926ddb797645bc172241d0e323a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Enemies/Zombies/SZombie2.prefab using Guid(38701926ddb797645bc172241d0e323a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bf446cb453d0acf9f1622f3b09900643') in 0.111927 seconds 
+  Time since last request: 0.000022 seconds.
+  path: Assets/Import/Audio/Footsteps - Essentials/Footsteps_Grass/Footsteps_Grass_Run/Footsteps_Grass_Run_11.wav
+  artifactKey: Guid(6c8508d96905ea749ae50b49916fde55) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Import/Audio/Footsteps - Essentials/Footsteps_Grass/Footsteps_Grass_Run/Footsteps_Grass_Run_11.wav using Guid(6c8508d96905ea749ae50b49916fde55) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c66295c5f9c3b2e2135df4ec306b6ebb') in 0.015345 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000036 seconds.
-  path: Assets/Prefabs/Obstacles/Tire Variant.prefab
-  artifactKey: Guid(0ee20bf72123e2444ba551f7af66d765) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Obstacles/Tire Variant.prefab using Guid(0ee20bf72123e2444ba551f7af66d765) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8b6e2a5d6381cc0112a6dfbd6834de2c') in 0.068160 seconds 
+  Time since last request: 0.000025 seconds.
+  path: Assets/Import/Audio/Footsteps - Essentials/Footsteps_Grass/Footsteps_Grass_Run/Footsteps_Grass_Run_03.wav
+  artifactKey: Guid(31be579b280d0bc459635877e8c45aee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Import/Audio/Footsteps - Essentials/Footsteps_Grass/Footsteps_Grass_Run/Footsteps_Grass_Run_03.wav using Guid(31be579b280d0bc459635877e8c45aee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f92f295d42b9f77ddd32ad4849ef5a0b') in 0.020664 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000053 seconds.
-  path: Assets/Import/illusionloop.com/road props/Prefabs - Standard/Tire Stack.prefab
-  artifactKey: Guid(52b0483b1937d7b45a0fcebd84ba00bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Import/illusionloop.com/road props/Prefabs - Standard/Tire Stack.prefab using Guid(52b0483b1937d7b45a0fcebd84ba00bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c9eb06bf9f7b10b15f3fd03cf6f5e8a7') in 0.057669 seconds 
+  Time since last request: 0.000020 seconds.
+  path: Assets/Import/Audio/Footsteps - Essentials/Footsteps_Grass/Footsteps_Grass_Run/Footsteps_Grass_Run_14.wav
+  artifactKey: Guid(b04914b5801123b4dafba88cbcb5bc74) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Import/Audio/Footsteps - Essentials/Footsteps_Grass/Footsteps_Grass_Run/Footsteps_Grass_Run_14.wav using Guid(b04914b5801123b4dafba88cbcb5bc74) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '15faa76ad32437de6ba745713bc85bf2') in 0.020868 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000043 seconds.
-  path: Assets/Other/ExampleAssets/Prefabs/Workbench.prefab
-  artifactKey: Guid(8850d132797ff49298ba781e8e1c9bfe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Other/ExampleAssets/Prefabs/Workbench.prefab using Guid(8850d132797ff49298ba781e8e1c9bfe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ba227648538cacc1dcfdaa6a5d1696c7') in 0.242149 seconds 
+  Time since last request: 0.000023 seconds.
+  path: Assets/Import/Audio/Footsteps - Essentials/Footsteps_Grass/Footsteps_Grass_Run/Footsteps_Grass_Run_10.wav
+  artifactKey: Guid(bd5653e52c4636e4aa3b0ced8f49a18d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Import/Audio/Footsteps - Essentials/Footsteps_Grass/Footsteps_Grass_Run/Footsteps_Grass_Run_10.wav using Guid(bd5653e52c4636e4aa3b0ced8f49a18d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2fff6abf191a82cf4d6f83bad1ce0aa0') in 0.016463 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000047 seconds.
-  path: Assets/Import/illusionloop.com/road props/Prefabs - Standard/Tire.prefab
-  artifactKey: Guid(2dd8e9b2447271c4f964eed3dd9a37aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Import/illusionloop.com/road props/Prefabs - Standard/Tire.prefab using Guid(2dd8e9b2447271c4f964eed3dd9a37aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '801e480c348e53a920dd05f68d01f9fe') in 0.052713 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000043 seconds.
-  path: Assets/Import/illusionloop.com/road props/Prefabs - Mobile/Water Barrel.prefab
-  artifactKey: Guid(69ab91bbdec462a41a8aaacf3ec0289b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Import/illusionloop.com/road props/Prefabs - Mobile/Water Barrel.prefab using Guid(69ab91bbdec462a41a8aaacf3ec0289b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '569bb93a9c0fddcbbac779db0793a76d') in 0.051472 seconds 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.018188 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory is not a mono symbol file
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 1.97 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Warning: Annotation not found!
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.ProBuilder.EditorUtility:SetGizmoIconEnabled (System.Type,bool) (at Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/EditorUtility.cs:575)
-UnityEditor.ProBuilder.HierarchyListener:.cctor () (at Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/HierarchyListener.cs:21)
-System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
-UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
-
-[Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/EditorUtility.cs line 575]
-
-Mono: successfully reloaded assembly
-- Completed reload, in  2.460 seconds
-Domain Reload Profiling:
-	ReloadAssembly (2462ms)
-		BeginReloadAssembly (221ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (14ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (46ms)
-		EndReloadAssembly (2013ms)
-			LoadAssemblies (160ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (493ms)
-			ReleaseScriptCaches (3ms)
-			RebuildScriptCaches (95ms)
-			SetupLoadedEditorAssemblies (1052ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (33ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (2ms)
-				BeforeProcessingInitializeOnLoad (170ms)
-				ProcessInitializeOnLoadAttributes (624ms)
-				ProcessInitializeOnLoadMethodAttributes (195ms)
-				AfterProcessingInitializeOnLoad (26ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (37ms)
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 6.39 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3633 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 21 unused Assets / (446.1 KB). Loaded Objects now: 4310.
-Memory consumption went from 195.7 MB to 195.3 MB.
-Total: 9.215900 ms (FindLiveObjects: 0.590200 ms CreateObjectMapping: 0.546200 ms MarkObjects: 7.515400 ms  DeleteObjects: 0.562400 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  Time since last request: 0.000026 seconds.
+  path: Assets/Import/Audio/Footsteps - Essentials/Footsteps_Grass/Footsteps_Grass_Run/Footsteps_Grass_Run_07.wav
+  artifactKey: Guid(d3ea0567dbe95714eb0ca07f43a37a96) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Import/Audio/Footsteps - Essentials/Footsteps_Grass/Footsteps_Grass_Run/Footsteps_Grass_Run_07.wav using Guid(d3ea0567dbe95714eb0ca07f43a37a96) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd06a0a8c7cca0c1f649c297c34312234') in 0.017396 seconds 
 Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
 AssetImportWorker is now disconnected from the server
 Process exiting

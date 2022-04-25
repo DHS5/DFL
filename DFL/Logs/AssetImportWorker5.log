@@ -1,0 +1,290 @@
+Using pre-set license
+Built from '2021.3/staging' branch; Version is '2021.3.0f1 (6eacc8284459) revision 7253192'; Using compiler version '192829333'; Build Type 'Release'
+OS: 'Windows 10  (10.0.19044) 64bit Core' Language: 'fr' Physical Memory: 16231 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
+
+COMMAND LINE ARGUMENTS:
+C:\Infomatique\Unity\2021.3.0f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker5
+-projectPath
+C:/Infomatique/Unity/Projects/Personal Projects/DFL/DFL
+-logFile
+Logs/AssetImportWorker5.log
+-srvPort
+53403
+Successfully changed project path to: C:/Infomatique/Unity/Projects/Personal Projects/DFL/DFL
+C:/Infomatique/Unity/Projects/Personal Projects/DFL/DFL
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Refreshing native plugins compatible for Editor in 102.63 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2021.3.0f1 (6eacc8284459)
+[Subsystems] Discovering subsystems at path C:/Infomatique/Unity/2021.3.0f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Infomatique/Unity/Projects/Personal Projects/DFL/DFL/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce GTX 1660 Ti (ID=0x2191)
+    Vendor:   NVIDIA
+    VRAM:     5991 MB
+    Driver:   26.21.14.4137
+Initialize mono
+Mono path[0] = 'C:/Infomatique/Unity/2021.3.0f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Infomatique/Unity/2021.3.0f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Infomatique/Unity/2021.3.0f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56612
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Infomatique/Unity/2021.3.0f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
+Register platform support module: C:/Infomatique/Unity/2021.3.0f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.009058 seconds.
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 92.85 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.690 seconds
+Domain Reload Profiling:
+	ReloadAssembly (690ms)
+		BeginReloadAssembly (82ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (0ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (1ms)
+		EndReloadAssembly (485ms)
+			LoadAssemblies (80ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (112ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (30ms)
+			SetupLoadedEditorAssemblies (290ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (10ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (93ms)
+				BeforeProcessingInitializeOnLoad (1ms)
+				ProcessInitializeOnLoadAttributes (138ms)
+				ProcessInitializeOnLoadMethodAttributes (47ms)
+				AfterProcessingInitializeOnLoad (0ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (0ms)
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.006263 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory is not a mono symbol file
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 108.62 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.406 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1407ms)
+		BeginReloadAssembly (112ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (6ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (19ms)
+		EndReloadAssembly (1173ms)
+			LoadAssemblies (96ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (233ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (70ms)
+			SetupLoadedEditorAssemblies (724ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (7ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (109ms)
+				BeforeProcessingInitializeOnLoad (98ms)
+				ProcessInitializeOnLoadAttributes (423ms)
+				ProcessInitializeOnLoadMethodAttributes (78ms)
+				AfterProcessingInitializeOnLoad (9ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (9ms)
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.07 seconds
+Refreshing native plugins compatible for Editor in 1.46 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3801 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 129 unused Assets / (456.9 KB). Loaded Objects now: 4254.
+Memory consumption went from 184.4 MB to 183.9 MB.
+Total: 3.645000 ms (FindLiveObjects: 0.296200 ms CreateObjectMapping: 0.226300 ms MarkObjects: 2.760500 ms  DeleteObjects: 0.361000 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 194719.213556 seconds.
+  path: Assets/Import/Audio/Footsteps - Essentials/Footsteps_DirtyGround/Footsteps_DirtyGround_Land/Footsteps_DirtyGround_Jump_Land_02.wav
+  artifactKey: Guid(942019cf9ecd5854ebeb343b12b7f779) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Import/Audio/Footsteps - Essentials/Footsteps_DirtyGround/Footsteps_DirtyGround_Land/Footsteps_DirtyGround_Jump_Land_02.wav using Guid(942019cf9ecd5854ebeb343b12b7f779) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ad44c140aabd818effcf4119e72d1165') in 0.159785 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Import/Audio/Footsteps - Essentials/Footsteps_DirtyGround/Footsteps_DirtyGround_Run/Footsteps_DirtyGround_Run_07.wav
+  artifactKey: Guid(924e3e09c67130946a6d7b666e8b8b68) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Import/Audio/Footsteps - Essentials/Footsteps_DirtyGround/Footsteps_DirtyGround_Run/Footsteps_DirtyGround_Run_07.wav using Guid(924e3e09c67130946a6d7b666e8b8b68) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c72a980e82988509674902f250f0c865') in 0.014797 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Import/Audio/Footsteps - Essentials/Footsteps_DirtyGround/Footsteps_DirtyGround_Land/Footsteps_DirtyGround_Jump_Land_03.wav
+  artifactKey: Guid(1a88f429c4a7b734f9c4254f0c654cea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Import/Audio/Footsteps - Essentials/Footsteps_DirtyGround/Footsteps_DirtyGround_Land/Footsteps_DirtyGround_Jump_Land_03.wav using Guid(1a88f429c4a7b734f9c4254f0c654cea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '761c0ea7ab752f4ffd6596e2f1f3fde1') in 0.019214 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Import/Audio/Footsteps - Essentials/Footsteps_DirtyGround/Footsteps_DirtyGround_Walk/Footsteps_DirtyGround_Walk_01.wav
+  artifactKey: Guid(9ea11a2d13d536e4e8441a0f5895995c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Import/Audio/Footsteps - Essentials/Footsteps_DirtyGround/Footsteps_DirtyGround_Walk/Footsteps_DirtyGround_Walk_01.wav using Guid(9ea11a2d13d536e4e8441a0f5895995c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a56cc1d437fb99a153ddabe8ffdd06ec') in 0.014415 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Import/Audio/Footsteps - Essentials/Footsteps_DirtyGround/Footsteps_DirtyGround_Run/Footsteps_DirtyGround_Run_05.wav
+  artifactKey: Guid(fa95ebee958fb0e41a42a832aab767eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Import/Audio/Footsteps - Essentials/Footsteps_DirtyGround/Footsteps_DirtyGround_Run/Footsteps_DirtyGround_Run_05.wav using Guid(fa95ebee958fb0e41a42a832aab767eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7ddc481dd3bf8130344c64c85d33296e') in 0.016101 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Import/Audio/Footsteps - Essentials/Footsteps_DirtyGround/Footsteps_DirtyGround_Run/Footsteps_DirtyGround_Run_08.wav
+  artifactKey: Guid(6da235e2573048249bcbe608f984ff48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Import/Audio/Footsteps - Essentials/Footsteps_DirtyGround/Footsteps_DirtyGround_Run/Footsteps_DirtyGround_Run_08.wav using Guid(6da235e2573048249bcbe608f984ff48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '601948afde0c523c83726a5f2ae08417') in 0.016908 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Import/Audio/Footsteps - Essentials/Footsteps_DirtyGround/Footsteps_DirtyGround_Walk/Footsteps_DirtyGround_Walk_08.wav
+  artifactKey: Guid(f1547ad8fbfa4f24d83e5a445aee860d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Import/Audio/Footsteps - Essentials/Footsteps_DirtyGround/Footsteps_DirtyGround_Walk/Footsteps_DirtyGround_Walk_08.wav using Guid(f1547ad8fbfa4f24d83e5a445aee860d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '22fc841b8bc4d8e619fea8575204d5e9') in 0.019653 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Import/Audio/Footsteps - Essentials/Footsteps_DirtyGround/Footsteps_DirtyGround_Run/Footsteps_DirtyGround_Run_04.wav
+  artifactKey: Guid(1f2844efbf7abf647ba3d75d510f823a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Import/Audio/Footsteps - Essentials/Footsteps_DirtyGround/Footsteps_DirtyGround_Run/Footsteps_DirtyGround_Run_04.wav using Guid(1f2844efbf7abf647ba3d75d510f823a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd15dd58d3c60dcc5b767e22adf6d9429') in 0.014462 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Import/Audio/Footsteps - Essentials/Footsteps_DirtyGround/Footsteps_DirtyGround_Walk/Footsteps_DirtyGround_Walk_04.wav
+  artifactKey: Guid(f42914d98b070f741b2feee96a2988ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Import/Audio/Footsteps - Essentials/Footsteps_DirtyGround/Footsteps_DirtyGround_Walk/Footsteps_DirtyGround_Walk_04.wav using Guid(f42914d98b070f741b2feee96a2988ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6c9d911ecf2dd037c2edf8027e2a2945') in 0.012833 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Import/Audio/Footsteps - Essentials/Footsteps_DirtyGround/Footsteps_DirtyGround_Walk/Footsteps_DirtyGround_Walk_07.wav
+  artifactKey: Guid(6478d7fb30f301b4fa8f74d5d1dad094) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Import/Audio/Footsteps - Essentials/Footsteps_DirtyGround/Footsteps_DirtyGround_Walk/Footsteps_DirtyGround_Walk_07.wav using Guid(6478d7fb30f301b4fa8f74d5d1dad094) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c3432cb85e3dced81975adb25be4309f') in 0.013213 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.007125 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory is not a mono symbol file
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 2.73 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Warning: Annotation not found!
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.ProBuilder.EditorUtility:SetGizmoIconEnabled (System.Type,bool) (at Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/EditorUtility.cs:575)
+UnityEditor.ProBuilder.HierarchyListener:.cctor () (at Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/HierarchyListener.cs:21)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+[Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/EditorUtility.cs line 575]
+
+Mono: successfully reloaded assembly
+- Completed reload, in  1.662 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1663ms)
+		BeginReloadAssembly (181ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (6ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (41ms)
+		EndReloadAssembly (1333ms)
+			LoadAssemblies (137ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (334ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (69ms)
+			SetupLoadedEditorAssemblies (721ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (27ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (3ms)
+				BeforeProcessingInitializeOnLoad (130ms)
+				ProcessInitializeOnLoadAttributes (452ms)
+				ProcessInitializeOnLoadMethodAttributes (99ms)
+				AfterProcessingInitializeOnLoad (10ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (12ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 4.23 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3626 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 21 unused Assets / (460.8 KB). Loaded Objects now: 4265.
+Memory consumption went from 180.3 MB to 179.8 MB.
+Total: 6.425400 ms (FindLiveObjects: 0.435300 ms CreateObjectMapping: 0.236900 ms MarkObjects: 5.335600 ms  DeleteObjects: 0.416400 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0

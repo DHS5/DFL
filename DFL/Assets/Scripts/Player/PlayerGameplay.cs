@@ -11,6 +11,7 @@ public class PlayerGameplay : MonoBehaviour
     [SerializeField] private GameManager gameManager;
 
 
+    [SerializeField] private AudioSource audioSource;
 
     [Tooltip("Player's number of life")]
     [HideInInspector] public int lifeNumber = 1;
@@ -60,22 +61,27 @@ public class PlayerGameplay : MonoBehaviour
     /// <param name="collision">Collider of the colliding object</param>
     private void OnCollisionEnter(Collision collision)
     {
-        // When the player collides with an enemy --> game over
-        if (collision.gameObject.CompareTag("Enemy") && !isInvincible)
+        if (!gameManager.gameOver)
         {
-            Hurt(collision.gameObject);
-            Debug.Log("Hurt by enemy");
-        }
-        // When the player collides with an obstacle --> game over
-        if (collision.gameObject.CompareTag("Obstacle") && !isInvincible)
-        {
-            Hurt(collision.gameObject);
-            Debug.Log("Hurt by obstacle");
+            // When the player collides with an enemy --> game over
+            if (collision.gameObject.CompareTag("Enemy") && !isInvincible)
+            {
+                Hurt(collision.gameObject);
+                Debug.Log("Hurt by enemy");
+            }
+            // When the player collides with an obstacle --> game over
+            if (collision.gameObject.CompareTag("Obstacle") && !isInvincible)
+            {
+                Hurt(collision.gameObject);
+                Debug.Log("Hurt by obstacle");
+            }
         }
     }
 
     private void Hurt(GameObject g)
     {
+        audioSource.Play();
+
         lifeNumber--;
         if (lifeNumber > 0)
         {

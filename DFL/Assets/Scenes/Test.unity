@@ -2223,6 +2223,11 @@ Camera:
   m_CorrespondingSourceObject: {fileID: 481326121232926630, guid: 954c6aefe33bdf948af105d130cc7e30, type: 3}
   m_PrefabInstance: {fileID: 400400878}
   m_PrefabAsset: {fileID: 0}
+--- !u!82 &400400881 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: -7373659802355154443, guid: 954c6aefe33bdf948af105d130cc7e30, type: 3}
+  m_PrefabInstance: {fileID: 400400878}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &402849811
 GameObject:
   m_ObjectHideFlags: 0
@@ -2609,7 +2614,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5075a40225c632d4d9251c388c176319, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1df5c3f2afc93144eb30695db620c3e8, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -10488,7 +10493,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 50, y: -25}
+  m_AnchoredPosition: {x: 75, y: -50}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1580441759
@@ -10511,10 +10516,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 1
+  m_text: 01
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 7cd4578d0fe3cb34e8986201a9a4c946, type: 2}
-  m_sharedMaterial: {fileID: 1909883670084624020, guid: 7cd4578d0fe3cb34e8986201a9a4c946, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 44584f538e181ea4b92be715634fdb47, type: 2}
+  m_sharedMaterial: {fileID: 8080496726357325712, guid: 44584f538e181ea4b92be715634fdb47, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -10538,8 +10543,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 75
-  m_fontSizeBase: 75
+  m_fontSize: 70
+  m_fontSizeBase: 70
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -10943,6 +10948,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 392287958}
+  audioSource: {fileID: 400400881}
   lifeNumber: 1
   isChasable: 1
   isInvincible: 0
