@@ -21,8 +21,6 @@ public class GameUIManager : MonoBehaviour
     [SerializeField] private Slider sensitivitySlider;
     [SerializeField] private Slider smoothRotationSlider;
 
-    [SerializeField] private GameObject hintTexts;
-
 
     [Tooltip("UI components of the acceleration bar")]
     [SerializeField] private GameObject[] accelerationBars;
@@ -78,7 +76,11 @@ public class GameUIManager : MonoBehaviour
     public void ActuWaveNumber(int wave)
     {
         foreach (TextMeshProUGUI t in waveNumberTexts)
-            t.text = wave.ToString();
+        {
+            if (wave < 10) t.text = "0";
+            else t.text = "";
+            t.text += wave.ToString();
+        }
     }
 
     /// <summary>

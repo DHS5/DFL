@@ -31,8 +31,6 @@ ScriptsOnlyBuild:
     - WingMan
     NavMeshComponents.dll:
     - UnityEngine.AI.NavMeshSurface
-    NavMeshComponentsEditor.dll:
-    - UnityEditor.AI.NavMeshAssetManager
     Unity.Play.Publisher.Editor.dll:
     - Unity.Play.Publisher.Editor.AnalyticsHelper
     - Unity.Play.Publisher.Editor.PublisherWindow
@@ -435,8 +433,26 @@ ScriptsOnlyBuild:
     fullTypeName: UnityEngine.Rendering.UI.DebugUIHandlerPanel
     methodName: ResetDebugManager
   - assembly: Assembly-CSharp
-    fullTypeName: FirstPersonCameraController
-    methodName: set_YMS
+    fullTypeName: GameUIManager
+    methodName: CloseAllTexts
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: Assembly-CSharp
+    fullTypeName: GameUIManager
+    methodName: CloseAllTexts
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: Assembly-CSharp
+    fullTypeName: GameUIManager
+    methodName: CloseAllTexts
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: Assembly-CSharp
+    fullTypeName: GameUIManager
+    methodName: CloseAllTexts
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.GameObject
     methodName: SetActive
@@ -444,17 +460,8 @@ ScriptsOnlyBuild:
     fullTypeName: GameManager
     methodName: PauseGame
   - assembly: Assembly-CSharp
-    fullTypeName: GameUIManager
-    methodName: CloseAllTexts
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.GameObject
-    methodName: SetActive
-  - assembly: Assembly-CSharp
-    fullTypeName: GameUIManager
-    methodName: CloseAllTexts
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.GameObject
-    methodName: SetActive
+    fullTypeName: FirstPersonCameraController
+    methodName: set_YMS
   - assembly: Assembly-CSharp
     fullTypeName: GameUIManager
     methodName: CloseAllTexts
@@ -469,9 +476,30 @@ ScriptsOnlyBuild:
     methodName: Restart
   - assembly: Assembly-CSharp
     fullTypeName: GameUIManager
+    methodName: CloseAllTexts
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: Assembly-CSharp
+    fullTypeName: GameManager
+    methodName: UnpauseGame
+  - assembly: Assembly-CSharp
+    fullTypeName: GameUIManager
     methodName: BackToMenu
   - assembly: Assembly-CSharp
     fullTypeName: GameUIManager
+    methodName: CloseAllTexts
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: Assembly-CSharp
+    fullTypeName: GameUIManager
+    methodName: CloseAllTexts
+  - assembly: Assembly-CSharp
+    fullTypeName: GameUIManager
     methodName: BackToMenu
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.GameObject
@@ -482,15 +510,6 @@ ScriptsOnlyBuild:
   - assembly: Assembly-CSharp
     fullTypeName: GameUIManager
     methodName: CloseAllTexts
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.GameObject
-    methodName: SetActive
-  - assembly: Assembly-CSharp
-    fullTypeName: GameUIManager
-    methodName: CloseAllTexts
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.GameObject
-    methodName: SetActive
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.GameObject
     methodName: SetActive
@@ -503,36 +522,33 @@ ScriptsOnlyBuild:
   - assembly: Assembly-CSharp
     fullTypeName: GameManager
     methodName: UnpauseGame
+  - assembly: Assembly-CSharp
+    fullTypeName: GameUIManager
+    methodName: CloseAllTexts
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.GameObject
     methodName: SetActive
   - assembly: Assembly-CSharp
     fullTypeName: GameUIManager
     methodName: CloseAllTexts
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: Assembly-CSharp
+    fullTypeName: GameUIManager
+    methodName: CloseAllTexts
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: Assembly-CSharp
+    fullTypeName: GameUIManager
+    methodName: CloseAllTexts
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
   - assembly: Assembly-CSharp
     fullTypeName: FirstPersonCameraController
     methodName: set_YSR
-  - assembly: Assembly-CSharp
-    fullTypeName: GameUIManager
-    methodName: CloseAllTexts
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.GameObject
-    methodName: SetActive
-  - assembly: Assembly-CSharp
-    fullTypeName: GameUIManager
-    methodName: CloseAllTexts
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.GameObject
-    methodName: SetActive
-  - assembly: Assembly-CSharp
-    fullTypeName: GameUIManager
-    methodName: CloseAllTexts
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.GameObject
-    methodName: SetActive
-  - assembly: Assembly-CSharp
-    fullTypeName: GameUIManager
-    methodName: CloseAllTexts
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.GameObject
     methodName: SetActive
@@ -566,21 +582,6 @@ ScriptsOnlyBuild:
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.GameObject
     methodName: SetActive
-  - assembly: Assembly-CSharp
-    fullTypeName: GameUIManager
-    methodName: CloseAllTexts
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.GameObject
-    methodName: SetActive
-  - assembly: Assembly-CSharp
-    fullTypeName: GameUIManager
-    methodName: CloseAllTexts
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.GameObject
-    methodName: SetActive
-  - assembly: Assembly-CSharp
-    fullTypeName: GameUIManager
-    methodName: CloseAllTexts
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.GameObject
     methodName: SetActive
@@ -1342,7 +1343,7 @@ ScriptsOnlyBuild:
     className: ActivationTrack
   - hash:
       serializedVersion: 2
-      Hash: cb35b67909109af6b053be693eca50cb
+      Hash: 846ddeea87e344e5df5a03d576a77ef5
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerGameplay
@@ -1930,7 +1931,7 @@ ScriptsOnlyBuild:
     className: SpeedBonus
   - hash:
       serializedVersion: 2
-      Hash: 0f179ceadb0d0e9dd3d8372453c5f3d9
+      Hash: 9bd6cbb0ce031e5b79f59d5c819da7c9
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameUIManager

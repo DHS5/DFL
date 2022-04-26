@@ -280,10 +280,10 @@
 -r:"C:/Infomatique/Unity/Projects/Personal Projects/DFL/DFL/Library/PackageCache/com.unity.burst@1.6.5/Unity.Burst.CodeGen/Unity.Burst.Cecil.Rocks.dll"
 -r:"C:/Infomatique/Unity/Projects/Personal Projects/DFL/DFL/Library/PackageCache/com.unity.burst@1.6.5/Unity.Burst.Unsafe.dll"
 -r:"Library/Bee/artifacts/2000b0aP.dag/UnityEngine.UI.ref.dll"
-"Assets/NavMeshComponents/Scripts/NavMeshLink.cs"
-"Assets/NavMeshComponents/Scripts/NavMeshModifier.cs"
-"Assets/NavMeshComponents/Scripts/NavMeshModifierVolume.cs"
-"Assets/NavMeshComponents/Scripts/NavMeshSurface.cs"
+"Assets/Other/NavMeshComponents/Scripts/NavMeshLink.cs"
+"Assets/Other/NavMeshComponents/Scripts/NavMeshModifier.cs"
+"Assets/Other/NavMeshComponents/Scripts/NavMeshModifierVolume.cs"
+"Assets/Other/NavMeshComponents/Scripts/NavMeshSurface.cs"
 -langversion:9.0
 
 /deterministic

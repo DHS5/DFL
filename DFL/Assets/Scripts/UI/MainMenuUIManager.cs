@@ -32,20 +32,31 @@ public class MainMenuUIManager : MonoBehaviour
 
     public float YMouseSensitivity
     {
-        set
-        {
-            DataManager.InstanceDataManager.yMouseSensitivity = value;
-        }
+        set { DataManager.InstanceDataManager.yMouseSensitivity = value; }
     }
     
     public float YSmoothRotation
     {
-        set
-        {
-            DataManager.InstanceDataManager.ySmoothRotation = value;
-        }
+        set { DataManager.InstanceDataManager.ySmoothRotation = value; }
     }
 
+    public bool Music
+    {
+        set { DataManager.InstanceDataManager.music = value; }
+    }
+    public float MusicVolume
+    {
+        set { DataManager.InstanceDataManager.musicVolume = value; }
+    }
+
+    public bool Sound
+    {
+        set { DataManager.InstanceDataManager.sound = value; }
+    }
+    public float SoundVolume
+    {
+        set { DataManager.InstanceDataManager.soundVolume = value; }
+    }
 
     private void Start()
     {

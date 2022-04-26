@@ -45,7 +45,7 @@ public class EnvironmentManager : MonoBehaviour
         RenderSettings.skybox = skyboxes[2];
         FindObjectOfType<Light>().gameObject.SetActive(false);
         dirLight = Instantiate(directionnalLights[2], new Vector3(0, 0, 0), Quaternion.Euler(50, -30, 0));
-        RenderSettings.ambientIntensity = 0.4f;
+        RenderSettings.ambientIntensity = 0.6f;
     }
 
 

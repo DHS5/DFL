@@ -29,6 +29,12 @@ public class DataManager : MonoBehaviour
     [HideInInspector] public float ySmoothRotation;
 
 
+    [HideInInspector] public bool music;
+    [HideInInspector] public float musicVolume;
+    [HideInInspector] public bool sound;
+    [HideInInspector] public float soundVolume;
+
+
     /// <summary>
     /// Gets the Singleton Instance
     /// </summary>

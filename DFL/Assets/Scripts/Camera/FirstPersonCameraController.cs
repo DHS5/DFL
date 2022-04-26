@@ -28,7 +28,7 @@ public class FirstPersonCameraController : MonoBehaviour
     [Range(-10, 15)]
     [SerializeField] private float headAngle = 10f;
     [Tooltip("Max angle at which the player is able to look behind")]
-    [SerializeField] private int angleMax = 85;
+    [SerializeField] private int angleMax = 150;
     [Tooltip("Mouse sensitivity along the Y axis")]
     [Range(0.1f, 10f)]
     [SerializeField]  private float yMouseSensitivity = 3f;
@@ -71,7 +71,7 @@ public class FirstPersonCameraController : MonoBehaviour
     }
 
     /// <summary>
-    /// Clamps the rotation around the Y axis between -50° and 50°
+    /// Clamps the rotation around the Y axis in the range [-angleMax,angleMax]
     /// Also keeps the rotation stable during the run
     /// </summary>
     /// <param name="rot">Original quaternion</param>
@@ -83,7 +83,7 @@ public class FirstPersonCameraController : MonoBehaviour
         rot.w = 1;
 
         // Keeps it stable around the X and Z axis
-        rot = Quaternion.Euler(headAngle, rot.eulerAngles.y, 0f);
+        //rot = Quaternion.Euler(headAngle, rot.eulerAngles.y, 0f);
 
         // Clamps the Y rotation in the angleMax range
         float angleY = 2.0f * Mathf.Rad2Deg * Mathf.Atan(rot.y);
@@ -109,12 +109,12 @@ public class FirstPersonCameraController : MonoBehaviour
         float yRotation = Mathf.Clamp(Input.GetAxis("Mouse X"), -xClamp, xClamp) * yMouseSensitivity * 1f;
 
         // Gets the camera rotation
-        float cameraYRot = Mathf.Abs(head.transform.localRotation.y);
+        //float cameraYRot = Mathf.Abs(head.transform.localRotation.y);
         // If the player looks behind, reduces his rotation speed to avoid to exceed the maximum rotation angle
-        if (cameraYRot > (float)angleMax / 100 && ((yRotation > 0 && head.transform.localRotation.eulerAngles.y < 180) || (yRotation < 0 && head.transform.localRotation.eulerAngles.y > 180)))
-        {
-            yRotation = Mathf.Clamp(yRotation, -yMouseSensitivity + cameraYRot * yMouseSensitivity, yMouseSensitivity - cameraYRot * yMouseSensitivity);
-        }
+        //if (cameraYRot > (float)angleMax / 100 && ((yRotation > 0 && head.transform.localRotation.eulerAngles.y < 180) || (yRotation < 0 && head.transform.localRotation.eulerAngles.y > 180)))
+        //{
+        //    yRotation = Mathf.Clamp(yRotation, -yMouseSensitivity + cameraYRot * yMouseSensitivity, yMouseSensitivity - cameraYRot * yMouseSensitivity);
+        //}
 
         // Gets the new camera's rotation
         cameraRotation *= Quaternion.Euler(0f, yRotation, 0f);

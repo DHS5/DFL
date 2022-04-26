@@ -25009,20 +25009,18 @@ struct GameUIManager_t6B3138FAC7E8A481B4925311830D3DC13248E654  : public MonoBeh
 	Slider_t87EA570E3D6556CABF57456C2F3873FFD86E652F* ___sensitivitySlider_7;
 	// UnityEngine.UI.Slider GameUIManager::smoothRotationSlider
 	Slider_t87EA570E3D6556CABF57456C2F3873FFD86E652F* ___smoothRotationSlider_8;
-	// UnityEngine.GameObject GameUIManager::hintTexts
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___hintTexts_9;
 	// UnityEngine.GameObject[] GameUIManager::accelerationBars
-	GameObjectU5BU5D_tFF67550DFCE87096D7A3734EA15B75896B2722CF* ___accelerationBars_10;
+	GameObjectU5BU5D_tFF67550DFCE87096D7A3734EA15B75896B2722CF* ___accelerationBars_9;
 	// UnityEngine.GameObject GameUIManager::bonusBar
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___bonusBar_11;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___bonusBar_10;
 	// UnityEngine.GameObject[] GameUIManager::lifeBonuses
-	GameObjectU5BU5D_tFF67550DFCE87096D7A3734EA15B75896B2722CF* ___lifeBonuses_12;
+	GameObjectU5BU5D_tFF67550DFCE87096D7A3734EA15B75896B2722CF* ___lifeBonuses_11;
 	// UnityEngine.Animation GameUIManager::accBarAnim
-	Animation_t6593B06C39E3B139808B19F2C719C860F3F61040* ___accBarAnim_13;
+	Animation_t6593B06C39E3B139808B19F2C719C860F3F61040* ___accBarAnim_12;
 	// UnityEngine.Animation GameUIManager::bonusBarAnim
-	Animation_t6593B06C39E3B139808B19F2C719C860F3F61040* ___bonusBarAnim_14;
+	Animation_t6593B06C39E3B139808B19F2C719C860F3F61040* ___bonusBarAnim_13;
 	// System.Single GameUIManager::bonusBarSize
-	float ___bonusBarSize_15;
+	float ___bonusBarSize_14;
 };
 
 // UnityEngine.Rendering.LensFlareComponentSRP
@@ -25334,14 +25332,16 @@ struct PlayerGameplay_tED3FF34D0BF7229DEEDFE0ABFF7E5602461169F7  : public MonoBe
 {
 	// GameManager PlayerGameplay::gameManager
 	GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6* ___gameManager_4;
+	// UnityEngine.AudioSource PlayerGameplay::audioSource
+	AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* ___audioSource_5;
 	// System.Int32 PlayerGameplay::lifeNumber
-	int32_t ___lifeNumber_5;
+	int32_t ___lifeNumber_6;
 	// System.Boolean PlayerGameplay::isChasable
-	bool ___isChasable_6;
+	bool ___isChasable_7;
 	// System.Boolean PlayerGameplay::isInvincible
-	bool ___isInvincible_7;
+	bool ___isInvincible_8;
 	// System.Boolean PlayerGameplay::isVisible
-	bool ___isVisible_8;
+	bool ___isVisible_9;
 };
 
 // UnityEngine.ProBuilder.PolyShape
@@ -31483,18 +31483,18 @@ IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4690[9] =
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4691[26] = 
 {
 	static_cast<int32_t>(offsetof(PlayerController_t7E8D7042FA2D0DFEC54A1FCDF395161D88DAAE95, ___gameManager_4)),static_cast<int32_t>(offsetof(PlayerController_t7E8D7042FA2D0DFEC54A1FCDF395161D88DAAE95, ___playerGameplay_5)),static_cast<int32_t>(offsetof(PlayerController_t7E8D7042FA2D0DFEC54A1FCDF395161D88DAAE95, ___cameraAnimator_6)),static_cast<int32_t>(offsetof(PlayerController_t7E8D7042FA2D0DFEC54A1FCDF395161D88DAAE95, ___playerAnimator_7)),static_cast<int32_t>(offsetof(PlayerController_t7E8D7042FA2D0DFEC54A1FCDF395161D88DAAE95, ___freeze_8)),static_cast<int32_t>(offsetof(PlayerController_t7E8D7042FA2D0DFEC54A1FCDF395161D88DAAE95, ___playerBody_9)),static_cast<int32_t>(offsetof(PlayerController_t7E8D7042FA2D0DFEC54A1FCDF395161D88DAAE95, ___playerCamera_10)),static_cast<int32_t>(offsetof(PlayerController_t7E8D7042FA2D0DFEC54A1FCDF395161D88DAAE95, ___playerRigidbody_11)),static_cast<int32_t>(offsetof(PlayerController_t7E8D7042FA2D0DFEC54A1FCDF395161D88DAAE95, ___velocity_12)),static_cast<int32_t>(offsetof(PlayerController_t7E8D7042FA2D0DFEC54A1FCDF395161D88DAAE95, ___speed_13)),static_cast<int32_t>(offsetof(PlayerController_t7E8D7042FA2D0DFEC54A1FCDF395161D88DAAE95, ___sideSpeedM_14)),static_cast<int32_t>(offsetof(PlayerController_t7E8D7042FA2D0DFEC54A1FCDF395161D88DAAE95, ___jukeSpeedM_15)),static_cast<int32_t>(offsetof(PlayerController_t7E8D7042FA2D0DFEC54A1FCDF395161D88DAAE95, ___spinSpeedM_16)),static_cast<int32_t>(offsetof(PlayerController_t7E8D7042FA2D0DFEC54A1FCDF395161D88DAAE95, ___sideSpeedAccD_17)),static_cast<int32_t>(offsetof(PlayerController_t7E8D7042FA2D0DFEC54A1FCDF395161D88DAAE95, ___canJuke_18)),static_cast<int32_t>(offsetof(PlayerController_t7E8D7042FA2D0DFEC54A1FCDF395161D88DAAE95, ___accelerationM_19)),static_cast<int32_t>(offsetof(PlayerController_t7E8D7042FA2D0DFEC54A1FCDF395161D88DAAE95, ___isAccelerating_20)),static_cast<int32_t>(offsetof(PlayerController_t7E8D7042FA2D0DFEC54A1FCDF395161D88DAAE95, ___canAccelerate_21)),static_cast<int32_t>(offsetof(PlayerController_t7E8D7042FA2D0DFEC54A1FCDF395161D88DAAE95, ___accelerationTime_22)),static_cast<int32_t>(offsetof(PlayerController_t7E8D7042FA2D0DFEC54A1FCDF395161D88DAAE95, ___waitToAccelerateTime_23)),static_cast<int32_t>(offsetof(PlayerController_t7E8D7042FA2D0DFEC54A1FCDF395161D88DAAE95, ___canJump_24)),static_cast<int32_t>(offsetof(PlayerController_t7E8D7042FA2D0DFEC54A1FCDF395161D88DAAE95, ___jumpPower_25)),static_cast<int32_t>(offsetof(PlayerController_t7E8D7042FA2D0DFEC54A1FCDF395161D88DAAE95, ___jumpHeight_26)),static_cast<int32_t>(offsetof(PlayerController_t7E8D7042FA2D0DFEC54A1FCDF395161D88DAAE95, ___gravityScale_27)),static_cast<int32_t>(offsetof(PlayerController_t7E8D7042FA2D0DFEC54A1FCDF395161D88DAAE95, ___bonusSpeed_28)),static_cast<int32_t>(offsetof(PlayerController_t7E8D7042FA2D0DFEC54A1FCDF395161D88DAAE95, ___bonusJump_29)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4692[5] = 
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4692[6] = 
 {
-	static_cast<int32_t>(offsetof(PlayerGameplay_tED3FF34D0BF7229DEEDFE0ABFF7E5602461169F7, ___gameManager_4)),static_cast<int32_t>(offsetof(PlayerGameplay_tED3FF34D0BF7229DEEDFE0ABFF7E5602461169F7, ___lifeNumber_5)),static_cast<int32_t>(offsetof(PlayerGameplay_tED3FF34D0BF7229DEEDFE0ABFF7E5602461169F7, ___isChasable_6)),static_cast<int32_t>(offsetof(PlayerGameplay_tED3FF34D0BF7229DEEDFE0ABFF7E5602461169F7, ___isInvincible_7)),static_cast<int32_t>(offsetof(PlayerGameplay_tED3FF34D0BF7229DEEDFE0ABFF7E5602461169F7, ___isVisible_8)),};
+	static_cast<int32_t>(offsetof(PlayerGameplay_tED3FF34D0BF7229DEEDFE0ABFF7E5602461169F7, ___gameManager_4)),static_cast<int32_t>(offsetof(PlayerGameplay_tED3FF34D0BF7229DEEDFE0ABFF7E5602461169F7, ___audioSource_5)),static_cast<int32_t>(offsetof(PlayerGameplay_tED3FF34D0BF7229DEEDFE0ABFF7E5602461169F7, ___lifeNumber_6)),static_cast<int32_t>(offsetof(PlayerGameplay_tED3FF34D0BF7229DEEDFE0ABFF7E5602461169F7, ___isChasable_7)),static_cast<int32_t>(offsetof(PlayerGameplay_tED3FF34D0BF7229DEEDFE0ABFF7E5602461169F7, ___isInvincible_8)),static_cast<int32_t>(offsetof(PlayerGameplay_tED3FF34D0BF7229DEEDFE0ABFF7E5602461169F7, ___isVisible_9)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4693[11] = 
 {
 	static_cast<int32_t>(offsetof(Attackers_t5683719F334F8E077A99AD60E07DCBCAF0D8CB14, ___teamManager_4)),static_cast<int32_t>(offsetof(Attackers_t5683719F334F8E077A99AD60E07DCBCAF0D8CB14, ___navMeshAgent_5)),static_cast<int32_t>(offsetof(Attackers_t5683719F334F8E077A99AD60E07DCBCAF0D8CB14, ___animator_6)),static_cast<int32_t>(offsetof(Attackers_t5683719F334F8E077A99AD60E07DCBCAF0D8CB14, ___player_7)),static_cast<int32_t>(offsetof(Attackers_t5683719F334F8E077A99AD60E07DCBCAF0D8CB14, ___target_8)),static_cast<int32_t>(offsetof(Attackers_t5683719F334F8E077A99AD60E07DCBCAF0D8CB14, ___playerProtectionRadius_9)),static_cast<int32_t>(offsetof(Attackers_t5683719F334F8E077A99AD60E07DCBCAF0D8CB14, ___size_10)),static_cast<int32_t>(offsetof(Attackers_t5683719F334F8E077A99AD60E07DCBCAF0D8CB14, ___hasDefender_11)),static_cast<int32_t>(offsetof(Attackers_t5683719F334F8E077A99AD60E07DCBCAF0D8CB14, ___runLimit_12)),static_cast<int32_t>(offsetof(Attackers_t5683719F334F8E077A99AD60E07DCBCAF0D8CB14, ___walkLimit_13)),static_cast<int32_t>(offsetof(Attackers_t5683719F334F8E077A99AD60E07DCBCAF0D8CB14, ___lookRot_14)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4695[12] = 
 {
 	static_cast<int32_t>(offsetof(TeamManager_tA8E7B7DB1FD835EC6FCC694A46C98241552987A9, ___gameManager_4)),static_cast<int32_t>(offsetof(TeamManager_tA8E7B7DB1FD835EC6FCC694A46C98241552987A9, ___fieldManager_5)),static_cast<int32_t>(offsetof(TeamManager_tA8E7B7DB1FD835EC6FCC694A46C98241552987A9, ___enemiesManager_6)),static_cast<int32_t>(offsetof(TeamManager_tA8E7B7DB1FD835EC6FCC694A46C98241552987A9, ___player_7)),static_cast<int32_t>(offsetof(TeamManager_tA8E7B7DB1FD835EC6FCC694A46C98241552987A9, ___attackersPrefabs_8)),static_cast<int32_t>(offsetof(TeamManager_tA8E7B7DB1FD835EC6FCC694A46C98241552987A9, ___freeAttackers_9)),static_cast<int32_t>(offsetof(TeamManager_tA8E7B7DB1FD835EC6FCC694A46C98241552987A9, ___busyAttackers_10)),static_cast<int32_t>(offsetof(TeamManager_tA8E7B7DB1FD835EC6FCC694A46C98241552987A9, ___enemies_11)),static_cast<int32_t>(offsetof(TeamManager_tA8E7B7DB1FD835EC6FCC694A46C98241552987A9, ___enemiesToSupp_12)),static_cast<int32_t>(offsetof(TeamManager_tA8E7B7DB1FD835EC6FCC694A46C98241552987A9, ___enemiesToAdd_13)),static_cast<int32_t>(offsetof(TeamManager_tA8E7B7DB1FD835EC6FCC694A46C98241552987A9, ___playerProtectionRadius_14)),static_cast<int32_t>(offsetof(TeamManager_tA8E7B7DB1FD835EC6FCC694A46C98241552987A9, ___teamReactivity_15)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4696[12] = 
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4696[11] = 
 {
-	static_cast<int32_t>(offsetof(GameUIManager_t6B3138FAC7E8A481B4925311830D3DC13248E654, ___gameManager_4)),static_cast<int32_t>(offsetof(GameUIManager_t6B3138FAC7E8A481B4925311830D3DC13248E654, ___screens_5)),static_cast<int32_t>(offsetof(GameUIManager_t6B3138FAC7E8A481B4925311830D3DC13248E654, ___waveNumberTexts_6)),static_cast<int32_t>(offsetof(GameUIManager_t6B3138FAC7E8A481B4925311830D3DC13248E654, ___sensitivitySlider_7)),static_cast<int32_t>(offsetof(GameUIManager_t6B3138FAC7E8A481B4925311830D3DC13248E654, ___smoothRotationSlider_8)),static_cast<int32_t>(offsetof(GameUIManager_t6B3138FAC7E8A481B4925311830D3DC13248E654, ___hintTexts_9)),static_cast<int32_t>(offsetof(GameUIManager_t6B3138FAC7E8A481B4925311830D3DC13248E654, ___accelerationBars_10)),static_cast<int32_t>(offsetof(GameUIManager_t6B3138FAC7E8A481B4925311830D3DC13248E654, ___bonusBar_11)),static_cast<int32_t>(offsetof(GameUIManager_t6B3138FAC7E8A481B4925311830D3DC13248E654, ___lifeBonuses_12)),static_cast<int32_t>(offsetof(GameUIManager_t6B3138FAC7E8A481B4925311830D3DC13248E654, ___accBarAnim_13)),static_cast<int32_t>(offsetof(GameUIManager_t6B3138FAC7E8A481B4925311830D3DC13248E654, ___bonusBarAnim_14)),static_cast<int32_t>(offsetof(GameUIManager_t6B3138FAC7E8A481B4925311830D3DC13248E654, ___bonusBarSize_15)),};
+	static_cast<int32_t>(offsetof(GameUIManager_t6B3138FAC7E8A481B4925311830D3DC13248E654, ___gameManager_4)),static_cast<int32_t>(offsetof(GameUIManager_t6B3138FAC7E8A481B4925311830D3DC13248E654, ___screens_5)),static_cast<int32_t>(offsetof(GameUIManager_t6B3138FAC7E8A481B4925311830D3DC13248E654, ___waveNumberTexts_6)),static_cast<int32_t>(offsetof(GameUIManager_t6B3138FAC7E8A481B4925311830D3DC13248E654, ___sensitivitySlider_7)),static_cast<int32_t>(offsetof(GameUIManager_t6B3138FAC7E8A481B4925311830D3DC13248E654, ___smoothRotationSlider_8)),static_cast<int32_t>(offsetof(GameUIManager_t6B3138FAC7E8A481B4925311830D3DC13248E654, ___accelerationBars_9)),static_cast<int32_t>(offsetof(GameUIManager_t6B3138FAC7E8A481B4925311830D3DC13248E654, ___bonusBar_10)),static_cast<int32_t>(offsetof(GameUIManager_t6B3138FAC7E8A481B4925311830D3DC13248E654, ___lifeBonuses_11)),static_cast<int32_t>(offsetof(GameUIManager_t6B3138FAC7E8A481B4925311830D3DC13248E654, ___accBarAnim_12)),static_cast<int32_t>(offsetof(GameUIManager_t6B3138FAC7E8A481B4925311830D3DC13248E654, ___bonusBarAnim_13)),static_cast<int32_t>(offsetof(GameUIManager_t6B3138FAC7E8A481B4925311830D3DC13248E654, ___bonusBarSize_14)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4697[2] = 
 {
 	static_cast<int32_t>(offsetof(MainMenuUIManager_t35E3C979AA777B6CBFCDA555773BE04A8ACA5657, ___sensitivitySlider_4)),static_cast<int32_t>(offsetof(MainMenuUIManager_t35E3C979AA777B6CBFCDA555773BE04A8ACA5657, ___smoothRotationSlider_5)),};
