@@ -151,7 +151,7 @@ public class GameManager : MonoBehaviour
 
         gameUIManager.SettingsScreen(true);
 
-        if (audioManager.SoundOn) audioManager.MuteSound();
+        if (audioManager.SoundOn) audioManager.MuteSound(true);
     }
     public void UnpauseGame()
     {
@@ -176,7 +176,7 @@ public class GameManager : MonoBehaviour
 
         player.GetComponentInChildren<FirstPersonCameraController>().LockCursor();
 
-        if (audioManager.SoundOn) audioManager.UnmuteSound();
+        if (audioManager.SoundOn) audioManager.MuteSound(false);
     }
 
 

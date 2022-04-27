@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class MenuAudioManager : AudioManager
 {
-    private void Start()
+    protected override void Start()
     {
+        base.Start();
+
         if (DataManager.InstanceDataManager != null && DataManager.InstanceDataManager.soundVolume != 0)
         {
             musicOn = DataManager.InstanceDataManager.musicOn; musicToggle.isOn = musicOn;
@@ -22,5 +24,9 @@ public class MenuAudioManager : AudioManager
             soundOn = soundToggle.isOn; DataManager.InstanceDataManager.soundOn = soundOn;
             soundVolume = soundSlider.value; DataManager.InstanceDataManager.soundVolume = soundVolume;
         }
+
+        musicNumber = DataManager.InstanceDataManager.musicNumber;
+        PlayFromTime(musicNumber, DataManager.InstanceDataManager.musicTime);
+        if (DataManager.InstanceDataManager.musicPaused) audioSource.Pause();
     }
 }

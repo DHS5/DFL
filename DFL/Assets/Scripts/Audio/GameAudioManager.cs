@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class GameAudioManager : AudioManager
 {
-    private void Start()
+    protected override void Start()
     {
+        base.Start();
+        
         if (DataManager.InstanceDataManager != null)
         {
             musicOn = DataManager.InstanceDataManager.musicOn; musicToggle.isOn = musicOn;
@@ -13,14 +15,21 @@ public class GameAudioManager : AudioManager
 
             soundOn = DataManager.InstanceDataManager.soundOn; soundToggle.isOn = soundOn;
             soundVolume = DataManager.InstanceDataManager.soundVolume; soundSlider.value = soundVolume;
+
+            musicNumber = DataManager.InstanceDataManager.musicNumber;
+            PlayFromTime(musicNumber, DataManager.InstanceDataManager.musicTime);
+            if (DataManager.InstanceDataManager.musicPaused) audioSource.Pause();
         }
         else
         {
-            musicOn = musicToggle.isOn; DataManager.InstanceDataManager.musicOn = musicOn;
-            musicVolume = musicSlider.value; DataManager.InstanceDataManager.musicVolume = musicVolume;
+            musicOn = musicToggle.isOn;
+            musicVolume = musicSlider.value;
 
-            soundOn = soundToggle.isOn; DataManager.InstanceDataManager.soundOn = soundOn;
-            soundVolume = soundSlider.value; DataManager.InstanceDataManager.soundVolume = soundVolume;
+            soundOn = soundToggle.isOn;
+            soundVolume = soundSlider.value;
+
+            musicNumber = 0;
+            PlayFromBeginning(musicNumber);
         }
     }
 
@@ -40,28 +49,14 @@ public class GameAudioManager : AudioManager
     }
 
 
-    public void MuteSound()
+    public void MuteSound(bool tmp)
     {
         foreach (AudioSource a in FindObjectsOfType<AudioSource>())
         {
             if (!a.CompareTag("AudioManager"))
             {
-                a.mute = true;
+                a.mute = tmp;
             }
         }
     }
-
-    public void UnmuteSound()
-    {
-        foreach (AudioSource a in FindObjectsOfType<AudioSource>())
-        {
-            if (!a.CompareTag("AudioManager"))
-            {
-                a.mute = false;
-            }
-        }
-    }
-
-
-
 }
