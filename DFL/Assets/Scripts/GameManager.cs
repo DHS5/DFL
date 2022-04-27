@@ -56,6 +56,8 @@ public class GameManager : MonoBehaviour
     public TeamManager teamManager;
     [Tooltip("UI Manager of the game")]
     public GameUIManager gameUIManager;
+    [Tooltip("Audio Manager of the game")]
+    public GameAudioManager audioManager;
     [Tooltip("Objectif Manager of the game")]
     public ObjectifManager objectifManager;
     [Tooltip("Obstacle Manager of the game")]
@@ -148,6 +150,8 @@ public class GameManager : MonoBehaviour
         }
 
         gameUIManager.SettingsScreen(true);
+
+        if (audioManager.SoundOn) audioManager.MuteSound();
     }
     public void UnpauseGame()
     {
@@ -171,6 +175,8 @@ public class GameManager : MonoBehaviour
         }
 
         player.GetComponentInChildren<FirstPersonCameraController>().LockCursor();
+
+        if (audioManager.SoundOn) audioManager.UnmuteSound();
     }
 
 

@@ -3,17 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-[System.Serializable]
-public struct FieldMaterials
-{
-    public Material grass;
-    public Material endzone1;
-    public Material endzone2;
-    public Material barriers;
-    public Material goalpostBase;
-    public Material goalpostMetal;
-}
-
 /// <summary>
 /// Contains the different types of field and a method to generates one given a difficulty
 /// </summary>
@@ -92,6 +81,8 @@ public class FieldManager : MonoBehaviour
         fieldScript = field.GetComponent<Field>();
         // ## Gets random field's materials
         fieldScript.fieldMaterials = fieldMaterialList[Random.Range(0, fieldMaterialList.Length)];
+        // ## Gives the stadium object to the field script
+        fieldScript.stadium = stadium;
         // ## Apply the materials on the field
         fieldScript.CreateField();
         // ## Actualization of the Nav Mesh

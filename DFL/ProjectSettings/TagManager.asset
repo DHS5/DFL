@@ -11,6 +11,7 @@ TagManager:
   - Enemy
   - Ground
   - ZombieVolume
+  - AudioManager
   layers:
   - Default
   - TransparentFX
