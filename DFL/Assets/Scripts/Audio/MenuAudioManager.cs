@@ -15,17 +15,21 @@ public class MenuAudioManager : AudioManager
 
             SoundOn = DataManager.InstanceDataManager.soundOn; soundToggle.isOn = soundOn;
             SoundVolume = DataManager.InstanceDataManager.soundVolume; soundSlider.value = soundVolume;
+
+            MusicNumber = DataManager.InstanceDataManager.musicNumber;
+            LoopOn = DataManager.InstanceDataManager.loopOn; loopToggle.isOn = loopOn;
         }
         else
         {
-            MusicOn = musicToggle.isOn; DataManager.InstanceDataManager.musicOn = musicOn;
-            MusicVolume = musicSlider.value; DataManager.InstanceDataManager.musicVolume = musicVolume;
+            MusicOn = musicToggle.isOn;
+            MusicVolume = musicSlider.value;
 
-            SoundOn = soundToggle.isOn; DataManager.InstanceDataManager.soundOn = soundOn;
-            SoundVolume = soundSlider.value; DataManager.InstanceDataManager.soundVolume = soundVolume;
+            SoundOn = soundToggle.isOn;
+            SoundVolume = soundSlider.value;
+
+            MusicNumber = 0;
+            LoopOn = loopToggle.isOn;
+            PlayFromBeginning(musicNumber);
         }
-
-        MusicNumber = DataManager.InstanceDataManager.musicNumber;
-        PlayFromTime(musicNumber, DataManager.InstanceDataManager.musicTime);
     }
 }

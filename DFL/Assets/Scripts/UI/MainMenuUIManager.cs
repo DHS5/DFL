@@ -10,6 +10,9 @@ using UnityEditor;
 
 public class MainMenuUIManager : MonoBehaviour
 {
+    [SerializeField] private MenuAudioManager audioManager;
+    
+    
     [SerializeField] private Slider sensitivitySlider;
     [SerializeField] private Slider smoothRotationSlider;
 

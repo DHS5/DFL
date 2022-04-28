@@ -21169,10 +21169,16 @@ struct FieldMaterials_tFC73BE86FDA14B93C9233D716826F7C4F4A233B5
 	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___endzone2_2;
 	// UnityEngine.Material FieldMaterials::barriers
 	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___barriers_3;
-	// UnityEngine.Material FieldMaterials::goalpostBase
-	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___goalpostBase_4;
-	// UnityEngine.Material FieldMaterials::goalpostMetal
-	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___goalpostMetal_5;
+	// UnityEngine.Material FieldMaterials::goalpostBase1
+	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___goalpostBase1_4;
+	// UnityEngine.Material FieldMaterials::goalpostMetal1
+	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___goalpostMetal1_5;
+	// UnityEngine.Material FieldMaterials::goalpostBase2
+	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___goalpostBase2_6;
+	// UnityEngine.Material FieldMaterials::goalpostMetal2
+	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___goalpostMetal2_7;
+	// UnityEngine.Material FieldMaterials::stadiumMaterial
+	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___stadiumMaterial_8;
 };
 // Native definition for P/Invoke marshalling of FieldMaterials
 struct FieldMaterials_tFC73BE86FDA14B93C9233D716826F7C4F4A233B5_marshaled_pinvoke
@@ -21181,8 +21187,11 @@ struct FieldMaterials_tFC73BE86FDA14B93C9233D716826F7C4F4A233B5_marshaled_pinvok
 	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___endzone1_1;
 	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___endzone2_2;
 	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___barriers_3;
-	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___goalpostBase_4;
-	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___goalpostMetal_5;
+	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___goalpostBase1_4;
+	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___goalpostMetal1_5;
+	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___goalpostBase2_6;
+	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___goalpostMetal2_7;
+	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___stadiumMaterial_8;
 };
 // Native definition for COM marshalling of FieldMaterials
 struct FieldMaterials_tFC73BE86FDA14B93C9233D716826F7C4F4A233B5_marshaled_com
@@ -21191,8 +21200,11 @@ struct FieldMaterials_tFC73BE86FDA14B93C9233D716826F7C4F4A233B5_marshaled_com
 	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___endzone1_1;
 	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___endzone2_2;
 	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___barriers_3;
-	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___goalpostBase_4;
-	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___goalpostMetal_5;
+	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___goalpostBase1_4;
+	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___goalpostMetal1_5;
+	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___goalpostBase2_6;
+	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___goalpostMetal2_7;
+	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___stadiumMaterial_8;
 };
 
 // UnityEngine.UIElements.FontDefinition
@@ -33332,10 +33344,19 @@ struct FieldMaterialsU5BU5D_tE160014F6E09B8EA8B1652BF0E2FEEA945061E8E  : public 
 		Il2CppCodeGenWriteBarrier((void**)&((m_Items + index)->___barriers_3), (void*)NULL);
 		#endif
 		#if IL2CPP_ENABLE_STRICT_WRITE_BARRIERS
-		Il2CppCodeGenWriteBarrier((void**)&((m_Items + index)->___goalpostBase_4), (void*)NULL);
+		Il2CppCodeGenWriteBarrier((void**)&((m_Items + index)->___goalpostBase1_4), (void*)NULL);
 		#endif
 		#if IL2CPP_ENABLE_STRICT_WRITE_BARRIERS
-		Il2CppCodeGenWriteBarrier((void**)&((m_Items + index)->___goalpostMetal_5), (void*)NULL);
+		Il2CppCodeGenWriteBarrier((void**)&((m_Items + index)->___goalpostMetal1_5), (void*)NULL);
+		#endif
+		#if IL2CPP_ENABLE_STRICT_WRITE_BARRIERS
+		Il2CppCodeGenWriteBarrier((void**)&((m_Items + index)->___goalpostBase2_6), (void*)NULL);
+		#endif
+		#if IL2CPP_ENABLE_STRICT_WRITE_BARRIERS
+		Il2CppCodeGenWriteBarrier((void**)&((m_Items + index)->___goalpostMetal2_7), (void*)NULL);
+		#endif
+		#if IL2CPP_ENABLE_STRICT_WRITE_BARRIERS
+		Il2CppCodeGenWriteBarrier((void**)&((m_Items + index)->___stadiumMaterial_8), (void*)NULL);
 		#endif
 	}
 	inline FieldMaterials_tFC73BE86FDA14B93C9233D716826F7C4F4A233B5 GetAtUnchecked(il2cpp_array_size_t index) const
@@ -33360,10 +33381,19 @@ struct FieldMaterialsU5BU5D_tE160014F6E09B8EA8B1652BF0E2FEEA945061E8E  : public 
 		Il2CppCodeGenWriteBarrier((void**)&((m_Items + index)->___barriers_3), (void*)NULL);
 		#endif
 		#if IL2CPP_ENABLE_STRICT_WRITE_BARRIERS
-		Il2CppCodeGenWriteBarrier((void**)&((m_Items + index)->___goalpostBase_4), (void*)NULL);
+		Il2CppCodeGenWriteBarrier((void**)&((m_Items + index)->___goalpostBase1_4), (void*)NULL);
 		#endif
 		#if IL2CPP_ENABLE_STRICT_WRITE_BARRIERS
-		Il2CppCodeGenWriteBarrier((void**)&((m_Items + index)->___goalpostMetal_5), (void*)NULL);
+		Il2CppCodeGenWriteBarrier((void**)&((m_Items + index)->___goalpostMetal1_5), (void*)NULL);
+		#endif
+		#if IL2CPP_ENABLE_STRICT_WRITE_BARRIERS
+		Il2CppCodeGenWriteBarrier((void**)&((m_Items + index)->___goalpostBase2_6), (void*)NULL);
+		#endif
+		#if IL2CPP_ENABLE_STRICT_WRITE_BARRIERS
+		Il2CppCodeGenWriteBarrier((void**)&((m_Items + index)->___goalpostMetal2_7), (void*)NULL);
+		#endif
+		#if IL2CPP_ENABLE_STRICT_WRITE_BARRIERS
+		Il2CppCodeGenWriteBarrier((void**)&((m_Items + index)->___stadiumMaterial_8), (void*)NULL);
 		#endif
 	}
 };

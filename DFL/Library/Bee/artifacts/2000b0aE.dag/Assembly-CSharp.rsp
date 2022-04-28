@@ -345,6 +345,7 @@
 "Assets/Scripts/Audio/AudioManager.cs"
 "Assets/Scripts/Audio/GameAudioManager.cs"
 "Assets/Scripts/Audio/MenuAudioManager.cs"
+"Assets/Scripts/Audio/MusicSource.cs"
 "Assets/Scripts/Bonus/Bonus.cs"
 "Assets/Scripts/Bonus/BonusManager.cs"
 "Assets/Scripts/Bonus/InvincibleBonus.cs"

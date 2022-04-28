@@ -115,7 +115,6 @@ public class FirstPersonCameraController : MonoBehaviour
         //{
         //    yRotation = Mathf.Clamp(yRotation, -yMouseSensitivity + cameraYRot * yMouseSensitivity, yMouseSensitivity - cameraYRot * yMouseSensitivity);
         //}
-
         // Gets the new camera's rotation
         cameraRotation *= Quaternion.Euler(0f, yRotation, 0f);
         cameraRotation = ClampRotation(cameraRotation);

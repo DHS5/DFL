@@ -16,6 +16,8 @@ public abstract class AudioManager : MonoBehaviour
     [SerializeField] protected Toggle soundToggle;
     [SerializeField] protected Slider soundSlider;
 
+    [SerializeField] protected Toggle loopToggle;
+
 
     [Tooltip("Number of the music currently playing")]
     protected int musicNumber;
@@ -30,7 +32,8 @@ public abstract class AudioManager : MonoBehaviour
     public bool MusicOn
     {
         get { return musicOn; }
-        set {
+        set 
+        {
             if (value == true && !musicOn) audioSource.UnPause();
             else if (value == false && musicOn) audioSource.Pause();
 
@@ -42,7 +45,12 @@ public abstract class AudioManager : MonoBehaviour
     public float MusicVolume
     {
         get { return musicVolume; }
-        set { musicVolume = value; if (DataManager.InstanceDataManager != null) DataManager.InstanceDataManager.musicVolume = value; }
+        set 
+        {
+            musicVolume = value;
+            audioSource.volume = musicVolume;
+            if (DataManager.InstanceDataManager != null) DataManager.InstanceDataManager.musicVolume = value;
+        }
     }
 
     protected bool soundOn;
@@ -59,10 +67,25 @@ public abstract class AudioManager : MonoBehaviour
     }
 
 
+    protected bool loopOn;
+    public bool LoopOn
+    {
+        get { return loopOn; }
+        set { loopOn = value; if (DataManager.InstanceDataManager != null) DataManager.InstanceDataManager.loopOn = value; audioSource.loop = value; }
+    }
+
 
     protected virtual void Start()
     {
-        audioSource = GetComponent<AudioSource>();
+        audioSource = FindObjectOfType<MusicSource>().audioSource;
+    }
+
+    private void Update()
+    {
+        if (musicOn && !audioSource.isPlaying)
+        {
+            NextMusic();
+        }
     }
 
 
@@ -104,19 +127,9 @@ public abstract class AudioManager : MonoBehaviour
     /// </summary>
     public void PreviousMusic()
     {
-        if (musicNumber == 0) MusicNumber = musics.Length;
+        if (musicNumber == 0) MusicNumber = musics.Length - 1;
         else MusicNumber--;
 
         PlayFromBeginning(musicNumber);
-    }
-
-
-
-    public void SceneChange()
-    {
-        if (DataManager.InstanceDataManager != null)
-        {
-            DataManager.InstanceDataManager.musicTime = audioSource.time;
-        }
     }
 }

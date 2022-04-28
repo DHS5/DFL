@@ -37,6 +37,8 @@ public class DataManager : MonoBehaviour
     [HideInInspector] public bool soundOn;
     [HideInInspector] public float soundVolume;
 
+    [HideInInspector] public bool loopOn;
+
 
     /// <summary>
     /// Gets the Singleton Instance

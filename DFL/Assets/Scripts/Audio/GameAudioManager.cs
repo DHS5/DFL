@@ -17,7 +17,7 @@ public class GameAudioManager : AudioManager
             SoundVolume = DataManager.InstanceDataManager.soundVolume; soundSlider.value = soundVolume;
 
             MusicNumber = DataManager.InstanceDataManager.musicNumber;
-            PlayFromTime(musicNumber, DataManager.InstanceDataManager.musicTime);
+            LoopOn = DataManager.InstanceDataManager.loopOn; loopToggle.isOn = loopOn;
         }
         else
         {
@@ -28,6 +28,7 @@ public class GameAudioManager : AudioManager
             SoundVolume = soundSlider.value;
 
             MusicNumber = 0;
+            LoopOn = loopToggle.isOn;
             PlayFromBeginning(musicNumber);
         }
     }
