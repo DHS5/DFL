@@ -1403,7 +1403,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   musics:
-  - {fileID: 8300000, guid: 61872b382fb617f4faa39bf24055a8d6, type: 3}
   - {fileID: 8300000, guid: 925f37a784fecd44b9944cb7f5e3111f, type: 3}
   - {fileID: 8300000, guid: 129c1d2c70f1437459479993aa16be90, type: 3}
   - {fileID: 8300000, guid: 72bfb55fe51d39b449d8437fd37c1f1d, type: 3}
@@ -1411,6 +1410,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: a2ab8c822074bdb49bd8425c4e3c1576, type: 3}
   - {fileID: 8300000, guid: b76dee63927eec549ab421da21568d8c, type: 3}
   - {fileID: 8300000, guid: 494eeb358657c024f918e18835ca1aaf, type: 3}
+  - {fileID: 8300000, guid: 61872b382fb617f4faa39bf24055a8d6, type: 3}
   - {fileID: 8300000, guid: d38d19c50f8a8a54882cb62465046310, type: 3}
   - {fileID: 8300000, guid: 7871c1a1f5c99bf479a3cf12036eca88, type: 3}
   - {fileID: 8300000, guid: ed4e940e489c31b4f9560e1680486bb1, type: 3}
