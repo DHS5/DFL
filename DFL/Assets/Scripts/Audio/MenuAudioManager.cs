@@ -10,23 +10,22 @@ public class MenuAudioManager : AudioManager
 
         if (DataManager.InstanceDataManager != null && DataManager.InstanceDataManager.soundVolume != 0)
         {
-            musicOn = DataManager.InstanceDataManager.musicOn; musicToggle.isOn = musicOn;
-            musicVolume = DataManager.InstanceDataManager.musicVolume; musicSlider.value = musicVolume;
+            MusicOn = DataManager.InstanceDataManager.musicOn; musicToggle.isOn = musicOn;
+            MusicVolume = DataManager.InstanceDataManager.musicVolume; musicSlider.value = musicVolume;
 
-            soundOn = DataManager.InstanceDataManager.soundOn; soundToggle.isOn = soundOn;
-            soundVolume = DataManager.InstanceDataManager.soundVolume; soundSlider.value = soundVolume;
+            SoundOn = DataManager.InstanceDataManager.soundOn; soundToggle.isOn = soundOn;
+            SoundVolume = DataManager.InstanceDataManager.soundVolume; soundSlider.value = soundVolume;
         }
         else
         {
-            musicOn = musicToggle.isOn; DataManager.InstanceDataManager.musicOn = musicOn;
-            musicVolume = musicSlider.value; DataManager.InstanceDataManager.musicVolume = musicVolume;
+            MusicOn = musicToggle.isOn; DataManager.InstanceDataManager.musicOn = musicOn;
+            MusicVolume = musicSlider.value; DataManager.InstanceDataManager.musicVolume = musicVolume;
 
-            soundOn = soundToggle.isOn; DataManager.InstanceDataManager.soundOn = soundOn;
-            soundVolume = soundSlider.value; DataManager.InstanceDataManager.soundVolume = soundVolume;
+            SoundOn = soundToggle.isOn; DataManager.InstanceDataManager.soundOn = soundOn;
+            SoundVolume = soundSlider.value; DataManager.InstanceDataManager.soundVolume = soundVolume;
         }
 
-        musicNumber = DataManager.InstanceDataManager.musicNumber;
+        MusicNumber = DataManager.InstanceDataManager.musicNumber;
         PlayFromTime(musicNumber, DataManager.InstanceDataManager.musicTime);
-        if (DataManager.InstanceDataManager.musicPaused) audioSource.Pause();
     }
 }

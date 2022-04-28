@@ -24,17 +24,19 @@ public abstract class AudioManager : MonoBehaviour
         get { return musicNumber; }
         set { musicNumber = value; if (DataManager.InstanceDataManager != null) DataManager.InstanceDataManager.musicNumber = value; }
     }
-    public bool MusicPaused
-    {
-        set { if (DataManager.InstanceDataManager != null) DataManager.InstanceDataManager.musicPaused = value; }
-    }
 
 
     protected bool musicOn;
     public bool MusicOn
     {
         get { return musicOn; }
-        set { musicOn = value; if (DataManager.InstanceDataManager != null) DataManager.InstanceDataManager.musicOn = value; }
+        set {
+            if (value == true && !musicOn) audioSource.UnPause();
+            else if (value == false && musicOn) audioSource.Pause();
+
+            musicOn = value; 
+            if (DataManager.InstanceDataManager != null) DataManager.InstanceDataManager.musicOn = value;
+        }
     }
     protected float musicVolume;
     public float MusicVolume

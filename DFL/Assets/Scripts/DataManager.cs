@@ -33,7 +33,6 @@ public class DataManager : MonoBehaviour
     [HideInInspector] public float musicVolume;
     [HideInInspector] public int musicNumber;
     [HideInInspector] public float musicTime;
-    [HideInInspector] public bool musicPaused;
 
     [HideInInspector] public bool soundOn;
     [HideInInspector] public float soundVolume;

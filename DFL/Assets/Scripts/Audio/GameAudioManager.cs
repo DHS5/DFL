@@ -10,25 +10,24 @@ public class GameAudioManager : AudioManager
         
         if (DataManager.InstanceDataManager != null)
         {
-            musicOn = DataManager.InstanceDataManager.musicOn; musicToggle.isOn = musicOn;
-            musicVolume = DataManager.InstanceDataManager.musicVolume; musicSlider.value = musicVolume;
+            MusicOn = DataManager.InstanceDataManager.musicOn; musicToggle.isOn = musicOn;
+            MusicVolume = DataManager.InstanceDataManager.musicVolume; musicSlider.value = musicVolume;
 
-            soundOn = DataManager.InstanceDataManager.soundOn; soundToggle.isOn = soundOn;
-            soundVolume = DataManager.InstanceDataManager.soundVolume; soundSlider.value = soundVolume;
+            SoundOn = DataManager.InstanceDataManager.soundOn; soundToggle.isOn = soundOn;
+            SoundVolume = DataManager.InstanceDataManager.soundVolume; soundSlider.value = soundVolume;
 
-            musicNumber = DataManager.InstanceDataManager.musicNumber;
+            MusicNumber = DataManager.InstanceDataManager.musicNumber;
             PlayFromTime(musicNumber, DataManager.InstanceDataManager.musicTime);
-            if (DataManager.InstanceDataManager.musicPaused) audioSource.Pause();
         }
         else
         {
-            musicOn = musicToggle.isOn;
-            musicVolume = musicSlider.value;
+            MusicOn = musicToggle.isOn;
+            MusicVolume = musicSlider.value;
 
-            soundOn = soundToggle.isOn;
-            soundVolume = soundSlider.value;
+            SoundOn = soundToggle.isOn;
+            SoundVolume = soundSlider.value;
 
-            musicNumber = 0;
+            MusicNumber = 0;
             PlayFromBeginning(musicNumber);
         }
     }
@@ -48,7 +47,10 @@ public class GameAudioManager : AudioManager
         }
     }
 
-
+    /// <summary>
+    /// Mutes the game sounds
+    /// </summary>
+    /// <param name="tmp"></param>
     public void MuteSound(bool tmp)
     {
         foreach (AudioSource a in FindObjectsOfType<AudioSource>())
