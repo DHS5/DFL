@@ -126,6 +126,8 @@ public class GameManager : MonoBehaviour
             player.GetComponent<PlayerController>().freeze = true;
             gameUIManager.GameOver();
             Invoke(nameof(GameOver), 0.75f);
+            currentField.OuuhAudio();
+            currentField.StopAmbianceAudios();
         }
 
         // Pause the game on press P
@@ -214,11 +216,17 @@ public class GameManager : MonoBehaviour
         // Activate the stadium's camera
         fieldManager.StadiumCamera.gameObject.SetActive(true);
 
-        
+
         // ### UI
-        
+
         // Calls the UI restart screen
         //gameUIManager.GameOver();
+
+
+        // ### Audio
+
+        // Calls the booh audios
+        currentField.BoohAudio();
     }
 
 
@@ -237,6 +245,11 @@ public class GameManager : MonoBehaviour
         // Passes to night mode after wave 10 (if not zombie mode)
         if (gameMode != GameMode.ZOMBIE && enemiesManager.waveNumber == 9) environmentManager.BedTime();
 
+
+        // ### Audio
+
+        // Actualize the audio volume
+        audioManager.ActuSoundVolume();
 
         // ### Enemies
 
@@ -327,5 +340,10 @@ public class GameManager : MonoBehaviour
             environmentManager.ZombieExitTunnel();
         }
         */
+
+        // ### Audio
+
+        // Actualize the audio volume
+        audioManager.ActuSoundVolume();
     }
 }

@@ -4605,7 +4605,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManager: {fileID: 392287958}
   player: {fileID: 1664567380}
-  objectifPrefab: {fileID: 4435932309390810467, guid: 503b1e53010b9a84083f1495b5173468, type: 3}
+  objectifPrefabs:
+  - {fileID: 4435932309390810467, guid: db900b5586f8cd042972a4ad8b630cf8, type: 3}
+  - {fileID: 4435932309390810467, guid: 503b1e53010b9a84083f1495b5173468, type: 3}
+  - {fileID: 4435932309390810467, guid: 41b7a0390de4d6445ba9a5ae87e37839, type: 3}
 --- !u!4 &508634769
 Transform:
   m_ObjectHideFlags: 0
@@ -12472,7 +12475,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManager: {fileID: 392287958}
   surface: {fileID: 205677399}
-  fieldPrefab: {fileID: 407003249648766668, guid: d44afab48a0d01847959fcdb37711ad9, type: 3}
+  fieldPrefab: {fileID: 407003249648766668, guid: 2e0c74d118e82ec40873593ee2918290, type: 3}
   stadiumPrefab: {fileID: 2118228205077930121, guid: 27cb587fa6d6f294f9b4a86546910541, type: 3}
   fieldMaterialList:
   - grass: {fileID: 2100000, guid: 8e9032c9e1a61664ab0e33e0377bf378, type: 2}

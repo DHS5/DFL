@@ -100,6 +100,7 @@ UnityEngine.Application::Quit
 UnityEngine.Application::set_targetFrameRate
 UnityEngine.Application::get_platform
 UnityEngine.AsyncOperation::InternalDestroy
+UnityEngine.AudioClip::get_length
 UnityEngine.AudioSource::get_isPlaying
 UnityEngine.AudioSource::Pause
 UnityEngine.AudioSource::Play
@@ -112,6 +113,7 @@ UnityEngine.AudioSource::set_mute
 UnityEngine.AudioSource::set_priority
 UnityEngine.AudioSource::set_time
 UnityEngine.AudioSource::set_volume
+UnityEngine.AudioSource::get_clip
 UnityEngine.Behaviour::get_enabled
 UnityEngine.Behaviour::get_isActiveAndEnabled
 UnityEngine.Behaviour::set_enabled

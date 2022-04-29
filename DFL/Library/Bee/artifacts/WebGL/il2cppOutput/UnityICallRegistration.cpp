@@ -484,6 +484,14 @@ void RegisterAllStrippedInternalCalls()
 
 	//End Registrations for type : UnityEngine.AsyncOperation
 
+	//Start Registrations for type : UnityEngine.AudioClip
+
+		//System.Single UnityEngine.AudioClip::get_length()
+		void Register_UnityEngine_AudioClip_get_length();
+		Register_UnityEngine_AudioClip_get_length();
+
+	//End Registrations for type : UnityEngine.AudioClip
+
 	//Start Registrations for type : UnityEngine.AudioSource
 
 		//System.Boolean UnityEngine.AudioSource::get_isPlaying()
@@ -533,6 +541,10 @@ void RegisterAllStrippedInternalCalls()
 		//System.Void UnityEngine.AudioSource::set_volume(System.Single)
 		void Register_UnityEngine_AudioSource_set_volume();
 		Register_UnityEngine_AudioSource_set_volume();
+
+		//UnityEngine.AudioClip UnityEngine.AudioSource::get_clip()
+		void Register_UnityEngine_AudioSource_get_clip();
+		Register_UnityEngine_AudioSource_get_clip();
 
 	//End Registrations for type : UnityEngine.AudioSource
 

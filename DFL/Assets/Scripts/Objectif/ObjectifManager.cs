@@ -11,7 +11,7 @@ public class ObjectifManager : MonoBehaviour
     [SerializeField] private GameObject player;
 
     [Tooltip("Prefab of the objectif")]
-    [SerializeField] private GameObject objectifPrefab;
+    [SerializeField] private GameObject[] objectifPrefabs;
 
 
     [Tooltip("Queue of objectives")]
@@ -63,7 +63,7 @@ public class ObjectifManager : MonoBehaviour
             Vector3 randomPos = new Vector3(Random.Range(-xScale, xScale), 0, Random.Range(-zScale, zScale)) + zonePos;
 
             // Instantiate the objectif
-            obj = Instantiate(objectifPrefab, randomPos, Quaternion.identity).GetComponent<Objectif>();
+            obj = Instantiate(objectifPrefabs[(int) gameManager.difficulty/2], randomPos, Quaternion.identity).GetComponent<Objectif>();
             obj.objectifManager = this;
             objectives.Enqueue(obj);
         }

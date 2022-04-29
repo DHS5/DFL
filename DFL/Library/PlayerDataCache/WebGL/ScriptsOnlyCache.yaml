@@ -99,8 +99,10 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -1643,7 +1645,7 @@ ScriptsOnlyBuild:
     className: GridLayoutGroup
   - hash:
       serializedVersion: 2
-      Hash: 75c1e524c295ddb65b6ed244a0089c10
+      Hash: dc7f61577888af79d489513c4e40b6d3
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ObjectifManager
@@ -1859,7 +1861,7 @@ ScriptsOnlyBuild:
     className: LiftGammaGain
   - hash:
       serializedVersion: 2
-      Hash: 71b3475f86a9136b5fbe54049803a48a
+      Hash: efbff37053d4683cd29381adbb0b851d
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Field
@@ -1949,7 +1951,7 @@ ScriptsOnlyBuild:
     className: GameManager
   - hash:
       serializedVersion: 2
-      Hash: 87375789f4338e6f73d42313ff75f1b2
+      Hash: e1528c408c07cbdfb06cfe010d8caa55
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Objectif

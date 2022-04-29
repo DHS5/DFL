@@ -74,15 +74,16 @@ public class FieldManager : MonoBehaviour
         // ### Creation of the field and the stadium
         // ## Instantiation of the prefabs
         field =  Instantiate(fieldPrefab, fieldPosition, Quaternion.identity);
-        stadium = Instantiate(stadiumPrefab, fieldPosition + stadiumPosition, Quaternion.identity);
-        StadiumCamera = stadium.GetComponentInChildren<Camera>();
+        //stadium = Instantiate(stadiumPrefab, fieldPosition + stadiumPosition, Quaternion.identity);
+        //StadiumCamera = stadium.GetComponentInChildren<Camera>();
+        StadiumCamera = field.GetComponentInChildren<Camera>();
         StadiumCamera.gameObject.SetActive(false);
         // ## Gets the field script
         fieldScript = field.GetComponent<Field>();
         // ## Gets random field's materials
         fieldScript.fieldMaterials = fieldMaterialList[Random.Range(0, fieldMaterialList.Length)];
         // ## Gives the stadium object to the field script
-        fieldScript.stadium = stadium;
+        //fieldScript.stadium = stadium;
         // ## Apply the materials on the field
         fieldScript.CreateField();
         // ## Actualization of the Nav Mesh

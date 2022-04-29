@@ -828,6 +828,8 @@ struct StringU5BU5DU5BU5D_t8BCC500C5CC1686D9BADCBAA811074FE00F83ACF;
 struct AnimatorU5BU5D_tC96418EE48F8DA017567CAE0235488C27640E759;
 // UnityEngine.AudioClip[]
 struct AudioClipU5BU5D_t916722468F7EDCFA833318C35CD7D41097D75D31;
+// UnityEngine.AudioSource[]
+struct AudioSourceU5BU5D_tBBF6E920E0DC80D53D4BB2A8D4C80D244EF170B2;
 // System.Boolean[]
 struct BooleanU5BU5D_tD317D27C31DB892BE79FAE3AEBC0B3FFB73DE9B4;
 // System.Byte[]
@@ -24891,8 +24893,18 @@ struct Field_tEF97ECA9AB0D11CF648718DD732D718091449734  : public MonoBehaviour_t
 	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___endZone_20;
 	// UnityEngine.GameObject Field::stadium
 	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___stadium_21;
+	// UnityEngine.AudioSource[] Field::entryAS
+	AudioSourceU5BU5D_tBBF6E920E0DC80D53D4BB2A8D4C80D244EF170B2* ___entryAS_22;
+	// UnityEngine.AudioSource[] Field::exitAS
+	AudioSourceU5BU5D_tBBF6E920E0DC80D53D4BB2A8D4C80D244EF170B2* ___exitAS_23;
+	// UnityEngine.AudioSource[] Field::bleachersAS
+	AudioSourceU5BU5D_tBBF6E920E0DC80D53D4BB2A8D4C80D244EF170B2* ___bleachersAS_24;
+	// UnityEngine.AudioSource[] Field::ouuhAS
+	AudioSourceU5BU5D_tBBF6E920E0DC80D53D4BB2A8D4C80D244EF170B2* ___ouuhAS_25;
+	// UnityEngine.AudioSource[] Field::boohAS
+	AudioSourceU5BU5D_tBBF6E920E0DC80D53D4BB2A8D4C80D244EF170B2* ___boohAS_26;
 	// System.Collections.Generic.List`1<UnityEngine.GameObject> Field::enemies
-	List_1_tB951CE80B58D1BF9650862451D8DAD8C231F207B* ___enemies_22;
+	List_1_tB951CE80B58D1BF9650862451D8DAD8C231F207B* ___enemies_27;
 };
 
 // FieldManager
@@ -25293,6 +25305,10 @@ struct Objectif_t9ACF93E58C51A3C81BD0187376796E48FD1081BB  : public MonoBehaviou
 {
 	// ObjectifManager Objectif::objectifManager
 	ObjectifManager_tA6D468AE96404E0258231F04EFAD5947D30ABC12* ___objectifManager_4;
+	// UnityEngine.AudioSource Objectif::audioSource
+	AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* ___audioSource_5;
+	// System.Boolean Objectif::done
+	bool ___done_6;
 };
 
 // ObjectifManager
@@ -25302,8 +25318,8 @@ struct ObjectifManager_tA6D468AE96404E0258231F04EFAD5947D30ABC12  : public MonoB
 	GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6* ___gameManager_4;
 	// UnityEngine.GameObject ObjectifManager::player
 	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___player_5;
-	// UnityEngine.GameObject ObjectifManager::objectifPrefab
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___objectifPrefab_6;
+	// UnityEngine.GameObject[] ObjectifManager::objectifPrefabs
+	GameObjectU5BU5D_tFF67550DFCE87096D7A3734EA15B75896B2722CF* ___objectifPrefabs_6;
 	// System.Collections.Generic.Queue`1<Objectif> ObjectifManager::objectives
 	Queue_1_t7A889FD47E7913602B7319F36F158CD2152C2DFC* ___objectives_7;
 	// Objectif ObjectifManager::currentObjectif
@@ -31536,9 +31552,9 @@ IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4683[5] =
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4684[9] = 
 {
 	static_cast<int32_t>(offsetof(FieldMaterials_tFC73BE86FDA14B93C9233D716826F7C4F4A233B5, ___grass_0)) + static_cast<int32_t>(sizeof(RuntimeObject)),static_cast<int32_t>(offsetof(FieldMaterials_tFC73BE86FDA14B93C9233D716826F7C4F4A233B5, ___endzone1_1)) + static_cast<int32_t>(sizeof(RuntimeObject)),static_cast<int32_t>(offsetof(FieldMaterials_tFC73BE86FDA14B93C9233D716826F7C4F4A233B5, ___endzone2_2)) + static_cast<int32_t>(sizeof(RuntimeObject)),static_cast<int32_t>(offsetof(FieldMaterials_tFC73BE86FDA14B93C9233D716826F7C4F4A233B5, ___barriers_3)) + static_cast<int32_t>(sizeof(RuntimeObject)),static_cast<int32_t>(offsetof(FieldMaterials_tFC73BE86FDA14B93C9233D716826F7C4F4A233B5, ___goalpostBase1_4)) + static_cast<int32_t>(sizeof(RuntimeObject)),static_cast<int32_t>(offsetof(FieldMaterials_tFC73BE86FDA14B93C9233D716826F7C4F4A233B5, ___goalpostMetal1_5)) + static_cast<int32_t>(sizeof(RuntimeObject)),static_cast<int32_t>(offsetof(FieldMaterials_tFC73BE86FDA14B93C9233D716826F7C4F4A233B5, ___goalpostBase2_6)) + static_cast<int32_t>(sizeof(RuntimeObject)),static_cast<int32_t>(offsetof(FieldMaterials_tFC73BE86FDA14B93C9233D716826F7C4F4A233B5, ___goalpostMetal2_7)) + static_cast<int32_t>(sizeof(RuntimeObject)),static_cast<int32_t>(offsetof(FieldMaterials_tFC73BE86FDA14B93C9233D716826F7C4F4A233B5, ___stadiumMaterial_8)) + static_cast<int32_t>(sizeof(RuntimeObject)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4685[19] = 
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4685[24] = 
 {
-	static_cast<int32_t>(offsetof(Field_tEF97ECA9AB0D11CF648718DD732D718091449734, ___fieldMaterials_4)),static_cast<int32_t>(offsetof(Field_tEF97ECA9AB0D11CF648718DD732D718091449734, ___grass_5)),static_cast<int32_t>(offsetof(Field_tEF97ECA9AB0D11CF648718DD732D718091449734, ___endzone1_6)),static_cast<int32_t>(offsetof(Field_tEF97ECA9AB0D11CF648718DD732D718091449734, ___endzone2_7)),static_cast<int32_t>(offsetof(Field_tEF97ECA9AB0D11CF648718DD732D718091449734, ___barrierL_8)),static_cast<int32_t>(offsetof(Field_tEF97ECA9AB0D11CF648718DD732D718091449734, ___barrierR_9)),static_cast<int32_t>(offsetof(Field_tEF97ECA9AB0D11CF648718DD732D718091449734, ___goalpost1Base_10)),static_cast<int32_t>(offsetof(Field_tEF97ECA9AB0D11CF648718DD732D718091449734, ___goalpost1Metal_11)),static_cast<int32_t>(offsetof(Field_tEF97ECA9AB0D11CF648718DD732D718091449734, ___goalpost2Base_12)),static_cast<int32_t>(offsetof(Field_tEF97ECA9AB0D11CF648718DD732D718091449734, ___goalpost2Metal_13)),static_cast<int32_t>(offsetof(Field_tEF97ECA9AB0D11CF648718DD732D718091449734, ___fieldZone_14)),static_cast<int32_t>(offsetof(Field_tEF97ECA9AB0D11CF648718DD732D718091449734, ___centerZone_15)),static_cast<int32_t>(offsetof(Field_tEF97ECA9AB0D11CF648718DD732D718091449734, ___leftZone_16)),static_cast<int32_t>(offsetof(Field_tEF97ECA9AB0D11CF648718DD732D718091449734, ___rightZone_17)),static_cast<int32_t>(offsetof(Field_tEF97ECA9AB0D11CF648718DD732D718091449734, ___frontZone_18)),static_cast<int32_t>(offsetof(Field_tEF97ECA9AB0D11CF648718DD732D718091449734, ___middleZone_19)),static_cast<int32_t>(offsetof(Field_tEF97ECA9AB0D11CF648718DD732D718091449734, ___endZone_20)),static_cast<int32_t>(offsetof(Field_tEF97ECA9AB0D11CF648718DD732D718091449734, ___stadium_21)),static_cast<int32_t>(offsetof(Field_tEF97ECA9AB0D11CF648718DD732D718091449734, ___enemies_22)),};
+	static_cast<int32_t>(offsetof(Field_tEF97ECA9AB0D11CF648718DD732D718091449734, ___fieldMaterials_4)),static_cast<int32_t>(offsetof(Field_tEF97ECA9AB0D11CF648718DD732D718091449734, ___grass_5)),static_cast<int32_t>(offsetof(Field_tEF97ECA9AB0D11CF648718DD732D718091449734, ___endzone1_6)),static_cast<int32_t>(offsetof(Field_tEF97ECA9AB0D11CF648718DD732D718091449734, ___endzone2_7)),static_cast<int32_t>(offsetof(Field_tEF97ECA9AB0D11CF648718DD732D718091449734, ___barrierL_8)),static_cast<int32_t>(offsetof(Field_tEF97ECA9AB0D11CF648718DD732D718091449734, ___barrierR_9)),static_cast<int32_t>(offsetof(Field_tEF97ECA9AB0D11CF648718DD732D718091449734, ___goalpost1Base_10)),static_cast<int32_t>(offsetof(Field_tEF97ECA9AB0D11CF648718DD732D718091449734, ___goalpost1Metal_11)),static_cast<int32_t>(offsetof(Field_tEF97ECA9AB0D11CF648718DD732D718091449734, ___goalpost2Base_12)),static_cast<int32_t>(offsetof(Field_tEF97ECA9AB0D11CF648718DD732D718091449734, ___goalpost2Metal_13)),static_cast<int32_t>(offsetof(Field_tEF97ECA9AB0D11CF648718DD732D718091449734, ___fieldZone_14)),static_cast<int32_t>(offsetof(Field_tEF97ECA9AB0D11CF648718DD732D718091449734, ___centerZone_15)),static_cast<int32_t>(offsetof(Field_tEF97ECA9AB0D11CF648718DD732D718091449734, ___leftZone_16)),static_cast<int32_t>(offsetof(Field_tEF97ECA9AB0D11CF648718DD732D718091449734, ___rightZone_17)),static_cast<int32_t>(offsetof(Field_tEF97ECA9AB0D11CF648718DD732D718091449734, ___frontZone_18)),static_cast<int32_t>(offsetof(Field_tEF97ECA9AB0D11CF648718DD732D718091449734, ___middleZone_19)),static_cast<int32_t>(offsetof(Field_tEF97ECA9AB0D11CF648718DD732D718091449734, ___endZone_20)),static_cast<int32_t>(offsetof(Field_tEF97ECA9AB0D11CF648718DD732D718091449734, ___stadium_21)),static_cast<int32_t>(offsetof(Field_tEF97ECA9AB0D11CF648718DD732D718091449734, ___entryAS_22)),static_cast<int32_t>(offsetof(Field_tEF97ECA9AB0D11CF648718DD732D718091449734, ___exitAS_23)),static_cast<int32_t>(offsetof(Field_tEF97ECA9AB0D11CF648718DD732D718091449734, ___bleachersAS_24)),static_cast<int32_t>(offsetof(Field_tEF97ECA9AB0D11CF648718DD732D718091449734, ___ouuhAS_25)),static_cast<int32_t>(offsetof(Field_tEF97ECA9AB0D11CF648718DD732D718091449734, ___boohAS_26)),static_cast<int32_t>(offsetof(Field_tEF97ECA9AB0D11CF648718DD732D718091449734, ___enemies_27)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4686[15] = 
 {
 	static_cast<int32_t>(offsetof(FieldManager_t1A7BE5492F5993DC43F404958A2698346B95E4A5, ___gameManager_4)),static_cast<int32_t>(offsetof(FieldManager_t1A7BE5492F5993DC43F404958A2698346B95E4A5, ___surface_5)),static_cast<int32_t>(offsetof(FieldManager_t1A7BE5492F5993DC43F404958A2698346B95E4A5, ___fieldPrefab_6)),static_cast<int32_t>(offsetof(FieldManager_t1A7BE5492F5993DC43F404958A2698346B95E4A5, ___stadiumPrefab_7)),static_cast<int32_t>(offsetof(FieldManager_t1A7BE5492F5993DC43F404958A2698346B95E4A5, ___fieldMaterialList_8)),static_cast<int32_t>(offsetof(FieldManager_t1A7BE5492F5993DC43F404958A2698346B95E4A5, ___field_9)),static_cast<int32_t>(offsetof(FieldManager_t1A7BE5492F5993DC43F404958A2698346B95E4A5, ___stadium_10)),static_cast<int32_t>(offsetof(FieldManager_t1A7BE5492F5993DC43F404958A2698346B95E4A5, ___formerField_11)),static_cast<int32_t>(offsetof(FieldManager_t1A7BE5492F5993DC43F404958A2698346B95E4A5, ___formerStadium_12)),static_cast<int32_t>(offsetof(FieldManager_t1A7BE5492F5993DC43F404958A2698346B95E4A5, ___U3CStadiumCameraU3Ek__BackingField_13)),static_cast<int32_t>(offsetof(FieldManager_t1A7BE5492F5993DC43F404958A2698346B95E4A5, ___fieldScript_14)),static_cast<int32_t>(offsetof(FieldManager_t1A7BE5492F5993DC43F404958A2698346B95E4A5, ___formerFieldScript_15)),static_cast<int32_t>(offsetof(FieldManager_t1A7BE5492F5993DC43F404958A2698346B95E4A5, ___fieldPosition_16)),static_cast<int32_t>(offsetof(FieldManager_t1A7BE5492F5993DC43F404958A2698346B95E4A5, ___fieldDistance_17)),static_cast<int32_t>(offsetof(FieldManager_t1A7BE5492F5993DC43F404958A2698346B95E4A5, ___stadiumPosition_18)),};
@@ -31554,12 +31570,12 @@ IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4689[4] =
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4690[20] = 
 {
 	static_cast<int32_t>(offsetof(GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6_StaticFields, ___U3CInstanceGameManagerU3Ek__BackingField_4)),static_cast<int32_t>(offsetof(GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6, ___gameMode_5)),static_cast<int32_t>(offsetof(GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6, ___difficulty_6)),static_cast<int32_t>(offsetof(GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6, ___options_7)),static_cast<int32_t>(offsetof(GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6, ___enemiesRange_8)),static_cast<int32_t>(offsetof(GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6, ___gameOn_9)),static_cast<int32_t>(offsetof(GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6, ___gameOver_10)),static_cast<int32_t>(offsetof(GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6, ___fieldManager_11)),static_cast<int32_t>(offsetof(GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6, ___environmentManager_12)),static_cast<int32_t>(offsetof(GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6, ___enemiesManager_13)),static_cast<int32_t>(offsetof(GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6, ___teamManager_14)),static_cast<int32_t>(offsetof(GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6, ___gameUIManager_15)),static_cast<int32_t>(offsetof(GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6, ___audioManager_16)),static_cast<int32_t>(offsetof(GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6, ___objectifManager_17)),static_cast<int32_t>(offsetof(GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6, ___obstacleManager_18)),static_cast<int32_t>(offsetof(GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6, ___bonusManager_19)),static_cast<int32_t>(offsetof(GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6, ___dataManager_20)),static_cast<int32_t>(offsetof(GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6, ___currentField_21)),static_cast<int32_t>(offsetof(GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6, ___player_22)),static_cast<int32_t>(offsetof(GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6, ___playerRunAnimator_23)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4691[1] = 
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4691[3] = 
 {
-	static_cast<int32_t>(offsetof(Objectif_t9ACF93E58C51A3C81BD0187376796E48FD1081BB, ___objectifManager_4)),};
+	static_cast<int32_t>(offsetof(Objectif_t9ACF93E58C51A3C81BD0187376796E48FD1081BB, ___objectifManager_4)),static_cast<int32_t>(offsetof(Objectif_t9ACF93E58C51A3C81BD0187376796E48FD1081BB, ___audioSource_5)),static_cast<int32_t>(offsetof(Objectif_t9ACF93E58C51A3C81BD0187376796E48FD1081BB, ___done_6)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4692[6] = 
 {
-	static_cast<int32_t>(offsetof(ObjectifManager_tA6D468AE96404E0258231F04EFAD5947D30ABC12, ___gameManager_4)),static_cast<int32_t>(offsetof(ObjectifManager_tA6D468AE96404E0258231F04EFAD5947D30ABC12, ___player_5)),static_cast<int32_t>(offsetof(ObjectifManager_tA6D468AE96404E0258231F04EFAD5947D30ABC12, ___objectifPrefab_6)),static_cast<int32_t>(offsetof(ObjectifManager_tA6D468AE96404E0258231F04EFAD5947D30ABC12, ___objectives_7)),static_cast<int32_t>(offsetof(ObjectifManager_tA6D468AE96404E0258231F04EFAD5947D30ABC12, ___currentObjectif_8)),static_cast<int32_t>(offsetof(ObjectifManager_tA6D468AE96404E0258231F04EFAD5947D30ABC12, ___zones_9)),};
+	static_cast<int32_t>(offsetof(ObjectifManager_tA6D468AE96404E0258231F04EFAD5947D30ABC12, ___gameManager_4)),static_cast<int32_t>(offsetof(ObjectifManager_tA6D468AE96404E0258231F04EFAD5947D30ABC12, ___player_5)),static_cast<int32_t>(offsetof(ObjectifManager_tA6D468AE96404E0258231F04EFAD5947D30ABC12, ___objectifPrefabs_6)),static_cast<int32_t>(offsetof(ObjectifManager_tA6D468AE96404E0258231F04EFAD5947D30ABC12, ___objectives_7)),static_cast<int32_t>(offsetof(ObjectifManager_tA6D468AE96404E0258231F04EFAD5947D30ABC12, ___currentObjectif_8)),static_cast<int32_t>(offsetof(ObjectifManager_tA6D468AE96404E0258231F04EFAD5947D30ABC12, ___zones_9)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4693[5] = 
 {
 	static_cast<int32_t>(offsetof(ObstacleManager_tA813CB8C6DC4658A0ADE259EA66F9F87982795B5, ___gameManager_4)),static_cast<int32_t>(offsetof(ObstacleManager_tA813CB8C6DC4658A0ADE259EA66F9F87982795B5, ___obstaclePrefabs_5)),static_cast<int32_t>(offsetof(ObstacleManager_tA813CB8C6DC4658A0ADE259EA66F9F87982795B5, ___obstacles_6)),static_cast<int32_t>(offsetof(ObstacleManager_tA813CB8C6DC4658A0ADE259EA66F9F87982795B5, ___fieldZone_7)),static_cast<int32_t>(offsetof(ObstacleManager_tA813CB8C6DC4658A0ADE259EA66F9F87982795B5, ___obstaclesLimit_8)),};
