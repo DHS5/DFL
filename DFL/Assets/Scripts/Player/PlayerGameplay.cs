@@ -72,6 +72,13 @@ public class PlayerGameplay : MonoBehaviour
             // When the player collides with an obstacle --> game over
             if (collision.gameObject.CompareTag("Obstacle") && !isInvincible)
             {
+                AudioSource a = collision.gameObject.GetComponent<AudioSource>();
+                if (a != null)
+                {
+                    a.Play();
+                    a.volume = 1f;
+                }
+                
                 Hurt(collision.gameObject);
                 Debug.Log("Hurt by obstacle");
             }

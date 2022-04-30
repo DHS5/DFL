@@ -1,0 +1,459 @@
+Using pre-set license
+Built from '2021.3/staging' branch; Version is '2021.3.0f1 (6eacc8284459) revision 7253192'; Using compiler version '192829333'; Build Type 'Release'
+OS: 'Windows 10  (10.0.19044) 64bit Core' Language: 'fr' Physical Memory: 16231 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
+
+COMMAND LINE ARGUMENTS:
+C:\Infomatique\Unity\2021.3.0f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker3
+-projectPath
+C:/Infomatique/Unity/Projects/Personal Projects/DFL/DFL
+-logFile
+Logs/AssetImportWorker3.log
+-srvPort
+65476
+Successfully changed project path to: C:/Infomatique/Unity/Projects/Personal Projects/DFL/DFL
+C:/Infomatique/Unity/Projects/Personal Projects/DFL/DFL
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Refreshing native plugins compatible for Editor in 100.50 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2021.3.0f1 (6eacc8284459)
+[Subsystems] Discovering subsystems at path C:/Infomatique/Unity/2021.3.0f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Infomatique/Unity/Projects/Personal Projects/DFL/DFL/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce GTX 1660 Ti (ID=0x2191)
+    Vendor:   NVIDIA
+    VRAM:     5991 MB
+    Driver:   26.21.14.4137
+Initialize mono
+Mono path[0] = 'C:/Infomatique/Unity/2021.3.0f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Infomatique/Unity/2021.3.0f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Infomatique/Unity/2021.3.0f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56744
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Infomatique/Unity/2021.3.0f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
+Register platform support module: C:/Infomatique/Unity/2021.3.0f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.007749 seconds.
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 94.58 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.687 seconds
+Domain Reload Profiling:
+	ReloadAssembly (688ms)
+		BeginReloadAssembly (80ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (0ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (1ms)
+		EndReloadAssembly (491ms)
+			LoadAssemblies (77ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (107ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (29ms)
+			SetupLoadedEditorAssemblies (301ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (9ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (95ms)
+				BeforeProcessingInitializeOnLoad (1ms)
+				ProcessInitializeOnLoadAttributes (143ms)
+				ProcessInitializeOnLoadMethodAttributes (53ms)
+				AfterProcessingInitializeOnLoad (0ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (0ms)
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.006130 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory is not a mono symbol file
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 92.50 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.426 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1427ms)
+		BeginReloadAssembly (114ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (6ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (20ms)
+		EndReloadAssembly (1185ms)
+			LoadAssemblies (98ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (224ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (59ms)
+			SetupLoadedEditorAssemblies (754ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (6ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (93ms)
+				BeforeProcessingInitializeOnLoad (95ms)
+				ProcessInitializeOnLoadAttributes (466ms)
+				ProcessInitializeOnLoadMethodAttributes (84ms)
+				AfterProcessingInitializeOnLoad (10ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (10ms)
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.08 seconds
+Refreshing native plugins compatible for Editor in 1.10 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3805 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 129 unused Assets / (472.5 KB). Loaded Objects now: 4258.
+Memory consumption went from 185.2 MB to 184.8 MB.
+Total: 3.676500 ms (FindLiveObjects: 0.300300 ms CreateObjectMapping: 0.241800 ms MarkObjects: 2.724900 ms  DeleteObjects: 0.408500 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 538967.308228 seconds.
+  path: Assets/Import/Audio/Voices - Essentials/Voice_Male/Voice_Male_Breath/Voice_Male_V2_Breath_Gasp_Mono_05.wav
+  artifactKey: Guid(327cc991f1c622141aacd5bc31ef6976) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Import/Audio/Voices - Essentials/Voice_Male/Voice_Male_Breath/Voice_Male_V2_Breath_Gasp_Mono_05.wav using Guid(327cc991f1c622141aacd5bc31ef6976) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3d9c004d4c7f48a14eb6550d9c18a12d') in 0.177135 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Import/Audio/Voices - Essentials/Voice_Male/Voice_Male_Breath/Voice_Male_V2_Breath_Shocked_Mono_02.wav
+  artifactKey: Guid(785fa179fdb8e5f43af0c576c8795563) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Import/Audio/Voices - Essentials/Voice_Male/Voice_Male_Breath/Voice_Male_V2_Breath_Shocked_Mono_02.wav using Guid(785fa179fdb8e5f43af0c576c8795563) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a95a6a0407216848e989432677dd07e2') in 0.026338 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Import/Audio/Voices - Essentials/Voice_Male/Voice_Male_Breath/Voice_Male_V2_Breath_Shocked_Mono_05.wav
+  artifactKey: Guid(7db5e00408340d44ab99e6783475c741) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Import/Audio/Voices - Essentials/Voice_Male/Voice_Male_Breath/Voice_Male_V2_Breath_Shocked_Mono_05.wav using Guid(7db5e00408340d44ab99e6783475c741) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c1311418ea601210cd1edd498783efe1') in 0.023834 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Import/Audio/Tybug Studios/Zombie Voice Pack - Free/Zombie Growl/zombie_growl_010.wav
+  artifactKey: Guid(ebb96c703224744479e6294bd49515d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Import/Audio/Tybug Studios/Zombie Voice Pack - Free/Zombie Growl/zombie_growl_010.wav using Guid(ebb96c703224744479e6294bd49515d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '881727d877d0a22485123e22d3ddff78') in 0.020122 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.798933 seconds.
+  path: Assets/Import/Audio/Footsteps - Essentials/Footsteps_Grass/Footsteps_Grass_Run/Footsteps_Grass_Run_07.wav
+  artifactKey: Guid(d3ea0567dbe95714eb0ca07f43a37a96) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Import/Audio/Footsteps - Essentials/Footsteps_Grass/Footsteps_Grass_Run/Footsteps_Grass_Run_07.wav using Guid(d3ea0567dbe95714eb0ca07f43a37a96) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '992abe2257d92e88e5b35561875cb021') in 0.025582 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Import/Audio/Footsteps - Essentials/Footsteps_Grass/Footsteps_Grass_Run/Footsteps_Grass_Run_08.wav
+  artifactKey: Guid(161d5a427e88d594f9906708ccdc5663) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Import/Audio/Footsteps - Essentials/Footsteps_Grass/Footsteps_Grass_Run/Footsteps_Grass_Run_08.wav using Guid(161d5a427e88d594f9906708ccdc5663) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5042b9742066f6fd452fe2c97394e1dc') in 0.025183 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Import/Audio/Footsteps - Essentials/Footsteps_Grass/Footsteps_Grass_Run/Footsteps_Grass_Run_10.wav
+  artifactKey: Guid(bd5653e52c4636e4aa3b0ced8f49a18d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Import/Audio/Footsteps - Essentials/Footsteps_Grass/Footsteps_Grass_Run/Footsteps_Grass_Run_10.wav using Guid(bd5653e52c4636e4aa3b0ced8f49a18d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c00c270a4cd2a79d286acb693e486e0a') in 0.014142 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.289164 seconds.
+  path: Assets/Import/Audio/Footsteps - Essentials/Footsteps_Grass/Footsteps_Grass_Run/Footsteps_Grass_Run_14.wav
+  artifactKey: Guid(b04914b5801123b4dafba88cbcb5bc74) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Import/Audio/Footsteps - Essentials/Footsteps_Grass/Footsteps_Grass_Run/Footsteps_Grass_Run_14.wav using Guid(b04914b5801123b4dafba88cbcb5bc74) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '60cc22f0c430bb1d098ed65cc6d6ebfe') in 0.024166 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Import/Audio/Footsteps - Essentials/Footsteps_Grass/Foley_Grass/Footsteps_Grass_Tall_Movement_06.wav
+  artifactKey: Guid(1fb63af572f3ebb469e2d7709aaf8a7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Import/Audio/Footsteps - Essentials/Footsteps_Grass/Foley_Grass/Footsteps_Grass_Tall_Movement_06.wav using Guid(1fb63af572f3ebb469e2d7709aaf8a7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e3787af355e36526064612d9469861ef') in 0.024318 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Import/Audio/Footsteps - Essentials/Footsteps_Grass/Foley_Grass/Footsteps_Grass_Tall_Movement_05.wav
+  artifactKey: Guid(fcbb5c4d4b88dab4196aa78093d897b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Import/Audio/Footsteps - Essentials/Footsteps_Grass/Foley_Grass/Footsteps_Grass_Tall_Movement_05.wav using Guid(fcbb5c4d4b88dab4196aa78093d897b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f9426e454d4838caa1eafc05451632b2') in 0.024212 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Import/Audio/Footsteps - Essentials/Footsteps_Gravel/Footsteps_Gravel_Run/Footsteps_Gravel_Run_02.wav
+  artifactKey: Guid(302595b93370c52408825d7fb07d09be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Import/Audio/Footsteps - Essentials/Footsteps_Gravel/Footsteps_Gravel_Run/Footsteps_Gravel_Run_02.wav using Guid(302595b93370c52408825d7fb07d09be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5885b3169df741c9cdfd022c336d2119') in 0.024975 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Import/Audio/Footsteps - Essentials/Footsteps_Grass/Foley_Grass/Footsteps_Grass_Tall_Movement_09.wav
+  artifactKey: Guid(ed15a29e723b7214ea43525973cdb6bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Import/Audio/Footsteps - Essentials/Footsteps_Grass/Foley_Grass/Footsteps_Grass_Tall_Movement_09.wav using Guid(ed15a29e723b7214ea43525973cdb6bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '36656cdb14bc0906db77218a51082579') in 0.022972 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Import/Audio/Footsteps - Essentials/Footsteps_Gravel/Footsteps_Gravel_Run/Footsteps_Gravel_Run_06.wav
+  artifactKey: Guid(32d4132b6bada6b48ac1474c5b84a1f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Import/Audio/Footsteps - Essentials/Footsteps_Gravel/Footsteps_Gravel_Run/Footsteps_Gravel_Run_06.wav using Guid(32d4132b6bada6b48ac1474c5b84a1f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2fcca587ee153ca45efbeafd4c03dcb1') in 0.021910 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/Import/Audio/Footsteps - Essentials/Footsteps_Grass/Foley_Grass/Footsteps_Grass_Tall_Movement_07.wav
+  artifactKey: Guid(926831fad7b7b2d4e872a783e1dff180) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Import/Audio/Footsteps - Essentials/Footsteps_Grass/Foley_Grass/Footsteps_Grass_Tall_Movement_07.wav using Guid(926831fad7b7b2d4e872a783e1dff180) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '349c5ab22f7312b28d9d4fddd4df1ad0') in 0.020112 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.277464 seconds.
+  path: Assets/Import/Audio/Footsteps - Essentials/Footsteps_Gravel/Footsteps_Gravel_Run/Footsteps_Gravel_Run_10.wav
+  artifactKey: Guid(a5d1dce4bff0e0a458049ab99fef06c4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Import/Audio/Footsteps - Essentials/Footsteps_Gravel/Footsteps_Gravel_Run/Footsteps_Gravel_Run_10.wav using Guid(a5d1dce4bff0e0a458049ab99fef06c4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fba63abfcbdedc19e56d613b7c80f86d') in 0.022539 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Import/Audio/Footsteps - Essentials/Footsteps_Gravel/Footsteps_Gravel_Walk/Footsteps_Gravel_Walk_01.wav
+  artifactKey: Guid(5461cae585b64f64089805f0d313bc84) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Import/Audio/Footsteps - Essentials/Footsteps_Gravel/Footsteps_Gravel_Walk/Footsteps_Gravel_Walk_01.wav using Guid(5461cae585b64f64089805f0d313bc84) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7e88d66d966f03dcdf67bab389f4b139') in 0.026417 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Import/Audio/Footsteps - Essentials/Footsteps_Gravel/Footsteps_Gravel_Walk/Footsteps_Gravel_Walk_06.wav
+  artifactKey: Guid(2e14b3cc9c6906b42885675f3572d4b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Import/Audio/Footsteps - Essentials/Footsteps_Gravel/Footsteps_Gravel_Walk/Footsteps_Gravel_Walk_06.wav using Guid(2e14b3cc9c6906b42885675f3572d4b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3a900b3e0b4151f0cd694a811d83cd0e') in 0.026243 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.626638 seconds.
+  path: Assets/Import/Audio/Footsteps - Essentials/Footsteps_Gravel/Footsteps_Gravel_Walk/Footsteps_Gravel_Walk_10.wav
+  artifactKey: Guid(afeb90013e6764449ae1616f47705ff7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Import/Audio/Footsteps - Essentials/Footsteps_Gravel/Footsteps_Gravel_Walk/Footsteps_Gravel_Walk_10.wav using Guid(afeb90013e6764449ae1616f47705ff7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6a12f9cb9e3beca55ca587ecc70a0b7c') in 0.024344 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Import/Audio/Footsteps - Essentials/Footsteps_Leaves/Footsteps_Leaves_Jump/Footsteps_Leaves_Jump_Land_01.wav
+  artifactKey: Guid(99c4a3774a894ff41a9f16f21aad34aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Import/Audio/Footsteps - Essentials/Footsteps_Leaves/Footsteps_Leaves_Jump/Footsteps_Leaves_Jump_Land_01.wav using Guid(99c4a3774a894ff41a9f16f21aad34aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '007cc9ec5e5b4c29c8c32cdfed2cd7fc') in 0.023376 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Import/Audio/Footsteps - Essentials/Footsteps_Gravel/Footsteps_Gravel_Jump/Footsteps_Jump_Land_01.wav
+  artifactKey: Guid(3e10d68c7f7aa854694549c916e8ba46) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Import/Audio/Footsteps - Essentials/Footsteps_Gravel/Footsteps_Gravel_Jump/Footsteps_Jump_Land_01.wav using Guid(3e10d68c7f7aa854694549c916e8ba46) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6336d821d403cb900ca4a6099c6d6fa3') in 0.022919 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.384456 seconds.
+  path: Assets/Import/Audio/Footsteps - Essentials/Footsteps_Leaves/Footsteps_Leaves_Jump/Footsteps_Leaves_Jump_Start_02.wav
+  artifactKey: Guid(156f78901fdf86e49ac90dd0c4a31ac5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Import/Audio/Footsteps - Essentials/Footsteps_Leaves/Footsteps_Leaves_Jump/Footsteps_Leaves_Jump_Start_02.wav using Guid(156f78901fdf86e49ac90dd0c4a31ac5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7e0673316532411c9a355a34dc8ba209') in 0.023134 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Import/Audio/Footsteps - Essentials/Footsteps_Leaves/Footsteps_Leaves_Run/Footsteps_Leaves_Run_04.wav
+  artifactKey: Guid(81ca12f276403d4429d50fcf4cf8629a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Import/Audio/Footsteps - Essentials/Footsteps_Leaves/Footsteps_Leaves_Run/Footsteps_Leaves_Run_04.wav using Guid(81ca12f276403d4429d50fcf4cf8629a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5c3110383d099cf830ac44d5473e74b9') in 0.023805 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Import/Audio/Footsteps - Essentials/Footsteps_Leaves/Footsteps_Leaves_Run/Footsteps_Leaves_Run_03.wav
+  artifactKey: Guid(5e1dbdb3454a3244d88f4178f8a08a08) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Import/Audio/Footsteps - Essentials/Footsteps_Leaves/Footsteps_Leaves_Run/Footsteps_Leaves_Run_03.wav using Guid(5e1dbdb3454a3244d88f4178f8a08a08) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2504ba93708f2c8451f47029438e83f9') in 0.022413 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Import/Audio/Footsteps - Essentials/Footsteps_Leaves/Footsteps_Leaves_Walk/Footsteps_Leaves_Walk_03.wav
+  artifactKey: Guid(88836c252240bf148b51f31eaa40423b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Import/Audio/Footsteps - Essentials/Footsteps_Leaves/Footsteps_Leaves_Walk/Footsteps_Leaves_Walk_03.wav using Guid(88836c252240bf148b51f31eaa40423b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6ac111348f33865bda60b8f1b74a582c') in 0.024270 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Import/Audio/Footsteps - Essentials/Footsteps_Leaves/Footsteps_Leaves_Walk/Footsteps_Leaves_Walk_05.wav
+  artifactKey: Guid(5110f81119d96ea47b2e9a45875c1156) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Import/Audio/Footsteps - Essentials/Footsteps_Leaves/Footsteps_Leaves_Walk/Footsteps_Leaves_Walk_05.wav using Guid(5110f81119d96ea47b2e9a45875c1156) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f27a606582c716620e2ef6d0aa0041ae') in 0.023801 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Import/Audio/Footsteps - Essentials/Footsteps_Metal/Footsteps_Metal_Jump/Footsteps_MetalV1_Jump_Land_04.wav
+  artifactKey: Guid(a04e8112fb4cca944baabc0048ff839d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Import/Audio/Footsteps - Essentials/Footsteps_Metal/Footsteps_Metal_Jump/Footsteps_MetalV1_Jump_Land_04.wav using Guid(a04e8112fb4cca944baabc0048ff839d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e4b7de5f14fc10fa6ef263d70005b460') in 0.024208 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.387141 seconds.
+  path: Assets/Import/Audio/Footsteps - Essentials/Footsteps_Metal/Footsteps_Metal_Jump/Footsteps_MetalV1_Jump_Start_04.wav
+  artifactKey: Guid(c2694fab5eccc4249bd5a2083be61d3e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Import/Audio/Footsteps - Essentials/Footsteps_Metal/Footsteps_Metal_Jump/Footsteps_MetalV1_Jump_Start_04.wav using Guid(c2694fab5eccc4249bd5a2083be61d3e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '294320b1f249c263c4373e8b4343f3ea') in 0.024989 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Import/Audio/Footsteps - Essentials/Footsteps_Metal/Footsteps_Metal_Run/Footsteps_MetalV1_Run_01.wav
+  artifactKey: Guid(b25225c72201cd740b16b95b86d57940) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Import/Audio/Footsteps - Essentials/Footsteps_Metal/Footsteps_Metal_Run/Footsteps_MetalV1_Run_01.wav using Guid(b25225c72201cd740b16b95b86d57940) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6d3e23cc59abc4733e80914d34fbff96') in 0.023578 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Import/Audio/Footsteps - Essentials/Footsteps_Metal/Footsteps_Metal_Run/Footsteps_MetalV1_Run_04.wav
+  artifactKey: Guid(be6f9c5983062b9488c5423a7e1fd1e0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Import/Audio/Footsteps - Essentials/Footsteps_Metal/Footsteps_Metal_Run/Footsteps_MetalV1_Run_04.wav using Guid(be6f9c5983062b9488c5423a7e1fd1e0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aa4e225a6a28b5080fb0ad5250da819a') in 0.024875 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Import/Audio/Footsteps - Essentials/Footsteps_Metal/Footsteps_Metal_Run/Footsteps_MetalV1_Run_07.wav
+  artifactKey: Guid(b16b005ddc0977b4aa402b5abce3205f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Import/Audio/Footsteps - Essentials/Footsteps_Metal/Footsteps_Metal_Run/Footsteps_MetalV1_Run_07.wav using Guid(b16b005ddc0977b4aa402b5abce3205f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd95f72f9e1d6dca2e53e2ad683120135') in 0.020893 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.021260 seconds.
+  path: Assets/Import/Audio/Footsteps - Essentials/Footsteps_Metal/Footsteps_Metal_Run/Footsteps_MetalV1_Run_10.wav
+  artifactKey: Guid(f7c73eb9b5b8af24b87031b591566444) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Import/Audio/Footsteps - Essentials/Footsteps_Metal/Footsteps_Metal_Run/Footsteps_MetalV1_Run_10.wav using Guid(f7c73eb9b5b8af24b87031b591566444) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd9e21b0a8e685a7d337c285afbf4dec7') in 0.022714 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Import/Audio/Footsteps - Essentials/Footsteps_Metal/Footsteps_Metal_Run/Footsteps_MetalV1_Run_11.wav
+  artifactKey: Guid(52c5e1808bea0b34e8abeab31591f4cc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Import/Audio/Footsteps - Essentials/Footsteps_Metal/Footsteps_Metal_Run/Footsteps_MetalV1_Run_11.wav using Guid(52c5e1808bea0b34e8abeab31591f4cc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '70eb9104d2d6551cff19bf6853351bd6') in 0.024156 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Import/Audio/Footsteps - Essentials/Footsteps_Metal/Footsteps_Metal_Run/Footsteps_MetalV1_Run_12.wav
+  artifactKey: Guid(520f55c41638a0d408571ddf515810d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Import/Audio/Footsteps - Essentials/Footsteps_Metal/Footsteps_Metal_Run/Footsteps_MetalV1_Run_12.wav using Guid(520f55c41638a0d408571ddf515810d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '320fd65499307c7e8632e36455b2e8ff') in 0.024838 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.250395 seconds.
+  path: Assets/Import/Audio/Footsteps - Essentials/Footsteps_Metal/Footsteps_Metal_Walk/Footsteps_MetalV1_Walk_05.wav
+  artifactKey: Guid(812100e3982e56842adb6ba5be867b7a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Import/Audio/Footsteps - Essentials/Footsteps_Metal/Footsteps_Metal_Walk/Footsteps_MetalV1_Walk_05.wav using Guid(812100e3982e56842adb6ba5be867b7a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4fe89ee26b564177cac5b8cb44d8c6b0') in 0.025013 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Import/Audio/Footsteps - Essentials/Footsteps_Metal/Footsteps_Metal_Walk/Footsteps_MetalV1_Walk_09.wav
+  artifactKey: Guid(d25a8335420d09f43bedf446e2deffa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Import/Audio/Footsteps - Essentials/Footsteps_Metal/Footsteps_Metal_Walk/Footsteps_MetalV1_Walk_09.wav using Guid(d25a8335420d09f43bedf446e2deffa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6fadcdf88d7e3b3c5af428461d245daa') in 0.022539 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Import/Audio/Footsteps - Essentials/Footsteps_Metal/Footsteps_Metal_Walk/Footsteps_MetalV1_Walk_12.wav
+  artifactKey: Guid(2705e9a452d315940a37bf3403ce5927) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Import/Audio/Footsteps - Essentials/Footsteps_Metal/Footsteps_Metal_Walk/Footsteps_MetalV1_Walk_12.wav using Guid(2705e9a452d315940a37bf3403ce5927) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4fd5fce29cc3f982e134837813be0224') in 0.024283 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Import/Audio/Footsteps - Essentials/Footsteps_Metal/Footsteps_Metal_Run/Footsteps_MetalV2_Run_01.wav
+  artifactKey: Guid(3e299b9129329f24692bb63f57f33d19) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Import/Audio/Footsteps - Essentials/Footsteps_Metal/Footsteps_Metal_Run/Footsteps_MetalV2_Run_01.wav using Guid(3e299b9129329f24692bb63f57f33d19) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6e4304f6ac5f5d0cce42594e2bee3ec4') in 0.024583 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Import/Audio/Footsteps - Essentials/Footsteps_Metal/Footsteps_Metal_Walk/Footsteps_MetalV1_Walk_15.wav
+  artifactKey: Guid(63218441cc62b42499a5df11d6393821) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Import/Audio/Footsteps - Essentials/Footsteps_Metal/Footsteps_Metal_Walk/Footsteps_MetalV1_Walk_15.wav using Guid(63218441cc62b42499a5df11d6393821) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6dcf13f018d236dc97f9c9a3fbc465b5') in 0.024050 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Import/Audio/Footsteps - Essentials/Footsteps_Metal/Footsteps_Metal_Walk/Footsteps_MetalV1_Walk_14.wav
+  artifactKey: Guid(4290a2df9f7c8ee4fbe7fee539c5bf30) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Import/Audio/Footsteps - Essentials/Footsteps_Metal/Footsteps_Metal_Walk/Footsteps_MetalV1_Walk_14.wav using Guid(4290a2df9f7c8ee4fbe7fee539c5bf30) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f8dd2971317b7a17dec21ab883504180') in 0.025347 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Import/Audio/Footsteps - Essentials/Footsteps_Metal/Footsteps_Metal_Walk/Footsteps_MetalV1_Walk_11.wav
+  artifactKey: Guid(2c32dcddf9cd3a944a54728c2c878557) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Import/Audio/Footsteps - Essentials/Footsteps_Metal/Footsteps_Metal_Walk/Footsteps_MetalV1_Walk_11.wav using Guid(2c32dcddf9cd3a944a54728c2c878557) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e3cfbbfb3116d764346496f090c7642a') in 0.018831 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.196870 seconds.
+  path: Assets/Import/Audio/Footsteps - Essentials/Footsteps_Metal/Footsteps_Metal_Run/Footsteps_MetalV2_Run_04.wav
+  artifactKey: Guid(5da9a1fac751fd544933656ba7cdb367) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Import/Audio/Footsteps - Essentials/Footsteps_Metal/Footsteps_Metal_Run/Footsteps_MetalV2_Run_04.wav using Guid(5da9a1fac751fd544933656ba7cdb367) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5e67c4e692435d80f9dc5fa2713ad1f6') in 0.022787 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Import/Audio/Footsteps - Essentials/Footsteps_Metal/Footsteps_Metal_Run/Footsteps_MetalV2_Run_09.wav
+  artifactKey: Guid(72854b6a8fde5e54eb8ae2eb10155f45) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Import/Audio/Footsteps - Essentials/Footsteps_Metal/Footsteps_Metal_Run/Footsteps_MetalV2_Run_09.wav using Guid(72854b6a8fde5e54eb8ae2eb10155f45) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fc15d0ead78d22384dd4fb2d78534a81') in 0.023574 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Import/Audio/Footsteps - Essentials/Footsteps_Metal/Footsteps_Metal_Run/Footsteps_MetalV2_Run_07.wav
+  artifactKey: Guid(af104ebdf73bf7a4ba6013021dd458cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Import/Audio/Footsteps - Essentials/Footsteps_Metal/Footsteps_Metal_Run/Footsteps_MetalV2_Run_07.wav using Guid(af104ebdf73bf7a4ba6013021dd458cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c279d8da0d63eb373ab1c93f91a88643') in 0.024661 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.947535 seconds.
+  path: Assets/Import/Audio/Footsteps - Essentials/Footsteps_Metal/Footsteps_Metal_Run/Footsteps_MetalV2_Run_14.wav
+  artifactKey: Guid(39ca7e88dc461e8458d02a2284708c0d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Import/Audio/Footsteps - Essentials/Footsteps_Metal/Footsteps_Metal_Run/Footsteps_MetalV2_Run_14.wav using Guid(39ca7e88dc461e8458d02a2284708c0d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '90c0b4e95e3ab21b77f3442cebbebcf0') in 0.029739 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Import/Audio/Footsteps - Essentials/Footsteps_Metal/Footsteps_Metal_Walk/Footsteps_MetalV2_Walk_01.wav
+  artifactKey: Guid(e5b9a63e11f3a8b4a8fef1eb139cc786) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Import/Audio/Footsteps - Essentials/Footsteps_Metal/Footsteps_Metal_Walk/Footsteps_MetalV2_Walk_01.wav using Guid(e5b9a63e11f3a8b4a8fef1eb139cc786) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'db62d8ab8c36a983e072e52b54352931') in 0.026658 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.823970 seconds.
+  path: Assets/Import/Audio/Voices - Essentials/Voice_Male/Voice_Male_Expressions/Voice_Male_V1_Sigh_Mono_03.wav
+  artifactKey: Guid(10e14bb301484bf4c9f4e014a1153e40) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Import/Audio/Voices - Essentials/Voice_Male/Voice_Male_Expressions/Voice_Male_V1_Sigh_Mono_03.wav using Guid(10e14bb301484bf4c9f4e014a1153e40) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8d79a389a5790ca4772b7d4944ea929d') in 0.024987 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Import/Audio/Voices - Essentials/Voice_Male/Voice_Male_Expressions/Voice_Male_V1_Sigh_Mono_04.wav
+  artifactKey: Guid(a541e3cd45677994aab1ba94cc611a33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Import/Audio/Voices - Essentials/Voice_Male/Voice_Male_Expressions/Voice_Male_V1_Sigh_Mono_04.wav using Guid(a541e3cd45677994aab1ba94cc611a33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4225cf1bd24d2c7b0ec95a76074618be') in 0.022662 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Import/Audio/Voices - Essentials/Voice_Male/Voice_Male_Expressions/Voice_Male_V2_Sigh_Mono_01.wav
+  artifactKey: Guid(8ea7eb0b216604e43b0d882b6ecbce9a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Import/Audio/Voices - Essentials/Voice_Male/Voice_Male_Expressions/Voice_Male_V2_Sigh_Mono_01.wav using Guid(8ea7eb0b216604e43b0d882b6ecbce9a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4d3cb9363b4b1e62f67c08aaa2b4f164') in 0.022840 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Import/Audio/Voices - Essentials/Voice_Male/Voice_Male_Expressions/Voice_Male_V2_Sigh_Mono_04.wav
+  artifactKey: Guid(89322c7125a2ddd4b901c9c415f98a93) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Import/Audio/Voices - Essentials/Voice_Male/Voice_Male_Expressions/Voice_Male_V2_Sigh_Mono_04.wav using Guid(89322c7125a2ddd4b901c9c415f98a93) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '603d60ab34280a7d0c8e14cff4200bcc') in 0.020514 seconds 
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0

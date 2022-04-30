@@ -8,13 +8,10 @@ using UnityEngine.SceneManagement;
 using UnityEditor;
 #endif
 
-public class MainMenuUIManager : MonoBehaviour
+public class MainMenuUIManager : UIManager
 {
     [SerializeField] private MenuAudioManager audioManager;
-    
-    
-    [SerializeField] private Slider sensitivitySlider;
-    [SerializeField] private Slider smoothRotationSlider;
+
 
 
     /// <summary>
@@ -54,17 +51,11 @@ public class MainMenuUIManager : MonoBehaviour
         if (DataManager.InstanceDataManager.ySmoothRotation != 0)
             smoothRotationSlider.value = DataManager.InstanceDataManager.ySmoothRotation;
         else DataManager.InstanceDataManager.ySmoothRotation = smoothRotationSlider.value;
+
+        gameType = DataManager.InstanceDataManager.gameType;
     }
 
 
-
-    public void CloseAllTexts(GameObject g)
-    {
-        foreach (TextMeshProUGUI t in g.GetComponentsInChildren<TextMeshProUGUI>())
-        {
-            t.gameObject.SetActive(false);
-        }
-    }
 
 
 

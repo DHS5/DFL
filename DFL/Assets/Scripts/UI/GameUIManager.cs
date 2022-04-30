@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
 
-public class GameUIManager : MonoBehaviour
+public class GameUIManager : UIManager
 {
     [Tooltip("Singleton Instance of the GameManager")]
     [SerializeField] private GameManager gameManager;
@@ -17,9 +17,6 @@ public class GameUIManager : MonoBehaviour
     [SerializeField] private GameObject[] screens;
     [Tooltip("Wave number UI text")]
     [SerializeField] private TextMeshProUGUI[] waveNumberTexts;
-
-    [SerializeField] private Slider sensitivitySlider;
-    [SerializeField] private Slider smoothRotationSlider;
 
 
     [Tooltip("UI components of the acceleration bar")]
@@ -51,6 +48,8 @@ public class GameUIManager : MonoBehaviour
             sensitivitySlider.value = DataManager.InstanceDataManager.yMouseSensitivity;
             smoothRotationSlider.value = DataManager.InstanceDataManager.ySmoothRotation;
         }
+
+        gameType = new Vector3Int(1, 0, 0);
     }
 
     /// <summary>
@@ -96,14 +95,6 @@ public class GameUIManager : MonoBehaviour
     public void SettingsScreen(bool state)
     {
         screens[2].SetActive(state);
-    }
-
-    public void CloseAllTexts(GameObject g)
-    {
-        foreach (TextMeshProUGUI t in g.GetComponentsInChildren<TextMeshProUGUI>())
-        {
-            t.gameObject.SetActive(false);
-        }
     }
 
 

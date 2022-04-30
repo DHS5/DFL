@@ -51,19 +51,4 @@ public class EnvironmentManager : MonoBehaviour
         dirLight = Instantiate(directionnalLights[2], new Vector3(0, 0, 0), Quaternion.Euler(50, -30, 0));
         RenderSettings.ambientIntensity = 0.6f;
     }
-
-
-
-
-    public void ZombieEnterTunnel()
-    {
-        RenderSettings.ambientIntensity = 0f;
-        dirLight.SetActive(false);
-    }
-
-    public void ZombieExitTunnel()
-    {
-        RenderSettings.ambientIntensity = 0.4f;
-        dirLight.SetActive(true);
-    }
 }

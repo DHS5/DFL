@@ -10,14 +10,14 @@ public class Zombie : Enemy
     }
 
     private void Update()
-    {
-        // Idle
+    {    
+        // Run
         if (Mathf.Abs(navMeshAgent.velocity.magnitude) > 0.01f)
         {
             animator.SetFloat("MoveSpeed", -1f);
             animator.SetFloat("SpeedM", navMeshAgent.velocity.magnitude);
         }
-        // Run
+        // Idle
         else
         {
             animator.SetFloat("MoveSpeed", 0f);

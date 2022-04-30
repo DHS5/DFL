@@ -40,10 +40,6 @@ public class GameManager : MonoBehaviour
     [Range(0, 5)] public int enemiesRange;
 
 
-    [Tooltip("Whether the game is running")]
-    [HideInInspector] public bool gameOn = false;
-    [Tooltip("Whether the game is over")]
-    [HideInInspector] public bool gameOver = false;
 
     [Header("Game managers")]
     [Tooltip("Field Manager of the game")]
@@ -74,6 +70,13 @@ public class GameManager : MonoBehaviour
     public GameObject player;
     [Tooltip("Animator of the player")]
     [SerializeField] private Animator playerRunAnimator;
+
+
+    [Tooltip("Whether the game is running")]
+    [HideInInspector] public bool gameOn = false;
+    [Tooltip("Whether the game is over")]
+    [HideInInspector] public bool gameOver = false;
+    private bool gameOverLate = false;
 
     /// <summary>
     /// Instantiate the Singleton
@@ -120,13 +123,14 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         // Checks if the game is over
-        if (gameOver)
+        if (gameOver && !gameOverLate)
         {
+            gameOverLate = true;
             playerRunAnimator.SetTrigger("Dead");
             player.GetComponent<PlayerController>().freeze = true;
             gameUIManager.GameOver();
             Invoke(nameof(GameOver), 0.75f);
-            currentField.OuuhAudio();
+            if (gameMode != GameMode.ZOMBIE) currentField.OuuhAudio();
             currentField.StopAmbianceAudios();
         }
 
@@ -226,7 +230,16 @@ public class GameManager : MonoBehaviour
         // ### Audio
 
         // Calls the booh audios
-        currentField.BoohAudio();
+        if (gameMode != GameMode.ZOMBIE) currentField.BoohAudio();
+
+
+        // ### Data
+
+        // Save the new score
+        if (dataManager.NewScore(gameMode, difficulty, options, "DHS5", enemiesManager.waveNumber) == 1)
+        {
+            dataManager.SaveHighscores();
+        }
     }
 
 
@@ -250,6 +263,8 @@ public class GameManager : MonoBehaviour
 
         // Actualize the audio volume
         audioManager.ActuSoundVolume();
+        // Disable the crowd sound in zombie mode
+        if (gameMode == GameMode.ZOMBIE) currentField.StopAmbianceAudios();
 
         // ### Enemies
 
@@ -258,14 +273,6 @@ public class GameManager : MonoBehaviour
 
 
         // ### Modes
-        /*
-        // If game mode = ZOMBIE
-        if (gameMode == GameMode.ZOMBIE)
-        {
-            // Puts the scene in a total dark
-            environmentManager.ZombieEnterTunnel();
-        }
-        */
 
         // If game mode = TEAM
         if (gameMode == GameMode.TEAM)
@@ -331,15 +338,6 @@ public class GameManager : MonoBehaviour
             // Generates the objectives
             objectifManager.GenerateObj();
         }
-
-        /*
-        // If game mode = ZOMBIE
-        if (gameMode == GameMode.ZOMBIE)
-        {
-            // Activates the dark lightning
-            environmentManager.ZombieExitTunnel();
-        }
-        */
 
         // ### Audio
 
