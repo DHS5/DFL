@@ -39,7 +39,10 @@ public class DataManager : MonoBehaviour
     [Tooltip("List of ScoreList with the highscores")]
     public ScoreList[] highscores = new ScoreList[96];
 
-    public Vector3Int gameType;
+    [HideInInspector] public string highName;
+    [HideInInspector] public int highWave;
+    [HideInInspector] public int highIndex;
+
 
 
     [HideInInspector] public float yMouseSensitivity;
@@ -56,9 +59,10 @@ public class DataManager : MonoBehaviour
 
     [HideInInspector] public bool loopOn;
 
-
+#if UNITY_WEBGL
     [DllImport("__Internal")]
-    private static extern void _JS_FileSystem_Sync();
+    private static extern void JS_FileSystem_Sync();
+#endif
 
 
     /// <summary>
@@ -78,7 +82,9 @@ public class DataManager : MonoBehaviour
 
         LoadHighscores();
 
-        gameType = new Vector3Int(1, 0, 0);
+        if (highscores[0].gameType != new Vector3Int(1, 0, 0)) InitHighscores();
+
+        
     }
 
 
@@ -176,6 +182,36 @@ public class DataManager : MonoBehaviour
     /// <param name="name">Name of the player</param>
     /// <param name="wave">Wave reached by the player</param>
     /// <returns>1 if it's a highscore, else 0</returns>
+    public int IsNewHighscore(GameMode GM, GameDifficulty GD, List<GameOption> GOs, string name, int wave)
+    {
+        int i = 0;
+        Vector3Int gameType = new Vector3Int((int)GM, (int)GD / 2, OptionsToInt(GOs));
+
+        while (highscores[i].gameType != gameType && i < 96) i++;
+
+        if (highscores[i].gameType == gameType)
+        {
+            for (int j = 0; j < 5; j++)
+                if (highscores[i].waves[j] < wave)
+                {
+                    return i;
+                }
+        }
+        else Debug.Log("Invalid game type");
+
+        return -1;
+    }
+
+
+    /// <summary>
+    /// Enters a new score in the highscores if it's in the top 5
+    /// </summary>
+    /// <param name="GM">Game Mode</param>
+    /// <param name="GD">Game Difficulty</param>
+    /// <param name="GOs">Game Options list</param>
+    /// <param name="name">Name of the player</param>
+    /// <param name="wave">Wave reached by the player</param>
+    /// <returns>1 if it's a highscore, else 0</returns>
     public int NewScore(GameMode GM, GameDifficulty GD, List<GameOption> GOs, string name, int wave)
     {
         int i = 0;
@@ -196,6 +232,20 @@ public class DataManager : MonoBehaviour
         else Debug.Log("Invalid game type");
 
         return 0;
+    }
+
+
+    public void NewHighscore()
+    {
+        if (highName == "") highName = "Anonymous";
+        for (int j = 0; j < 5; j++)
+            if (highscores[highIndex].waves[j] < highWave)
+            {
+                AddName(highscores[highIndex].names, j, highName);
+                AddWave(highscores[highIndex].waves, j, highWave);
+                SaveHighscores();
+                return;
+            }
     }
 
 
@@ -220,8 +270,11 @@ public class DataManager : MonoBehaviour
         string json = JsonUtility.ToJson(data);
 
         File.WriteAllText(Application.persistentDataPath + "/savefile.json", json);
-        if (Application.platform != RuntimePlatform.WindowsEditor)
-            _JS_FileSystem_Sync();
+
+        
+
+        if (Application.platform == RuntimePlatform.WebGLPlayer)
+            JS_FileSystem_Sync();
     }
 
     /// <summary>

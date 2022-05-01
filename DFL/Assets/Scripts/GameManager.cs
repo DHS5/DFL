@@ -155,13 +155,13 @@ public class GameManager : MonoBehaviour
             teamManager.StopAttackers();
         }
 
-        gameUIManager.SettingsScreen(true);
+        gameUIManager.SetScreen(GameScreen.SETTINGS, true);
 
         if (audioManager.SoundOn) audioManager.MuteSound(true);
     }
     public void UnpauseGame()
     {
-        gameUIManager.SettingsScreen(false);
+        gameUIManager.SetScreen(GameScreen.SETTINGS, false);
         Invoke(nameof(GameOn) , 1f);
     }
     private void GameOn()
@@ -236,9 +236,18 @@ public class GameManager : MonoBehaviour
         // ### Data
 
         // Save the new score
-        if (dataManager.NewScore(gameMode, difficulty, options, "DHS5", enemiesManager.waveNumber) == 1)
+        //if (dataManager.NewScore(gameMode, difficulty, options, "DHS5", enemiesManager.waveNumber) == 1)
+        //{
+        //    dataManager.SaveHighscores();
+        //}
+        int index = dataManager.IsNewHighscore(gameMode, difficulty, options, "DHS5", enemiesManager.waveNumber);
+        if (dataManager != null && index != -1)
         {
-            dataManager.SaveHighscores();
+            dataManager.highWave = enemiesManager.waveNumber;
+            dataManager.highIndex = index;
+            gameUIManager.SetScreen(GameScreen.HIGHSCORE, true);
+            gameUIManager.SetScreen(GameScreen.RESTART, false);
+            gameUIManager.ActuInputField();
         }
     }
 

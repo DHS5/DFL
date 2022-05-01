@@ -213,7 +213,7 @@ public class EnemiesManager : MonoBehaviour
         float zScale = fieldZone.transform.localScale.z / 2;
         int r;
         // Spawn on the whole field
-        for (int i = 0; i < 50 + 5 * (waveNumber + (int) gameManager.difficulty) ; i++)
+        for (int i = 0; i < 50 + (3 + (int) gameManager.difficulty / 2) * (waveNumber + (int) gameManager.difficulty) ; i++)
         {
             r = Random.Range(1, 3);
             if (r == 1) CreateEnemy(classicZPrefabs, field, xScale, zScale, 0.1f, zombieAudios);

@@ -41,8 +41,6 @@ public class UIManager : MonoBehaviour
             }
         }
         else Debug.Log("Invalid game type");
-
-        DataManager.InstanceDataManager.gameType = gameType;
     }
 
     public void GTChooseOption(int option)

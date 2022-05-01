@@ -52,7 +52,7 @@ public class MainMenuUIManager : UIManager
             smoothRotationSlider.value = DataManager.InstanceDataManager.ySmoothRotation;
         else DataManager.InstanceDataManager.ySmoothRotation = smoothRotationSlider.value;
 
-        gameType = DataManager.InstanceDataManager.gameType;
+        gameType = new Vector3Int(1, 0, 0);
     }
 
 

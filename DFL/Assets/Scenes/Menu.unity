@@ -4572,7 +4572,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
+    rgba: 4278190080
   m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -6040,16 +6040,31 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Yellow - Speed bonus
+  m_text: '- Yellow :
 
-    Purple - Jump bonus
+    Speed bonus
 
-    Blue - Invisible bonus
 
-    Orange
-    - Invincible bonus
+    - Purple :
 
-    Green - Life bonus'
+    Jump bonus
+
+
+    - Blue
+    :
+
+    Invisible bonus
+
+
+    - Orange :
+
+    Invincible bonus
+
+
+    - Green :
+
+    Life
+    bonus'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 44584f538e181ea4b92be715634fdb47, type: 2}
   m_sharedMaterial: {fileID: 8080496726357325712, guid: 44584f538e181ea4b92be715634fdb47, type: 2}
@@ -6076,8 +6091,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 26
-  m_fontSizeBase: 26
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -6115,7 +6130,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &558224981
@@ -6193,7 +6208,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
+    rgba: 4278190080
   m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -7384,7 +7399,9 @@ MonoBehaviour:
   - gameType: {x: 0, y: 0, z: 0}
     names: []
     waves: 
-  gameType: {x: 0, y: 0, z: 0}
+  highName: 
+  highWave: 0
+  highIndex: 0
   yMouseSensitivity: 0
   ySmoothRotation: 0
   musicOn: 0
@@ -7565,7 +7582,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d829ee83a4e416e4a9167261ffc7320e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioManager: {fileID: 62984105}
   sensitivitySlider: {fileID: 453978745}
   smoothRotationSlider: {fileID: 1687278542}
   highNames:
@@ -7580,6 +7596,7 @@ MonoBehaviour:
   - {fileID: 34842914}
   - {fileID: 165327150}
   - {fileID: 2106668455}
+  audioManager: {fileID: 62984105}
 --- !u!1 &643479215
 GameObject:
   m_ObjectHideFlags: 0
@@ -10299,7 +10316,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
+    rgba: 4278190080
   m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3

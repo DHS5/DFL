@@ -5,6 +5,10 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
 
+
+public enum GameScreen { GAME = 0, RESTART = 1, SETTINGS = 2, HIGHSCORE = 3 }
+
+
 public class GameUIManager : UIManager
 {
     [Tooltip("Singleton Instance of the GameManager")]
@@ -17,6 +21,14 @@ public class GameUIManager : UIManager
     [SerializeField] private GameObject[] screens;
     [Tooltip("Wave number UI text")]
     [SerializeField] private TextMeshProUGUI[] waveNumberTexts;
+
+
+    public string HighName { set { if (DataManager.InstanceDataManager != null) DataManager.InstanceDataManager.highName = value; } }
+
+    [Tooltip("")]
+    [SerializeField] private TMP_InputField pseudoInputField;
+
+
 
 
     [Tooltip("UI components of the acceleration bar")]
@@ -92,10 +104,7 @@ public class GameUIManager : UIManager
     }
 
 
-    public void SettingsScreen(bool state)
-    {
-        screens[2].SetActive(state);
-    }
+    public void SetScreen(GameScreen GS, bool state) { screens[(int)GS].SetActive(state); }
 
 
     /// <summary>
@@ -180,5 +189,27 @@ public class GameUIManager : UIManager
     public void ModifyLife(bool plus, int lifeNumber)
     {
         lifeBonuses[lifeNumber].SetActive(plus);
+    }
+
+
+
+
+    public void SaveHighscore()
+    {
+        if (DataManager.InstanceDataManager != null)
+        {
+            DataManager.InstanceDataManager.NewHighscore();
+            SetScreen(GameScreen.HIGHSCORE, false);
+            SetScreen(GameScreen.RESTART, true);
+        }
+    }
+
+    public void ActuInputField()
+    {
+        if (DataManager.InstanceDataManager != null && DataManager.InstanceDataManager.highName != "Anonymous")
+        {
+            pseudoInputField.text = DataManager.InstanceDataManager.highName;
+        }
+            
     }
 }

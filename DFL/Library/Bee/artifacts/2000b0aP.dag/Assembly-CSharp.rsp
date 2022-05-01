@@ -332,6 +332,7 @@
 "Assets/Scripts/Team/TeamManager.cs"
 "Assets/Scripts/UI/GameUIManager.cs"
 "Assets/Scripts/UI/MainMenuUIManager.cs"
+"Assets/Scripts/UI/UIManager.cs"
 -langversion:9.0
 
 /deterministic

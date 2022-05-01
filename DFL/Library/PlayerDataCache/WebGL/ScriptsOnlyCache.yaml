@@ -92,6 +92,7 @@ ScriptsOnlyBuild:
     - UnityEditor.ShaderGraph.SubGraphAsset
     Unity.TextMeshPro.dll:
     - TMPro.TMP_FontAsset
+    - TMPro.TMP_InputField
     - TMPro.TMP_Settings
     - TMPro.TMP_SpriteAsset
     - TMPro.TMP_StyleSheet
@@ -99,10 +100,8 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -120,11 +119,13 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.Image
     - UnityEngine.UI.LayoutElement
     - UnityEngine.UI.Mask
+    - UnityEngine.UI.RectMask2D
     - UnityEngine.UI.ScrollRect
     - UnityEngine.UI.Scrollbar
     - UnityEngine.UI.Slider
     - UnityEngine.UI.Text
     - UnityEngine.UI.Toggle
+    - UnityEngine.UI.ToggleGroup
     - UnityEngine.UI.VerticalLayoutGroup
   serializedClasses:
     Assembly-CSharp:
@@ -132,6 +133,7 @@ ScriptsOnlyBuild:
     - GameDifficulty
     - GameMode
     - GameOption
+    - ScoreList
     Unity.ProBuilder:
     - UnityEngine.ProBuilder.AutoUnwrapSettings
     - UnityEngine.ProBuilder.Face
@@ -168,6 +170,11 @@ ScriptsOnlyBuild:
     - TMPro.TMP_GlyphAdjustmentRecord
     - TMPro.TMP_GlyphPairAdjustmentRecord
     - TMPro.TMP_GlyphValueRecord
+    - TMPro.TMP_InputField/OnChangeEvent
+    - TMPro.TMP_InputField/SelectionEvent
+    - TMPro.TMP_InputField/SubmitEvent
+    - TMPro.TMP_InputField/TextSelectionEvent
+    - TMPro.TMP_InputField/TouchScreenKeyboardEvent
     - TMPro.TMP_Sprite
     - TMPro.TMP_SpriteCharacter
     - TMPro.TMP_SpriteGlyph
@@ -198,11 +205,17 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.SpriteState
     - UnityEngine.UI.Toggle/ToggleEvent
   methodsToPreserve:
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: Assembly-CSharp
+    fullTypeName: UIManager
+    methodName: ActuScoreList
   - assembly: Assembly-CSharp
     fullTypeName: AudioManager
     methodName: NextMusic
   - assembly: Assembly-CSharp
-    fullTypeName: MainMenuUIManager
+    fullTypeName: UIManager
     methodName: CloseAllTexts
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.GameObject
@@ -223,7 +236,7 @@ ScriptsOnlyBuild:
     fullTypeName: AudioManager
     methodName: set_SoundVolume
   - assembly: Assembly-CSharp
-    fullTypeName: MainMenuUIManager
+    fullTypeName: UIManager
     methodName: CloseAllTexts
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.GameObject
@@ -235,13 +248,16 @@ ScriptsOnlyBuild:
     fullTypeName: UnityEngine.GameObject
     methodName: SetActive
   - assembly: Assembly-CSharp
-    fullTypeName: MainMenuUIManager
+    fullTypeName: UIManager
+    methodName: set_GTDifficulty
+  - assembly: Assembly-CSharp
+    fullTypeName: UIManager
     methodName: CloseAllTexts
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.GameObject
     methodName: SetActive
   - assembly: Assembly-CSharp
-    fullTypeName: MainMenuUIManager
+    fullTypeName: UIManager
     methodName: CloseAllTexts
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.GameObject
@@ -259,6 +275,9 @@ ScriptsOnlyBuild:
     fullTypeName: MainMenuUIManager
     methodName: LaunchGame
   - assembly: Assembly-CSharp
+    fullTypeName: UIManager
+    methodName: set_GTMode
+  - assembly: Assembly-CSharp
     fullTypeName: AudioManager
     methodName: set_MusicVolume
   - assembly: UnityEngine.CoreModule
@@ -268,7 +287,7 @@ ScriptsOnlyBuild:
     fullTypeName: AudioManager
     methodName: set_LoopOn
   - assembly: Assembly-CSharp
-    fullTypeName: MainMenuUIManager
+    fullTypeName: UIManager
     methodName: CloseAllTexts
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.GameObject
@@ -279,26 +298,35 @@ ScriptsOnlyBuild:
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.GameObject
     methodName: SetActive
+  - assembly: Assembly-CSharp
+    fullTypeName: UIManager
+    methodName: set_GTDifficulty
   - assembly: Assembly-CSharp
     fullTypeName: MainMenuUIManager
     methodName: set_Difficulty
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.GameObject
     methodName: SetActive
+  - assembly: Assembly-CSharp
+    fullTypeName: UIManager
+    methodName: set_GTMode
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.GameObject
     methodName: SetActive
   - assembly: Assembly-CSharp
-    fullTypeName: MainMenuUIManager
+    fullTypeName: UIManager
     methodName: CloseAllTexts
   - assembly: Assembly-CSharp
-    fullTypeName: MainMenuUIManager
+    fullTypeName: UIManager
+    methodName: GTChooseOption
+  - assembly: Assembly-CSharp
+    fullTypeName: UIManager
     methodName: CloseAllTexts
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.GameObject
     methodName: SetActive
   - assembly: Assembly-CSharp
-    fullTypeName: MainMenuUIManager
+    fullTypeName: UIManager
     methodName: CloseAllTexts
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.GameObject
@@ -306,6 +334,15 @@ ScriptsOnlyBuild:
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.GameObject
     methodName: SetActive
+  - assembly: Assembly-CSharp
+    fullTypeName: UIManager
+    methodName: set_GTDifficulty
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: Assembly-CSharp
+    fullTypeName: UIManager
+    methodName: GTChooseOption
   - assembly: Assembly-CSharp
     fullTypeName: MainMenuUIManager
     methodName: set_Mode
@@ -313,25 +350,25 @@ ScriptsOnlyBuild:
     fullTypeName: UnityEngine.GameObject
     methodName: SetActive
   - assembly: Assembly-CSharp
-    fullTypeName: MainMenuUIManager
+    fullTypeName: UIManager
     methodName: CloseAllTexts
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.GameObject
     methodName: SetActive
   - assembly: Assembly-CSharp
-    fullTypeName: MainMenuUIManager
+    fullTypeName: UIManager
     methodName: CloseAllTexts
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.GameObject
     methodName: SetActive
   - assembly: Assembly-CSharp
-    fullTypeName: MainMenuUIManager
+    fullTypeName: UIManager
     methodName: CloseAllTexts
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.GameObject
     methodName: SetActive
   - assembly: Assembly-CSharp
-    fullTypeName: MainMenuUIManager
+    fullTypeName: UIManager
     methodName: CloseAllTexts
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.GameObject
@@ -346,13 +383,13 @@ ScriptsOnlyBuild:
     fullTypeName: UnityEngine.GameObject
     methodName: SetActive
   - assembly: Assembly-CSharp
-    fullTypeName: MainMenuUIManager
+    fullTypeName: UIManager
     methodName: CloseAllTexts
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.GameObject
     methodName: SetActive
   - assembly: Assembly-CSharp
-    fullTypeName: MainMenuUIManager
+    fullTypeName: UIManager
     methodName: CloseAllTexts
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.GameObject
@@ -360,6 +397,9 @@ ScriptsOnlyBuild:
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.GameObject
     methodName: SetActive
+  - assembly: Assembly-CSharp
+    fullTypeName: UIManager
+    methodName: set_GTMode
   - assembly: Assembly-CSharp
     fullTypeName: MainMenuUIManager
     methodName: ChooseOption
@@ -370,7 +410,7 @@ ScriptsOnlyBuild:
     fullTypeName: UnityEngine.GameObject
     methodName: SetActive
   - assembly: Assembly-CSharp
-    fullTypeName: MainMenuUIManager
+    fullTypeName: UIManager
     methodName: CloseAllTexts
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.GameObject
@@ -382,7 +422,7 @@ ScriptsOnlyBuild:
     fullTypeName: AudioManager
     methodName: set_SoundOn
   - assembly: Assembly-CSharp
-    fullTypeName: MainMenuUIManager
+    fullTypeName: UIManager
     methodName: CloseAllTexts
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.GameObject
@@ -390,11 +430,14 @@ ScriptsOnlyBuild:
   - assembly: Assembly-CSharp
     fullTypeName: MainMenuUIManager
     methodName: set_YSmoothRotation
+  - assembly: Assembly-CSharp
+    fullTypeName: UIManager
+    methodName: set_GTMode
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.GameObject
     methodName: SetActive
   - assembly: Assembly-CSharp
-    fullTypeName: MainMenuUIManager
+    fullTypeName: UIManager
     methodName: CloseAllTexts
   - assembly: Assembly-CSharp
     fullTypeName: MainMenuUIManager
@@ -406,10 +449,10 @@ ScriptsOnlyBuild:
     fullTypeName: UnityEngine.GameObject
     methodName: SetActive
   - assembly: Assembly-CSharp
-    fullTypeName: MainMenuUIManager
+    fullTypeName: UIManager
     methodName: CloseAllTexts
   - assembly: Assembly-CSharp
-    fullTypeName: MainMenuUIManager
+    fullTypeName: UIManager
     methodName: CloseAllTexts
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.GameObject
@@ -421,7 +464,10 @@ ScriptsOnlyBuild:
     fullTypeName: AudioManager
     methodName: set_MusicOn
   - assembly: Assembly-CSharp
-    fullTypeName: MainMenuUIManager
+    fullTypeName: UIManager
+    methodName: GTChooseOption
+  - assembly: Assembly-CSharp
+    fullTypeName: UIManager
     methodName: CloseAllTexts
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.GameObject
@@ -466,25 +512,31 @@ ScriptsOnlyBuild:
     fullTypeName: UnityEngine.Rendering.UI.DebugUIHandlerPanel
     methodName: ResetDebugManager
   - assembly: Assembly-CSharp
-    fullTypeName: GameUIManager
+    fullTypeName: UIManager
+    methodName: set_GTMode
+  - assembly: Assembly-CSharp
+    fullTypeName: UIManager
     methodName: CloseAllTexts
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.GameObject
     methodName: SetActive
   - assembly: Assembly-CSharp
-    fullTypeName: GameUIManager
+    fullTypeName: UIManager
     methodName: CloseAllTexts
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.GameObject
     methodName: SetActive
   - assembly: Assembly-CSharp
-    fullTypeName: GameUIManager
+    fullTypeName: UIManager
     methodName: CloseAllTexts
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.GameObject
     methodName: SetActive
   - assembly: Assembly-CSharp
-    fullTypeName: GameUIManager
+    fullTypeName: UIManager
+    methodName: set_GTDifficulty
+  - assembly: Assembly-CSharp
+    fullTypeName: UIManager
     methodName: CloseAllTexts
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.GameObject
@@ -496,7 +548,7 @@ ScriptsOnlyBuild:
     fullTypeName: FirstPersonCameraController
     methodName: set_YMS
   - assembly: Assembly-CSharp
-    fullTypeName: GameUIManager
+    fullTypeName: UIManager
     methodName: CloseAllTexts
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.GameObject
@@ -504,12 +556,18 @@ ScriptsOnlyBuild:
   - assembly: Assembly-CSharp
     fullTypeName: AudioManager
     methodName: PreviousMusic
+  - assembly: Assembly-CSharp
+    fullTypeName: UIManager
+    methodName: set_GTMode
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.GameObject
     methodName: SetActive
   - assembly: Assembly-CSharp
     fullTypeName: AudioManager
     methodName: set_LoopOn
+  - assembly: Assembly-CSharp
+    fullTypeName: GameUIManager
+    methodName: set_HighName
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.GameObject
     methodName: SetActive
@@ -517,7 +575,7 @@ ScriptsOnlyBuild:
     fullTypeName: GameUIManager
     methodName: Restart
   - assembly: Assembly-CSharp
-    fullTypeName: GameUIManager
+    fullTypeName: UIManager
     methodName: CloseAllTexts
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.GameObject
@@ -538,7 +596,7 @@ ScriptsOnlyBuild:
     fullTypeName: GameUIManager
     methodName: BackToMenu
   - assembly: Assembly-CSharp
-    fullTypeName: GameUIManager
+    fullTypeName: UIManager
     methodName: CloseAllTexts
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.GameObject
@@ -547,7 +605,7 @@ ScriptsOnlyBuild:
     fullTypeName: UnityEngine.GameObject
     methodName: SetActive
   - assembly: Assembly-CSharp
-    fullTypeName: GameUIManager
+    fullTypeName: UIManager
     methodName: CloseAllTexts
   - assembly: Assembly-CSharp
     fullTypeName: GameUIManager
@@ -556,16 +614,25 @@ ScriptsOnlyBuild:
     fullTypeName: UnityEngine.GameObject
     methodName: SetActive
   - assembly: Assembly-CSharp
-    fullTypeName: GameUIManager
+    fullTypeName: UIManager
     methodName: CloseAllTexts
   - assembly: Assembly-CSharp
-    fullTypeName: GameUIManager
+    fullTypeName: UIManager
     methodName: CloseAllTexts
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.GameObject
     methodName: SetActive
   - assembly: Assembly-CSharp
-    fullTypeName: GameUIManager
+    fullTypeName: UIManager
+    methodName: set_GTDifficulty
+  - assembly: Assembly-CSharp
+    fullTypeName: UIManager
+    methodName: GTChooseOption
+  - assembly: Assembly-CSharp
+    fullTypeName: UIManager
+    methodName: set_GTDifficulty
+  - assembly: Assembly-CSharp
+    fullTypeName: UIManager
     methodName: CloseAllTexts
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.GameObject
@@ -573,6 +640,9 @@ ScriptsOnlyBuild:
   - assembly: Assembly-CSharp
     fullTypeName: GameManager
     methodName: UnpauseGame
+  - assembly: Assembly-CSharp
+    fullTypeName: GameUIManager
+    methodName: SaveHighscore
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.GameObject
     methodName: SetActive
@@ -582,14 +652,32 @@ ScriptsOnlyBuild:
   - assembly: Assembly-CSharp
     fullTypeName: AudioManager
     methodName: NextMusic
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
   - assembly: Assembly-CSharp
-    fullTypeName: GameUIManager
+    fullTypeName: UIManager
+    methodName: ActuScoreList
+  - assembly: Assembly-CSharp
+    fullTypeName: UIManager
+    methodName: set_GTMode
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: Assembly-CSharp
+    fullTypeName: UIManager
+    methodName: GTChooseOption
+  - assembly: Assembly-CSharp
+    fullTypeName: UIManager
     methodName: CloseAllTexts
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.GameObject
     methodName: SetActive
   - assembly: Assembly-CSharp
-    fullTypeName: GameUIManager
+    fullTypeName: UIManager
+    methodName: GTChooseOption
+  - assembly: Assembly-CSharp
+    fullTypeName: UIManager
     methodName: CloseAllTexts
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.GameObject
@@ -601,13 +689,13 @@ ScriptsOnlyBuild:
     fullTypeName: AudioManager
     methodName: set_MusicOn
   - assembly: Assembly-CSharp
-    fullTypeName: GameUIManager
+    fullTypeName: UIManager
     methodName: CloseAllTexts
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.GameObject
     methodName: SetActive
   - assembly: Assembly-CSharp
-    fullTypeName: GameUIManager
+    fullTypeName: UIManager
     methodName: CloseAllTexts
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.GameObject
@@ -619,19 +707,19 @@ ScriptsOnlyBuild:
     fullTypeName: UnityEngine.GameObject
     methodName: SetActive
   - assembly: Assembly-CSharp
-    fullTypeName: GameUIManager
+    fullTypeName: UIManager
     methodName: CloseAllTexts
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.GameObject
     methodName: SetActive
   - assembly: Assembly-CSharp
-    fullTypeName: GameUIManager
+    fullTypeName: UIManager
     methodName: CloseAllTexts
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.GameObject
     methodName: SetActive
   - assembly: Assembly-CSharp
-    fullTypeName: GameUIManager
+    fullTypeName: UIManager
     methodName: CloseAllTexts
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.GameObject
@@ -640,10 +728,13 @@ ScriptsOnlyBuild:
     fullTypeName: UnityEngine.GameObject
     methodName: SetActive
   - assembly: Assembly-CSharp
-    fullTypeName: GameUIManager
+    fullTypeName: UIManager
     methodName: CloseAllTexts
   - assembly: Assembly-CSharp
-    fullTypeName: GameUIManager
+    fullTypeName: UIManager
+    methodName: set_GTMode
+  - assembly: Assembly-CSharp
+    fullTypeName: UIManager
     methodName: CloseAllTexts
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.GameObject
@@ -709,6 +800,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 2714}
     - Class: 114
       Script: {instanceID: 2960}
+    - Class: 114
+      Script: {instanceID: 3476}
     - Class: 114
       Script: {instanceID: 3574}
     - Class: 114
@@ -782,13 +875,13 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 7770}
     - Class: 114
-      Script: {instanceID: 8112}
+      Script: {instanceID: 8114}
     - Class: 114
-      Script: {instanceID: 8468}
+      Script: {instanceID: 8470}
     - Class: 114
-      Script: {instanceID: 8536}
+      Script: {instanceID: 8538}
     - Class: 114
-      Script: {instanceID: 8818}
+      Script: {instanceID: 8820}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -865,6 +958,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1838}
     - Class: 114
+      Script: {instanceID: 1956}
+    - Class: 114
       Script: {instanceID: 2086}
     - Class: 114
       Script: {instanceID: 2136}
@@ -877,6 +972,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3086}
     - Class: 114
+      Script: {instanceID: 3476}
+    - Class: 114
       Script: {instanceID: 3574}
     - Class: 114
       Script: {instanceID: 3692}
@@ -886,6 +983,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 4146}
     - Class: 114
       Script: {instanceID: 4350}
+    - Class: 114
+      Script: {instanceID: 4552}
     - Class: 114
       Script: {instanceID: 4606}
     - Class: 114
@@ -910,6 +1009,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 5336}
     - Class: 114
       Script: {instanceID: 5438}
+    - Class: 114
+      Script: {instanceID: 5492}
     - Class: 114
       Script: {instanceID: 5636}
     - Class: 114
@@ -945,16 +1046,18 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 7862}
     - Class: 114
-      Script: {instanceID: 7990}
+      Script: {instanceID: 7992}
     - Class: 114
-      Script: {instanceID: 8112}
+      Script: {instanceID: 8114}
     - Class: 114
-      Script: {instanceID: 8252}
+      Script: {instanceID: 8254}
     - Class: 114
-      Script: {instanceID: 8684}
+      Script: {instanceID: 8686}
     - Class: 114
-      Script: {instanceID: 8714}
+      Script: {instanceID: 8716}
     - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
       Script: {instanceID: 0}
     - Class: 134
       Script: {instanceID: 0}
@@ -1945,7 +2048,7 @@ ScriptsOnlyBuild:
     className: DebugUIHandlerCanvas
   - hash:
       serializedVersion: 2
-      Hash: de15fd9deba45b503228c69d333c5fde
+      Hash: 1aae5c45ceb76f824ef4dfe4599b630a
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameManager
@@ -1981,7 +2084,7 @@ ScriptsOnlyBuild:
     className: FilmGrain
   - hash:
       serializedVersion: 2
-      Hash: cb49722bef40987c707a939b5bbeabeb
+      Hash: 142ad478e08da29931c1de69a27587f4
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: MainMenuUIManager
@@ -2029,7 +2132,7 @@ ScriptsOnlyBuild:
     className: SpeedBonus
   - hash:
       serializedVersion: 2
-      Hash: 9bd6cbb0ce031e5b79f59d5c819da7c9
+      Hash: 1679cb2b5a37615154b86879d2cece40
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameUIManager
@@ -2095,6 +2198,12 @@ ScriptsOnlyBuild:
     className: SignalTrack
   - hash:
       serializedVersion: 2
+      Hash: 484a759d7eb56e19483635b17c77c4e4
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: UIManager
+  - hash:
+      serializedVersion: 2
       Hash: bf0b7979f4a70ea6f2fd04fa0ddfc73c
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
@@ -2143,7 +2252,7 @@ ScriptsOnlyBuild:
     className: PaniniProjection
   - hash:
       serializedVersion: 2
-      Hash: e7db77f00911324a96776e14574326b1
+      Hash: 112968cc71991f0c50688e5a5421ff92
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: DataManager
