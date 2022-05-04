@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using LootLocker.Requests;
+using LootLocker.Admin;
 using UnityEngine;
 using System.IO;
 using System.Runtime.InteropServices;
@@ -13,6 +15,12 @@ public struct ScoreList
     public Vector3Int gameType;
     public string[] names;
     public int[] waves;
+}
+
+public struct LeaderBoard
+{
+    public List<string> names;
+    public List<int> scores;
 }
 
 
@@ -38,6 +46,10 @@ public class DataManager : MonoBehaviour
 
     [Tooltip("List of ScoreList with the highscores")]
     public ScoreList[] highscores = new ScoreList[96];
+
+    [HideInInspector] public LeaderBoard[,,] leaderboards = new LeaderBoard[4, 3, 8];
+
+    private int[] lb_ID = { 2909, 2911, 2912, 2913 };
 
     [HideInInspector] public string highName;
     [HideInInspector] public int highWave;
@@ -84,9 +96,64 @@ public class DataManager : MonoBehaviour
 
         if (highscores[0].gameType != new Vector3Int(1, 0, 0)) InitHighscores();
 
-        
+        StartSession();
     }
 
+
+    private void StartSession()
+    {
+        LootLockerSDKManager.StartGuestSession((response) =>
+        {
+            if (response.success) Debug.Log("success");
+            else Debug.Log("failed");
+        });
+    }
+
+
+    private string GametypeToMeta(GameMode GM, GameDifficulty GD, List<GameOption> GOs)
+    {
+        return (int) GM + "." + (int) GD / 2 + "." + OptionsToInt(GOs);
+    }
+
+
+    public void PostScore(GameMode GM, GameDifficulty GD, List<GameOption> GOs)
+    {
+        Debug.Log("gt meta : " + GametypeToMeta(GM, GD, GOs));
+        LootLockerSDKManager.SubmitScore(highName, highWave, lb_ID[(int) GM], GametypeToMeta(GM, GD, GOs), (response) =>
+        {
+            if (response.success) Debug.Log("Successfully submitted");
+            else Debug.Log("Failed to submit");
+        });
+    }
+
+    public void LoadLeaderboards()
+    {
+        for (int i = 0; i < 4; i++)
+        {
+            LootLockerSDKManager.GetScoreList(lb_ID[i], 5, (response) =>
+            {
+                if (response.success)
+                {
+                    LootLockerLeaderboardMember[] scores = response.items;
+
+                    for (int j = 0; j < scores.Length; j++)
+                    {
+                        string[] gt = scores[j].metadata.Split('.');
+                        LeaderBoard l = leaderboards[lb_ID[i], int.Parse(gt[1]), int.Parse(gt[2])];
+                        if (l.names.Count < 5)
+                        {
+                            l.names.Add(scores[j].member_id);
+                            l.scores.Add(scores[j].score);
+                        }
+                    }
+
+
+                    Debug.Log("Successfully loaded");
+                }
+                else Debug.Log("Failed to submit");
+            });
+        }
+    }
 
 
 
@@ -237,7 +304,7 @@ public class DataManager : MonoBehaviour
 
     public void NewHighscore()
     {
-        if (highName == "") highName = "Anonymous";
+        if (highName == "") highName = "Anonym";
         for (int j = 0; j < 5; j++)
             if (highscores[highIndex].waves[j] < highWave)
             {

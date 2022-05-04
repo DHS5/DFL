@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "com.lootlocker.lootlockersdk": "file:C:/Infomatique/Unity/unity-sdk-main",
     "com.unity.collab-proxy": "1.15.15",
     "com.unity.connect.share": "4.2.3",
     "com.unity.ide.rider": "3.0.13",

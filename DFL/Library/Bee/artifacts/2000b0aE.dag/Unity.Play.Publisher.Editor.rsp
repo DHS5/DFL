@@ -396,6 +396,7 @@
 -r:"C:/Infomatique/Unity/Projects/Personal Projects/DFL/DFL/Library/PackageCache/com.unity.collab-proxy@1.15.15/Lib/Editor/PlasticSCM/Unity.Plastic.Newtonsoft.Json.dll"
 -r:"C:/Infomatique/Unity/Projects/Personal Projects/DFL/DFL/Library/PackageCache/com.unity.collab-proxy@1.15.15/Lib/Editor/PlasticSCM/unityplastic.dll"
 -r:"C:/Infomatique/Unity/Projects/Personal Projects/DFL/DFL/Library/PackageCache/com.unity.ext.nunit@1.0.6/net35/unity-custom/nunit.framework.dll"
+-r:"C:/Infomatique/Unity/Projects/Personal Projects/DFL/DFL/Library/PackageCache/com.unity.nuget.newtonsoft-json@2.0.0/Runtime/Newtonsoft.Json.dll"
 -r:"Library/Bee/artifacts/2000b0aE.dag/Unity.EditorCoroutines.Editor.ref.dll"
 -r:"Library/Bee/artifacts/2000b0aE.dag/Unity.InternalAPIEditorBridgeDev.001.ref.dll"
 -r:"Library/Bee/artifacts/2000b0aE.dag/Unity.Settings.Editor.ref.dll"

@@ -199,6 +199,7 @@ public class GameUIManager : UIManager
         if (DataManager.InstanceDataManager != null)
         {
             DataManager.InstanceDataManager.NewHighscore();
+            DataManager.InstanceDataManager.PostScore(gameManager.gameMode, gameManager.difficulty, gameManager.options);
             SetScreen(GameScreen.HIGHSCORE, false);
             SetScreen(GameScreen.RESTART, true);
         }

@@ -5,23 +5,86 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637856115083241985
-    m_Hash: 3694080108
+      ticks: 637871874342209785
+    m_Hash: 646690715
   m_LockFileStatus:
     m_FilePath: C:/Infomatique/Unity/Projects/Personal Projects/DFL/DFL/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637856115475335149
-    m_Hash: 3310619031
+      ticks: 637871874342254079
+    m_Hash: 3360597560
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
-  m_LocalFileStatus: []
+  m_LocalFileStatus:
+  - m_FilePath: C:\Infomatique\Unity\unity-sdk-main/package.json
+    m_PathExists: 1
+    m_ContentTrackingEnabled: 1
+    m_ModificationDate:
+      serializedVersion: 2
+      ticks: 637867462660000000
+    m_Hash: 1546923789
+  - m_FilePath: C:\Infomatique\Unity\unity-sdk-main
+    m_PathExists: 1
+    m_ContentTrackingEnabled: 1
+    m_ModificationDate:
+      serializedVersion: 2
+      ticks: 0
+    m_Hash: 0
 m_ProjectPath: C:/Infomatique/Unity/Projects/Personal Projects/DFL/DFL/Packages
 m_EditorVersion: 2021.3.0f1 (6eacc8284459)
 m_ResolvedPackages:
+- packageId: com.lootlocker.lootlockersdk@file:C:\Infomatique\Unity\unity-sdk-main
+  testable: 0
+  isDirectDependency: 1
+  version: 1.1.15
+  source: 4
+  resolvedPath: C:\Infomatique\Unity\unity-sdk-main
+  assetPath: Packages/com.lootlocker.lootlockersdk
+  name: com.lootlocker.lootlockersdk
+  displayName: LootLocker
+  author:
+    name: LootLocker
+    email: 
+    url: 
+  category: 
+  type: tool
+  description: LootLocker SDK
+  status: 4
+  errors: []
+  versions:
+    all: []
+    compatible: []
+    verified: 
+  dependencies:
+  - name: com.unity.nuget.newtonsoft-json
+    version: 2.0.0
+  resolvedDependencies:
+  - name: com.unity.nuget.newtonsoft-json
+    version: 2.0.0
+  keywords: []
+  registry:
+    id: main
+    name: 
+    url: https://packages.unity.com
+    scopes: []
+    isDefault: 1
+    capabilities: 7
+  hideInEditor: 1
+  isAssetStorePackage: 0
+  datePublishedTicks: 0
+  documentationUrl: 
+  hasRepository: 0
+  repository:
+    type: 
+    url: 
+    revision: 
+    path: 
+  unityLifecycle:
+    version: 
+    nextVersion: 
 - packageId: com.unity.collab-proxy@1.15.15
   testable: 0
   isDirectDependency: 1
@@ -80,6 +143,7 @@ m_ResolvedPackages:
     - 1.14.13
     - 1.14.15
     - 1.14.16
+    - 1.14.17
     - 1.15.1
     - 1.15.4
     - 1.15.7
@@ -88,6 +152,7 @@ m_ResolvedPackages:
     - 1.15.13
     - 1.15.15
     - 1.15.16
+    - 1.15.17
     - 2.0.0-preview.6
     - 2.0.0-preview.8
     - 2.0.0-preview.15
@@ -101,6 +166,7 @@ m_ResolvedPackages:
     compatible:
     - 1.15.15
     - 1.15.16
+    - 1.15.17
     - 2.0.0-preview.6
     - 2.0.0-preview.8
     - 2.0.0-preview.15
@@ -111,7 +177,7 @@ m_ResolvedPackages:
     - 2.1.0-preview.3
     - 2.1.0-preview.5
     - 2.1.0-preview.6
-    verified: 1.15.16
+    verified: 1.15.17
   dependencies:
   - name: com.unity.services.core
     version: 1.0.1
@@ -3693,6 +3759,7 @@ m_ResolvedPackages:
     - 1.1.0-pre.69
     - 1.2.0
     - 1.3.1
+    - 1.3.2
     compatible:
     - 1.0.1
     - 1.1.0-pre.7
@@ -3704,6 +3771,7 @@ m_ResolvedPackages:
     - 1.1.0-pre.69
     - 1.2.0
     - 1.3.1
+    - 1.3.2
     verified: 1.0.1
   dependencies:
   - name: com.unity.modules.unitywebrequest
@@ -3732,6 +3800,74 @@ m_ResolvedPackages:
   unityLifecycle:
     version: 1.0.1
     nextVersion: 1.1.0-pre.8
+- packageId: com.unity.nuget.newtonsoft-json@2.0.0
+  testable: 0
+  isDirectDependency: 0
+  version: 2.0.0
+  source: 1
+  resolvedPath: C:\Infomatique\Unity\Projects\Personal Projects\DFL\DFL\Library\PackageCache\com.unity.nuget.newtonsoft-json@2.0.0
+  assetPath: Packages/com.unity.nuget.newtonsoft-json
+  name: com.unity.nuget.newtonsoft-json
+  displayName: Newtonsoft Json
+  author:
+    name: 
+    email: 
+    url: 
+  category: 
+  type: 
+  description: 'Newtonsoft Json for use in Unity projects and Unity packages. Currently
+    synced to version 12.0.2.
+
+
+    This package is used for advanced json serialization
+    and deserialization. Most Unity users will be better suited using the existing
+    json tools built into Unity.
+
+    To avoid assembly clashes, please use this
+    package if you intend to use Newtonsoft Json.'
+  status: 4
+  errors: []
+  versions:
+    all:
+    - 1.0.0-preview.2
+    - 1.0.0-preview.3
+    - 1.0.0-preview.4
+    - 1.0.1-preview.1
+    - 1.1.2
+    - 2.0.0-preview
+    - 2.0.0-preview.1
+    - 2.0.0-preview.2
+    - 2.0.0
+    - 2.0.1-preview.1
+    - 2.0.2
+    compatible:
+    - 2.0.0
+    - 2.0.1-preview.1
+    - 2.0.2
+    verified: 2.0.2
+  dependencies: []
+  resolvedDependencies: []
+  keywords: []
+  registry:
+    id: main
+    name: 
+    url: https://packages.unity.com
+    scopes: []
+    isDefault: 1
+    capabilities: 7
+  hideInEditor: 1
+  isAssetStorePackage: 0
+  datePublishedTicks: 637237898320000000
+  documentationUrl: 
+  hasRepository: 1
+  repository:
+    type: git
+    url: https://github.cds.internal.unity3d.com/unity/com.unity.nuget.newtonsoft-json.git
+    revision: d2fd6ed876261bbd82f59199ad711e7667bf633a
+    path: 
+  unityLifecycle:
+    version: 2.0.0
+    nextVersion: 
 - packageId: com.unity.searcher@4.9.1
   testable: 0
   isDirectDependency: 0
