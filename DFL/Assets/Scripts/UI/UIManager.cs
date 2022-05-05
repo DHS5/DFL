@@ -12,11 +12,14 @@ public class UIManager : MonoBehaviour
     [SerializeField] protected TextMeshProUGUI[] highNames;
     [SerializeField] protected TextMeshProUGUI[] highWaves;
 
+    [SerializeField] protected TextMeshProUGUI[] highNamesL;
+    [SerializeField] protected TextMeshProUGUI[] highWavesL;
+
     protected Vector3Int gameType;
-    public int GTMode { set { gameType.x = value; ActuScoreList(); } }
-    public int GTDifficulty { set { gameType.y = value; ActuScoreList(); } }
+    public int GTMode { set { gameType.x = value; ActuLeaderboards(); ActuScoreList(); } }
+    public int GTDifficulty { set { gameType.y = value; ActuLeaderboards(); ActuScoreList(); } }
     protected List<GameOption> gTOptions = new List<GameOption>();
-    public int GTOptions { set { gameType.z = value; ActuScoreList(); } }
+    public int GTOptions { set { gameType.z = value; ActuLeaderboards(); ActuScoreList(); } }
 
 
     public void CloseAllTexts(GameObject g)
@@ -29,10 +32,11 @@ public class UIManager : MonoBehaviour
 
     public void ActuScoreList()
     {
+        Vector3Int gt = gameType + new Vector3Int(1, 0, 0);
         int i = 0;
-        while (DataManager.InstanceDataManager.highscores[i].gameType != gameType && i < 96) i++;
+        while (DataManager.InstanceDataManager.highscores[i].gameType != gt && i < 96) i++;
 
-        if (DataManager.InstanceDataManager.highscores[i].gameType == gameType)
+        if (DataManager.InstanceDataManager.highscores[i].gameType == gt)
         {
             for (int j = 0; j < 5; j++)
             {
@@ -42,6 +46,23 @@ public class UIManager : MonoBehaviour
         }
         else Debug.Log("Invalid game type");
     }
+
+    public void ActuLeaderboards()
+    {
+        int limit = DataManager.InstanceDataManager.leaderboards[gameType.x, gameType.y, gameType.z].names.Count <= 5 ? DataManager.InstanceDataManager.leaderboards[gameType.x, gameType.y, gameType.z].names.Count : 5;
+        for (int i = 0; i < limit; i++)
+        {
+            highNamesL[i].text = DataManager.InstanceDataManager.leaderboards[gameType.x, gameType.y, gameType.z].names[i];
+            highWavesL[i].text = DataManager.InstanceDataManager.leaderboards[gameType.x, gameType.y, gameType.z].scores[i].ToString();
+        }
+        for (int j = limit; j < 5; j++)
+        {
+            highNamesL[j].text = "None";
+            highWavesL[j].text = "0";
+        }
+    }
+
+
 
     public void GTChooseOption(int option)
     {

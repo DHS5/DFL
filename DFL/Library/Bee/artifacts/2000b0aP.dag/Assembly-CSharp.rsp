@@ -279,6 +279,8 @@
 -r:"C:/Infomatique/Unity/Projects/Personal Projects/DFL/DFL/Library/PackageCache/com.unity.burst@1.6.5/Unity.Burst.CodeGen/Unity.Burst.Cecil.Pdb.dll"
 -r:"C:/Infomatique/Unity/Projects/Personal Projects/DFL/DFL/Library/PackageCache/com.unity.burst@1.6.5/Unity.Burst.CodeGen/Unity.Burst.Cecil.Rocks.dll"
 -r:"C:/Infomatique/Unity/Projects/Personal Projects/DFL/DFL/Library/PackageCache/com.unity.burst@1.6.5/Unity.Burst.Unsafe.dll"
+-r:"C:/Infomatique/Unity/Projects/Personal Projects/DFL/DFL/Library/PackageCache/com.unity.nuget.newtonsoft-json@2.0.0/Runtime/AOT/Newtonsoft.Json.dll"
+-r:"Library/Bee/artifacts/2000b0aP.dag/lootlocker.lootlockersdk.runtime.ref.dll"
 -r:"Library/Bee/artifacts/2000b0aP.dag/NavMeshComponents.ref.dll"
 -r:"Library/Bee/artifacts/2000b0aP.dag/Unity.Burst.ref.dll"
 -r:"Library/Bee/artifacts/2000b0aP.dag/Unity.Mathematics.ref.dll"

@@ -240,14 +240,25 @@ public class GameManager : MonoBehaviour
         //{
         //    dataManager.SaveHighscores();
         //}
-        int index = dataManager.IsNewHighscore(gameMode, difficulty, options, "DHS5", enemiesManager.waveNumber);
-        if (dataManager != null && index != -1)
+        if (dataManager != null)
         {
-            dataManager.highWave = enemiesManager.waveNumber;
-            dataManager.highIndex = index;
-            gameUIManager.SetScreen(GameScreen.HIGHSCORE, true);
-            gameUIManager.SetScreen(GameScreen.RESTART, false);
-            gameUIManager.ActuInputField();
+            int index = dataManager.IsNewHighscoreF(gameMode, difficulty, options, enemiesManager.waveNumber);
+            if (dataManager.IsNewHighscoreO(gameMode, difficulty, options, enemiesManager.waveNumber))
+            {
+                dataManager.highWave = enemiesManager.waveNumber;
+                dataManager.highIndex = index;
+                gameUIManager.SetScreen(GameScreen.ONLINE_HIGHSCORE, true);
+                gameUIManager.SetScreen(GameScreen.RESTART, false);
+                gameUIManager.ActuInputField();
+            }
+            else if (index != -1)
+            {
+                dataManager.highWave = enemiesManager.waveNumber;
+                dataManager.highIndex = index;
+                gameUIManager.SetScreen(GameScreen.HIGHSCORE, true);
+                gameUIManager.SetScreen(GameScreen.RESTART, false);
+                gameUIManager.ActuInputField();
+            }
         }
     }
 

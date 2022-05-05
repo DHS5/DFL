@@ -6614,7 +6614,7 @@ IL_000e:
 		Type_t* L_3;
 		L_3 = Object_GetType_mE10A8FC1E57F3DF29972CCBC026C2DC3942263B3(L_2, NULL);
 		bool L_4;
-		L_4 = VirtualFuncInvoker0< bool >::Invoke(39 /* System.Boolean System.Type::get_IsGenericType() */, L_3);
+		L_4 = VirtualFuncInvoker0< bool >::Invoke(40 /* System.Boolean System.Type::get_IsGenericType() */, L_3);
 		if (!L_4)
 		{
 			goto IL_0031;
@@ -6658,7 +6658,7 @@ IL_004a:
 		// if (methodInfo.IsGenericMethod)
 		MethodInfo_t* L_14 = ___methodInfo1;
 		bool L_15;
-		L_15 = VirtualFuncInvoker0< bool >::Invoke(24 /* System.Boolean System.Reflection.MethodBase::get_IsGenericMethod() */, L_14);
+		L_15 = VirtualFuncInvoker0< bool >::Invoke(26 /* System.Boolean System.Reflection.MethodBase::get_IsGenericMethod() */, L_14);
 		if (!L_15)
 		{
 			goto IL_0063;
@@ -7606,7 +7606,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CU3Ec_U3CCompileU3Eb__17_0_m7DA44444B7
 		Type_t* L_1;
 		L_1 = Object_GetType_mE10A8FC1E57F3DF29972CCBC026C2DC3942263B3(L_0, NULL);
 		String_t* L_2;
-		L_2 = VirtualFuncInvoker0< String_t* >::Invoke(7 /* System.String System.Reflection.MemberInfo::get_Name() */, L_1);
+		L_2 = VirtualFuncInvoker0< String_t* >::Invoke(8 /* System.String System.Reflection.MemberInfo::get_Name() */, L_1);
 		bool L_3;
 		L_3 = String_op_Inequality_m0FBE5AC4931D312E5B347BAA603755676E6DA2FE(L_2, _stringLiteral592EA6352B1DC6F257CCDA7C5C1A064EFE696C16, NULL);
 		return L_3;
@@ -7627,7 +7627,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CU3Ec_U3CTriggerUnsafeStaticMethodReco
 		Type_t* L_1;
 		L_1 = Object_GetType_mE10A8FC1E57F3DF29972CCBC026C2DC3942263B3(L_0, NULL);
 		String_t* L_2;
-		L_2 = VirtualFuncInvoker0< String_t* >::Invoke(25 /* System.String System.Type::get_FullName() */, L_1);
+		L_2 = VirtualFuncInvoker0< String_t* >::Invoke(26 /* System.String System.Type::get_FullName() */, L_1);
 		bool L_3;
 		L_3 = String_op_Equality_m0D685A924E5CD78078F248ED1726DA5A9D7D6AC0(L_2, _stringLiteral55014DACB94D71FC747A4E7BB4C0DA7C2A706EE4, NULL);
 		return L_3;
@@ -8445,7 +8445,7 @@ IL_001a_1:
 				// if (attributeType.FullName == "Burst.Compiler.IL.Tests.TestCompilerAttribute")
 				Type_t* L_13 = V_3;
 				String_t* L_14;
-				L_14 = VirtualFuncInvoker0< String_t* >::Invoke(25 /* System.String System.Type::get_FullName() */, L_13);
+				L_14 = VirtualFuncInvoker0< String_t* >::Invoke(26 /* System.String System.Type::get_FullName() */, L_13);
 				bool L_15;
 				L_15 = String_op_Equality_m0D685A924E5CD78078F248ED1726DA5A9D7D6AC0(L_14, _stringLiteralBEE03BDA1448C10795E764222E36CC6226EECA1A, NULL);
 				if (!L_15)
@@ -8849,9 +8849,9 @@ IL_0011:
 		// if (TryGetAttribute(member.Module.Assembly, out var assemblyAttribute))
 		MemberInfo_t* L_4 = ___member0;
 		Module_tABB9217F7F2BA3E0F4277D03C2B234A7313BB8D0* L_5;
-		L_5 = VirtualFuncInvoker0< Module_tABB9217F7F2BA3E0F4277D03C2B234A7313BB8D0* >::Invoke(10 /* System.Reflection.Module System.Reflection.MemberInfo::get_Module() */, L_4);
+		L_5 = VirtualFuncInvoker0< Module_tABB9217F7F2BA3E0F4277D03C2B234A7313BB8D0* >::Invoke(11 /* System.Reflection.Module System.Reflection.MemberInfo::get_Module() */, L_4);
 		Assembly_t* L_6;
-		L_6 = VirtualFuncInvoker0< Assembly_t* >::Invoke(7 /* System.Reflection.Assembly System.Reflection.Module::get_Assembly() */, L_5);
+		L_6 = VirtualFuncInvoker0< Assembly_t* >::Invoke(8 /* System.Reflection.Assembly System.Reflection.Module::get_Assembly() */, L_5);
 		il2cpp_codegen_runtime_class_init_inline(BurstCompilerOptions_t5F93118F305E1B0C950C6F9AF8BCA74033DA01C9_il2cpp_TypeInfo_var);
 		bool L_7;
 		L_7 = BurstCompilerOptions_TryGetAttribute_m6E47656668E057CCFDD1B8EB928EBB3C7366DBE6(L_6, (&V_1), NULL);
@@ -9792,7 +9792,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t BurstRuntime_GetHashCode32_m45D1423AA
 		// return HashStringWithFNV1A32(type.AssemblyQualifiedName);
 		Type_t* L_0 = ___type0;
 		String_t* L_1;
-		L_1 = VirtualFuncInvoker0< String_t* >::Invoke(24 /* System.String System.Type::get_AssemblyQualifiedName() */, L_0);
+		L_1 = VirtualFuncInvoker0< String_t* >::Invoke(25 /* System.String System.Type::get_AssemblyQualifiedName() */, L_0);
 		int32_t L_2;
 		L_2 = BurstRuntime_HashStringWithFNV1A32_mFAD3C2E99076E4FF106605C61B5EF1E1535DC7E1(L_1, NULL);
 		return L_2;
@@ -9805,7 +9805,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BurstRuntime_GetHashCode64_mC86F09215
 		// return HashStringWithFNV1A64(type.AssemblyQualifiedName);
 		Type_t* L_0 = ___type0;
 		String_t* L_1;
-		L_1 = VirtualFuncInvoker0< String_t* >::Invoke(24 /* System.String System.Type::get_AssemblyQualifiedName() */, L_0);
+		L_1 = VirtualFuncInvoker0< String_t* >::Invoke(25 /* System.String System.Type::get_AssemblyQualifiedName() */, L_0);
 		int64_t L_2;
 		L_2 = BurstRuntime_HashStringWithFNV1A64_m76D012F886F99EA46D0AE6A4F8CB64CFFD4BC635(L_1, NULL);
 		return L_2;

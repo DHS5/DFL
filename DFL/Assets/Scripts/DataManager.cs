@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using LootLocker.Requests;
-using LootLocker.Admin;
 using UnityEngine;
 using System.IO;
 using System.Runtime.InteropServices;
@@ -96,7 +95,10 @@ public class DataManager : MonoBehaviour
 
         if (highscores[0].gameType != new Vector3Int(1, 0, 0)) InitHighscores();
 
+
         StartSession();
+
+        //LoadLeaderboards();
     }
 
 
@@ -104,7 +106,11 @@ public class DataManager : MonoBehaviour
     {
         LootLockerSDKManager.StartGuestSession((response) =>
         {
-            if (response.success) Debug.Log("success");
+            if (response.success)
+            {
+                Debug.Log("success");
+                LoadLeaderboards();
+            }
             else Debug.Log("failed");
         });
     }
@@ -112,47 +118,84 @@ public class DataManager : MonoBehaviour
 
     private string GametypeToMeta(GameMode GM, GameDifficulty GD, List<GameOption> GOs)
     {
-        return (int) GM + "." + (int) GD / 2 + "." + OptionsToInt(GOs);
+        return (int) GM - 1 + "." + (int) GD / 2 + "." + OptionsToInt(GOs);
     }
 
 
     public void PostScore(GameMode GM, GameDifficulty GD, List<GameOption> GOs)
     {
         Debug.Log("gt meta : " + GametypeToMeta(GM, GD, GOs));
-        LootLockerSDKManager.SubmitScore(highName, highWave, lb_ID[(int) GM], GametypeToMeta(GM, GD, GOs), (response) =>
+        LootLockerSDKManager.SubmitScore(highName + "." + GametypeToMeta(GM, GD, GOs), highWave, lb_ID[(int) GM - 1], GametypeToMeta(GM, GD, GOs), (response) =>
         {
-            if (response.success) Debug.Log("Successfully submitted");
+            if (response.success)
+            {
+                Debug.Log("Successfully submitted");
+                LoadLeaderboards();
+            }
             else Debug.Log("Failed to submit");
         });
     }
+
+
+    private void ClearLeaderboards(int mode)
+    {
+        for (int i = 0; i < 3; i++)
+        {
+            for (int j = 0; j < 8; j++)
+            {
+                leaderboards[mode, i, j].names = new List<string>();
+                leaderboards[mode, i, j].scores = new List<int>();
+            }
+        }
+    }
+
+    private void CompleteLeaderboards(int mode)
+    {
+        for (int i = 0; i < 3; i++)
+        {
+            for (int j = 0; j < 8; j++)
+            {
+                for (int k = leaderboards[mode, i, j].names.Count; k < 5; k++)
+                {
+                    leaderboards[mode, i, j].names.Add("None");
+                    leaderboards[mode, i, j].scores.Add(0);
+                }
+            }
+        }
+    }
+
 
     public void LoadLeaderboards()
     {
         for (int i = 0; i < 4; i++)
         {
-            LootLockerSDKManager.GetScoreList(lb_ID[i], 5, (response) =>
-            {
-                if (response.success)
-                {
-                    LootLockerLeaderboardMember[] scores = response.items;
-
-                    for (int j = 0; j < scores.Length; j++)
-                    {
-                        string[] gt = scores[j].metadata.Split('.');
-                        LeaderBoard l = leaderboards[lb_ID[i], int.Parse(gt[1]), int.Parse(gt[2])];
-                        if (l.names.Count < 5)
-                        {
-                            l.names.Add(scores[j].member_id);
-                            l.scores.Add(scores[j].score);
-                        }
-                    }
-
-
-                    Debug.Log("Successfully loaded");
-                }
-                else Debug.Log("Failed to submit");
-            });
+            LoadLeaderboard(i);
         }
+    }
+
+
+    private void LoadLeaderboard(int mode)
+    {
+        ClearLeaderboards(mode);
+
+        LootLockerSDKManager.GetScoreList(lb_ID[mode], 100, (response) =>
+        {
+            if (response.success)
+            {
+                LootLockerLeaderboardMember[] scores = response.items;
+
+                for (int j = 0; j < scores.Length; j++)
+                {
+                    string[] gt = scores[j].metadata.Split('.');
+                    Vector3Int gtv = new Vector3Int(int.Parse(gt[0]), int.Parse(gt[1]), int.Parse(gt[2]));
+                    leaderboards[gtv.x, gtv.y, gtv.z].names.Add(scores[j].member_id.Split('.')[0]);
+                    leaderboards[gtv.x, gtv.y, gtv.z].scores.Add(scores[j].score);
+                }
+
+                Debug.Log("Successfully loaded");
+            }
+            else Debug.Log("Failed to load");
+        });
     }
 
 
@@ -174,15 +217,6 @@ public class DataManager : MonoBehaviour
                     highscores[i] = sl;
                     i++;
                 }
-    }
-
-    private void PrintHighscores()
-    {
-        for (int gm = 0; gm < 4; gm++)
-            for (int gd = 0; gd < 3; gd++)
-                for (int go = 0; go < 8; go++)
-                    for (int i = 0; i < 5; i++)
-                        Debug.Log(0);
     }
 
 
@@ -249,7 +283,7 @@ public class DataManager : MonoBehaviour
     /// <param name="name">Name of the player</param>
     /// <param name="wave">Wave reached by the player</param>
     /// <returns>1 if it's a highscore, else 0</returns>
-    public int IsNewHighscore(GameMode GM, GameDifficulty GD, List<GameOption> GOs, string name, int wave)
+    public int IsNewHighscoreF(GameMode GM, GameDifficulty GD, List<GameOption> GOs, int wave)
     {
         int i = 0;
         Vector3Int gameType = new Vector3Int((int)GM, (int)GD / 2, OptionsToInt(GOs));
@@ -267,6 +301,33 @@ public class DataManager : MonoBehaviour
         else Debug.Log("Invalid game type");
 
         return -1;
+    }
+
+
+    /// <summary>
+    /// Enters a new score in the highscores if it's in the top 5
+    /// </summary>
+    /// <param name="GM">Game Mode</param>
+    /// <param name="GD">Game Difficulty</param>
+    /// <param name="GOs">Game Options list</param>
+    /// <param name="name">Name of the player</param>
+    /// <param name="wave">Wave reached by the player</param>
+    /// <returns>1 if it's a highscore, else 0</returns>
+    public bool IsNewHighscoreO(GameMode GM, GameDifficulty GD, List<GameOption> GOs, int wave)
+    {
+        //int j = 0;
+        //while (j < leaderboards[(int)GM - 1, (int)GD / 2, OptionsToInt(GOs)].scores.Count && leaderboards[(int)GM - 1, (int)GD / 2, OptionsToInt(GOs)].names[j] != highName && highName != "Anonym")
+        
+        
+        for (int i = 0; i < 5; i++)
+        {
+            Debug.Log((int)GM - 1 + "," + (int)GD / 2 + "," + OptionsToInt(GOs) + "," + i);
+            if (leaderboards[(int)GM - 1, (int)GD / 2, OptionsToInt(GOs)].scores.Count < 5 || leaderboards[(int)GM - 1, (int)GD / 2, OptionsToInt(GOs)].scores[i] < wave)
+            {
+                return true;
+            }
+        }
+        return false;
     }
 
 

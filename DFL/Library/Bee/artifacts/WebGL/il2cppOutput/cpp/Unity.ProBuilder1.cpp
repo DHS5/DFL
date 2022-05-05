@@ -20871,7 +20871,7 @@ IL_0073:
 			// sw.WriteLine(message);
 			StreamWriter_t6E7DF7D524AA3C018A65F62EE80779873ED4D1E4* L_22 = V_2;
 			String_t* L_23 = ___message0;
-			VirtualActionInvoker1< String_t* >::Invoke(14 /* System.Void System.IO.TextWriter::WriteLine(System.String) */, L_22, L_23);
+			VirtualActionInvoker1< String_t* >::Invoke(18 /* System.Void System.IO.TextWriter::WriteLine(System.String) */, L_22, L_23);
 			// }
 			goto IL_008e;
 		}// end try (depth: 1)
@@ -20918,7 +20918,7 @@ IL_008d:
 			// sw.WriteLine(message);
 			StreamWriter_t6E7DF7D524AA3C018A65F62EE80779873ED4D1E4* L_28 = V_3;
 			String_t* L_29 = ___message0;
-			VirtualActionInvoker1< String_t* >::Invoke(14 /* System.Void System.IO.TextWriter::WriteLine(System.String) */, L_28, L_29);
+			VirtualActionInvoker1< String_t* >::Invoke(18 /* System.Void System.IO.TextWriter::WriteLine(System.String) */, L_28, L_29);
 			// }
 			goto IL_008e;
 		}// end try (depth: 1)

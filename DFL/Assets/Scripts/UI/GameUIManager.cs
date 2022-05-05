@@ -6,7 +6,7 @@ using TMPro;
 using UnityEngine.SceneManagement;
 
 
-public enum GameScreen { GAME = 0, RESTART = 1, SETTINGS = 2, HIGHSCORE = 3 }
+public enum GameScreen { GAME = 0, RESTART = 1, SETTINGS = 2, HIGHSCORE = 3, ONLINE_HIGHSCORE = 4 }
 
 
 public class GameUIManager : UIManager
@@ -26,7 +26,7 @@ public class GameUIManager : UIManager
     public string HighName { set { if (DataManager.InstanceDataManager != null) DataManager.InstanceDataManager.highName = value; } }
 
     [Tooltip("")]
-    [SerializeField] private TMP_InputField pseudoInputField;
+    [SerializeField] private TMP_InputField[] pseudoInputFields;
 
 
 
@@ -61,7 +61,7 @@ public class GameUIManager : UIManager
             smoothRotationSlider.value = DataManager.InstanceDataManager.ySmoothRotation;
         }
 
-        gameType = new Vector3Int(1, 0, 0);
+        gameType = new Vector3Int(0, 0, 0);
     }
 
     /// <summary>
@@ -199,17 +199,28 @@ public class GameUIManager : UIManager
         if (DataManager.InstanceDataManager != null)
         {
             DataManager.InstanceDataManager.NewHighscore();
-            DataManager.InstanceDataManager.PostScore(gameManager.gameMode, gameManager.difficulty, gameManager.options);
             SetScreen(GameScreen.HIGHSCORE, false);
+            SetScreen(GameScreen.RESTART, true);
+        }
+    }
+
+    public void SaveOnlineHighscore()
+    {
+        if (DataManager.InstanceDataManager != null)
+        {
+            if (DataManager.InstanceDataManager.highIndex != -1) DataManager.InstanceDataManager.NewHighscore();
+            DataManager.InstanceDataManager.PostScore(gameManager.gameMode, gameManager.difficulty, gameManager.options);
+            SetScreen(GameScreen.ONLINE_HIGHSCORE, false);
             SetScreen(GameScreen.RESTART, true);
         }
     }
 
     public void ActuInputField()
     {
-        if (DataManager.InstanceDataManager != null && DataManager.InstanceDataManager.highName != "Anonymous")
+        if (DataManager.InstanceDataManager != null && DataManager.InstanceDataManager.highName != "Anonym")
         {
-            pseudoInputField.text = DataManager.InstanceDataManager.highName;
+            foreach (TMP_InputField i in pseudoInputFields)
+                i.text = DataManager.InstanceDataManager.highName;
         }
             
     }

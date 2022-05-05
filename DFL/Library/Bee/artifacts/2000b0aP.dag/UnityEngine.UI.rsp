@@ -284,6 +284,7 @@
 -r:"C:/Infomatique/Unity/Projects/Personal Projects/DFL/DFL/Library/PackageCache/com.unity.burst@1.6.5/Unity.Burst.CodeGen/Unity.Burst.Cecil.Pdb.dll"
 -r:"C:/Infomatique/Unity/Projects/Personal Projects/DFL/DFL/Library/PackageCache/com.unity.burst@1.6.5/Unity.Burst.CodeGen/Unity.Burst.Cecil.Rocks.dll"
 -r:"C:/Infomatique/Unity/Projects/Personal Projects/DFL/DFL/Library/PackageCache/com.unity.burst@1.6.5/Unity.Burst.Unsafe.dll"
+-r:"C:/Infomatique/Unity/Projects/Personal Projects/DFL/DFL/Library/PackageCache/com.unity.nuget.newtonsoft-json@2.0.0/Runtime/AOT/Newtonsoft.Json.dll"
 "Library/PackageCache/com.unity.render-pipelines.universal@12.1.6/Editor/ShaderGUI/MaterialAssemblyReference/RawRenderQueue.cs"
 "Library/PackageCache/com.unity.shadergraph@12.1.6/Editor/Generation/Targets/BuiltIn/Editor/ShaderGUI/MaterialAssemblyReference/RawRenderQueue.cs"
 "Library/PackageCache/com.unity.ugui@1.0.0/Runtime/EventSystem/EventData/AxisEventData.cs"
