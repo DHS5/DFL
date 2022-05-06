@@ -240,7 +240,7 @@ public class GameManager : MonoBehaviour
         //{
         //    dataManager.SaveHighscores();
         //}
-        if (dataManager != null)
+        if (dataManager != null && enemiesManager.waveNumber > 1)
         {
             int index = dataManager.IsNewHighscoreF(gameMode, difficulty, options, enemiesManager.waveNumber);
             if (dataManager.IsNewHighscoreO(gameMode, difficulty, options, enemiesManager.waveNumber))

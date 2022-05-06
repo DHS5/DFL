@@ -222,6 +222,5 @@ public class GameUIManager : UIManager
             foreach (TMP_InputField i in pseudoInputFields)
                 i.text = DataManager.InstanceDataManager.highName;
         }
-            
     }
 }

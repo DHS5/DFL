@@ -32,12 +32,12 @@ public class MainMenuUIManager : UIManager
 
     public float YMouseSensitivity
     {
-        set { DataManager.InstanceDataManager.yMouseSensitivity = value; }
+        set { DataManager.InstanceDataManager.yMouseSensitivity = value; DataManager.InstanceDataManager.SavePlayerData(); }
     }
     
     public float YSmoothRotation
     {
-        set { DataManager.InstanceDataManager.ySmoothRotation = value; }
+        set { DataManager.InstanceDataManager.ySmoothRotation = value; DataManager.InstanceDataManager.SavePlayerData(); }
     }
 
     
@@ -46,11 +46,11 @@ public class MainMenuUIManager : UIManager
     {
         if (DataManager.InstanceDataManager.yMouseSensitivity != 0)
             sensitivitySlider.value = DataManager.InstanceDataManager.yMouseSensitivity;
-        else DataManager.InstanceDataManager.yMouseSensitivity = sensitivitySlider.value;
+        else YMouseSensitivity = sensitivitySlider.value;
 
         if (DataManager.InstanceDataManager.ySmoothRotation != 0)
             smoothRotationSlider.value = DataManager.InstanceDataManager.ySmoothRotation;
-        else DataManager.InstanceDataManager.ySmoothRotation = smoothRotationSlider.value;
+        else YSmoothRotation = smoothRotationSlider.value;
 
         gameType = new Vector3Int(0, 0, 0);
     }

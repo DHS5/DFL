@@ -43,12 +43,14 @@ public class DataManager : MonoBehaviour
     [Tooltip("Game options to pass to the GameManager")]
     [HideInInspector] public List<GameOption> options = new List<GameOption>();
 
+    readonly public int leaderboardLimit = 10;
+
     [Tooltip("List of ScoreList with the highscores")]
     public ScoreList[] highscores = new ScoreList[96];
 
     [HideInInspector] public LeaderBoard[,,] leaderboards = new LeaderBoard[4, 3, 8];
 
-    private int[] lb_ID = { 2909, 2911, 2912, 2913 };
+    readonly int[] lb_ID = { 2909, 2911, 2912, 2913 };
 
     [HideInInspector] public string highName;
     [HideInInspector] public int highWave;
@@ -91,17 +93,18 @@ public class DataManager : MonoBehaviour
         InstanceDataManager = this;
         DontDestroyOnLoad(gameObject);
 
-        LoadHighscores();
-
+        // Load the personnal highscores and player preferences
+        LoadPlayerData();
         if (highscores[0].gameType != new Vector3Int(1, 0, 0)) InitHighscores();
 
-
+        // Starts a LootLocker session and load the leaderboards
         StartSession();
-
-        //LoadLeaderboards();
     }
 
 
+    /// <summary>
+    /// Starts a LootLocker session and load the leaderboards if session successfully
+    /// </summary>
     private void StartSession()
     {
         LootLockerSDKManager.StartGuestSession((response) =>
@@ -149,20 +152,6 @@ public class DataManager : MonoBehaviour
         }
     }
 
-    private void CompleteLeaderboards(int mode)
-    {
-        for (int i = 0; i < 3; i++)
-        {
-            for (int j = 0; j < 8; j++)
-            {
-                for (int k = leaderboards[mode, i, j].names.Count; k < 5; k++)
-                {
-                    leaderboards[mode, i, j].names.Add("None");
-                    leaderboards[mode, i, j].scores.Add(0);
-                }
-            }
-        }
-    }
 
 
     public void LoadLeaderboards()
@@ -319,10 +308,10 @@ public class DataManager : MonoBehaviour
         //while (j < leaderboards[(int)GM - 1, (int)GD / 2, OptionsToInt(GOs)].scores.Count && leaderboards[(int)GM - 1, (int)GD / 2, OptionsToInt(GOs)].names[j] != highName && highName != "Anonym")
         
         
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < leaderboardLimit; i++)
         {
             Debug.Log((int)GM - 1 + "," + (int)GD / 2 + "," + OptionsToInt(GOs) + "," + i);
-            if (leaderboards[(int)GM - 1, (int)GD / 2, OptionsToInt(GOs)].scores.Count < 5 || leaderboards[(int)GM - 1, (int)GD / 2, OptionsToInt(GOs)].scores[i] < wave)
+            if (leaderboards[(int)GM - 1, (int)GD / 2, OptionsToInt(GOs)].scores.Count < leaderboardLimit || leaderboards[(int)GM - 1, (int)GD / 2, OptionsToInt(GOs)].scores[i] < wave)
             {
                 return true;
             }
@@ -365,13 +354,13 @@ public class DataManager : MonoBehaviour
 
     public void NewHighscore()
     {
-        if (highName == "") highName = "Anonym";
+        if (highName == "" || highName == " ") highName = "Anonym";
         for (int j = 0; j < 5; j++)
             if (highscores[highIndex].waves[j] < highWave)
             {
                 AddName(highscores[highIndex].names, j, highName);
                 AddWave(highscores[highIndex].waves, j, highWave);
-                SaveHighscores();
+                SavePlayerData();
                 return;
             }
     }
@@ -387,13 +376,35 @@ public class DataManager : MonoBehaviour
     class SaveData
     {
         public ScoreList[] highscores;
+
+        public string name;
+
+        public float yms;
+        public float ysr;
+
+        public bool musicOn;
+        public float musicVolume;
+        public bool soundOn;
+        public float soundVolume;
+        public bool loopOn;
     }
 
 
-    public void SaveHighscores()
+    public void SavePlayerData()
     {
         SaveData data = new SaveData();
         data.highscores = highscores;
+
+        data.name = highName;
+
+        data.yms = yMouseSensitivity;
+        data.ysr = ySmoothRotation;
+
+        data.musicOn = musicOn;
+        data.musicVolume = musicVolume;
+        data.soundOn = soundOn;
+        data.soundVolume = soundVolume;
+        data.loopOn = loopOn;
 
         string json = JsonUtility.ToJson(data);
 
@@ -408,7 +419,7 @@ public class DataManager : MonoBehaviour
     /// <summary>
     /// Load the game record from the corresponding file
     /// </summary>
-    public void LoadHighscores()
+    public void LoadPlayerData()
     {
         string path = Application.persistentDataPath + "/savefile.json";
         if (File.Exists(path))
@@ -417,6 +428,17 @@ public class DataManager : MonoBehaviour
             SaveData data = JsonUtility.FromJson<SaveData>(json);
 
             highscores = data.highscores;
+
+            highName = data.name;
+
+            yMouseSensitivity = data.yms;
+            ySmoothRotation = data.ysr;
+
+            musicOn = data.musicOn;
+            musicVolume = data.musicVolume;
+            soundOn = data.soundOn;
+            soundVolume = data.soundVolume;
+            loopOn = data.loopOn;
         }
     }
 }

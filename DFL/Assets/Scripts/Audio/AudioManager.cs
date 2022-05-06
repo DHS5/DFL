@@ -37,8 +37,12 @@ public abstract class AudioManager : MonoBehaviour
             if (value == true && !musicOn) audioSource.UnPause();
             else if (value == false && musicOn) audioSource.Pause();
 
-            musicOn = value; 
-            if (DataManager.InstanceDataManager != null) DataManager.InstanceDataManager.musicOn = value;
+            musicOn = value;
+            if (DataManager.InstanceDataManager != null)
+            {
+                DataManager.InstanceDataManager.musicOn = value;
+                DataManager.InstanceDataManager.SavePlayerData();
+            }
         }
     }
     protected float musicVolume;
@@ -49,7 +53,11 @@ public abstract class AudioManager : MonoBehaviour
         {
             musicVolume = value;
             audioSource.volume = musicVolume;
-            if (DataManager.InstanceDataManager != null) DataManager.InstanceDataManager.musicVolume = value;
+            if (DataManager.InstanceDataManager != null)
+            {
+                DataManager.InstanceDataManager.musicVolume = value;
+                DataManager.InstanceDataManager.SavePlayerData();
+            }
         }
     }
 
@@ -57,13 +65,29 @@ public abstract class AudioManager : MonoBehaviour
     public bool SoundOn
     {
         get { return soundOn; }
-        set { soundOn = value; if (DataManager.InstanceDataManager != null) DataManager.InstanceDataManager.soundOn = value; }
+        set 
+        { 
+            soundOn = value;
+            if (DataManager.InstanceDataManager != null)
+            {
+                DataManager.InstanceDataManager.soundOn = value;
+                DataManager.InstanceDataManager.SavePlayerData();
+            }
+        }
     }
     protected float soundVolume;
     public float SoundVolume
     {
         get { return soundVolume; }
-        set { soundVolume = value; if (DataManager.InstanceDataManager != null) DataManager.InstanceDataManager.soundVolume = value; }
+        set
+        {
+            soundVolume = value;
+            if (DataManager.InstanceDataManager != null)
+            {
+                DataManager.InstanceDataManager.soundVolume = value;
+                DataManager.InstanceDataManager.SavePlayerData();
+            }
+        }
     }
 
 
@@ -71,7 +95,16 @@ public abstract class AudioManager : MonoBehaviour
     public bool LoopOn
     {
         get { return loopOn; }
-        set { loopOn = value; if (DataManager.InstanceDataManager != null) DataManager.InstanceDataManager.loopOn = value; audioSource.loop = value; }
+        set 
+        { 
+            loopOn = value;
+            if (DataManager.InstanceDataManager != null)
+            {
+                DataManager.InstanceDataManager.loopOn = value;
+                audioSource.loop = value;
+                DataManager.InstanceDataManager.SavePlayerData();
+            }
+        }
     }
 
 

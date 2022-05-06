@@ -49,13 +49,13 @@ public class UIManager : MonoBehaviour
 
     public void ActuLeaderboards()
     {
-        int limit = DataManager.InstanceDataManager.leaderboards[gameType.x, gameType.y, gameType.z].names.Count <= 5 ? DataManager.InstanceDataManager.leaderboards[gameType.x, gameType.y, gameType.z].names.Count : 5;
+        int limit = DataManager.InstanceDataManager.leaderboards[gameType.x, gameType.y, gameType.z].names.Count <= DataManager.InstanceDataManager.leaderboardLimit ? DataManager.InstanceDataManager.leaderboards[gameType.x, gameType.y, gameType.z].names.Count : DataManager.InstanceDataManager.leaderboardLimit;
         for (int i = 0; i < limit; i++)
         {
             highNamesL[i].text = DataManager.InstanceDataManager.leaderboards[gameType.x, gameType.y, gameType.z].names[i];
             highWavesL[i].text = DataManager.InstanceDataManager.leaderboards[gameType.x, gameType.y, gameType.z].scores[i].ToString();
         }
-        for (int j = limit; j < 5; j++)
+        for (int j = limit; j < highNamesL.Length; j++)
         {
             highNamesL[j].text = "None";
             highWavesL[j].text = "0";
