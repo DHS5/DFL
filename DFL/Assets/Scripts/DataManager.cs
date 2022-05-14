@@ -229,31 +229,16 @@ public class DataManager : MonoBehaviour
     }
 
 
+
     /// <summary>
     /// Add a score in a list
     /// </summary>
     /// <param name="list">List of scores</param>
     /// <param name="index">Index at which add the score</param>
     /// <param name="value">Score to add</param>
-    private void AddName(string[] list, int index, string value)
+    private void AddScore<T>(T[] list, int index, T value)
     {
-        string tmp;
-        for (int i = 0; i < 4 - index; i++)
-        {
-            tmp = list[index + i];
-            list[index + i] = value;
-            value = tmp;
-        }
-    }
-    /// <summary>
-    /// Add a score in a list
-    /// </summary>
-    /// <param name="list">List of scores</param>
-    /// <param name="index">Index at which add the score</param>
-    /// <param name="value">Score to add</param>
-    private void AddWave(int[] list, int index, int value)
-    {
-        int tmp;
+        T tmp;
         for (int i = 0; i < 4 - index; i++)
         {
             tmp = list[index + i];
@@ -320,46 +305,14 @@ public class DataManager : MonoBehaviour
     }
 
 
-    /// <summary>
-    /// Enters a new score in the highscores if it's in the top 5
-    /// </summary>
-    /// <param name="GM">Game Mode</param>
-    /// <param name="GD">Game Difficulty</param>
-    /// <param name="GOs">Game Options list</param>
-    /// <param name="name">Name of the player</param>
-    /// <param name="wave">Wave reached by the player</param>
-    /// <returns>1 if it's a highscore, else 0</returns>
-    public int NewScore(GameMode GM, GameDifficulty GD, List<GameOption> GOs, string name, int wave)
-    {
-        int i = 0;
-        Vector3Int gameType = new Vector3Int((int)GM, (int)GD / 2, OptionsToInt(GOs));
-
-        while (highscores[i].gameType != gameType && i < 96) i++;
-
-        if (highscores[i].gameType == gameType)
-        {
-            for (int j = 0; j < 5; j++)
-                if (highscores[i].waves[j] < wave)
-                {
-                    AddName(highscores[i].names, j, name);
-                    AddWave(highscores[i].waves, j, wave);
-                    return 1;
-                }
-        }
-        else Debug.Log("Invalid game type");
-
-        return 0;
-    }
-
-
     public void NewHighscore()
     {
         if (highName == "" || highName == " ") highName = "Anonym";
         for (int j = 0; j < 5; j++)
             if (highscores[highIndex].waves[j] < highWave)
             {
-                AddName(highscores[highIndex].names, j, highName);
-                AddWave(highscores[highIndex].waves, j, highWave);
+                AddScore(highscores[highIndex].names, j, highName);
+                AddScore(highscores[highIndex].waves, j, highWave);
                 SavePlayerData();
                 return;
             }
